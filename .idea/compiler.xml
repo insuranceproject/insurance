@@ -10,11 +10,9 @@
         <module name="zhongan-provider-product" />
         <module name="zhongan-provider-order" />
         <module name="zhongan-api" />
-        <module name="zhongan-provider-previous" />
-        <module name="zhongan-util" />
-        <module name="zhongan-provider-operation" />
-        <module name="zhongan-consumer" />
         <module name="zhongan-eureka" />
+        <module name="zhongan-util" />
+        <module name="zhongan-consumer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
