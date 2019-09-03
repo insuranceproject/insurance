@@ -2,7 +2,6 @@ package com.insurance.controller;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.insurance.api.user.UserControllerApi;
 import com.insurance.pojo.User;
 import com.insurance.service.UserService;
@@ -62,7 +61,7 @@ public class UserController implements UserControllerApi {
     @PostMapping("/updateUser")
     @Override
     public boolean updateUser(@RequestBody User user) {
-        return userService.update(user,new UpdateWrapper<User>());
+        return userService.updateById(user);
     }
 
 
