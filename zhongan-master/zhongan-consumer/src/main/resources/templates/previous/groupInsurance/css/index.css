@@ -1,0 +1,583 @@
+
+/* 首页banner */
+
+.ybanner {
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.ybanner li {
+    background-image: url(../assets/image/indexImg/main_ban.gif);
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 500px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+.groupInformation{
+    text-align: center;
+}
+/* 流程导航 */
+.fillstep h2 {
+    width: 1200px;
+    height: 60px;
+    margin-top: 25px;
+    margin-bottom: 30px;
+    background: url(../assets/image/indexImg/technological_process.png) no-repeat;
+}
+/* 投保左侧 */
+.indexmain{
+    border: 1px solid #ddd;
+    margin-bottom: 60px;
+}
+.indexmain>div{
+    float: left;
+}
+.indexmain .indexmainLeft{
+    width: 310px;
+    position: relative;
+    background: #F5F5F3;
+}
+.indexmain .indexmainLeft li{
+    position: relative;
+    width: 291px;
+    cursor: pointer;
+    color: #FFFEFF;
+    height: 155px;
+    background: #FF444B;
+}
+.indexmain .indexmainLeft .sel{
+    position: relative;
+    padding-top: 12px;
+    left: -5px;
+    width: 306px;
+    height: 160px;
+    background: -webkit-gradient(linear, 0 0, 0 0, from(#FF770B), to(#FF454A));   
+    background: -webkit-linear-gradient(left, #FF770B, #FF454A);   
+    background: -moz-linear-gradient(left, #FF770B, #FF454A);   
+    background: -o-linear-gradient(left, #FF770B, #FF454A);   
+    background: -ms-linear-gradient(left, #FF770B, #FF454A);   
+    background: linear-gradient(left, #FF770B, #FF454A);   
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType = 1, startColorstr = #FF770B, endColorstr = #FF454A); 
+    -moz-box-shadow:1px 0px 12px #F8777B;
+    -webkit-box-shadow:1px 0px 12px #F8777B;
+    box-shadow:1px 0px 12px #F8777B;
+}
+.indexmain .indexmainLeft li.sel dl{
+    background:transparent;
+}
+.indexmain .indexmainLeft li h6{
+    text-align: center;
+    line-height: 65px;
+    font-size: 24px;
+}
+.indexmain .indexmainLeft dl{
+    background: url(../assets/image/editionline.png) no-repeat center bottom;
+    height: 90px;
+    padding-top: 10px;
+}
+.indexmain .indexmainLeft dt{
+    float: left;
+    width: 130px;
+    line-height: 36px;
+    text-align: center;
+}
+.indexmain .indexmainLeft dt i{
+    font-size: 16px;
+    padding-left: 3px;
+    vertical-align: middle;
+}
+.indexmain .indexmainLeft dt span{
+    font-weight: bold;
+    font-size: 20px;
+    vertical-align: middle;
+}
+.indexmain .indexmainLeft dt span b{
+    font-size: 32px;
+    padding-top: 6px;
+    font-family: 'arialbd';
+}
+.indexmain .indexmainLeft dd{
+    float: left;
+    text-align: center;
+    width: 150px;
+    font-size: 15px;
+}
+.indexmain .indexmainLeft dd .lastElement{
+    padding-left: 24px;
+}
+.indexmain .indexmainLeft dd p{
+    position: relative;
+}
+.indexmain .indexmainLeft dd i{
+    position: absolute;
+    width: 17px;
+    height: 13px;
+    cursor: pointer;
+    background: #000;
+    right: 31px;
+}
+.indexmain .indexmainLeft dd .indextop{
+    background: url(../images/top.png) no-repeat center center;
+}
+.indexmain .indexmainLeft dd .indexbom{
+    background: url(../images/bom.png) no-repeat center center;
+    top: 24px;
+}
+.indexmain .indexmainLeft .lastLeft dl{
+    background: transparent;
+}
+/* .indexmain .indexmainLeft li.sel::before{  
+    content: "";  
+    width: 0;  
+    height: 0;  
+    border: 8px solid #FD444A;  
+    border-color: transparent   transparent transparent #FD444A;  
+    position:absolute;  
+    top: 72px;
+    right: -16px;
+}  */
+.indexmain .indexmainLeft li>img{
+    position: absolute;
+    right: 0;
+    z-index: 12;
+    top: 60px;
+    right: 0px;
+    top: 72px;
+    right: -8px;
+    display: none;
+}
+.indexmain .indexmainLeft .editionList .sel img{
+    display: block;
+    position: absolute;
+    z-index: 13;
+}
+.indexmain .indexmainLeft input{
+    border: none;
+    width: 58px;
+    text-align: center;
+    height: 36px;
+    line-height: 36px;
+    font-size:18px;
+    color: #111111;
+}
+/* 首页投保右侧 */
+.indexmain .indexmainRight{
+    width: 888px;
+    position: relative;
+    background: #F5F5F5;
+}
+.indexmain .indexmainRight .typeList{
+    padding-left: 0;
+}
+.indexmainRight .typeList li{
+    float: left;
+    width: 439px;
+    /* height: 307px; */
+    border: 1px solid transparent;
+    border-top: none;
+    box-shadow: -1px 0px 2px #E1E1E1;
+}
+.indexmainRight .typeList .firstli,.indexmainRight .typeList .medicalCare{
+    height: 339px;
+}
+.indexmainRight .typeList .upgrade,.indexmainRight .typeList .lastli{
+    height: 277px;
+}
+.indexmainRight .typeList li.sel{
+    border: 1px solid #E1E1E1;
+    border-top: none;
+    background: #fff;
+}
+.indexmainRight .typeList .sel dl>i{
+    background: url(../images/selection_sel.png) no-repeat;
+    right: -10px;
+    /* right: -1px; */
+}
+.indexmain .typeList .upgrade,.indexmain .typeList .lastli{
+    margin-top: 9px;
+}
+.indexmain .typeList dl{
+    margin: 20px 9px 12px;
+    /* margin: 20px 0 12px; */
+    position: relative;
+    border-bottom: 1px solid #D8D8D8;
+}
+.indexmain .typeList dl>i{
+    display: inline-block;
+    position: absolute;
+    background: url(../images/unselected_sel.png) no-repeat;
+    width: 51px;
+    height: 52px;
+    top: -20px;
+    right: -9px;
+    /* right: 0px; */
+}
+.indexmain .indexmainRight .medicalCare,.indexmain .indexmainRight .lastli{
+    margin-left: 10px;
+    border-right: none;
+}
+.indexmain .typeList dt{
+    float: left;
+    padding-bottom: 18px;
+    margin-left: 70px;
+}
+.indexmain .typeList dt img{
+    width: 124px;
+    height: 66px;
+}
+.indexmain .typeList dd{
+    float: left;
+    padding-left: 15px;
+}
+.indexmain .typeList dd h3{
+    font-size: 22px;
+    line-height: 25px;
+    margin-top: 5px;
+    color: #666666;
+}
+.indexmain .typeList .sel dd h3{
+    color: #111111;
+}
+.indexmain .typeList dd h3 i{
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    cursor: pointer;
+    margin-left: 10px;
+    vertical-align: middle;
+    background: url(../assets/image/doubt1.png) no-repeat;
+}
+.indexmain .typeList .sel dd h3 i{
+    background: url(../assets/image/doubt.png) no-repeat;
+}
+.indexmain .typeList dd p{
+    font-size: 16px;
+    color: #999999;
+    line-height: 25px;
+    margin-top: 8px;
+}
+.indexmain .typeList .sel dd p{
+    color: #999999;
+}
+.indexmainRight .typeList .guaranteeList{
+    margin-left: 70px;
+} 
+.indexmainRight .typeList .guaranteeList b{
+    font-weight: bold;
+    font-size: 17px;
+    color: #999999;
+}
+.indexmainRight .typeList li img{
+    opacity: 0.7;
+}
+.indexmainRight .typeList .sel img{
+    opacity: 1;
+}
+.indexmainRight .typeList .guaranteeList p:first-child{
+    margin-bottom: 10px;
+}
+.indexmainRight .typeList .guaranteeList p{
+    line-height: 27px;
+}
+.indexmainRight .typeList .sel .guaranteeList b{
+    color: #333333;
+}
+.indexmainRight .guaranteeList p span{
+    display: inline-block;   
+    color: #999999;
+    font-size: 14px;
+}
+.indexmainRight .sel p span{
+    color: #666666;
+}
+.indexmainRight .guaranteeList p span:first-child{
+    width: 210px;
+}
+/* 首页常见问题 */
+.indexExplain{
+    background: #F5F5F5;
+    text-align: center;
+    padding-bottom: 60px;
+}
+.indexExplain p{
+    width: 850px;
+    text-align: left;
+    margin-left: 150px;
+    padding-left: 40px;
+    margin-top: 25px;
+    font-size: 17px;
+    line-height: 30px;
+}
+.indexExplain .indexDotted{
+    margin-top: 20px;
+}
+.indexExplain .ask{
+    color: #111111;
+    background: url('../assets/image/ask.png') no-repeat;
+}
+.indexExplain .answer{
+    background: url('../assets/image/answer.png') no-repeat;
+    color: #666666;
+}
+/* 立即购买 */
+.purchase_wrap{
+    position: relative;
+    height: 130px;
+    line-height: 130px;
+    margin-bottom: 15px;
+}
+.immediate_box{
+    position: absolute;
+    right: 5px;
+}
+.immediate_box em{
+    font-size: 18px;
+    vertical-align: middle;
+}
+.immediate_box span{
+    font-size: 25px;
+    font-weight: bold;
+    color: #FF444A;
+    vertical-align: middle;
+}
+.immediate_box b{
+    font-weight: bold;
+}
+.immediate_box button{
+    border: none;
+    width: 220px;
+    height: 60px;
+    margin-left: 10px;
+    color: #fff;
+    font-size: 25px;
+    background: url('../assets/image/immediate_btn.png') no-repeat;
+    line-height: 60px;
+    vertical-align: middle;
+}
+
+/* 产品详情 */
+.mark-details{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 66;
+    background: rgba(0,0,0,.5);
+    font-size: 16px;
+    display: none;
+}
+.mark-details .details-box{
+    width: 1000px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -500px;
+   
+    background: #fff;
+}
+.mark-details .details-box1{
+    height: 820px;
+    margin-top: -410px;
+}
+.mark-details .details-box3{
+    height: 546px;
+    margin-top: -273px;
+}
+.mark-details .details-box4{
+    height: 400px;
+    margin-top: -200px;
+}
+.mark-details .details-box4 .mark-body{
+    margin-bottom: 40px;
+}
+.mark-details .details-box3 p,.mark-details .details-box4 p{
+    line-height: 30px;
+}
+.details-box h1{
+    background: #FF444A;
+    color: #fff;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 25px;
+    position: relative;
+}
+.details-box h1 img{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+}
+.details-box .mark-body{
+    margin:15px 30px;
+}
+.details-box .mark-body h6{
+    color: #111111;
+    background: url('../assets/image/indexImg/list_icon.png') no-repeat;
+    font-weight: bold;
+    margin-top: 25px;
+    padding-left: 20px;
+}
+.details-box .mark-body p{
+    color: #333333;
+    background: #F5F5F5;
+    padding: 5px 10px;
+    margin: 10px 0;
+}
+.details-box .mark-body p span{
+    color: #111111;
+    font-weight: bold;
+    font-size: 15px;
+}
+.details-box>p{
+    color: #999999;
+    border-top: 1px dashed #E4E4E4;
+    margin:30px 30px 0;
+    padding-top: 17px;
+}
+/* 字体 */
+@font-face{
+    font-family: 'arialbd';
+    src : url('../assets/fonts/arialbd.ttf');
+}
+
+.makeAnAppointment{
+    /* 团险预约 */
+    background-image: url('../assets/image/indexImg/bg_02.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 506px;
+    margin-top: 25px;
+}
+.makeAnAppointmentBox{
+    width: 1200px;
+    margin: 0 auto;
+}
+.makeAnAppointmentBox>p{
+    text-align: right;
+    margin-right: 65px;
+    margin-top: 34px;
+}
+.makeAnAppointmentBox>p span{
+    cursor: pointer;
+}
+.makeAnAppointmentBox>div{
+    display: inline-block;
+    width: 49%;
+    margin-top: 100px;
+}
+.makeAnAppointmentBox>div li{
+    line-height: 69px;
+}
+.makeAnAppointmentBox>div li div{
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+}
+.makeAnAppointmentBox #mseloptIndustry{
+    height: 190px;
+}
+.makeAnAppointmentBox #mseloptContent{
+    height: 130px;
+}
+.makeAnAppointmentBox .mselopt{
+    position: absolute;
+    overflow-y: scroll;
+    background: #fff;
+    z-index: 11;
+    top:53px;
+    display: none;
+}
+.makeAnAppointmentBox>div li div i{
+    position: absolute;
+    right: 0;
+    top: 13px;
+    height: 40px;
+    border-left: 1px solid #CCCCCC;
+    width: 40px;
+    background: url('../assets/image/indexImg/donw_01.png') no-repeat;
+    cursor: pointer;
+}
+.makeAnAppointmentBox .mselopt strong{
+    height: 33px;
+    line-height: 33px;
+    padding: 0 20px;
+    font-size: 13px;
+    width: 100%;
+    display: inline-block;
+    color: #333333;
+    text-align: center;
+    cursor: pointer;
+}
+.makeAnAppointmentBox .mselopt strong:hover{
+    background-color: #FF444A;
+    color: #ffffff;
+}
+.makeAnAppointmentBox .mselopt .hover{
+    background-color: #FF444A;
+    color: #ffffff;
+}
+.makeAnAppointmentBox>div div input{
+    width: 300px;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    padding-left: 15px;
+    font-size: 18px;
+    border: 1px solid #CCCCCC;
+    background: none;
+    position: relative;
+    z-index: 10;
+    outline: none;
+    color: #fff;
+}
+.makeAnAppointmentBox .verificationCode{
+    width: 162px;
+}
+/* 普通IE浏览器 样式清除 */
+input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{
+    -webkit-appearance: none !important;
+}
+/* 火狐浏览器样式清除 */
+input[type="number"]{
+    -moz-appearance:textfield;
+}
+input::-webkit-input-placeholder{
+    color: #CCCCCC;
+}
+img[src=""],img:not([src]){
+    opacity:0;
+}
+.makeAnAppointmentBox>div li span{
+    vertical-align: middle;
+    width: 103px;
+    text-align: right;
+    margin-right: 5px;
+    display: inline-block;
+    font-size: 17px;
+    color: #fff;
+    margin-left: 90px;
+}
+.makeAnAppointmentBox>div li u{
+    vertical-align: middle;
+    width: 117px;
+    height: 40px;
+    position: relative;
+    display: inline-block;
+    border: 1px solid #CCCCCC;
+    margin-left: 17px;
+}
+.makeAnAppointmentBox>div li u img{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    cursor: pointer;
+}

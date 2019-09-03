@@ -1,0 +1,567 @@
+body {
+    background: #fff
+}
+
+.wrapper .login-way-icon {
+    position: absolute;
+    right: 0;
+    width: 50px;
+    height: 50px
+}
+
+.wrapper .login-way-icon .icon-way img {
+    top: 10px;
+    right: 10px;
+    width: 50px;
+    position: absolute;
+    background-color: #fff;
+    cursor: pointer
+}
+
+.wrapper .login-way-icon .icon-way .qr {
+    z-index: 10
+}
+
+.wrapper .login-way-icon .icon-way .pc {
+    z-index: 11
+}
+
+.wrapper .login-way-icon .pc-tip {
+    position: absolute;
+    font-size: 12px;
+    width: 144px;
+    height: 20px;
+    line-height: 19px;
+    color: #12c286;
+    text-align: center;
+    background: url("../images/passport/pc-tip.png") no-repeat;
+    background-position: center;
+    z-index: 11;
+    right: 53px;
+    top: 11px
+}
+
+#qrImg {
+    top: -10px
+}
+
+.za-rect-box .za-login-form .way-form {
+    display: none
+}
+
+.za-rect-box .za-login-form .way-qr .qr-title {
+    color: #464646;
+    width: 280px;
+    margin: 0 auto;
+    padding-top: 38px;
+    height: 49px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 49px;
+    border-bottom: 1px solid #e7e7e7
+}
+
+.za-rect-box .za-login-form .way-qr .qr-content-move-left {
+    -webkit-animation: qrContentMoveLeft 0.7s linear forwards;
+    animation: qrContentMoveLeft 0.7s linear forwards
+}
+
+.za-rect-box .za-login-form .way-qr .qr-content-move-right {
+    -webkit-animation: qrContentMoveRight 0.7s linear forwards;
+    animation: qrContentMoveRight 0.7s linear forwards
+}
+
+.za-rect-box .za-login-form .way-qr .qr-content {
+    display: table;
+    position: relative;
+    margin: 19px auto;
+    height: 170px;
+    margin-top: 19px
+}
+
+.za-rect-box .za-login-form .way-qr .qr-content .qr-img {
+    position: relative;
+    display: table-cell;
+    width: 170px;
+    height: 170px;
+    margin: 0 auto;
+    padding: 10px
+}
+
+.za-rect-box .za-login-form .way-qr .qr-content .qr-img .qr {
+    width: 150px;
+    height: 150px;
+    margin: 10px
+}
+
+.za-rect-box .za-login-form .way-qr .qr-content .qr-fresh {
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 170px;
+    height: 170px;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.75)
+}
+
+.za-rect-box .za-login-form .way-qr .qr-content .qr-fresh .fresh-img {
+    width: 37px;
+    height: 37px;
+    margin-top: 30px
+}
+
+.za-rect-box .za-login-form .way-qr .qr-content .qr-fresh .fresh-desc {
+    margin-top: 11px;
+    font-size: 18px;
+    font-weight: 600
+}
+
+.za-rect-box .za-login-form .way-qr .qr-content .qr-fresh .fresh-btn {
+    width: 90px;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 4px;
+    font-size: 14px;
+    margin: 14px auto;
+    background-color: #12c286;
+    cursor: pointer
+}
+
+.za-rect-box .za-login-form .way-qr .qr-content .phone-img {
+    display: none;
+    opacity: 1;
+    top: 8px;
+    margin-left: -8px;
+    position: absolute
+}
+
+.za-rect-box .za-login-form .way-qr .qr-content .opcityPhoneLeft {
+    display: block;
+    -webkit-animation: opcityFadeLeft 0.75s both;
+    animation: opcityFadeLeft 0.75s both
+}
+
+.za-rect-box .za-login-form .way-qr .qr-content .opcityPhoneRight {
+    display: block;
+    -webkit-animation: opcityFadeRight 0.75s both;
+    animation: opcityFadeRight 0.75s both
+}
+
+.za-rect-box .za-login-form .way-qr .qr-bottom-desc {
+    position: absolute;
+    text-align: center;
+    background: url("../images/passport/icon-scan.png") no-repeat;
+    background-position: 81px center;
+    margin-top: -35px
+}
+
+.za-rect-box .za-login-form .way-qr .qr-bottom-desc .desc {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #464646;
+    padding-left: 125px;
+    text-align: left
+}
+
+.za-rect-box .za-login-form .way-qr .qr-bottom-desc .desc span {
+    color: #12c286;
+    cursor: pointer
+}
+
+.za-rect-box .za-login-form .way-qr .scan-success {
+    display: none;
+    position: absolute;
+    top: 82px;
+    background: url("../images/passport/icon_success.png") no-repeat;
+    height: 290px;
+    width: 100%;
+    background-color: #fff;
+    background-position: center 82px
+}
+
+.za-rect-box .za-login-form .way-qr .scan-success .s-desc {
+    margin-top: 148px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.13;
+    color: #464646
+}
+
+.za-rect-box .za-login-form .way-qr .scan-success .s-cont {
+    margin-top: 9px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #909090
+}
+
+.za-rect-box .za-login-form .way-qr .third-login {
+    position: absolute;
+    bottom: 0;
+    color: #12c286;
+    font-size: 14px;
+    text-align: center
+}
+
+.za-rect-box .za-login-form .way-qr .third-login .down-left {
+    position: absolute;
+    line-height: 60px;
+    height: 60px;
+    padding-left: 46px;
+    background: url("../images/passport/icon_phone.png") no-repeat;
+    background-position: 23px center;
+    cursor: pointer
+}
+
+.za-rect-box .za-login-form .quick-login {
+    display: none
+}
+
+.za-rect-box .za-login-form .login-icon {
+    width: 175px;
+    height: 30px;
+    background: url("../images/passport/logo_min.png") no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    margin: 45px auto 36px auto
+}
+
+.za-rect-box .za-login-form .login-icon a {
+    display: inline-block;
+    width: 175px;
+    height: 30px
+}
+
+.za-rect-box .za-login-form .tab-change {
+    color: #464646 !important;
+    border-bottom: 3px solid #12c286 !important
+}
+
+.za-rect-box .za-login-form .form-item {
+    width: 100%;
+    margin-bottom: 16px;
+    color: #666;
+    clear: both
+}
+
+.za-rect-box .za-login-form .form-item .loginName {
+    margin-top: 30px
+}
+
+.za-rect-box .za-login-form .form-item .login-way {
+    display: table;
+    color: #909090;
+    width: 280px;
+    margin: 0 auto;
+    padding-top: 38px;
+    height: 49px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 49px
+}
+
+.za-rect-box .za-login-form .form-item .login-way span {
+    display: table-cell;
+    color: #dcdcdc;
+    font-size: 14px;
+    width: 140px;
+    text-align: center;
+    border-bottom: 1px solid #e7e7e7;
+    cursor: pointer
+}
+
+.za-rect-box .za-login-form .form-item .voice {
+    height: 40px;
+    line-height: 30px;
+    float: right
+}
+
+.za-rect-box .za-login-form .form-item .voice a {
+    color: #48af66;
+    font-size: 14px
+}
+
+.za-rect-box .za-login-form .form-item .item {
+    height: 25px;
+    line-height: 25px
+}
+
+.za-rect-box .za-login-form .form-item .item a {
+    position: relative;
+    top: -2px;
+    color: #48af66;
+    font-size: 12px
+}
+
+.za-rect-box .za-login-form .form-item .message .placehld {
+    position: relative;
+    line-height: 40px;
+    top: -40px;
+    color: #b6b3b3;
+    display: none
+}
+
+.za-rect-box .za-login-form .form-item .za-input-hover-red {
+    border: 1px solid #E77A7A !important;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 5px #eda4a2 !important;
+    border-radius: 3px
+}
+
+.za-rect-box .za-login-form .form-item .form-error {
+    width: 100%;
+    margin-bottom: -10px;
+    margin-top: 10px;
+    color: #666;
+    clear: both
+}
+
+.za-rect-box .za-login-form .form-item .form-error i {
+    background: url("../images/passport/warning_icon.png");
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    vertical-align: middle
+}
+
+.za-rect-box .za-login-form .form-item .form-error .error-text {
+    color: #EC7171;
+    font-size: 14px;
+    position: relative;
+    top: 1px
+}
+
+.za-rect-box .za-login-form .form-item .btn-full {
+    width: 100%
+}
+
+.za-rect-box .za-login-form .third-login {
+    width: 350px;
+    height: 60px;
+    background-color: #f9f9f9;
+    position: relative;
+    bottom: -10px
+}
+
+.za-rect-box .za-login-form .third-login .ui-btns {
+    display: table;
+    width: 140px;
+    position: absolute;
+    height: 60px;
+    margin-left: 20px
+}
+
+.za-rect-box .za-login-form .third-login .ui-btns i.icon-wx {
+    background-image: url("../images/passport/wx_icon.png")
+}
+
+.za-rect-box .za-login-form .third-login .ui-btns i.icon-qq {
+    background-image: url("../images/passport/QQ_icon.png")
+}
+
+.za-rect-box .za-login-form .third-login .ui-btns i.icon-pay {
+    background-image: url("../images/passport/zfb_icon.png")
+}
+
+.za-rect-box .za-login-form .third-login .ui-btns a {
+    display: table-cell;
+    vertical-align: middle
+}
+
+.za-rect-box .za-login-form .third-login .ui-btns i {
+    display: table-cell;
+    width: 44px;
+    height: 36px;
+    vertical-align: middle;
+    background-repeat: no-repeat
+}
+
+.za-rect-box .za-login-form .third-login .registe-right {
+    display: table-cell;
+    vertical-align: middle;
+    position: absolute;
+    right: 20px;
+    line-height: 60px;
+    height: 60px;
+    color: #12c286;
+    font-size: 14px;
+    cursor: pointer
+}
+
+.za-rect-box .za-login-form .form-item .za-input-hover-green {
+    border: 1px solid #75E199 !important;
+    box-shadow: 0 0 1px #199442 !important;
+    border-radius: 3px
+}
+
+.za-rect-box .za-login-form .form-item .remember {
+    color: #dcdcdc;
+    height: 40px;
+    line-height: 30px;
+    text-align: center;
+    margin-top: -16px
+}
+
+.za-rect-box .za-login-form .form-item .remember a {
+    color: #48af66;
+    font-size: 14px
+}
+
+.za-m-copyright {
+    color: #83969F;
+    position: relative;
+    bottom: 0;
+    width: 410px;
+    height: 40px;
+    font-size: 14px;
+    margin: 0 auto;
+    padding: 20px 0 35px;
+    left: 0;
+    right: 0;
+    top: 30px
+}
+
+.za-m-copyright a {
+    color: #83969F
+}
+
+.za-m-copyright a:hover {
+    text-decoration: underline
+}
+
+a:hover {
+    text-decoration: underline
+}
+
+input {
+    border-style: none;
+    outline: none;
+    padding: 0;
+    margin: 0
+}
+
+button {
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif
+}
+
+button:link, button:hover, button:visited, button:active, button:focus {
+    outline: none !important
+}
+
+.regist-phone {
+    margin-top: 10px;
+    display: inline-block
+}
+
+.register-page .za-rect-box .za-login-form .form-item .form-input-middle {
+    color: #dcdcdc;
+    line-height: 30px;
+    text-align: center;
+    margin-top: 20px;
+    height: 74px
+}
+
+.wd100 {
+    width: 106px !important
+}
+
+.placehld {
+    color: #a3a3a3 !important
+}
+
+.placehld {
+    z-index: 0
+}
+
+input {
+    z-index: 2;
+    background: transparent
+}
+
+#za-anti-radar-init-path, #za-anti-radar-loading-path, #za-anti-radar-success-path, #za-anti-radar-pending-path, #za-anti-radar-close-path, #za-anti-radar-refresh-path {
+    fill: green
+}
+
+#za-anti-radar-fail-path {
+    fill: #EF4836
+}
+
+#za-id-radar {
+    padding-left: 18px;
+    -webkit-transform-origin: 27px center;
+    transform-origin: 27px center
+}
+
+#radar-init use, #za-anti-radar-init-path {
+    fill: #cdcdcd
+}
+
+@-webkit-keyframes opcityFadeLeft {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes opcityFadeLeft {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes opcityFadeRight {
+    from {
+        opacity: 1
+    }
+    to {
+        opacity: 0
+    }
+}
+
+@keyframes opcityFadeRight {
+    from {
+        opacity: 1
+    }
+    to {
+        opacity: 0
+    }
+}
+
+@-webkit-keyframes qrContentMoveLeft {
+    from {
+        left: 0px
+    }
+    to {
+        left: -78px
+    }
+}
+
+@keyframes qrContentMoveLeft {
+    from {
+        left: 0px
+    }
+    to {
+        left: -78px
+    }
+}
+
+@-webkit-keyframes qrContentMoveRight {
+    from {
+        left: -78px
+    }
+    to {
+        left: 0
+    }
+}
+
+@keyframes qrContentMoveRight {
+    from {
+        left: -78px
+    }
+    to {
+        left: 0
+    }
+}
