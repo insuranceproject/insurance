@@ -16,6 +16,7 @@ import lombok.experimental.Accessors;
 @Accessors(chain=true)
 @TableName(value = "insurance_user")
 public class User {
+    //主键
     @TableId(type = IdType.AUTO)
     private int userId;
     private String userName;
