@@ -1,0 +1,154 @@
+.page-library {
+    padding: 50px 0 0
+}
+
+.page-library .card {
+    padding-bottom: 60px;
+    background: #fff;
+    -webkit-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, .05);
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, .05)
+}
+
+.page-library .card h3 {
+    font-size: 36px;
+    font-weight: 400;
+    padding: 33px 70px 40px 56px;
+    color: #464646
+}
+
+.page-library .data-list {
+    margin: 0 50px;
+    padding: 30px 20px;
+    border: 1px solid #ebebeb
+}
+
+.page-library .data-list + .data-list {
+    margin-top: 30px
+}
+
+.page-library .data-list h4 {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 25px;
+    color: #343434
+}
+
+.page-library .data-list .item {
+    font-size: 14px;
+    line-height: 50px;
+    height: 50px;
+    padding-left: 20px;
+    background-color: #f9fbfd
+}
+
+.page-library .data-list .item:nth-child(2n) {
+    background-color: #f3f8fc
+}
+
+.page-library .data-list .item.title {
+    margin-top: 50px;
+    color: #4497ea;
+    background-color: #dcedfd
+}
+
+.page-library .data-list .item:first-child {
+    margin-top: 0
+}
+
+.page-library .download-wrapper {
+    width: 1200px;
+    border: 1px solid #00bc70;
+    padding: 20px 70px;
+    background-color: #fff;
+    line-height: 50px
+}
+
+.page-library .check-all {
+    margin-right: 36px
+}
+
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+html {
+    font-size: 14px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+}
+
+body {
+    font-family: PingFangSC-Light, helvetica neue, hiragino sans gb, arial, microsoft yahei ui, microsoft yahei, simsun, sans-serif;
+    line-height: 1.42857143;
+    -webkit-font-smoothing: subpixel-antialiased
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit
+}
+
+a {
+    text-decoration: none;
+    color: #6c6c6c;
+    outline: none
+}
+
+a:focus {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px
+}
+
+figure {
+    margin: 0
+}
+
+img {
+    vertical-align: middle
+}
+
+blockquote, figure, form, h1, h2, h3, h4, h5, h6, p {
+    margin: 0
+}
+
+dd, dl, li, ol, ul {
+    margin: 0;
+    padding: 0
+}
+
+ol, ul {
+    list-style: none outside none
+}
+
+.comp-breadcrumb {
+    font-size: 12px;
+    line-height: 40px;
+    height: 40px;
+    padding-left: 40px;
+    color: #6e6e6e;
+    border-bottom: 1px solid #eee
+}
+
+.comp-fixed-bar {
+    overflow: hidden;
+    width: 100%;
+    margin: 50px 0
+}
+
+.comp-fixed-bar.fixed .bar-wrapper {
+    position: fixed;
+    bottom: 0;
+    width: 100%
+}
+
+.comp-fixed-bar .bar-wrapper, .comp-fixed-bar.fixed .bar-wrapper {
+    -webkit-transition: all .5s linear;
+    -o-transition: all .5s linear;
+    transition: all .5s linear
+}
+
+.comp-fixed-bar .bar-wrapper {
+    position: relative
+}

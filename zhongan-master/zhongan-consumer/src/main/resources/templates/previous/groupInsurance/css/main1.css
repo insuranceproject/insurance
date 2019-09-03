@@ -1,0 +1,1050 @@
+body,
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl,
+dd,
+form,
+input,
+textarea,
+select {
+    padding: 0;
+    margin: 0;
+}
+
+input {
+    border: none;
+}
+
+input[disabled] {
+    opacity: 1;
+    background: #fff;
+}
+
+body {
+    font-size: 14px;
+    font-family: "微软雅黑";
+    line-height: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label {
+    font-weight: 400;
+    font-weight: normal;
+    font-size: inherit;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+b,
+strong,
+i,
+em {
+    font-style: normal;
+    font-weight: 400;
+}
+
+.vertical {
+    vertical-align: middle;
+}
+
+img {
+    border: none;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    font-size: 12px;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+    /*IE/7/6*/
+}
+
+.content {
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.textEllipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+/* 隐藏滚动条 */
+.ovfHiden{
+    overflow: hidden;
+    height: 100%;
+}
+
+/* 首页顶部条 */
+
+.ytopbar {
+    color: #666;
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+    border-bottom: #e0e0e0 solid 1px;
+    background: #fff;
+}
+
+.ytopbar h1 {
+    line-height: inherit;
+    font-size: 12px;
+}
+
+.ytopbar h1 span {
+    color: #ff444a;
+    margin-right: 5px;
+}
+
+.ytopbar h1 b {
+    margin-left: 10px;
+}
+
+.ytopbar h1 b a {
+    color: #666;
+    margin-right: 10px;
+}
+
+.ytopbar h1 b a:last-child {
+    color: #ff444a;
+    margin-left: 10px;
+}
+
+.ytopbar h1 b i {
+    color: #ddd;
+}
+
+.ytopbar h1 b em {
+    cursor: pointer;
+}
+
+.ytopbar ul {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.ytopbar ul li {
+    float: left;
+    height: 30px;
+    background-repeat: no-repeat;
+}
+
+.ytopbar ul li.ysep {
+    color: #ddd;
+    margin: 0 10px;
+}
+
+.ytopbar ul li.ycenter {
+    background-image: url(../assets/image/ytopbar.png);
+    background-position: 0 6px;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+.ytopbar ul li.ycenter:hover {
+    text-decoration: underline;
+}
+
+.ytopbar ul li.ytel {
+    background-image: url(../assets/image/ytopbar.png);
+    background-position: 0 -35px;
+    padding-left: 22px;
+}
+
+.ytopbar ul li.yctc {
+    background-image: url(../assets/image/yctc.png);
+    background-position: 0 7px;
+    padding-left: 22px;
+}
+
+.ytopbar ul li.yqrcode {
+    background-image: url(../assets/image/ytopbar.png);
+    background-position: 0 -67px;
+    padding-left: 22px;
+    cursor: pointer;
+}
+
+.ytopbar .content {
+    overflow: visible;
+}
+
+.ytopbar .ytopqr {
+    position: absolute;
+    background: #fff;
+    border: #e0e0e0 solid 1px;
+    width: 120px;
+    height: 120px;
+    z-index: 66;
+    right: 0;
+    display: none;
+    border-top: none;
+}
+
+.ytopbar .ytopqr img {
+    width: 100%;
+    height: 100%;
+}
+
+.ytopbar .ytopmenu {
+    position: absolute;
+    background: #fff;
+    border: #e0e0e0 solid 1px;
+    width: 90px;
+    z-index: 1;
+    left: 0;
+    display: none;
+    border-top: none;
+}
+
+.ytopbar .ytopmenu p {
+    margin: 0 10px;
+    border-bottom: #e0e0e0 solid 1px;
+    text-align: center;
+}
+
+.ytopbar .ytopmenu p:last-child {
+    border-bottom: none;
+}
+
+.ytopbar .ytopmenu p:hover {
+    background: #f8f8f8;
+}
+
+.ytopbar .ytopmenu p a {
+    color: #666;
+    display: block;
+    text-decoration: none;
+}
+
+/* 分页 */
+
+.hxpage {
+    width: 890px;
+    text-align: center;
+    font-family: "微软雅黑";
+    margin: 35px 0 60px;
+}
+
+.hxpage span,
+.hxpage i {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    color: #666;
+    line-height: 35px;
+    border: #e0e0e0 solid 1px;
+    margin: 0 5px;
+    vertical-align: middle;
+    cursor: default;
+}
+
+.hxpage span[page],
+.hxpage i[page] {
+    cursor: pointer;
+}
+
+.hxpage span[page]:hover,
+.hxpage i[page]:hover,
+.hxpage span.cur,
+.hxpage i.cur {
+    border-color: #ff444a;
+    color: #ff444a;
+}
+
+.hxpage span {
+    padding: 0 12px;
+}
+
+.hxpage i {
+    width: 35px;
+    text-align: center;
+}
+
+.hxpage b {
+    width: 10px;
+    height: 2px;
+    background: url(./images/ydots.png) no-repeat;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    margin: 0 5px;
+    vertical-align: middle;
+}
+
+/* 导航 */
+
+.ymainmenu {
+    border-bottom: 1px solid #E2E2E2;
+}
+
+.ymainmenu a {
+    text-decoration: none;
+    display: inline-block;
+    vertical-align: middle;
+    *display: inline;
+    *zoom: 1;
+    -webkit-transition: -webkit-color 300ms;
+    -webkit-transition: color 300ms;
+    transition: color 300ms;
+    color: #444444;
+}
+
+.ymainmenu .logo_text {
+    border-left: 1px solid #BBBBBB;
+    padding-left: 20px;
+    height: 42px;
+    line-height: 42px;
+    font-size: 23px;
+}
+
+.input-helphide {
+    display: none;
+}
+
+/* 提示弹框 */
+
+.dialog-wrap .dialog {
+    border: none;
+}
+
+.dialog-wrap,
+.mark-wrap,
+.mark-login,
+.publicMask {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .5);
+}
+
+.mark-wrap,
+.mark-login,
+.publicMask {
+    display: none;
+    z-index: 15;
+}
+
+.mark-login .dialog,
+.publicMask .dialog {
+    display: block;
+}
+
+.dialog-wrap {
+    z-index: 670;
+    display: none;
+}
+
+.dialog-wrap .dialog {
+    position: absolute;
+    width: 500px;
+    left: 50%;
+    margin-left: -250px;
+    top: 40%;
+}
+
+.dialog .dialog-head {
+    background: #FF444A;
+    color: #fff;
+    text-align: center;
+    padding: 16px 20px;
+}
+
+.dialog .dialog-head strong {
+    font-size: 23px;
+    margin-left: 35px;
+}
+
+.dialog .dialog-head .close {
+    font-size: 38px;
+    line-height: 14px;
+}
+
+.dialog .dialog-foot {
+    border-top: none;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.dialog .dialog-foot .button {
+    background: #FF444A;
+    border: none;
+    border-radius: 0;
+    width: 100px;
+    height: 35px;
+    font-size: 16px;
+}
+
+.dialog-Text {
+    text-align: center;
+}
+
+.dialog-Text p {
+    padding-left: 40px;
+    font-size: 16px;
+    line-height: 30px;
+    /* width: 400px; */
+    width: 370px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 20px;
+    text-indent: 20px;
+}
+
+/* 电话预留 */
+
+.ReserveTel {
+    z-index: 668;
+}
+
+.ReserveTel .dialog {
+    width: 600px;
+    height: 320px;
+    top: 20%;
+    position: absolute;
+    border: none;
+    left: 50%;
+    margin-left: -300px
+}
+
+.ReserveTel .dialog-body p {
+    padding-top: 0;
+    padding-bottom: 2px;
+}
+
+.ReserveTel .dialog-body p span {
+    color: #FF444A;
+}
+
+.ReserveTel .dialog-body div span {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.ReserveTel .dialog-body div {
+    margin-top: 36px;
+}
+
+.ReserveTel .ReserveSure {
+    color: #fff;
+}
+
+.ReserveTel button {
+    margin: 0px 60px;
+}
+
+.ReserveTel .dialog-foot .ReserveClose {
+    border: 1px solid #E2E2E2;
+    background: #F5F5F5;
+    color: #111111;
+}
+
+.ReserveTel .dialog-body {
+    height: 193px;
+    margin: 5px 20px;
+    border-bottom: 1px dotted #E2E2E2;
+}
+
+.ReserveTel input {
+    border: 1px solid #E2E2E2;
+    background: #F5F5F5;
+    width: 300px;
+    padding-left: 15px;
+    height: 42px;
+    line-height: 42px;
+    font-weight: normal;
+    margin-left: 10px;
+}
+
+/* 登录注册 */
+
+.shortMessage {
+    display: none;
+}
+
+.mark-login .dialog {
+    width: 500px;
+    left: 50%;
+    position: absolute;
+    margin-left: -250px;
+    top: 25%;
+    border: none;
+}
+
+.loginBox .dialog {
+    height: 490px;
+}
+
+.registerBox .dialog {
+    height: 420px;
+}
+
+.mark-login .form-tips {
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.mark-login .field {
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.mark-login .form-group {
+    margin-left: 40px;
+}
+
+.mark-login .dialog-body .input {
+    border: none;
+    border-bottom: 1px solid #C4C4C4;
+    box-shadow: 0 0;
+    position: relative;
+    width: 369px;
+    padding-left: 50px;
+    font-size: 16px;
+}
+
+.mark-login .dialog-body {
+    padding-top: 32px;
+}
+
+.mark-login .field i {
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    width: 34px;
+    height: 36px;
+    z-index: 700;
+    top: -4px;
+}
+
+.field {
+    width: 249px;
+    position: absolute;
+    top: 1px;
+}
+
+.mark-login .input-help {
+    padding-left: 50px;
+    margin-top: 5px;
+    position: absolute;
+}
+
+.mark-login .input_tel i {
+    background: url(../assets/image/loginImg/login_tel.png) no-repeat left top;
+}
+
+.mark-login .input_pas i {
+    background: url(../assets/image/loginImg/login_pas.png) no-repeat left top;
+}
+
+.mark-login .input_code i {
+    background: url(../assets/image/loginImg/logon_yzm.png) no-repeat left top;
+}
+
+.mark-login .input_codeDx button {
+    position: absolute;
+    height: 40px;
+    width: 110px;
+    display: inline-block;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    background: #ff444a;
+    line-height: 40px;
+    right: -119px;
+    top: -7px;
+    border: none;
+}
+
+.mark-login .input_imgcode .input {
+    width: 200px;
+}
+
+.mark-login .input_imgcode img {
+    display: inline-block;
+    width: 110px;
+    height: 40px;
+    position: absolute;
+    z-index: 2;
+    right: -60px;
+    top: -6px;
+}
+
+.mark-login .input_imgcode span {
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    right: -110px;
+    top: 8px;
+    color: #ff444a;
+}
+
+.mark-login .buttonReg {
+    width: 370px;
+    margin-left: 39px;
+    margin-top: 40px;
+}
+
+.mark-login .buttonReg span {
+    background: #ff444a;
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+    border: none;
+    line-height: 42px;
+    border-radius: 0;
+    height: 42px;
+    width: 100%;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.mark-login .buttonReg p {
+    text-align: right;
+}
+
+.mark-login .buttonReg a {
+    color: #ff444a;
+    font-size: 14px;
+}
+
+.landingMode .sel {
+    border-bottom: 2px solid #ff444a;
+}
+
+.landingMode .sel a {
+    color: #333333;
+}
+
+.landingMode {
+    margin-bottom: 20px;
+}
+
+.landingMode span {
+    display: inline-block;
+    width: 115px;
+    margin-left: 70px;
+    padding-bottom: 5px;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    text-align: center;
+}
+
+.landingMode span a {
+    color: #999999;
+    font-size: 16px;
+}
+
+/* 请求遮罩 */
+
+.dialog-box {
+    background-color: rgba(0, 0, 0, .5);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    display: none;
+    z-index: 10000000000;
+}
+
+.dialog1 {
+    overflow: hidden;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: 2px 2px 5px #333333;
+    z-index: 777;
+    width: 200px;
+    height: 100px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.dialog1 p {
+    margin-top: 37px;
+}
+
+/* 条款 */
+
+.publicMask .dialog {
+    border: none;
+}
+
+.mark-clause .dialog {
+    width: 1040px;
+    position: absolute;
+    height: 700px;
+    left: 50%;
+    margin-left: -520px;
+    margin-top: 5%;
+}
+
+.mark-clause a {
+    text-decoration: underline;
+    color: #333;
+    font-size: 15px;
+}
+
+.mark-clause ul {
+    border-bottom: 1px solid #D1D1D1;
+}
+
+.mark-clause ul>li {
+    width: 162px;
+    text-align: center;
+    line-height: 42px;
+    height: 42px;
+    font-size: 16px;
+    background: #F5F5F5;
+    font-weight: bold;
+    clear: #111111;
+    border-right: 1px solid #D1D1D1;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+.mark-clause ul>li i {
+    position: absolute;
+    bottom: -1px;
+    width: 100%;
+    left: 0;
+    height: 1px;
+    background: #D1D1D1;
+}
+
+.mark-clause ul .sel {
+    background: #fff;
+}
+
+.mark-clause ul .sel i {
+    background: #fff;
+}
+
+.mark-clause th {
+    background: #ff444a;
+    font-size: 16px;
+    color: #fff;
+    font-weight: normal;
+}
+
+.mark-clause th,
+.mark-clause td {
+    width: 300px;
+    height: 40px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.mark-clause td {
+    color: #333333;
+    font-size: 15px;
+}
+
+.mark-clause .dialog-body {
+    margin: 20px 40px;
+    height: 680px;
+}
+
+.mark-clause .clauseList {
+    height: 490px;
+    display: none;
+}
+
+.mark-clause div.sel {
+    display: block;
+}
+
+.mark-clause .clause-btn {
+    text-align: right;
+    width: 900px;
+}
+
+.mark-clause button {
+    background: #F5F5F5;
+    border: 1px solid #D1D1D1;
+    color: #111111;
+    width: 122px;
+    height: 42px;
+    text-align: center;
+    font-size: 17px;
+}
+
+.mark-clause .dialog-body p {
+    color: #999999;
+    font-size: 15px;
+    padding-top: 10px;
+}
+
+/* 健康告知 */
+
+.index-main {
+    position: relative;
+    background: #fff;
+}
+
+.index-main .healthNotification {
+    position: absolute;
+    height: 100%;
+    border: none;
+    display: none;
+    left: 0;
+    top: 0;
+    margin: 0;
+    width: 100%;
+}
+input:-webkit-autofill {
+    background-color: #fff;
+    box-shadow: 0 0 0px 1000px white inset;
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+.healthNotification .dialog {
+    display: block;
+    width: 100%;
+    border: none;
+}
+
+.index-main .healthNotification {
+    z-index: 667;
+    /* background: rgba(0,0,0,.5); */
+    background: transparent;
+}
+
+.healthNotification .health-box {
+    width: 1040px;
+    border: none;
+    top: 400px;
+    position: absolute;
+    left: 50%;
+    margin-left: -520px;
+    color: #333333;
+}
+
+.healthNotification .dialog-body {
+    padding-left: 45px;
+    padding-right: 45px;
+    padding-bottom: 40px;
+}
+
+.healthNotification .dialog-body p {
+    line-height: 33px;
+}
+
+.healthNotification .dialog-body .dialong-statement {
+    color: #999;
+}
+
+.healthNotification .dialog-foot {
+    border-bottom: 1px dotted #E2E2E2;
+}
+
+.healthNotification .dialog-foot .button {
+    border: 1px solid #D1D1D1;
+    background: #F5F5F5;
+    color: #111111;
+    font-size: 18px;
+    cursor: pointer;
+    width: 120px;
+    height: 35px;
+    margin: 20px 100px;
+}
+
+.healthNotification .dialog-foot .sel {
+    background: #FF444A;
+    color: #fff;
+    border: 1px solid #FF444A;
+}
+
+/* 单选 */
+
+.radio_sel {
+    padding-left: 53px;
+    padding-bottom: 10px;
+}
+
+.radio_sel i {
+    display: inline-block;
+    vertical-align: middle;
+    width: 21px;
+    height: 21px;
+    background: url(../assets/image/infoImg/radioNosel.png);
+}
+
+.radio_sel .sel i {
+    background: url(../assets/image/infoImg/radioSel.png);
+}
+
+.radio_sel em {
+    vertical-align: middle;
+    padding-left: 5px;
+}
+
+.radio_sel span {
+    margin-left: 70px;
+    cursor: pointer;
+}
+
+/* 三级城市 */
+
+select {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+option {
+    color: black;
+    height: 22px;
+    line-height: 22px;
+    cursor: default;
+    font-size: 14px;
+    padding-left: 8px;
+}
+
+option:hover {
+    background: #1087FF;
+    color: #fff;
+}
+
+.citys .city-select {
+    color: black;
+    cursor: default;
+    margin: 0;
+    width: 120px;
+    height: 32px;
+    line-height: 32px;
+    padding-left: 8px;
+    padding-right: 25px;
+    padding-right: 3px\9;
+    font-size: 14px;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    background: url(../assets/image/infoImg/info_dropdown.png) no-repeat right center;
+}
+
+.citys .city-select:focus {
+    outline: 0;
+}
+
+.ui-datepicker .ui-datepicker-title select {
+    font-weight: 100;
+    vertical-align: middle;
+}
+
+/* footer 页脚*/
+
+.footer {
+    background: #333;
+}
+
+.footer .yfootlist {
+    padding-top: 30px;
+    margin-left: 50px;
+    color: #a5a5a5;
+    font-family: "微软雅黑";
+}
+
+.footer .yfootlist ul {
+    float: left;
+    width: 240px;
+}
+.footer a{
+    font-size: 14px;
+}
+
+.footer .yfootlist ul li {
+    font-size: 14px;
+    line-height: 26px;
+}
+
+.footer .yfootlist h1 {
+    position: absolute;
+    right: 50px;
+    line-height: 1.1;
+    font-size: 14px;
+}
+
+.footer .yfootlist h1 span {
+    margin-left: 80px;
+}
+
+.footer .yfootlist h1 span img {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.footer .yfootlist h1 span .yfooterWx {
+    width: 100px;
+    height: 100px;
+    margin-right: 0;
+    margin-left: 20px;
+}
+
+.footer .yfootlist h1 span b {
+    margin-left: 20px;
+    font-size: 30px;
+    color: #fff;
+    vertical-align: middle;
+    font-family: "微软雅黑";
+}
+
+.footer a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer h6 {
+    font-family: "微软雅黑";
+    font-size: 14px;
+    color: #666;
+    padding: 40px 0 20px;
+    text-align: center;
+}
+/* 禁止滚动 */
+.ovfHiden{overflow: hidden;height: 100%;}

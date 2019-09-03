@@ -1,0 +1,10 @@
+@charset "utf-8";
+.placehld { z-index:0; }
+input { z-index:2; background:transparent; }
+#za-idcontrol { padding-left: 0; }
+#slider { width: 100%!important; }
+#za-anti-radar-init-path, #za-anti-radar-loading-path, #za-anti-radar-success-path, #za-anti-radar-pending-path,  #za-anti-radar-close-path, #za-anti-radar-refresh-path { fill: green; }
+#za-anti-radar-fail-path{fill:#EF4836;}
+#za-id-radar { padding-left:18px;-webkit-transform-origin: 27px center;-moz-transform-origin: 27px center;-ms-transform-origin: 27px center;transform-origin: 27px center; }
+#za-id-label { padding-left:14px; }
+#radar-init use, #za-anti-radar-init-path { fill:#cdcdcd; }
