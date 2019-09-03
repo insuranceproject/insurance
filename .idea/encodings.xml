@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/zhongan-master" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zhongan-master/zhongan-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zhongan-master/zhongan-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zhongan-master/zhongan-consumer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zhongan-master/zhongan-eureka" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zhongan-master/zhongan-provider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zhongan-master/zhongan-provider/zhongan-provider-adminback" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zhongan-master/zhongan-provider/zhongan-provider-adminback" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zhongan-master/zhongan-provider/zhongan-provider-back" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zhongan-master/zhongan-provider/zhongan-provider-corpback" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zhongan-master/zhongan-provider/zhongan-provider-corpprevious" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zhongan-master/zhongan-provider/zhongan-provider-operation" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zhongan-master/zhongan-provider/zhongan-provider-order" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zhongan-master/zhongan-provider/zhongan-provider-previous" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zhongan-master/zhongan-provider/zhongan-provider-product" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zhongan-master/zhongan-util" charset="UTF-8" />
+  </component>
+</project>

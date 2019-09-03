@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Insurance.iml" filepath="$PROJECT_DIR$/.idea/Insurance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zhongan-master/zhongan.iml" filepath="$PROJECT_DIR$/zhongan-master/zhongan.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zhongan-master/zhongan-api/zhongan-api.iml" filepath="$PROJECT_DIR$/zhongan-master/zhongan-api/zhongan-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zhongan-master/zhongan-common/zhongan-common.iml" filepath="$PROJECT_DIR$/zhongan-master/zhongan-common/zhongan-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zhongan-master/zhongan-consumer/zhongan-consumer.iml" filepath="$PROJECT_DIR$/zhongan-master/zhongan-consumer/zhongan-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zhongan-master/zhongan-eureka/zhongan-eureka.iml" filepath="$PROJECT_DIR$/zhongan-master/zhongan-eureka/zhongan-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zhongan-master/zhongan-master.iml" filepath="$PROJECT_DIR$/zhongan-master/zhongan-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zhongan-master/zhongan-provider/zhongan-provider.iml" filepath="$PROJECT_DIR$/zhongan-master/zhongan-provider/zhongan-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zhongan-master/zhongan-provider/zhongan-provider-operation/zhongan-provider-operation.iml" filepath="$PROJECT_DIR$/zhongan-master/zhongan-provider/zhongan-provider-operation/zhongan-provider-operation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zhongan-master/zhongan-provider/zhongan-provider-order/zhongan-provider-order.iml" filepath="$PROJECT_DIR$/zhongan-master/zhongan-provider/zhongan-provider-order/zhongan-provider-order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zhongan-master/zhongan-provider/zhongan-provider-previous/zhongan-provider-previous.iml" filepath="$PROJECT_DIR$/zhongan-master/zhongan-provider/zhongan-provider-previous/zhongan-provider-previous.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zhongan-master/zhongan-provider/zhongan-provider-product/zhongan-provider-product.iml" filepath="$PROJECT_DIR$/zhongan-master/zhongan-provider/zhongan-provider-product/zhongan-provider-product.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zhongan-master/zhongan-util/zhongan-util.iml" filepath="$PROJECT_DIR$/zhongan-master/zhongan-util/zhongan-util.iml" />
+    </modules>
+  </component>
+</project>

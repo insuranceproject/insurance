@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="zhongan-common" />
+        <module name="zhongan-provider-product" />
+        <module name="zhongan-provider-order" />
+        <module name="zhongan-api" />
+        <module name="zhongan-provider-previous" />
+        <module name="zhongan-util" />
+        <module name="zhongan-provider-operation" />
+        <module name="zhongan-consumer" />
+        <module name="zhongan-eureka" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="zhongan" target="1.8" />
+      <module name="zhongan-api" target="1.8" />
+      <module name="zhongan-common" target="1.8" />
+      <module name="zhongan-consumer" target="1.8" />
+      <module name="zhongan-eureka" target="1.8" />
+      <module name="zhongan-master" target="1.8" />
+      <module name="zhongan-provider" target="1.8" />
+      <module name="zhongan-provider-adminback" target="1.8" />
+      <module name="zhongan-provider-back" target="1.8" />
+      <module name="zhongan-provider-corpback" target="1.8" />
+      <module name="zhongan-provider-corpprevious" target="1.8" />
+      <module name="zhongan-provider-operation" target="1.8" />
+      <module name="zhongan-provider-order" target="1.8" />
+      <module name="zhongan-provider-previous" target="1.8" />
+      <module name="zhongan-provider-product" target="1.8" />
+      <module name="zhongan-util" target="1.8" />
+      <module name="zhonganprovideradminback" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

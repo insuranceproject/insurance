@@ -1,0 +1,23 @@
+server:
+  port: 80
+
+spring:
+  thymeleaf:
+    encoding: UTF-8
+    #开发时关闭缓存,不然没法看到实时页面
+    cache: false
+    prefix: classpath:/static/
+    suffix: .html
+
+  #spring:
+  application:
+    name: consumer
+
+eureka:
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:6001/eureka/
+  instance:
+    instance-id: consumer-80
+    prefer-ip-address: true     #访问路径可以显示IP地址

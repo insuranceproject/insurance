@@ -1,0 +1,56 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: previous
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql:///zhongan
+    username: root
+    password: 123
+  dbcp2:
+      min-idle: 5
+      initial-size: 5
+      max-total: 5
+      max-wait-millis: 200
+
+#整合mybatisplus
+mybatis-plus:
+  type-aliases-package: com.insurance.pojo
+  db-config:
+    id-type: auto
+    field-strategy: not_empty
+    column-underline: false
+    logic-delete-value: 0
+    logic-not-delete-value: 1
+    refresh: true
+
+
+
+#  boot:
+#    admin:
+#      client:
+#        url: "http://localhost:8000"
+
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"
+#  endpoint:
+#      health:
+#        show-details: ALWAYS
+
+eureka:
+  client: #客户端注册进eureka服务列表内
+    service-url:
+      defaultZone: http://localhost:6001/eureka
+      #Eureka服务器集群
+      # defaultZone: http://eureka6001.com:6001/eureka/,http://eureka6002.com:6002/eureka/
+  instance:
+    instance-id: previous-8001
+    prefer-ip-address: true     #访问路径可以显示IP地址
+    leaseRenewalIntervalInSeconds: 10  #租期更新时间间隔（默认30秒）
+    leaseExpirationDurationInSeconds: 30 #租期到期时间（默认90秒）
