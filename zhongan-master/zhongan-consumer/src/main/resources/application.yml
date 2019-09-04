@@ -8,6 +8,8 @@ spring:
     cache: false
     prefix: classpath:/templates/
     suffix: .html
+    resources:
+      static-locations: classpath:/templates/,classpath:/static/,classpath:/public/
 
   #spring:
   application:

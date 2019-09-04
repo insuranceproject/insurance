@@ -11,8 +11,9 @@ public class TestController {
 
     @GetMapping("/session")
     public Object getsession(HttpSession session){
+        session.setAttribute("name","张三");
         System.out.println(session.getId());
-        return session.getId();
+        return session.getAttribute("name");
 
     }
 

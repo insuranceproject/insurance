@@ -12,7 +12,7 @@ public class TestController {
     @GetMapping("/session")
     public Object getsession(HttpSession session){
         System.out.println(session.getId());
-        return session.getId();
+        return session.getAttribute("name");
     }
 
 }
