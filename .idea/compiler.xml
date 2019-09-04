@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -12,6 +13,8 @@
         <module name="zhongan-api" />
         <module name="zhongan-eureka" />
         <module name="zhongan-util" />
+        <module name="zhongan-provider-corp" />
+        <module name="zhongan-provider-user" />
         <module name="zhongan-consumer" />
       </profile>
     </annotationProcessing>
@@ -25,12 +28,12 @@
       <module name="zhongan-provider" target="1.8" />
       <module name="zhongan-provider-adminback" target="1.8" />
       <module name="zhongan-provider-back" target="1.8" />
+      <module name="zhongan-provider-corp" target="1.8" />
       <module name="zhongan-provider-corpback" target="1.8" />
       <module name="zhongan-provider-corpprevious" target="1.8" />
-      <module name="zhongan-provider-operation" target="1.8" />
       <module name="zhongan-provider-order" target="1.8" />
-      <module name="zhongan-provider-previous" target="1.8" />
       <module name="zhongan-provider-product" target="1.8" />
+      <module name="zhongan-provider-user" target="1.8" />
       <module name="zhongan-util" target="1.8" />
       <module name="zhonganprovideradminback" target="1.8" />
     </bytecodeTargetLevel>

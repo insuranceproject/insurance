@@ -3,34 +3,24 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>com.insurance</groupId>
         <artifactId>zhongan-provider</artifactId>
+        <groupId>com.insurance</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>zhongan-provider-previous</artifactId>
-
+    <artifactId>zhongan-provider-user</artifactId>
     <dependencies>
-        <!-- 引入model通用包-->
-        <dependency>
-            <groupId>com.insurance</groupId>
-            <artifactId>zhongan-common</artifactId>
-            <version>${project.version}</version>
-        </dependency>
         <dependency>
             <groupId>com.insurance</groupId>
             <artifactId>zhongan-api</artifactId>
-            <version>${project.version}</version>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
-
-        <!-- 将微服务provider注册进eureka -->
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <groupId>com.insurance</groupId>
+            <artifactId>zhongan-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
-
-
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -55,31 +45,16 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
-        <!-- 依赖actuator -->
-        <dependency>
-            <groupId>de.codecentric</groupId>
-            <artifactId>spring-boot-admin-starter-client</artifactId>
-            <version>2.1.5</version>
-        </dependency>
-
-        <!-- actuator监控信息完善 -->
-        <!--<dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>-->
-
-        <!-- 热部署 -->
+        <!--测试分布式session 依赖redis-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
-        <!--mybatispuls-->
+
         <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session-data-redis</artifactId>
         </dependency>
     </dependencies>
-
 
 </project>

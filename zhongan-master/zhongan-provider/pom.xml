@@ -12,10 +12,10 @@
     <artifactId>zhongan-provider</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>zhongan-provider-previous</module>
+        <module>zhongan-provider-corp</module>
         <module>zhongan-provider-product</module>
         <module>zhongan-provider-order</module>
-        <module>zhongan-provider-operation</module>
+        <module>zhongan-provider-user</module>
     </modules>
 
     <dependencies>

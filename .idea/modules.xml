@@ -10,8 +10,10 @@
       <module fileurl="file://$PROJECT_DIR$/zhongan-master/zhongan-eureka/zhongan-eureka.iml" filepath="$PROJECT_DIR$/zhongan-master/zhongan-eureka/zhongan-eureka.iml" />
       <module fileurl="file://$PROJECT_DIR$/zhongan-master/zhongan-master.iml" filepath="$PROJECT_DIR$/zhongan-master/zhongan-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/zhongan-master/zhongan-provider/zhongan-provider.iml" filepath="$PROJECT_DIR$/zhongan-master/zhongan-provider/zhongan-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zhongan-master/zhongan-provider/zhongan-provider-corp/zhongan-provider-corp.iml" filepath="$PROJECT_DIR$/zhongan-master/zhongan-provider/zhongan-provider-corp/zhongan-provider-corp.iml" />
       <module fileurl="file://$PROJECT_DIR$/zhongan-master/zhongan-provider/zhongan-provider-order/zhongan-provider-order.iml" filepath="$PROJECT_DIR$/zhongan-master/zhongan-provider/zhongan-provider-order/zhongan-provider-order.iml" />
       <module fileurl="file://$PROJECT_DIR$/zhongan-master/zhongan-provider/zhongan-provider-product/zhongan-provider-product.iml" filepath="$PROJECT_DIR$/zhongan-master/zhongan-provider/zhongan-provider-product/zhongan-provider-product.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zhongan-master/zhongan-provider/zhongan-provider-user/zhongan-provider-user.iml" filepath="$PROJECT_DIR$/zhongan-master/zhongan-provider/zhongan-provider-user/zhongan-provider-user.iml" />
       <module fileurl="file://$PROJECT_DIR$/zhongan-master/zhongan-util/zhongan-util.iml" filepath="$PROJECT_DIR$/zhongan-master/zhongan-util/zhongan-util.iml" />
     </modules>
   </component>

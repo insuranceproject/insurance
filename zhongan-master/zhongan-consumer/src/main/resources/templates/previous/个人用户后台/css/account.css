@@ -1,0 +1,130 @@
+/* common */
+.account-greena{ color:#40c16b;}
+.za-body-bg-white{background-color: #fff;}
+/* mypolicy */
+.mypolicy-nopad{
+    padding: 0px;
+}
+.mypolicy-box,.otherorders-box {
+    margin: 30px 25px;
+}
+.mypolicy-sub-tit{
+    margin-bottom: 30px;
+}
+.mypolicy-sub-tit>a{
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    padding-right: 25px;
+    margin-right: 25px;
+}
+.mypolicy-sub-tit>a.active{
+    color: #40c16b;
+}
+#za-ins-tab{
+    border: none;
+}
+#wait-process-tab{
+    width:auto;
+    padding: 0px 20px;
+    background-color: #fff;
+    border-bottom: solid 1px #40c16b;
+}
+#wait-process-tab li{
+    border-right: none;
+    background-color: #f6f6f6;
+    margin-right: 3px;
+    padding: 0px 20px;
+}
+#wait-process-tab > li.active{
+    border: solid 1px #40c16b;
+    border-bottom: none;
+    background-color: #fff;
+}
+
+/* otherorders */
+.za-acc-orlist-dlbg2 .za-acc-orlist-th{ background:#f6f6f6}
+.za-acc-orlist-dlbg2{ border: 1px solid #e3e3e3;}
+.za-acc-orlist-dlbg2 .za-acc-orlist-br1 {
+  border-right: 1px solid #e3e3e3;
+}
+.otherorders-pay{
+    background:#40c16b;
+    color:#fff;
+    padding:5px 10px;
+    margin-left:10px;
+    border-radius: 2px;
+}
+.otherorders-del{
+    display: inline-block;
+    float: inherit;
+    vertical-align:baseline;
+}
+
+/* otherdetail */
+
+.otherorder-detail{ width:1180px; margin:0 auto; border:1px #ccc solid;}
+.otherorder-detail_title{ background:#f9f9f9; height:30px; line-height:30px; font-size:16px; text-indent:2em; font-weight: 600;}
+.otherorder-detail_ul{ height:100px;}
+.jigen_li{ float:left; display:inline-block; font-size:14px; width:50%; height:50px; line-height:50px; }
+.otherorder-detail_w100{ width:100%;}
+.otherorder-detail_tit_right{ width:140px; text-align:right; display:inline-block;}
+.otherorder-detail_wrap{ width:1140px; margin:20px;}
+.shop_info_tit{ height:40px; background:#eeeeee; line-height:40px; margin-top:20px;font-weight: bold;}
+.info_w350{width:350px; display:inline-block;}
+.info_w160{width:160px; display:inline-block;}
+.info_w110{width:110px; display:inline-block;}
+.info_w300{width:300px; display:inline-block;}
+.info_tc{ text-align:center;*+float:left;}
+.info_tl{ text-align:left;}
+.pro_pic1{ width:68px; height:68px; border:none; display:inline-block;vertical-align:middle;margin-right: 10px;}
+.shop_info_cont{ height:100px; border-bottom:1px #ccc solid; line-height:100px;  font-size: 14px;}
+.info_line{ height:100px; line-height:100px; vertical-align:middle;}
+.lin_nor{ line-height:normal;vertical-align: middle;display: inline-block;}
+.info_tr{ text-align:right;  }
+.info_money{ height:50px; line-height:50px; font-size:14px;}
+.info_red{ color:#f60; font-size:18px; font-weight:bold;}
+a.pay_right{ width:180px; height:40px; line-height:40px; background:#40c16b; text-align:center; color:#fff; display:inline-block; text-decoration:none; font-size:16px;font-weight: 600;}
+.lightcol{ color:#b7b7b7;  margin-top: 5px;}
+/*--2015/12/21 web\templates\screen\account\myPoint  start--*/
+.za-acc-nav-list > li > a > .za-icon-point{background: url(http://static.zhongan.com/website/online/assets/images/za-icon-point.png) 0 3px no-repeat;}
+.za-account-cont{font-family: "Microsoft YaHei";padding: 30px; word-break: break-all;word-wrap: normal;}
+.za-account-tips-mod{min-height: 30px;line-height: 30px;color: #666;margin-bottom: 20px;padding: 10px 20px;background-color: #fff4e8;border: 1px solid #ffe6c7;}
+.za-account-tips-mod .za-numb{color: #ff6e31;}
+.za-account-item-mod{margin-bottom: 20px;}
+.za-account-item-hd{height: 40px;line-height: 40px;font-family: "Microsoft YaHei";font-weight: bold;color: #333;margin-bottom: 10px;padding-left: 20px;background-color: #f6f6f6;}
+.za-account-item-bd{}
+ul.za-account-item-list,div.za-account-item-list ul{display: table;width: 100%;table-layout: fixed;color: #666;}
+.za-account-item-bd .za-item-hd,.za-account-item-bd .za-item-bd{display: table-row;line-height: 1.5;text-align: center;}
+.za-account-item-bd .za-col{ display: table-cell;vertical-align: middle;padding: 5px;}
+.za-account-item-bd .za-item-hd .za-col{font-weight: bold;background-color: #f6f6f6;}
+.za-account-item-bd .za-item-bd .za-col{border-top: 1px solid #E3E3E3;}
+.za-account-item-bd .za-item-bd .za-col-1,
+.za-account-item-bd .za-item-bd .za-col-2{font-family:arial, helvetica, sans-serif;}
+.za-account-item-bd .za-col-1,.za-account-table .za-col-3{width: 28%;}
+.za-account-item-bd .za-col-2{width: 44%;}
+.za-account-item-bd .txt-row{display: block;position: relative;max-height:48px; text-align: left;overflow: hidden;}
+.za-account-item-bd .txt-row:after{position: absolute;right: 0;top: 24px;width: 18px;height: 24px;content:'...';background-color: #fff;overflow: hidden;}
+@supports(-webkit-box-orient:vertical){
+  .za-account-item-bd .txt-row{text-overflow:ellipsis;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;}
+  .za-account-item-bd .txt-row:after{display: none;}
+}
+.za-account-item-bd .za-com-list-empty{border: 0 none;}
+.za-account-intro-mod{margin-top: 20px;}
+.za-account-intro-hd{height: 40px;line-height: 40px;font-family: "Microsoft YaHei";text-align: center;}
+.za-account-intro-list{}
+.za-account-intro-item{line-height: 1.5;margin-top: 15px;}
+.za-account-intro-item .za-intro-item-hd{color: #37c266;margin-bottom:6px;}
+.za-account-intro-item .za-intro-item-bd{color: #666;}
+
+/*--end 2015/12/21 web\templates\screen\account\myPoint--*/
+/*--20160112 web\templates\screen\account\myInsuranceCertificate.vm start--*/
+.za-account-icon{display: inline-block;width: 60px;height: 40px;background-position: center 0;background-repeat: no-repeat;}
+.za-icon-certificate{background-image: url(../images/za-icon-certificate.png);}
+.za-icon-btns-account{display: inline-block;width: 60px;color: #40C16B;padding-top: 35px;background-position: center 0;background-repeat: no-repeat;}
+.za-icon-btns-account span{display: block;color: #40C16B;visibility: hidden;}
+.za-icon-btns-account:hover span{visibility: visible;}
+.za-btns-certificate{background-image: url(../images/za-icon-certificate2.png);}
+.za-inline-block{display: inline-block;}
+.za-white-nowrap{white-space: nowrap;}
+/*--end 20160112 web\templates\screen\account\myInsuranceCertificate.vm--*/

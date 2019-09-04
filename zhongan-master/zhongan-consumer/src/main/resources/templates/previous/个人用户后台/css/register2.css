@@ -1,0 +1,321 @@
+.placehld {
+    position: relative;
+    line-height: 40px;
+    top: -40px;
+    color: #b6b3b3;
+    display: none;
+    font-size: 13px
+}
+
+#registerBtn {
+    width: 284px;
+    margin: -10px auto
+}
+
+.hidden-inpt {
+    position: absolute;
+    left: -300px
+}
+
+.btn-gary {
+    background: #f4f4f4 !important;
+    color: #c4c2c2 !important;
+    pointer-events: none
+}
+
+.register-page {
+    background-color: #fff
+}
+
+.register-page input {
+    background: transparent
+}
+
+.register-page .wrapper {
+    display: block;
+    min-width: 1200px;
+    margin: 0 auto;
+    margin-top: 0px !important
+}
+
+.register-page .za-rect-box .za-login-form {
+    width: 350px;
+    height: 440px;
+    float: right;
+    background: #FFF;
+    padding: 1px 0;
+    overflow: hidden
+}
+
+.register-page .za-rect-box .za-login-form .login-title {
+    height: 52px;
+    line-height: 52px;
+    width: 280px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    font-weight: 600;
+    border-bottom: 1px solid #e7e7e7;
+    font-size: 16px;
+    color: #464646
+}
+
+.register-page .za-rect-box .za-login-form .login-icon {
+    width: 175px;
+    height: 30px;
+    background: url(//static.zhongan.com/website/sign/assets/images/passport/v1/logo_min.png) no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    margin: 45px auto 36px auto
+}
+
+.register-page .za-rect-box .za-login-form .login-icon a {
+    display: inline-block;
+    width: 175px;
+    height: 30px
+}
+
+.register-page .za-rect-box .za-login-form .form-item {
+    width: 100%;
+    margin-bottom: 16px;
+    color: #666;
+    clear: both
+}
+
+.register-page .za-rect-box .za-login-form .form-item .za-input-hover-red {
+    border: 1px solid #E77A7A !important;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 5px #eda4a2 !important;
+    border-radius: 3px
+}
+
+.register-page .za-rect-box .za-login-form .form-item .form-error {
+    width: 100%;
+    margin-bottom: -10px;
+    margin-top: 10px;
+    color: #666;
+    clear: both
+}
+
+.register-page .za-rect-box .za-login-form .form-item .form-error i {
+    background: url(//static.zhongan.com/website/sign/assets/images/passport/v1/warning_icon.png);
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    vertical-align: middle
+}
+
+.register-page .za-rect-box .za-login-form .form-item .form-error .error-text {
+    color: #EC7171;
+    font-size: 14px;
+    position: relative;
+    top: 1px;
+    left: 5px
+}
+
+.register-page .za-rect-box .za-login-form .form-item .form-tips {
+    width: 100%;
+    margin-bottom: -4px;
+    margin-top: 22px;
+    color: #666;
+    clear: both;
+    position: relative
+}
+
+.register-page .za-rect-box .za-login-form .form-item .form-tips .tooltips {
+    background: #dbf1d6;
+    border-radius: 2px;
+    z-index: 999
+}
+
+.register-page .za-rect-box .za-login-form .form-item .form-tips .tooltips .arrow {
+    width: 0px;
+    height: 0px;
+    line-height: 0px;
+    border-top-color: #d6e9c6;
+    border: 12px solid transparent;
+    border-bottom: 12px solid #dbf1d6;
+    position: absolute;
+    border-left-color: transparent;
+    border-right-color: transparent
+}
+
+.register-page .za-rect-box .za-login-form .form-item .form-tips .tooltips .arrow-border {
+    color: #dbf1d6;
+    top: -24px;
+    right: 50%;
+    left: 50%;
+    margin-left: -15px
+}
+
+.register-page .za-rect-box .za-login-form .form-item .form-tips .tooltips .arrow-bg {
+    color: #dbf1d6;
+    bottom: 0px;
+    right: 50%
+}
+
+.register-page .za-rect-box .za-login-form .form-item .form-tips .tooltips .tips-text {
+    padding: 24px 15px;
+    color: #757575;
+    line-height: 24px;
+    font-size: 14px
+}
+
+.register-page .za-rect-box .za-login-form .form-item .btn-full {
+    width: 100%
+}
+
+.register-page .za-rect-box .za-login-form .form-item .agreement {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: wrap;
+    flex-flow: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 10px;
+    margin-top: 4px;
+    margin-bottom: 17px;
+    color: #888;
+    text-align: left;
+    padding-left: 54px
+}
+
+.register-page .za-rect-box .za-login-form .form-item .agreement .agreement-checkbox {
+    display: none;
+    position: relative;
+    top: 2px;
+    left: 0px
+}
+
+.register-page .za-rect-box .za-login-form .form-item .agreement .za-ins-ck-label2 {
+    cursor: pointer;
+    background: url("//static.zhongan.com/website/sign/assets/images/passport/v1/checkbox.png") no-repeat top left;
+    width: 18px;
+    height: 18px;
+    left: -3px;
+    position: relative
+}
+
+.register-page .za-rect-box .za-login-form .form-item .agreement .tickbox_normal {
+    background-position: -2px 0
+}
+
+.register-page .za-rect-box .za-login-form .form-item .agreement .tickbox_selected {
+    background-position: -2px -28px
+}
+
+.register-page .za-rect-box .za-login-form .form-item .za-ins-link-green {
+    color: #12c286;
+    text-decoration: none
+}
+
+.register-page .za-rect-box .za-login-form .form-item .za-input-hover-green {
+    border: 1px solid #75E199 !important;
+    box-shadow: 0 0 1px #199442 !important;
+    border-radius: 3px
+}
+
+.regist-phone {
+    margin-top: 10px;
+    display: inline-block
+}
+
+.register-page .za-rect-box .za-login-form .form-item .form-input-middle {
+    color: #dcdcdc;
+    line-height: 40px;
+    text-align: center;
+    background-color: #f9f9f9;
+    height: 60px
+}
+
+.register-page .za-rect-box .za-login-form .form-item .form-input-middle a {
+    color: #12c286;
+    font-size: 14px
+}
+
+.register-page .za-rect-box .za-login-form .form-item .message {
+    position: relative;
+    margin-left: 35px;
+    width: 148px;
+    padding: 0 16px
+}
+
+.register-page .za-rect-box .za-login-form .form-item .message .message-button-active {
+    background: #f4f4f4 !important;
+    color: #c4c2c2 !important
+}
+
+.register-page .overlay {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100%;
+    z-index: 99999;
+    background: rgba(0, 0, 0, 0.3);
+    display: none;
+    overflow-y: scroll
+}
+
+.register-page input, .register-page button {
+    border-style: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif
+}
+
+.register-page a, .register-page a:link, .register-page a:visited {
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent
+}
+
+.register-page a:hover {
+    text-decoration: underline
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset
+}
+
+button:link, button:hover, button:visited, button:active, button:focus {
+    outline: none !important
+}
+
+.placehld {
+    z-index: 0
+}
+
+input {
+    z-index: 2;
+    background: transparent
+}
+
+#slider {
+    width: 280px;
+    height: 40px;
+    margin: 0 auto
+}
+
+#za-anti-radar-init-path, #za-anti-radar-loading-path, #za-anti-radar-success-path, #za-anti-radar-pending-path, #za-anti-radar-close-path, #za-anti-radar-refresh-path {
+    fill: green
+}
+
+#za-anti-radar-fail-path {
+    fill: #EF4836
+}
+
+#za-id-radar {
+    padding-left: 18px;
+    -webkit-transform-origin: 27px center;
+    transform-origin: 27px center
+}
+
+#radar-init use, #za-anti-radar-init-path {
+    fill: #cdcdcd
+}
+
+#za-id-dialog {
+    left: 627px
+}

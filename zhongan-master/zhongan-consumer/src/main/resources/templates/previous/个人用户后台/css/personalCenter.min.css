@@ -1,0 +1,6443 @@
+.za-my-accList>ul>li>a>p,
+.za-prolist-hot li p {
+    position: relative;
+    z-index: 9
+}
+
+.bui-ext-mask1,
+.za-upload-input {
+    opacity: 0;
+    filter: alpha(opacity=0)
+}
+
+.bui-grid-table,
+.x-datepicker-inner,
+.x-datepicker-inner td,
+.x-datepicker-inner th {
+    border-collapse: separate
+}
+
+#za-pol-paging:after,
+.bui-combox ul:after,
+.bui-dialog .bui-stdmod-footer:after,
+.bui-grid-bbar:after,
+.bui-grid-tbar:after,
+.x-timepicker ul:after,
+.za-com-paging:after,
+.za-ins-mod-p:after,
+.za-my-page-body p {
+    clear: both
+}
+
+.hide-text,
+.za-white-nowrap {
+    white-space: nowrap
+}
+
+.za-nav-flag {
+    padding-bottom: 15px;
+    padding-top: 15px;
+    color: #818181
+}
+
+.za-nav-flag a {
+    color: #70c16e
+}
+
+.za-nav-flag a:active,
+.za-nav-flag a:focus,
+.za-nav-flag a:hover {
+    color: #ff6f3c
+}
+
+.za-acc-nav-toolbar {
+    height: 60px;
+    line-height: 60px;
+    background-color: #40c16b;
+    border: 1px solid #2EAF59;
+    border-radius: 2px;
+    padding-left: 25px;
+    position: relative;
+    margin: 0 -1px
+}
+
+.za-acc-nav-toolbar a {
+    color: #fff
+}
+
+.za-com-nav-list li {
+    cursor: pointer
+}
+
+.za-com-nav-list a {
+    color: #555;
+    height: 40px;
+    line-height: 40px;
+    display: block;
+    padding-left: 45px
+}
+
+.za-acc-l-w,
+.za-acc-l-w+.za-f-l {
+    display: table-cell;
+    vertical-align: top
+}
+
+.za-com-nav-list a b,
+.za-com-nav-list a span {
+    float: left
+}
+
+.za-com-nav-list a b {
+    width: 24px;
+    height: 24px;
+    margin: 8px 0
+}
+
+.za-com-nav-list a.hover {
+    border-bottom: 1px solid #E6E6E6;
+    border-top: 1px solid #E6E6E6;
+    border-left: 5px solid #40C16B;
+    background-color: #f2f2f2;
+    position: relative;
+    right: -1px;
+    margin: -1px 0 -1px -2px;
+    padding-left: 41px;
+    background-position-x: 43px
+}
+
+.za-l-w {
+    width: 1180px
+}
+
+.za-acc-l-w {
+    width: 198px;
+    background-color: #f9f9f9;
+    border-color: #e6e6e6;
+    border-style: solid;
+    border-width: 0 1px 1px;
+    border-radius: 1px 1px 0 0
+}
+
+.za-acc-l-w+.za-f-l {
+    float: none;
+    padding-left: 15px
+}
+
+.za-acc-item {
+    width: 910px;
+    border: 1px solid #E3E3E3;
+    padding: 25px;
+    background-color: #fff
+}
+
+.za-acc-item-nopad {
+    width: 960px;
+    padding: 0
+}
+
+.za-acc-item-w270 {
+    width: 270px;
+    padding: 15px
+}
+
+.za-acc-item .za-ins-tabs {
+    border: none;
+    border-bottom: 1px solid #eee
+}
+
+.za-acc-item .za-ins-panel {
+    border: none
+}
+
+.za-acc-inter-wid {
+    width: 880px
+}
+
+.za-buy-product2 {
+    padding-bottom: 90px
+}
+
+.za-ins-buytitle {
+    height: 18px;
+    line-height: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    border-left: 3px solid #40C16B
+}
+
+.p-intruduction {
+    padding: 40px;
+    border: 1px solid #e6e6e6
+}
+
+.za-ins-itemTitle {
+    height: 42px;
+    line-height: 42px;
+    color: #666;
+    font-weight: 700;
+    padding-left: 25px
+}
+
+.za-ins-itemTitle>.za-ins-itemTitle-1 {
+    display: inline-block;
+    width: 100px;
+    text-align: right
+}
+
+.p-form .za-job-search,
+.p-form p .verbtn,
+.za-com-list-empty,
+.za-ins-tabs>ul>li,
+.za-news-btn,
+.za-news-title,
+.za-upload-txt {
+    text-align: center
+}
+
+.za-ins-itemTitle.za-marbot15 {
+    margin-bottom: 15px
+}
+
+.za-ins-itemTitle-tip {
+    font-weight: 100;
+    color: #999;
+    font-size: 15px;
+    margin-left: 10px
+}
+
+.za-com-position {
+    position: relative
+}
+
+.za-com-list-empty {
+    display: block;
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+    color: #ccc;
+    margin: 20px auto;
+    border: 1px dashed #bbb
+}
+
+.za-com-list-empty a {
+    color: #40c16b;
+    text-decoration: underline;
+    margin: 0 5px
+}
+
+.za-news-btn {
+    background-color: #eaeaea
+}
+
+.za-new-list>ul>.za-new-item {
+    height: 20px;
+    padding: 20px 30px
+}
+
+.za-new-list>ul>.itembg1 {
+    background-color: #f9f9f9
+}
+
+.za-new-list>ul>.za-new-item>span {
+    color: #999;
+    padding-right: 20px;
+    margin-right: 20px;
+    border-right: 1px solid #CCC
+}
+
+.za-new-list>ul>.za-new-item>a {
+    color: #666
+}
+
+.za-new-list>ul>.za-new-item>a:hover {
+    text-decoration: underline;
+    color: #40c16b
+}
+
+.za-news-title {
+    height: 80px
+}
+
+.za-news-title>h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px
+}
+
+.za-news-btn {
+    color: #666;
+    display: block;
+    height: 36px;
+    line-height: 36px;
+    margin-bottom: 30px;
+    margin-top: 0;
+    text-decoration: none;
+    width: 140px
+}
+
+.za-my-accList {
+    width: 100%
+}
+
+.za-my-accList>ul>li {
+    width: 295px;
+    height: 103px;
+    margin-right: 11px;
+    background-color: #FFF;
+    padding-left: 15px;
+    padding-top: 25px
+}
+
+.za-my-accList>ul>li>a>span {
+    right: 0;
+    bottom: 0
+}
+
+.za-prolist-hot li {
+    border: 1px solid #E9E9E9;
+    position: relative;
+    padding-left: 30px;
+    padding-top: 30px;
+    float: left;
+    cursor: pointer
+}
+
+.za-prolist-hot li:hover {
+    background-color: #FEFEFE;
+    box-shadow: 2px 2px 2px #EEE;
+    border-color: #E0E0E0
+}
+
+.za-prolist-hot li.nomargin {
+    margin: 0
+}
+
+.za-prolist-hot li p {
+    line-height: 20px;
+    color: #666
+}
+
+.za-prolist-hot li span {
+    height: 90px;
+    width: 140px;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-ser-icon.png);
+    background-repeat: no-repeat
+}
+
+.za-prolist-hot li span.bg1 {
+    background-position: -13px -249px
+}
+
+.za-prolist-hot li span.bg2 {
+    background-position: -231px -251px
+}
+
+.za-prolist-hot li span.bg3 {
+    background-position: -497px -260px
+}
+
+.za-gress-list {
+    margin-top: 20px
+}
+
+.za-gress-list>ul>li {
+    width: 310px;
+    height: 120px;
+    margin-right: 20px
+}
+
+.za-ins-end {
+    width: 660px;
+    margin: 15px auto 50px
+}
+
+.za-ins-end-l {
+    width: 72px;
+    height: 72px;
+    float: left
+}
+
+.za-ins-end-r {
+    float: left;
+    width: 570px;
+    margin-left: 18px
+}
+
+.za-ins-end-r p {
+    margin-bottom: 20px;
+    margin-top: 10px
+}
+
+.za-ins-end-h1 {
+    color: #40C16B;
+    font-size: 26px
+}
+
+.za-ins-end.w420 {
+    width: 420px;
+    margin-bottom: 20px
+}
+
+.za-ins-end.w420 .za-ins-end-r {
+    width: 320px
+}
+
+.za-ins-tabs {
+    border: 1px solid #EEE
+}
+
+.za-ins-tabs>ul {
+    width: 100%;
+    background-color: #f6f6f6
+}
+
+.za-ins-tabs>ul>li {
+    border-right: 1px solid #EEE;
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    margin-top: -1px;
+    position: relative;
+    padding: 0 40px;
+    cursor: pointer
+}
+
+.za-ins-tabs ul>li>a {
+    color: #999;
+    font-weight: 600
+}
+
+.za-ins-tabs>ul>li.active {
+    background-color: #fff;
+    border-bottom-style: none;
+    border-top: 2px solid #40C16B;
+    bottom: -1px;
+    margin-top: -2px
+}
+
+.za-ins-tabs>ul>li.active>a {
+    color: #40C16B
+}
+
+.za-ins-panel {
+    padding: 0 15px 20px;
+    border-width: 0 1px 1px;
+    border-style: solid;
+    border-color: #EEE
+}
+
+#za-pol-paging:after,
+.za-com-paging:after {
+    overflow: hidden;
+    content: "";
+    display: block;
+    height: 0
+}
+
+.pagination {
+    display: inline-block;
+    float: right;
+    margin: 20px 0;
+    padding-left: 0;
+    border-radius: 4px
+}
+
+.p-form .za-ins-select,
+.pagination li {
+    display: inline
+}
+
+.pagination li a,
+.pagination li span {
+    position: relative;
+    float: left;
+    line-height: 20px;
+    color: #40c16b;
+    text-decoration: none;
+    margin-left: -1px;
+    padding: 4px 12px;
+    border: 1px solid #ddd;
+    background-color: #fff
+}
+
+.pagination li:first-child a,
+.pagination li:first-child span {
+    margin-left: 0;
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px
+}
+
+.pagination li:last-child a,
+.pagination li:last-child span {
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px
+}
+
+.pagination li a:focus,
+.pagination li a:hover,
+.pagination li span:focus,
+.pagination li span:hover {
+    color: #40c16b;
+    border-color: #ddd;
+    background-color: #eee
+}
+
+.pagination .active a,
+.pagination .active a:focus,
+.pagination .active a:hover,
+.pagination .active span,
+.pagination .active span:focus,
+.pagination .active span:hover {
+    cursor: default;
+    z-index: 2;
+    color: #fff;
+    border-color: #40c16b;
+    background-color: #40c16b
+}
+
+.pagination .disabled a,
+.pagination .disabled a:focus,
+.pagination .disabled a:hover,
+.pagination .disabled span,
+.pagination .disabled span:focus,
+.pagination .disabled span:hover {
+    cursor: not-allowed;
+    color: #999;
+    border-color: #ddd;
+    background-color: #fff
+}
+
+.pagination-large li a,
+.pagination-large li span {
+    font-size: 18px;
+    padding: 10px 16px
+}
+
+.pagination-large li:first-child a,
+.pagination-large li:first-child span {
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px
+}
+
+.pagination-large li:last-child a,
+.pagination-large li:last-child span {
+    border-bottom-right-radius: 6px;
+    border-top-right-radius: 6px
+}
+
+.pagination-small li a,
+.pagination-small li span {
+    font-size: 12px;
+    padding: 2px 8px
+}
+
+.pagination-small li:first-child a,
+.pagination-small li:first-child span {
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px
+}
+
+.pagination-small li:last-child a,
+.pagination-small li:last-child span {
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px
+}
+
+.p-form .za-ins-select .bui-select {
+    line-height: 32px;
+    padding-right: 20px;
+    background-image: url(//static.zhongan.com/website/online/assets/images/enterprise/ent-fm-icon.png);
+    background-position: right -34px;
+    background-repeat: no-repeat;
+    border: 1px solid #e3e3e3
+}
+
+.p-form .za-ins-select .bui-select-disabled {
+    line-height: 32px;
+    padding-right: 20px;
+    background: #F0F0F0;
+    border: 1px solid #e3e3e3
+}
+
+.p-form .za-ins-select .bui-select:hover {
+    border: 1px solid #40c16b
+}
+
+.p-form .za-ins-select .bui-select-disabled:hover {
+    border-color: #e3e3e3
+}
+
+.p-form .za-ins-select .bui-select300 {
+    background-position: 222px 13px
+}
+
+.p-form .za-ins-select .bui-select .bui-select-input {
+    height: 31px;
+    line-height: 32px\9;
+    padding: 0 5px;
+    vertical-align: top
+}
+
+.p-form .za-ins-select .bui-select input.bui-select-input {
+    color: #444
+}
+
+.p-form .za-ins-select .bui-select .x-icon {
+    display: none
+}
+
+.za-disabled,
+.za-disabled1 {
+    background-color: #F0F0F0;
+    border: 1px solid #e3e3e3
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .p-form .za-ins-select .bui-select-disabled,
+    .za-disabled {
+        background-color: #EBEBE4
+    }
+    .p-form .za-ins-select .bui-select-disabled .bui-select-input:hover {
+        border: none
+    }
+}
+
+div.bui-select-list {
+    border-color: #e3e3e3;
+    color: #5e5e5e;
+    overflow: auto;
+    overflow-x: hidden;
+    max-height: 300px
+}
+
+div.bui-select-list .bui-list-item {
+    padding: 12px 5px 12px 8px;
+    border-radius: 0;
+    margin: 1px 0;
+    border: none
+}
+
+div.bui-select-list .bui-list-item-hover,
+div.bui-select-list .bui-list-item-selected {
+    background: #40c16b;
+    color: #FFF
+}
+
+.p-form .za-ins-textbox,
+.za-ins-textbox {
+    height: 18px;
+    line-height: 18px;
+    padding: 7px 5px;
+    font-size: 14px;
+    border: 1px solid #E3E3E3;
+    color: #666;
+    width: 300px
+}
+
+.p-form .za-ins-textbox.w190,
+.za-ins-textbox.w190 {
+    width: 190px
+}
+
+.p-form .za-ins-textbox.w420,
+.za-ins-textbox.w420 {
+    width: 420px
+}
+
+.p-form .za-ins-textbox-disabled,
+.za-ins-textbox-disabled {
+    background-color: #f3f3f3
+}
+
+.p-form .za-ins-textbox-disabled.active {
+    border: 1px solid #e3e3e3
+}
+
+.p-form .za-ins-textbox.active {
+    border: 1px solid #40C16B
+}
+
+.p-form textarea.za-ins-textbox {
+    padding: 5px;
+    border: 1px solid #E3E3E3;
+    color: #666;
+    width: 300px;
+    height: auto;
+    min-height: 64px
+}
+
+.p-form .textboxw200 {
+    width: 200px;
+    vertical-align: top
+}
+
+.p-form input.verify {
+    width: 120px
+}
+
+.p-form p .verbtn {
+    float: left;
+    width: 150px;
+    height: 34px;
+    margin-left: 30px;
+    background-color: #F0F0F0;
+    border-radius: 4px;
+    color: #40C16B;
+    cursor: pointer
+}
+
+.p-form p .verbtn1 {
+    background-color: #40C16B;
+    color: #fff
+}
+
+.p-form p .verbtn1.disabled {
+    background-color: #f0f0f0;
+    color: #bbb
+}
+
+.p-form p input.verbtn {
+    font-size: 15px
+}
+
+.p-form .za-job-search>.za-ins-textbox {
+    width: 450px;
+    color: #e3e3e3
+}
+
+.p-form .za-job-search>.za-ins-end-btn {
+    height: 30px;
+    line-height: 30px;
+    width: 120px;
+    border-radius: 2px
+}
+
+.za-ins-calendar,
+.za-ins-calendar1 {
+    line-height: 22px;
+    padding: 5px;
+    color: #666;
+    background-image: url(//static.zhongan.com/website/online/assets/images/enterprise/ent-fm-icon.png);
+    background-position: right 10px
+}
+
+.p-form .za-ins-select1 .bui-select .bui-select-input {
+    width: 68px
+}
+
+.za-ins-calendar {
+    border: 1px solid #E3E3E3;
+    width: 300px;
+    background-repeat: no-repeat
+}
+
+.za-ins-calendar:hover {
+    border: 1px solid #40c16b
+}
+
+.za-ins-calendar.za-calwid220 {
+    width: 220px
+}
+
+.za-ins-calendar1 {
+    border: 1px solid #E3E3E3;
+    width: 300px;
+    background-repeat: no-repeat
+}
+
+.za-ins-iconbg-clear,
+.za-ins-iconbg-del,
+.za-ins-iconbg-ok,
+.za-ins-iconbg-pre,
+.za-ins-iconbg-trg {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-ins-icon.png);
+    background-repeat: no-repeat
+}
+
+.za-my-activation .p-form span.regtitle {
+    width: 120px
+}
+
+.za-my-activation .za-tit {
+    position: relative;
+    margin: -40px 0 30px;
+    font-size: 16px;
+    color: #000
+}
+
+.za-ins-icon-clear,
+.za-ins-icon-del {
+    vertical-align: middle;
+    text-indent: 0;
+    margin-right: 15px;
+    font-weight: 100
+}
+
+.za-ins-icon-clear {
+    color: #40C16B;
+    height: 16px;
+    line-height: 16px;
+    margin-top: 12px
+}
+
+.za-ins-iconbg-clear:hover,
+.za-ins-iconbg-pre:hover {
+    color: #2D884D
+}
+
+.za-ins-iconbg-trg {
+    background-position-y: -60px;
+    background-position-x: right;
+    padding-left: 22px
+}
+
+.za-ins-iconbg-clear {
+    background-position: 2px -20px;
+    padding-left: 22px
+}
+
+.za-ins-iconbg-pre {
+    background-position: 0 -40px;
+    padding-left: 25px;
+    height: 20px;
+    cursor: pointer
+}
+
+.za-ins-iconbg-ok {
+    background-position: 0 -60px
+}
+
+.za-ins-icon-del {
+    color: #40C16B;
+    height: 20px;
+    line-height: 20px;
+    margin-top: 6px
+}
+
+.za-ins-iconbg-del {
+    background-position: 0 -203px;
+    padding-left: 22px
+}
+
+.za-alert-price,
+.za-alert-right {
+    margin: 10px 40px;
+    min-height: 72px;
+    padding-left: 90px;
+    vertical-align: bottom
+}
+
+.za-ins-iconbg-del:hover {
+    color: #2D884D
+}
+
+.za-alert-right {
+    background: url(//static.zhongan.com/website/online/assets/images/za-ins-icon.png) 0 -60px no-repeat
+}
+
+.za-alert-price {
+    background: url(//static.zhongan.com/website/online/assets/images/dialog_price_icon.png) 0 10px no-repeat
+}
+
+.bui-dialog,
+.za-popup {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .5);
+    background-clip: padding-box;
+    outline: 0
+}
+
+.za-upload-holder {
+    border: 1px dashed #D3D3D3;
+    height: 32px;
+    overflow: hidden;
+    position: relative;
+    width: 150px;
+    color: #C9C9C9;
+    display: inline-block;
+    vertical-align: middle
+}
+
+.za-upload-del,
+.za-upload-del1,
+.za-upload-look {
+    color: #40C16B;
+    vertical-align: middle;
+    text-decoration: underline
+}
+
+.za-upload-holderh100 {
+    width: 120px;
+    height: 100px;
+    overflow: inherit
+}
+
+.za-upload-holderh100 .za-upload-txt {
+    height: 120px;
+    line-height: 120px;
+    background-position: -678px -340px
+}
+
+.za-upload-input,
+.za-upload-txt {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0
+}
+
+.za-upload-input {
+    cursor: pointer;
+    right: 0;
+    z-index: 9;
+    font-size: 30px\9
+}
+
+.za-upload-txt {
+    left: 0;
+    font-size: 16px;
+    line-height: 32px;
+    background-image: url(//static.zhongan.com/website/online/assets/images/public/za-ser-icon.png);
+    background-position: -715px -354px;
+    background-repeat: no-repeat
+}
+
+.za-upload-del {
+    margin-left: 10px
+}
+
+.za-upload-del1 {
+    position: absolute;
+    bottom: -20px;
+    right: 5px
+}
+
+.za-upload-look {
+    position: absolute;
+    bottom: -20px;
+    left: 5px
+}
+
+.za-upload-holder1 {
+    border: 1px solid #D3D3D3;
+    background-color: #F6F6F6;
+    overflow: hidden;
+    position: relative;
+    width: 110px;
+    height: 32px;
+    color: #B4B4B4;
+    float: left;
+    margin-left: 20px
+}
+
+.za-upload-holder1 .za-upload-txt {
+    height: 100%;
+    left: 0;
+    font-size: 16px;
+    line-height: 32px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    background-image: none
+}
+
+.za-upload-des {
+    width: 380px;
+    height: 100px;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 16px;
+    line-height: 24px;
+    color: #BABABA;
+    margin-left: 40px
+}
+
+.za-ins-ck-cbx {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px
+}
+
+.za-ins-ck-label,
+.za-ins-ck-label1,
+.za-ins-rad-label {
+    background-repeat: no-repeat;
+    display: inline-block;
+    padding-left: 24px;
+    height: 18px;
+    line-height: 18px;
+    vertical-align: middle;
+    background-image: url(//static.zhongan.com/website/online/assets/images/cbx_green.png);
+    cursor: pointer
+}
+
+.za-ins-ck-label,
+.za-ins-ck-label1 {
+    font-size: 16px;
+    background-position: 0 0
+}
+
+.za-ins-ck-hover {
+    background-position: 0 -20px
+}
+
+.za-ins-ck-check {
+    background-position: 0 -40px
+}
+
+.za-ins-rad-label {
+    background-position: 0 -60px
+}
+
+.za-ser-formlist .formcon .formdiv,
+.za-ser-formlist .formcon p {
+    line-height: 40px;
+    margin-bottom: 10px;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+    font-size: 14px
+}
+
+.za-ins-rad-hover {
+    background-position: 0 -80px
+}
+
+.za-ins-rad-check {
+    background-position: 0 -100px
+}
+
+.za-ins-buyleft {
+    width: 100%;
+    margin-top: 20px
+}
+
+.za-ins-buyright {
+    width: 250px
+}
+
+.za-ins-buyleft dd,
+.za-ins-buyright dd {
+    border-top: 2px solid #EEE;
+    padding-top: 15px
+}
+
+.za-ser-formlist .za-hz-formcon .formfilediv .ftitle {
+    width: 320px
+}
+
+.za-ser-formlist .formcon.formpad15 {
+    padding: 15px 0
+}
+
+.za-ser-formlist .formcon p.formbort {
+    padding-top: 25px;
+    border-top: 1px solid #F0F0F0
+}
+
+.za-ser-formlist .formcon p.formbort1 {
+    padding-top: 25px
+}
+
+.za-ser-formlist .formcon p.formbort .za-ser-formbtn,
+.za-ser-formlist .formcon p.formbort1 .za-ser-formbtn {
+    margin-left: 35px
+}
+
+.za-ser-formlist .formcon .formdiv:after,
+.za-ser-formlist .formcon p:after {
+    overflow: hidden;
+    content: "";
+    clear: both;
+    display: block;
+    height: 0
+}
+
+.za-ser-formlist .formcon .formdiv .ftitle,
+.za-ser-formlist .formcon p .ftitle {
+    float: left;
+    width: 140px;
+    text-align: right
+}
+
+.za-ser-formlist .formcon p .x-field-error {
+    margin-top: 3px
+}
+
+.za-ser-formlist .formcon .formfilediv {
+    margin-bottom: 20px
+}
+
+.za-ser-formlist .formcon .formfilediv .ftitle {
+    float: left;
+    width: 140px;
+    text-align: right;
+    margin-top: 10px
+}
+
+.za-ser-formlist .formcon .formfilediv .za-ins-buytitle {
+    font-weight: 100
+}
+
+.za-ser-formlist .formcon .formdiv1 {
+    padding: 5px 0;
+    margin-bottom: 10px
+}
+
+.za-ser-formlist .formcon .formdiv1 .ftitle {
+    float: left;
+    width: 140px;
+    text-align: right;
+    padding: 5px 0
+}
+
+.za-ser-formlist .formcon p.ramk {
+    line-height: 22px
+}
+
+.za-ser-formlist .formcon .za-acc-table td>p {
+    line-height: 14px;
+    margin-bottom: 5px
+}
+
+.za-ser-formlist .formcon .za-hz-formbort1 .ftitle {
+    width: 320px
+}
+
+.za-ser-formlist .formcon1 p {
+    line-height: 30px;
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+    font-size: 14px
+}
+
+.za-ser-formlist.w220 .formcon .formdiv .ftitle,
+.za-ser-formlist.w220 .formcon .formdiv1 .ftitle,
+.za-ser-formlist.w220 .formcon .formfilediv .ftitle,
+.za-ser-formlist.w220 .formcon p .ftitle {
+    width: 220px
+}
+
+.za-ser-formlist p>.vertxt {
+    width: 130px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 16px;
+    color: #666;
+    padding: 7px 5px;
+    border: 1px solid #DEDEDE;
+    border-radius: 2px
+}
+
+.za-ser-formlist p>.za-verify {
+    display: inline-block;
+    width: 160px;
+    height: 36px;
+    line-height: 36px;
+    margin-left: 10px;
+    background-color: #F0F0F0
+}
+
+.za-ser-formlist p>.za-verify img {
+    cursor: pointer;
+    vertical-align: top;
+    margin: 2px 5px
+}
+
+.za-ser-formlist p>.za-verify a {
+    color: #40C16B;
+    text-decoration: underline;
+    margin-left: 5px
+}
+
+.bui-ext-mask1 {
+    -moz-opacity: 0;
+    -khtml-opacity: 0
+}
+
+.bui-dialog {
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-top: 4px solid #40C16B;
+    position: absolute;
+    z-index: 1070;
+    min-width: 500px
+}
+
+.bui-dialog .bui-stdmod-header {
+    -moz-user-select: none;
+    color: #666;
+    cursor: move;
+    font-family: ff-tisa-web-pro-1, ff-tisa-web-pro-2, "Lucida Grande", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei UI", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 15px;
+    background-color: #F0F0F0
+}
+
+.bui-dialog .bui-stdmod-header .header-title {
+    font-size: 18px;
+    color: #999
+}
+
+.bui-dialog .bui-stdmod-body {
+    padding: 15px 40px
+}
+
+.bui-dialog .bui-stdmod-footer {
+    border-top: 1px solid #e5e5e5;
+    padding: 0 15px 37px;
+    text-align: center
+}
+
+.bui-dialog .bui-stdmod-footer:after,
+.bui-dialog .bui-stdmod-footer:before {
+    content: " ";
+    display: table
+}
+
+.bui-dialog .bui-stdmod-footer .button+.button {
+    margin-bottom: 0;
+    margin-left: 5px
+}
+
+.bui-dialog .bui-stdmod-footer .button-group .button+.button {
+    margin-left: -1px
+}
+
+.bui-dialog .bui-stdmod-footer .button-block+.button-block {
+    margin-left: 0
+}
+
+.bui-dialog a.bui-ext-close {
+    cursor: pointer;
+    display: block;
+    height: 30px;
+    outline: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 15px;
+    text-decoration: none;
+    top: 10px;
+    width: 30px;
+    z-index: 1
+}
+
+.bui-dialog .bui-ext-close-x {
+    border: none;
+    cursor: pointer;
+    display: block;
+    font-size: 30px;
+    line-height: 1;
+    color: #c3bfbe;
+    width: 30px;
+    height: 30px;
+    font-family: "Microsoft YaHei";
+    text-align: center
+}
+
+.bui-dialog .bui-ext-close-x:hover {
+    background-color: #F0F0F0;
+    color: #666
+}
+
+.bui-dialog.za-dialog-message .bui-stdmod-body {
+    padding: 15px;
+    min-width: 520px;
+    min-height: 100px;
+    text-align: center;
+    width: auto
+}
+
+.bui-dialog.za-dialog-message .bui-stdmod-footer {
+    border-top: 1px solid #f0f0f0;
+    padding: 15px;
+    text-align: center;
+    background-color: #f9f9f9
+}
+
+.bui-dialog .za-login-body {
+    padding-top: 10px;
+    height: 350px
+}
+
+.bui-message .bui-stdmod-header {
+    min-height: 20px
+}
+
+.za-dialog-message .bui-stdmod-footer {
+    border-top: none;
+    padding: 5px;
+    min-width: 350px
+}
+
+.bui-stdmod-footer .button {
+    -moz-user-select: none;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #333;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    margin-bottom: 0;
+    padding: 4px 36px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap
+}
+
+.button-primary,
+.button-primary.active,
+.button-primary:hover,
+.za-dialog-message .bui-stdmod-footer .button-primary {
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+    font-weight: 700
+}
+
+.button-primary,
+.button-primary.active,
+.button-primary:hover {
+    border-color: #3DB664;
+    color: #fff;
+    background-color: #40c16b;
+    background-image: -moz-linear-gradient(top, #40c16b, #40c16b);
+    background-image: -ms-linear-gradient(top, #40c16b, #40c16b);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#40c16b), to(#40c16b));
+    background-image: -webkit-linear-gradient(top, #40c16b, #40c16b);
+    background-image: -o-linear-gradient(top, #40c16b, #40c16b);
+    background-image: linear-gradient(top, #40c16b, #40c16b);
+    background-repeat: repeat-x;
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#40c16b', endColorstr='#40c16b', GradientType=0)
+}
+
+.bui-stdmod-footer.active,
+.bui-stdmod-footer:active,
+.bui-stdmod-footer:focus,
+.bui-stdmod-footer:hover {
+    background-color: #3DB664;
+    border-color: #35A659;
+    color: #fff
+}
+
+.za-dialog-message .x-icon {
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    background-repeat: no-repeat
+}
+
+.za-dialog-message .x-icon.me-success {
+    width: 22px;
+    height: 22px;
+    background-image: url(//static.zhongan.com/website/online/assets/images/mg_success.png);
+    vertical-align: middle
+}
+
+.za-dialog-message .x-icon.me-error {
+    width: 22px;
+    height: 22px;
+    background-image: url(//static.zhongan.com/website/online/assets/images/mg_error.png);
+    vertical-align: middle
+}
+
+.za-dialog-message .x-icon.me-warning {
+    width: 22px;
+    height: 22px;
+    background-image: url(//static.zhongan.com/website/online/assets/images/mg_warning.png);
+    vertical-align: middle;
+    background-size: cover
+}
+
+.za-dialog-message .bui-stdmod-body .me-bd {
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    line-height: 20px;
+    color: #5e5e5e;
+    font-size: 16px
+}
+
+.za-mask {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9991;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .3;
+    filter: alpha(opacity=30)
+}
+
+:root .za-mask {
+    filter: none
+}
+
+.za-popup {
+    position: fixed;
+    z-index: 9992;
+    left: 50%;
+    top: 50%;
+    width: 500px;
+    min-height: 330px;
+    margin-left: -251px;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-top: 4px solid #40C16B;
+    background-color: #fff
+}
+
+.za-popup .popup-hd {
+    cursor: move;
+    height: 44px;
+    line-height: 44px;
+    font-size: 14px;
+    font-family: "Lucida Grande", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei UI", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    font-weight: 500;
+    color: #666;
+    padding-left: 15px;
+    background-color: #F0F0F0;
+    -moz-user-select: none
+}
+
+.za-popup .popup-close,
+.za-popup .popup-close span {
+    width: 30px;
+    height: 30px;
+    display: block;
+    cursor: pointer
+}
+
+.za-popup .popup-close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 1;
+    outline: 0;
+    overflow: hidden;
+    text-decoration: none
+}
+
+.za-popup .popup-close span {
+    border: none;
+    font-size: 30px;
+    line-height: 1;
+    color: #c3bfbe;
+    font-family: "Microsoft YaHei";
+    text-align: center;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, .25)
+}
+
+.za-popup .popup-bd {
+    min-height: 240px;
+    padding: 20px
+}
+
+.za-popup p {
+    font-size: 14px;
+    text-align: center
+}
+
+.za-popup img {
+    display: block;
+    width: 148px;
+    height: 148px;
+    margin: 25px auto
+}
+
+.za-popup .webtxt {
+    font-weight: 700;
+    color: #40c16b
+}
+
+.bui-overlay {
+    position: absolute;
+    z-index: 99999
+}
+
+.x-icon-error {
+    background-color: #F63;
+    border-color: #F60;
+    color: #fff
+}
+
+.x-icon-warning {
+    background-color: #f0ad4e;
+    border-color: #eea236;
+    color: #fff
+}
+
+.x-icon-mini {
+    border-radius: 2px;
+    font-size: 14px;
+    height: 12px;
+    line-height: 12px;
+    width: 12px
+}
+
+.x-icon {
+    overflow: hidden;
+    vertical-align: middle
+}
+
+.x-icon-info,
+.x-icon-question {
+    background-color: #5bc0de;
+    border-color: #46b8da;
+    color: #fff
+}
+
+.x-icon-normal {
+    filter: none;
+    background-color: #fff;
+    background-image: none;
+    border-color: #ccc;
+    text-shadow: none
+}
+
+.icon,
+[class*=" icon-"],
+[class^=icon-] {
+    background-image: url(//static.zhongan.com/website/online/assets/images/sprite-469-300.png);
+    background-position: 14px 14px;
+    height: 14px;
+    line-height: 14px;
+    width: 14px;
+    background-repeat: no-repeat;
+    display: inline-block
+}
+
+.x-icon-success {
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    color: #fff
+}
+
+.icon {
+    vertical-align: text-top
+}
+
+.x-icon i,
+.x-icon-small i {
+    vertical-align: baseline
+}
+
+[class*=" icon-"],
+[class^=icon-] {
+    vertical-align: text-top
+}
+
+.icon-white {
+    background-image: url(//static.zhongan.com/website/online/assets/images/white_sprite-469-300.png)
+}
+
+.icon-question {
+    background-position: -48px -168px
+}
+
+.za-field-success {
+    width: 22px;
+    height: 22px;
+    margin-left: 5px;
+    margin-top: 5px;
+    position: absolute;
+    line-height: 16px;
+    font-weight: 700;
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-login-icon.png);
+    background-position: 0 -126px;
+    background-repeat: no-repeat
+}
+
+.x-field-error {
+    margin-left: 5px;
+    position: absolute;
+    background-color: #FFF6f6;
+    padding: 5px;
+    line-height: 22px
+}
+
+.x-field-error1 {
+    cursor: pointer;
+    background: 0 0
+}
+
+.p-form .x-input-error {
+    border: 1px solid #f60
+}
+
+.bui-dialog .x-icon {
+    vertical-align: top
+}
+
+.x-field-error .x-field-error-text {
+    color: #F63;
+    margin-left: 5px;
+    line-height: 22px
+}
+
+.x-field-error .x-field-error-text .za-error-alink {
+    color: #F63;
+    text-decoration: underline
+}
+
+.bui-dialog>.bui-ext-close>.x-icon-normal {
+    background-color: transparent
+}
+
+.tip-text {
+    margin-left: 10px;
+    color: #BABABA
+}
+
+.tips {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #333;
+    padding: 10px
+}
+
+.tips-success {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #3c763d
+}
+
+.tips-info {
+    background-color: #e6f2ff;
+    border-color: #acd5ff
+}
+
+.tips-warning {
+    background-color: #fff3f3;
+    border-color: #ffb2b2
+}
+
+.tips .x-icon {
+    float: left
+}
+
+.tips .tips-content {
+    color: #333;
+    line-height: 16px;
+    margin-left: 24px
+}
+
+.bui-dialog .bui-stdmod-body .icon-ok {
+    background-position: -288px 0
+}
+
+.x-align-arrow,
+.x-align-arrow-inner {
+    border: 6px solid transparent;
+    position: absolute
+}
+
+.bui-calendar,
+.bui-form-tip-container {
+    position: relative
+}
+
+.x-align-top .x-align-arrow,
+.x-align-top-left .x-align-arrow,
+.x-align-top-right .x-align-arrow {
+    border-top: 8px solid #c3c3d6;
+    bottom: -15px
+}
+
+.x-align-top .x-align-arrow-inner,
+.x-align-top-left .x-align-arrow-inner,
+.x-align-top-right .x-align-arrow-inner {
+    border-top: 8px solid #fff;
+    left: -6px;
+    top: -9px
+}
+
+.x-align-bottom .x-align-arrow,
+.x-align-top .x-align-arrow {
+    left: 50%
+}
+
+.x-align-bottom-left .x-align-arrow,
+.x-align-top-left .x-align-arrow {
+    left: 10px
+}
+
+.x-align-bottom-right .x-align-arrow,
+.x-align-top-right .x-align-arrow {
+    right: 10px
+}
+
+.x-align-right .x-align-arrow {
+    border-right: 8px solid #c3c3d6;
+    left: -15px;
+    top: 50%
+}
+
+.x-align-right .x-align-arrow-inner {
+    border-right: 8px solid #fff;
+    left: -4px;
+    top: -6px
+}
+
+.x-align-left .x-align-arrow {
+    border-left: 8px solid #c3c3d6;
+    right: -15px;
+    top: 50%
+}
+
+.x-align-left .x-align-arrow-inner {
+    border-left: 8px solid #fff;
+    left: -9px;
+    top: -6px
+}
+
+.x-align-bottom .x-align-arrow,
+.x-align-bottom-left .x-align-arrow,
+.x-align-bottom-right .x-align-arrow {
+    border-bottom: 8px solid #c3c3d6;
+    top: -15px
+}
+
+.x-align-bottom .x-align-arrow-inner,
+.x-align-bottom-left .x-align-arrow-inner,
+.x-align-bottom-right .x-align-arrow-inner {
+    border-bottom: 8px solid #fff;
+    left: -6px;
+    top: -5px
+}
+
+.tips[class*=" x-align-top"] .x-align-arrow,
+.tips[class^=x-align-top] .x-align-arrow {
+    border-top-color: #ddd
+}
+
+.tips[class*=" x-align-top"] .x-align-arrow-inner,
+.tips[class^=x-align-top] .x-align-arrow-inner {
+    border-top-color: #f5f5f5
+}
+
+.tips.x-align-right .x-align-arrow {
+    border-right-color: #ddd
+}
+
+.tips.x-align-right .x-align-arrow-inner {
+    border-right-color: #f5f5f5
+}
+
+.tips.x-align-left .x-align-arrow {
+    border-left-color: #ddd
+}
+
+.tips.x-align-left .x-align-arrow-inner {
+    border-left-color: #f5f5f5
+}
+
+.tips[class*=" x-align-bottom"] .x-align-arrow,
+.tips[class^=x-align-bottom] .x-align-arrow {
+    border-bottom-color: #ddd
+}
+
+.tips[class*=" x-align-bottom"] .x-align-arrow-inner,
+.tips[class^=x-align-bottom] .x-align-arrow-inner {
+    border-bottom-color: #f5f5f5
+}
+
+.tips-success[class*=" x-align-top"] .x-align-arrow,
+.tips-success[class^=x-align-top] .x-align-arrow {
+    border-top-color: #d6e9c6
+}
+
+.tips-success[class*=" x-align-top"] .x-align-arrow-inner,
+.tips-success[class^=x-align-top] .x-align-arrow-inner {
+    border-top-color: #dff0d8
+}
+
+.tips-success.x-align-right .x-align-arrow {
+    border-right-color: #d6e9c6
+}
+
+.tips-success.x-align-right .x-align-arrow-inner {
+    border-right-color: #dff0d8
+}
+
+.tips-success.x-align-left .x-align-arrow {
+    border-left-color: #d6e9c6
+}
+
+.tips-success.x-align-left .x-align-arrow-inner {
+    border-left-color: #dff0d8
+}
+
+.tips-success[class*=" x-align-bottom"] .x-align-arrow,
+.tips-success[class^=x-align-bottom] .x-align-arrow {
+    border-bottom-color: #d6e9c6
+}
+
+.tips-success[class*=" x-align-bottom"] .x-align-arrow-inner,
+.tips-success[class^=x-align-bottom] .x-align-arrow-inner {
+    border-bottom-color: #dff0d8
+}
+
+.tips-warning[class*=" x-align-top"] .x-align-arrow,
+.tips-warning[class^=x-align-top] .x-align-arrow {
+    border-top-color: #ffb2b2
+}
+
+.tips-warning[class*=" x-align-top"] .x-align-arrow-inner,
+.tips-warning[class^=x-align-top] .x-align-arrow-inner {
+    border-top-color: #fff3f3
+}
+
+.tips-warning.x-align-right .x-align-arrow {
+    border-right-color: #ffb2b2
+}
+
+.tips-warning.x-align-right .x-align-arrow-inner {
+    border-right-color: #fff3f3
+}
+
+.tips-warning.x-align-left .x-align-arrow {
+    border-left-color: #ffb2b2
+}
+
+.tips-warning.x-align-left .x-align-arrow-inner {
+    border-left-color: #fff3f3
+}
+
+.tips-warning[class*=" x-align-bottom"] .x-align-arrow,
+.tips-warning[class^=x-align-bottom] .x-align-arrow {
+    border-bottom-color: #ffb2b2
+}
+
+.tips-warning[class*=" x-align-bottom"] .x-align-arrow-inner,
+.tips-warning[class^=x-align-bottom] .x-align-arrow-inner {
+    border-bottom-color: #fff3f3
+}
+
+.tips-info[class*=" x-align-top"] .x-align-arrow,
+.tips-info[class^=x-align-top] .x-align-arrow {
+    border-top-color: #acd5ff
+}
+
+.tips-info[class*=" x-align-top"] .x-align-arrow-inner,
+.tips-info[class^=x-align-top] .x-align-arrow-inner {
+    border-top-color: #e6f2ff
+}
+
+.tips-info.x-align-right .x-align-arrow {
+    border-right-color: #acd5ff
+}
+
+.tips-info.x-align-right .x-align-arrow-inner {
+    border-right-color: #e6f2ff
+}
+
+.tips-info.x-align-left .x-align-arrow {
+    border-left-color: #acd5ff
+}
+
+.tips-info.x-align-left .x-align-arrow-inner {
+    border-left-color: #e6f2ff
+}
+
+.tips-info[class*=" x-align-bottom"] .x-align-arrow,
+.tips-info[class^=x-align-bottom] .x-align-arrow {
+    border-bottom-color: #acd5ff
+}
+
+.tips-info[class*=" x-align-bottom"] .x-align-arrow-inner,
+.tips-info[class^=x-align-bottom] .x-align-arrow-inner {
+    border-bottom-color: #e6f2ff
+}
+
+.tips-notice[class*=" x-align-top"] .x-align-arrow,
+.tips-notice[class^=x-align-top] .x-align-arrow {
+    border-top-color: #fbeed5
+}
+
+.tips-notice[class*=" x-align-top"] .x-align-arrow-inner,
+.tips-notice[class^=x-align-top] .x-align-arrow-inner {
+    border-top-color: #fcf8e3
+}
+
+.tips-notice.x-align-right .x-align-arrow {
+    border-right-color: #fbeed5
+}
+
+.tips-notice.x-align-right .x-align-arrow-inner {
+    border-right-color: #fcf8e3
+}
+
+.tips-notice.x-align-left .x-align-arrow {
+    border-left-color: #fbeed5
+}
+
+.tips-notice.x-align-left .x-align-arrow-inner {
+    border-left-color: #fcf8e3
+}
+
+.tips-notice[class*=" x-align-bottom"] .x-align-arrow,
+.tips-notice[class^=x-align-bottom] .x-align-arrow {
+    border-bottom-color: #fbeed5
+}
+
+.tips-notice[class*=" x-align-bottom"] .x-align-arrow-inner,
+.tips-notice[class^=x-align-bottom] .x-align-arrow-inner {
+    border-bottom-color: #fcf8e3
+}
+
+.bui-calendar,
+.bui-monthpicker {
+    font-family: tahoma, arial, SimSun, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 12px
+}
+
+.bui-calendar em,
+.bui-monthpicker em {
+    font-style: normal
+}
+
+.bui-calendar ul,
+.bui-monthpicker ul {
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+
+.x-datepicker-arrow .icon,
+.x-monthpicker-yearnav .icon {
+    margin-top: 2px
+}
+
+.bui-calendar .icon,
+.bui-monthpicker .icon {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    vertical-align: text-top;
+    background: url(//static.zhongan.com/website/online/assets/images/sprite-469-300.png) 14px 14px no-repeat
+}
+
+.button,
+.button-primary {
+    background-repeat: repeat-x
+}
+
+.bui-calendar .icon-white,
+.bui-monthpicker .icon-white {
+    background-image: url(//static.zhongan.com/website/online/assets/images/white_sprite-469-300.png)
+}
+
+.bui-calendar .icon-caret-left,
+.bui-monthpicker .icon-caret-left {
+    background-position: -1px -227px
+}
+
+.bui-calendar .icon-caret-right,
+.bui-monthpicker .icon-caret-right {
+    background-position: -1px -235px
+}
+
+.bui-calendar .icon-caret-down,
+.bui-monthpicker .icon-caret-down {
+    background-position: -1px -218px
+}
+
+.bui-calendar .icon-caret,
+.bui-monthpicker .icon-caret {
+    width: 8px;
+    height: 8px;
+    display: inline-block
+}
+
+.button {
+    display: inline-block;
+    padding: 4px 15px;
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, .75);
+    background-color: #f4f4f4;
+    background-image: -moz-linear-gradient(top, #fff, #e4e4e4);
+    background-image: -ms-linear-gradient(top, #fff, #e4e4e4);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#e4e4e4));
+    background-image: -webkit-linear-gradient(top, #fff, #e4e4e4);
+    background-image: -o-linear-gradient(top, #fff, #e4e4e4);
+    background-image: linear-gradient(top, #fff, #e4e4e4);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e4e4e4', GradientType=0);
+    border: 1px solid #ccc;
+    border-bottom-color: #b3b3b3;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2), 0 1px 2px rgba(0, 0, 0, .05);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2), 0 1px 2px rgba(0, 0, 0, .05);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2), 0 1px 2px rgba(0, 0, 0, .05);
+    cursor: pointer
+}
+
+.button.active,
+.button.disabled,
+.button:active,
+.button:hover,
+.button[disabled] {
+    background-color: #e4e4e4
+}
+
+.button.active,
+.button:active {
+    background-color: #cbcbcb\9
+}
+
+.button:hover {
+    color: #333;
+    text-decoration: none;
+    background-color: #e6e6e6;
+    background-position: 0 -15px;
+    -webkit-transition: background-position .1s linear;
+    -moz-transition: background-position .1s linear;
+    -ms-transition: background-position .1s linear;
+    -o-transition: background-position .1s linear;
+    transition: background-position .1s linear
+}
+
+.button-primary,
+.button-primary:hover {
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, .25)
+}
+
+.button:focus {
+    outline: #333 dotted thin;
+    outline: -webkit-focus-ring-color auto 5px;
+    outline-offset: -2px
+}
+
+.button.active,
+.button:active {
+    background-image: none;
+    -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, .15), 0 1px 2px rgba(0, 0, 0, .05);
+    -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, .15), 0 1px 2px rgba(0, 0, 0, .05);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, .15), 0 1px 2px rgba(0, 0, 0, .05);
+    background-color: #e6e6e6;
+    background-color: #d9d9d9\9;
+    outline: 0
+}
+
+.button[disabled] {
+    cursor: default;
+    outline-width: 0;
+    background-image: none;
+    background-color: #e6e6e6;
+    opacity: .65;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none
+}
+
+.button-small {
+    padding: 2px 10px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px
+}
+
+.button-primary {
+    background-color: #3357cc;
+    background-image: -moz-linear-gradient(top, #36c, #3340cc);
+    background-image: -ms-linear-gradient(top, #36c, #3340cc);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#36c), to(#3340cc));
+    background-image: -webkit-linear-gradient(top, #36c, #3340cc);
+    background-image: -o-linear-gradient(top, #36c, #3340cc);
+    background-image: linear-gradient(top, #36c, #3340cc);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#3366cc', endColorstr='#3340cc', GradientType=0);
+    border-color: #3340cc #3340cc #242d8f;
+    border-color: rgba(0, 0, 0, .1) rgba(0, 0, 0, .1) rgba(0, 0, 0, .25)
+}
+
+.bui-calendar-footer,
+.x-monthpicker-footer,
+table.x-datepicker-inner th {
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e4e4e4', GradientType=0)
+}
+
+.button-primary.active {
+    color: rgba(255, 255, 255, .75)
+}
+
+.button-primary.active,
+.button-primary.disabled,
+.button-primary:active,
+.button-primary:hover,
+.button-primary[disabled] {
+    background-color: #3340cc
+}
+
+.button-primary.active,
+.button-primary:active {
+    background-color: #2933a3\9
+}
+
+.calendar {
+    background: url(//static.zhongan.com/website/online/assets/images/calendar-200-300.gif) right -130px no-repeat #fff
+}
+
+.bui-calendar {
+    width: 180px;
+    border: 1px solid #c3c3d6;
+    background-color: #fff
+}
+
+.x-datepicker-arrow .icon-caret-right {
+    margin-left: 2px
+}
+
+.x-datepicker-header {
+    position: relative;
+    height: 26px;
+    line-height: 26px
+}
+
+.x-datepicker-month {
+    text-align: center
+}
+
+.month-text-container {
+    display: inline-block;
+    cursor: pointer;
+    font-weight: 700;
+    color: #fff
+}
+
+.month-text-container .bui-caret {
+    border-top-color: #fff;
+    margin-left: 5px
+}
+
+.x-datepicker-arrow {
+    line-height: 14px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer
+}
+
+.x-datepicker-next,
+.x-datepicker-prev {
+    position: absolute;
+    top: 5px;
+    width: 14px;
+    height: 14px
+}
+
+.x-datepicker-prev {
+    left: 5px
+}
+
+.x-datepicker-next {
+    right: 5px
+}
+
+.bui-calendar-panel {
+    outline: 0
+}
+
+table.x-datepicker-inner {
+    width: 100%;
+    table-layout: fixed
+}
+
+table.x-datepicker-inner tr {
+    height: 20px
+}
+
+table.x-datepicker-inner th {
+    width: 25px;
+    height: 19px;
+    padding: 0;
+    color: #333;
+    font: 400 10px tahoma, arial, verdana, sans-serif;
+    text-align: right;
+    background-color: #f4f4f4;
+    background-image: -moz-linear-gradient(top, #fff, #e4e4e4);
+    background-image: -ms-linear-gradient(top, #fff, #e4e4e4);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#e4e4e4));
+    background-image: -webkit-linear-gradient(top, #fff, #e4e4e4);
+    background-image: -o-linear-gradient(top, #fff, #e4e4e4);
+    background-image: linear-gradient(top, #fff, #e4e4e4);
+    background-repeat: repeat-x;
+    border-bottom: 1px solid #c3c3d6;
+    cursor: default
+}
+
+table.x-datepicker-inner th span {
+    display: block;
+    padding-right: 7px
+}
+
+.x-datepicker-date {
+    border: 1px solid #fff;
+    height: 17px;
+    text-align: right;
+    padding: 0
+}
+
+.x-datepicker-date a {
+    outline: 0;
+    padding-right: 4px;
+    display: block;
+    zoom: 1;
+    font: 400 11px tahoma, arial, verdana, sans-serif;
+    color: #333;
+    text-decoration: none;
+    text-align: right;
+    border: 1px solid #fff
+}
+
+.x-datepicker-date a:hover,
+.x-datepicker-disabled a,
+.x-datepicker-nextday a,
+.x-datepicker-prevday a {
+    text-decoration: none!important
+}
+
+.x-datepicker-date a:hover {
+    color: #333;
+    border: 1px solid #ccd7ff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px
+}
+
+.bui-select-list .bui-list-item-disabled a:hover,
+.pagination .disabled a:hover {
+    text-decoration: none
+}
+
+.x-datepicker-today a {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px
+}
+
+.x-datepicker-active {
+    cursor: pointer;
+    color: #333
+}
+
+.x-datepicker-disabled a:hover {
+    color: #aaa;
+    border-color: #fff;
+    background: 0 0
+}
+
+.x-datepicker-selected a {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px
+}
+
+input.x-datepicker-time {
+    width: 15px;
+    height: 15px;
+    cursor: pointer
+}
+
+.x-datepicker-second {
+    margin-right: 5px
+}
+
+.bui-calendar-footer,
+.x-monthpicker-footer {
+    height: 30px;
+    line-height: 30px;
+    border-top: 1px solid #c3c3d6;
+    text-align: center;
+    background-color: #f4f4f4;
+    background-image: -moz-linear-gradient(top, #fff, #e4e4e4);
+    background-image: -ms-linear-gradient(top, #fff, #e4e4e4);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#e4e4e4));
+    background-image: -webkit-linear-gradient(top, #fff, #e4e4e4);
+    background-image: -o-linear-gradient(top, #fff, #e4e4e4);
+    background-image: linear-gradient(top, #fff, #e4e4e4);
+    background-repeat: repeat-x
+}
+
+.bui-calendar-footer .button,
+.x-monthpicker-footer .button {
+    margin-right: 10px
+}
+
+.bui-calendar-footer button.last,
+.x-monthpicker-footer button.last {
+    margin-right: 0
+}
+
+.bui-monthpicker,
+.x-monthpicker {
+    width: 180px;
+    border: 1px solid #c3c3d6;
+    position: absolute;
+    background-color: #fff;
+    top: 0;
+    left: 0
+}
+
+.bui-calendar .bui-monthpicker {
+    top: -1px;
+    left: -1px
+}
+
+.x-monthpicker-months,
+.x-monthpicker-years {
+    height: 167px;
+    width: 88px
+}
+
+.x-monthpicker-months {
+    float: left;
+    border-right: 1px solid #c3c3d6;
+    width: 87px
+}
+
+.x-monthpicker-years {
+    margin-left: 88px
+}
+
+.x-monthpicker-item,
+.x-timepicker .bui-list-item {
+    float: left;
+    margin: 4px 0 5px;
+    font: 400 11px tahoma, arial, verdana, sans-serif;
+    text-align: center;
+    vertical-align: middle;
+    height: 18px;
+    width: 43px;
+    border: 0
+}
+
+.x-monthpicker-item a,
+.x-timepicker .bui-list-item a {
+    display: block;
+    margin: 0 2px;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #fff;
+    line-height: 17px
+}
+
+.x-timepicker ul:after,
+.x-timepicker ul:before {
+    display: table;
+    content: ""
+}
+
+.x-monthpicker-item-hover a,
+.x-monthpicker-item-selected a,
+.x-timepicker .bui-list-item-hover a,
+.x-timepicker .bui-list-item-selected a {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px
+}
+
+.x-monthpicker-yearnav {
+    height: 28px
+}
+
+.x-monthpicker-yearnav .x-icon {
+    margin: 6px 12px 5px 13px;
+    cursor: pointer;
+    opacity: .7;
+    filter: alpha(opacity=70)
+}
+
+.x-monthpicker-yearnav .x-icon:hover {
+    opacity: .8;
+    filter: alpha(opacity=80)
+}
+
+.x-timepicker {
+    width: 180px;
+    background-color: #fff;
+    border: 1px solid #c3c3d6;
+    border-bottom-color: #c3c3d6
+}
+
+.x-timepicker .bui-list-item {
+    height: 15px;
+    width: 20px
+}
+
+.bui-datepicker {
+    position: absolute
+}
+
+.bui-ext-mask-msg,
+.lp-el-mask-msg {
+    left: 0;
+    top: 0;
+    padding: 2px;
+    position: absolute;
+    z-index: 1050
+}
+
+.x-mask-loading>div {
+    line-height: 16px;
+    padding: 10px 15px;
+    color: #444;
+    background: #EBFAEF;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    width: 200px;
+    margin-left: -50%
+}
+
+.Dialogmask,
+.bui-ext-mask,
+.lp-el-mask,
+.lp-ext-mask {
+    background-color: #333;
+    z-index: 1040;
+    height: 100%;
+    top: 0;
+    left: 0
+}
+
+.x-mask-loading>div .maskloading {
+    vertical-align: middle;
+    margin-right: 10px
+}
+
+.bui-ext-mask,
+.lp-el-mask,
+.lp-ext-mask {
+    position: absolute;
+    width: 100%;
+    opacity: .3;
+    filter: alpha(opacity=30);
+    -moz-opacity: .3;
+    -khtml-opacity: .3
+}
+
+.Dialogmask {
+    opacity: .3;
+    width: 100%;
+    position: fixed;
+    display: none
+}
+
+.hide-text {
+    overflow: hidden;
+    text-indent: 100%
+}
+
+.input-block-level {
+    display: block;
+    width: 100%;
+    min-height: 28px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.bui-inline-block,
+.bui-select,
+.x-checkbox,
+.x-icon,
+.x-radio {
+    display: inline-block
+}
+
+.x-icon {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: Arial;
+    text-align: center;
+    height: 22px;
+    width: 22px;
+    line-height: 22px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, .25);
+    border: 1px solid transparent;
+    cursor: inherit
+}
+
+.x-icon i {
+    vertical-align: baseline
+}
+
+.x-icon-normal {
+    color: #9ca0b1
+}
+
+.x-icon-small {
+    font-size: 17px;
+    height: 14px;
+    width: 14px;
+    line-height: 14px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px
+}
+
+.bui-select-list {
+    border: 1px solid #c3c3d6;
+    background-color: #fff;
+    overflow: auto
+}
+
+.bui-select-list .bui-list-item {
+    padding: 2px 4px 2px 8px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    border: 1px solid #fff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin: 1px
+}
+
+.bui-select-list .bui-list-item-hover {
+    background: #dee5ff;
+    border: 1px solid #ccd7ff
+}
+
+.bui-select-list .bui-list-item-selected {
+    background: #ccd7ff;
+    border: 1px solid #99afff
+}
+
+.bui-select-list .bui-list-item-disabled {
+    background: 0 0;
+    color: #ccc;
+    cursor: default
+}
+
+.bui-select-list .bui-list-item-disabled a {
+    color: #ccc;
+    cursor: default
+}
+
+.bui-select .bui-select-input {
+    border-right: none;
+    vertical-align: middle;
+    outline: 0;
+    width: 118px
+}
+
+.bui-select .x-icon {
+    vertical-align: middle;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0
+}
+
+.bui-select .icon-caret {
+    margin-top: -4px
+}
+
+.bui-select-disabled .x-icon {
+    opacity: .5;
+    filter: alpha(opacity=50);
+    cursor: default
+}
+
+.x-checkbox {
+    background: url(//static.zhongan.com/website/online/assets/images/check_icon-100-100.gif) no-repeat
+}
+
+.x-radio {
+    background: url(//static.zhongan.com/website/online/assets/images/radio_icon-64-40.gif) no-repeat
+}
+
+.x-checkbox,
+.x-radio {
+    width: 13px;
+    height: 20px;
+    vertical-align: top;
+    margin-right: 5px
+}
+
+.bui-combox ul:after,
+.bui-combox ul:before {
+    display: table;
+    content: ""
+}
+
+.bui-list-item-hover .x-checkbox,
+.bui-list-item-hover .x-radio,
+.x-checkbox:hover,
+.x-radio:hover {
+    background-position: -16px 0
+}
+
+.bui-list-item-selected .x-checkbox,
+.bui-list-item-selected .x-radio,
+.checked .x-checkbox {
+    background-position: 0 -20px
+}
+
+.bui-list-item-disabled .x-checkbox,
+.bui-list-item-disabled .x-radio {
+    background-position: -48px 0
+}
+
+.bui-list-item-selected.bui-list-item-disabled .x-checkbox,
+.bui-list-item-selected.bui-list-item-disabled .x-radio,
+.bui-simple-list-disabled .x-checkbox,
+.bui-simple-list-disabled .x-radio {
+    background-position: -48px -20px
+}
+
+.bui-combox {
+    border: 1px solid #c3c3d6
+}
+
+.bui-combox .bui-list-item {
+    display: inline-block;
+    float: left;
+    margin: 2px;
+    padding: 1px 6px;
+    transition: color .2s;
+    -moz-transition: color .2s;
+    -webkit-transition: color .2s;
+    -o-transition: color .2s;
+    background-color: #5bc0de;
+    color: #eee
+}
+
+.bui-combox .bui-list-item button {
+    border: none;
+    padding: 0;
+    background: 0 0;
+    margin-left: 5px;
+    cursor: pointer;
+    color: #eee
+}
+
+.bui-combox .bui-list-item-warn {
+    background-color: #ee5f5b
+}
+
+.bui-combox .bui-list-item-active {
+    background-color: #fbb450
+}
+
+.bui-combox .bui-combox-input {
+    border: none
+}
+
+.bui-combox .bui-combox-input:focus {
+    border: none;
+    outline: 0
+}
+
+.bui-tag-follow .bui-simple-list {
+    float: left
+}
+
+.bui-tag-follow .bui-combox-input {
+    float: left;
+    margin-top: 2px;
+    width: 50px
+}
+
+.bui-select-list ul,
+ul.bui-select-list {
+    padding: 0;
+    margin: 0;
+    list-style: none
+}
+
+.bui-select .icon {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    vertical-align: text-top;
+    background: url(//static.zhongan.com/website/online/assets/images/sprite-469-300.png) 14px 14px no-repeat
+}
+
+.bui-select .icon-white {
+    background-image: url(//static.zhongan.com/website/online/assets/images/white_sprite-469-300.png)
+}
+
+.bui-select .icon-caret-left {
+    background-position: -1px -227px
+}
+
+.bui-select .icon-caret-right {
+    background-position: -1px -235px
+}
+
+.bui-select .icon-caret-down {
+    background-position: -1px -218px
+}
+
+.bui-select .icon-caret {
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    vertical-align: middle
+}
+
+.bui-grid .bui-pagingbar .bui-bar-item-button,
+.bui-grid .bui-pagingbar .bui-pb-page,
+.bui-grid .bui-pagingbar button,
+.image-pbar .bui-bar-item-button,
+.image-pbar .bui-pb-page,
+.image-pbar button {
+    background: url(//static.zhongan.com/website/online/assets/images/table-191-450.gif) -999px -999px no-repeat;
+    overflow: hidden
+}
+
+.bui-grid .bui-pagingbar button,
+.image-pbar button {
+    height: 16px;
+    width: 16px;
+    margin: 0;
+    text-indent: -100px;
+    border: none;
+    overfow: hidden
+}
+
+.bui-grid .bui-pagingbar .bui-button-disabled,
+.image-pbar .bui-button-disabled {
+    opacity: 1;
+    filter: alpha(opacity=100)
+}
+
+.bui-grid .bui-pagingbar .bui-pb-first button,
+.image-pbar .bui-pb-first button {
+    background-position: 3px 2px
+}
+
+.bui-grid .bui-pagingbar .bui-pb-first .bui-button-disabled,
+.image-pbar .bui-pb-first .bui-button-disabled {
+    background-position: 3px -18px
+}
+
+.bui-grid .bui-pagingbar .bui-pb-prev button,
+.image-pbar .bui-pb-prev button {
+    background-position: -57px 2px
+}
+
+.bui-grid .bui-pagingbar .bui-pb-prev .bui-button-disabled,
+.image-pbar .bui-pb-prev .bui-button-disabled {
+    background-position: -57px -18px
+}
+
+.bui-grid .bui-pagingbar .bui-pb-next button,
+.image-pbar .bui-pb-next button {
+    background-position: -37px 2px
+}
+
+.bui-grid .bui-pagingbar .bui-pb-next .bui-button-disabled,
+.image-pbar .bui-pb-next .bui-button-disabled {
+    background-position: -37px -18px
+}
+
+.bui-grid .bui-pagingbar .bui-pb-last button,
+.image-pbar .bui-pb-last button {
+    background-position: -17px 2px
+}
+
+.bui-grid .bui-pagingbar .bui-pb-last .bui-button-disabled,
+.image-pbar .bui-pb-last .bui-button-disabled {
+    background-position: -17px -18px
+}
+
+.bui-grid .bui-pagingbar .bui-bar-item-button-disabled,
+.bui-grid .bui-pagingbar .bui-pb-skip,
+.image-pbar .bui-bar-item-button-disabled,
+.image-pbar .bui-pb-skip {
+    background-position: -999px -999px
+}
+
+.bui-grid .bui-pagingbar .bui-bar-item,
+.image-pbar .bui-bar-item {
+    outline: 0;
+    margin: 0 2px;
+    vertical-align: middle
+}
+
+.bui-grid .bui-pagingbar .bui-bar-item-button,
+.image-pbar .bui-bar-item-button {
+    padding: 1px
+}
+
+.bui-grid .bui-pagingbar .bui-pb-page,
+.image-pbar .bui-pb-page {
+    color: #9d261d;
+    font: 11px tahoma, arial, verdana, sans-serif;
+    height: 14px;
+    margin: 0;
+    width: 20px;
+    vertical-align: baseline;
+    background-color: #fff;
+    padding: 0 2px
+}
+
+.bui-bar-item-separator,
+.bui-grid .bui-pagingbar .bui-bar-item-text,
+.bui-grid-cascade,
+.image-pbar .bui-bar-item-text {
+    vertical-align: middle
+}
+
+.bui-grid .bui-pagingbar .bui-pb-skip button,
+.image-pbar .bui-pb-skip button {
+    text-indent: 0;
+    background-position: -80px -20px;
+    height: 20px;
+    font-size: 11px;
+    width: 41px
+}
+
+.bui-grid .bui-pagingbar .bui-pb-skip button:hover,
+.image-pbar .bui-pb-skip button:hover {
+    background-position: -150px -20px
+}
+
+.bui-grid .bui-pagingbar .bui-bar-item-separator,
+.image-pbar .bui-bar-item-separator {
+    margin: 0 5px
+}
+
+.pagination .bui-bar-item {
+    float: left;
+    margin: 0
+}
+
+.bar-btn-add,
+.bar-btn-close,
+.bar-btn-create,
+.bar-btn-del,
+.bar-btn-edit,
+.bar-btn-export,
+.bar-btn-import,
+.bar-btn-save {
+    background: url(//static.zhongan.com/website/online/assets/images/table-191-450.gif) -999px -999px no-repeat
+}
+
+.bui-bar-item-separator {
+    background: url(//static.zhongan.com/website/online/assets/images/table-191-450.gif) -80px 0 no-repeat;
+    height: 14px;
+    margin: 0 3px 0 2px;
+    width: 2px
+}
+
+.bui-grid-button-bar {
+    float: left
+}
+
+.bui-grid-button-bar .bui-bar-item {
+    margin-right: 10px
+}
+
+.bui-grid-button-bar .bar-btn-add,
+.bui-grid-button-bar .bar-btn-close,
+.bui-grid-button-bar .bar-btn-create,
+.bui-grid-button-bar .bar-btn-del,
+.bui-grid-button-bar .bar-btn-edit,
+.bui-grid-button-bar .bar-btn-export,
+.bui-grid-button-bar .bar-btn-import,
+.bui-grid-button-bar .bar-btn-save {
+    padding-left: 18px
+}
+
+.bui-grid-button-bar .bar-btn-edit {
+    background-position: 2px -307px
+}
+
+.bui-grid-button-bar .bar-btn-add {
+    background-position: -48px -137px
+}
+
+.bui-grid-button-bar .bar-btn-del {
+    background-position: 2px -247px
+}
+
+.bui-grid-button-bar .bar-btn-close {
+    background-position: -48px -157px
+}
+
+.bui-grid-button-bar .bar-btn-import {
+    background-position: 2px -187px
+}
+
+.bui-grid-button-bar .bar-btn-export {
+    background-position: 2px -217px
+}
+
+.bui-grid-button-bar .bar-btn-save {
+    background-position: 2px -277px
+}
+
+.bui-grid-button-bar .bar-btn-create {
+    background-position: 2px -307px
+}
+
+.bui-grid-button-bar .button-small [class^=icon-] {
+    margin: -2px 2px 0 -5px
+}
+
+.bui-simple-list-focused {
+    outline: 0
+}
+
+.bui-grid-table .bui-grid-cascade-icon,
+.bui-grid-table .bui-grid-hd-menu-trigger,
+.bui-grid-table .sort-asc .bui-grid-sort-icon,
+.bui-grid-table .sort-desc .bui-grid-sort-icon {
+    background-image: url(//static.zhongan.com/website/online/assets/images/table-191-450.gif);
+    background-repeat: no-repeat
+}
+
+.bui-grid-bbar,
+.bui-grid-table .bui-grid-hd-inner {
+    background-repeat: repeat-x;
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e4e4e4', GradientType=0)
+}
+
+.bui-simple-grid .bui-grid-table {
+    border: 1px solid #ddd
+}
+
+.bui-drag-line {
+    position: absolute;
+    border-left: 1px solid #ccc
+}
+
+.bui-grid-body,
+.bui-grid-header {
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd
+}
+
+.bui-grid-header {
+    border-top: 1px solid #ddd;
+    overflow: hidden
+}
+
+.bui-grid-group-header .bui-grid-hd-empty {
+    display: none
+}
+
+.bui-grid-body,
+.bui-grid-height .bui-grid-body .bui-grid-table {
+    border-bottom: 1px solid #ddd
+}
+
+.bui-grid-header .table {
+    margin: 0
+}
+
+.bui-grid-table {
+    width: 100%;
+    table-layout: fixed
+}
+
+.bui-grid,
+.bui-simple-grid {
+    background-color: #fff
+}
+
+.bui-grid td.left,
+.bui-grid th.left,
+.bui-simple-grid td.left,
+.bui-simple-grid th.left {
+    text-align: left
+}
+
+.bui-grid td.right,
+.bui-grid th.right,
+.bui-simple-grid td.right,
+.bui-simple-grid th.right {
+    text-align: right
+}
+
+.bui-grid td.center,
+.bui-grid th.center,
+.bui-simple-grid td.center,
+.bui-simple-grid th.center {
+    text-align: center
+}
+
+.bui-grid-border .bui-grid-cell,
+.bui-grid-border .bui-grid-hd,
+.bui-grid-border .bui-grid-header-row td {
+    border-left: 1px solid #c5c5c5
+}
+
+.bui-grid-border .bui-grid-cell-empty,
+.bui-grid-border .bui-grid-hd-empty {
+    border-left: none
+}
+
+.bui-grid-header-row td,
+.bui-grid-header-row th {
+    padding: 0;
+    margin: 0
+}
+
+td.bui-grid-cell-empty,
+th.bui-grid-hd-empty {
+    padding: 0;
+    margin: 0;
+    border-left: none
+}
+
+.bui-grid-table .bui-grid-hd {
+    border-bottom: 1px solid #c5c5c5;
+    text-align: left;
+    cursor: default
+}
+
+.bui-grid-table tr td:first-child,
+.bui-grid-table tr th:first-child {
+    border-left-width: 0
+}
+
+.bui-grid-table .bui-grid-hd-inner {
+    background-color: #f4f4f4;
+    background-image: -moz-linear-gradient(top, #fff, #e4e4e4);
+    background-image: -ms-linear-gradient(top, #fff, #e4e4e4);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#e4e4e4));
+    background-image: -webkit-linear-gradient(top, #fff, #e4e4e4);
+    background-image: -o-linear-gradient(top, #fff, #e4e4e4);
+    background-image: linear-gradient(top, #fff, #e4e4e4);
+    height: 24px;
+    overflow: hidden;
+    font-weight: 400;
+    background-position: 0 0;
+    position: relative
+}
+
+.bui-grid-table .bui-grid-db-hd .bui-grid-hd-inner {
+    padding: 12px 0 13px
+}
+
+.bui-grid-table .bui-grid-hd-title {
+    line-height: 22px;
+    font-size: 12px;
+    padding: 0 4px
+}
+
+.bui-grid-table .bui-grid-sort-icon {
+    display: inline-block;
+    height: 15px;
+    width: 15px
+}
+
+.bui-grid-table .bui-grid-hd-menu-trigger {
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 14px;
+    height: 24px;
+    background-position: 0 -140px
+}
+
+.bui-grid-table th.sortable {
+    cursor: pointer
+}
+
+.bui-grid-table .bui-grid-hd-hover .bui-grid-hd-inner,
+.bui-grid-table .bui-grid-hd-open .bui-grid-hd-inner {
+    background-image: -ms-linear-gradient(top, #e0e6fc, #e0e6fc);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e0e6fc), to(#e0e6fc));
+    background-image: -webkit-linear-gradient(top, #e0e6fc, #e0e6fc);
+    background-image: -o-linear-gradient(top, #e0e6fc, #e0e6fc);
+    background-image: linear-gradient(top, #e0e6fc, #e0e6fc)
+}
+
+.bui-grid-table .bui-grid-hd-hover .bui-grid-hd-menu-trigger,
+.bui-grid-table .bui-grid-hd-open .bui-grid-hd-menu-trigger {
+    display: block
+}
+
+.bui-grid-table .sort-asc .bui-grid-sort-icon {
+    background-position: 5px -52px
+}
+
+.bui-grid-table .sort-asc:hover .bui-grid-sort-icon {
+    background-position: 5px -92px
+}
+
+.bui-grid-table .sort-desc .bui-grid-sort-icon {
+    background-position: 5px -72px
+}
+
+.bui-grid-table .sort-desc:hover .bui-grid-sort-icon {
+    background-position: 5px -112px
+}
+
+.bui-grid-table .bui-grid-row-checked-column,
+.bui-grid-table .grid-header-checked-column {
+    text-align: center;
+    width: 30px;
+    vertical-align: middle;
+    border-left-width: 0
+}
+
+.bui-grid-table .bui-grid-row-checked-column .bui-grid-cell-inner,
+.bui-grid-table .grid-header-checked-column .bui-grid-hd-inner {
+    width: 30px
+}
+
+.bui-grid-table .bui-grid-cell {
+    overflow: hidden;
+    border-top: 1px solid #ededed
+}
+
+.bui-grid-table .bui-grid-cell-empty,
+.bui-grid-table .bui-grid-row-group td {
+    border-top: 1px solid #ededed
+}
+
+.bui-grid-table .bui-grid-body .bui-grid-row-first td {
+    border-top: none
+}
+
+.bui-grid-table .bui-grid-body .bui-grid-table {
+    border-bottom: 1px solid #ededed
+}
+
+.bui-grid-table .bui-grid-header-row .bui-grid-cell-empty {
+    line-height: 0;
+    border: none
+}
+
+.bui-grid-table .bui-grid-cell-inner {
+    padding: 2px 0;
+    position: relative;
+    overflow: hidden
+}
+
+.bui-grid-table .bui-grid-cell-text {
+    padding: 0 4px;
+    display: block;
+    min-height: 20px;
+    min-width: 25px
+}
+
+.bui-grid-table .bui-grid-error-cell {
+    position: relative
+}
+
+.bui-grid-table .bui-grid-error-cell .bui-grid-cell-text {
+    padding-right: 20px
+}
+
+.bui-grid-table .bui-grid-cell,
+.bui-grid-table .bui-grid-cell-empty {
+    word-break: break-all;
+    word-wrap: break-word
+}
+
+.bui-grid-table .grid-command {
+    color: #36c;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 5px
+}
+
+.bui-grid-table .grid-command:hover {
+    color: #f60
+}
+
+.bui-grid-table .grid-command.disable {
+    color: #ccc
+}
+
+td.bui-grid-cell-empty {
+    height: 0;
+    line-height: 0
+}
+
+.bui-grid-width .bui-grid-body {
+    overflow-x: auto;
+    overflow-y: hidden
+}
+
+.bui-grid-height .bui-grid-body {
+    overflow-x: auto;
+    overflow-y: scroll;
+    position: relative
+}
+
+.bui-grid-strip .bui-grid-row-odd {
+    background-color: #fff
+}
+
+.bui-grid-strip .bui-grid-row-even {
+    background-color: #fafafa
+}
+
+.bui-grid .bui-pagingbar {
+    float: right;
+    margin: 3px 0 0
+}
+
+.bui-grid-bbar:after,
+.bui-grid-bbar:before,
+.bui-grid-tbar:after,
+.bui-grid-tbar:before {
+    display: table;
+    content: ""
+}
+
+.bui-grid-tbar {
+    height: 34px;
+    line-height: 34px
+}
+
+.bui-grid-bbar {
+    background-color: #f4f4f4;
+    background-image: -moz-linear-gradient(top, #fff, #e4e4e4);
+    background-image: -ms-linear-gradient(top, #fff, #e4e4e4);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#e4e4e4));
+    background-image: -webkit-linear-gradient(top, #fff, #e4e4e4);
+    background-image: -o-linear-gradient(top, #fff, #e4e4e4);
+    background-image: linear-gradient(top, #fff, #e4e4e4);
+    border: 1px solid #ddd;
+    border-top: none;
+    line-height: 18px
+}
+
+.bui-grid-checkBox-container,
+.bui-grid-radio-container {
+    text-align: center
+}
+
+.bui-grid .x-grid-checkbox {
+    background: url(//static.zhongan.com/website/online/assets/images/check_icon-100-100.gif) 0 3px no-repeat;
+    width: 13px;
+    height: 20px;
+    display: inline-block
+}
+
+.x-grid-checkbox:hover {
+    background-position: -16px 3px
+}
+
+.bui-grid-row-selected .x-grid-checkbox,
+.checked .x-grid-checkbox {
+    background-position: 0 -18px
+}
+
+.bui-grid-row-disabled .x-grid-checkbox {
+    background-position: -48px 3px
+}
+
+.bui-grid-row-selected.bui-grid-row-disabled .x-grid-checkbox {
+    background-position: -48px -18px
+}
+
+.bui-grid-cascade-icon {
+    cursor: pointer;
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    background-position: 0 -440px
+}
+
+.bui-grid-cascade-expand .bui-grid-cascade-icon {
+    background-position: -30px -440px
+}
+
+.bui-grid-cascade-collapse {
+    display: none
+}
+
+.grid-column-menu .bui-menu-item-selected .icon {
+    background-position: -144px -72px
+}
+
+.bui-grid-cell-error {
+    position: absolute;
+    right: 10px;
+    top: 6px
+}
+
+.bui-grid-header .table {
+    height: auto
+}
+
+.bui-grid-summary-row {
+    font-weight: 700
+}
+
+.bui-grid-summary-row:first-child td {
+    border-top: 1px solid #c5c5c5
+}
+
+.x-datepicker-next,
+.x-datepicker-prev,
+.x-datepicker-selected a,
+.x-datepicker-today a {
+    border: 1px solid #40C16B
+}
+
+td.x-grid-rownumber {
+    background-color: #e4e4e4;
+    background-image: -moz-linear-gradient(left, #fff, #e4e4e4);
+    background-image: -ms-linear-gradient(left, #fff, #e4e4e4);
+    background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#fff), to(#e4e4e4));
+    background-image: -webkit-linear-gradient(left, #fff, #e4e4e4);
+    background-image: -o-linear-gradient(left, #fff, #e4e4e4);
+    background-image: linear-gradient(left, #fff, #e4e4e4);
+    background-repeat: repeat-x;
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e4e4e4', GradientType=1);
+    text-align: center
+}
+
+.bui-grid .bui-pagingbar .bui-bar-item-button-hover,
+.image-pbar .bui-bar-item-button-hover {
+    background-position: -130px 0
+}
+
+.bui-grid-table .bui-grid-hd-hover .bui-grid-hd-inner,
+.bui-grid-table .bui-grid-hd-open .bui-grid-hd-inner {
+    background-color: #C7EBD0;
+    background-image: -moz-linear-gradient(top, #C7EBD0, #C7EBD0);
+    background-image: -ms-linear-gradient(top, #C7EBD0, #C7EBD0);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#C7EBD0), to(#C7EBD0c));
+    background-image: -webkit-linear-gradient(top, #C7EBD0, #C7EBD0);
+    background-image: -o-linear-gradient(top, #C7EBD0, #C7EBD0);
+    background-image: linear-gradient(top, #C7EBD0, #C7EBD0);
+    background-repeat: repeat-x;
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#C7EBD0', endColorstr='#C7EBD0', GradientType=0)
+}
+
+.bui-grid .bui-grid-table .bui-grid-row-hover,
+.bui-grid .bui-grid-table .bui-grid-row-selected,
+.bui-simple-grid .bui-grid-table .bui-grid-row-hover,
+.bui-simple-grid .bui-grid-table .bui-grid-row-selected {
+    background-color: #C7EBD0
+}
+
+.bui-grid-row-expanded .x-tree-elbow-expander,
+.bui-tree-item-expanded .x-tree-elbow-expander {
+    background-position: -16px 0
+}
+
+.bui-grid-row-expanded .x-tree-elbow-expander:hover,
+.bui-tree-item-expanded .x-tree-elbow-expander:hover {
+    background-position: -48px 0
+}
+
+.bui-grid-row-expanded .x-tree-elbow-dir,
+.bui-tree-item-expanded .x-tree-elbow-dir {
+    background-position: -20px -80px
+}
+
+.bui-grid-row-checked .x-tree-icon-checkbox,
+.bui-grid-row-checked .x-tree-icon-radio,
+.bui-tree-item-checked .x-tree-icon-checkbox,
+.bui-tree-item-checked .x-tree-icon-radio {
+    background-position: 0 -20px
+}
+
+.bui-grid-row-checked .x-tree-icon-checkbox:hover,
+.bui-grid-row-checked .x-tree-icon-radio:hover,
+.bui-tree-item-checked .x-tree-icon-checkbox:hover,
+.bui-tree-item-checked .x-tree-icon-radio:hover {
+    background-position: -16px -20px
+}
+
+.bui-grid-row-partial-checked .x-tree-icon-checkbox,
+.bui-grid-row-partial-checked .x-tree-icon-radio,
+.bui-tree-item-partial-checked .x-tree-icon-checkbox,
+.bui-tree-item-partial-checked .x-tree-icon-radio {
+    background-position: 0 -40px
+}
+
+.bui-grid-row-partial-checked .x-tree-icon-checkbox:hover,
+.bui-grid-row-partial-checked .x-tree-icon-radio:hover,
+.bui-tree-item-partial-checked .x-tree-icon-checkbox:hover,
+.bui-tree-item-partial-checked .x-tree-icon-radio:hover {
+    background-position: -16px -40px
+}
+
+.bui-tree-item-disabled .bui-grid-row-disabled .x-tree-icon-checkbox,
+.bui-tree-item-disabled .bui-grid-row-disabled .x-tree-icon-radio {
+    background-position: -48px 0
+}
+
+.bui-grid-row-checked.bui-grid-row-disabled .x-tree-icon-checkbox,
+.bui-grid-row-checked.bui-grid-row-disabled .x-tree-icon-radio,
+.bui-tree-item-checked.bui-tree-item-disabled .x-tree-icon-checkbox,
+.bui-tree-item-checked.bui-tree-item-disabled .x-tree-icon-radio {
+    background-position: -48px -20px
+}
+
+.bui-grid .bui-grid-row-loading .x-tree-elbow-expander,
+.bui-tree-list .bui-tree-item-loading .x-tree-elbow-expander {
+    background: url(//static.zhongan.com/website/online/assets/images/load-16-16.gif) no-repeat
+}
+
+.bui-tree-grid .bui-grid-table .bui-grid-cell-text {
+    display: inline-block
+}
+
+.bui-datagrid {
+    display: none;
+    position: absolute;
+    z-index: 99;
+    font-size: 14px;
+    line-height: 24px
+}
+
+.bui-grid-cell-empty {
+    display: none
+}
+
+.x-datepicker-header {
+    background-color: #40C16B
+}
+
+.x-datepicker-selected a {
+    background: left top repeat-x #BAE9C9;
+    color: #008C00
+}
+
+.x-datepicker-today a {
+    color: #008C00
+}
+
+.x-datepicker-date a:hover {
+    background-color: #40C16B
+}
+
+input.x-datepicker-time {
+    padding: 2px 5px;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .075) inset
+}
+
+.za-ins-item-group .radio-btn,
+.za-ins-item-group .radio-btn1 {
+    height: 35px;
+    line-height: 35px;
+    margin: 0 5px 10px 0;
+    padding: 0 10px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer
+}
+
+.x-monthpicker-item-selected a,
+.x-timepicker .bui-list-item-selected a {
+    background-color: #69cd8a;
+    border: 1px solid #40c16b;
+    border-radius: 3px
+}
+
+.x-monthpicker-item-hover a,
+.x-timepicker .bui-list-item-hover a {
+    background-color: #bae9c9;
+    border: 1px solid #40c16b;
+    border-radius: 3px;
+    color: #000
+}
+
+.x-datepicker-nextday a,
+.x-datepicker-prevday a {
+    color: #898989
+}
+
+.x-datepicker-disabled a {
+    color: #cfcfcf
+}
+
+.za-ins-item-group .radio-btn {
+    border: 1px solid #DDD;
+    background-color: #fff
+}
+
+.za-ins-item-group .radio-btn1 {
+    border: 1px solid #eee;
+    color: #fff;
+    background-color: #eee
+}
+
+.za-ins-item-group .radio-btn.lr30 {
+    padding: 0 30px
+}
+
+.za-ins-item-group .selected {
+    background-color: #40c16b;
+    color: #fff;
+    border-color: #40c16b
+}
+
+.za-ins-margin15 {
+    margin: 15px
+}
+
+.za-com-m-t10 {
+    margin-top: 10px
+}
+
+.za-com-m-t15 {
+    margin-top: 15px
+}
+
+.za-com-m-t25,
+.za-ser-padtop25 {
+    margin-top: 25px
+}
+
+.za-com-m-l30 {
+    margin-left: 30px
+}
+
+.za-com-m-l150 {
+    margin-left: 150px
+}
+
+.za-com-ta-cen {
+    text-align: center
+}
+
+.za-pro-buy-btn-h36 {
+    height: 36px;
+    line-height: 36px
+}
+
+.za-ab-content {
+    padding: 0 20px
+}
+
+.za-btn-rm {
+    margin: 20px 0;
+    text-align: center
+}
+
+.za-btn-greenbd {
+    margin: 0 auto;
+    display: inline-block;
+    border: 2px solid #38c267;
+    color: #38c267;
+    border-radius: 3px;
+    padding: 10px 50px
+}
+
+.za-eat-pinkcon {
+    border: 1px dashed #ffe6c8;
+    background-color: #fffdf5;
+    padding: 20px 60px
+}
+
+.za-eat-pinkcon-d {
+    width: 470px;
+    margin: 0 auto
+}
+
+.za-eat-pinkcon-d>img {
+    margin-right: 15px
+}
+
+.za-ser-formlist {
+    padding: 35px
+}
+
+.za-ser-formlist .formdt {
+    height: 40px;
+    line-height: 40px;
+    background-color: #F6F6F6;
+    text-indent: 20px;
+    font-size: 16px;
+    margin-bottom: 15px
+}
+
+.za-ppinfo-table {
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    margin-bottom: 15px
+}
+
+.za-ppinfo-table td,
+.za-ppinfo-table th {
+    padding: 10px 0 10px 50px;
+    border-left: 1px solid #eee;
+    border-top: 1px solid #eee
+}
+
+.za-ppinfo-table th {
+    background-color: #fffdf5;
+    text-align: left
+}
+
+.za-ppinfo-table td {
+    color: #8b8a91;
+    text-align: left
+}
+
+.za-ppinfo-table td.tl,
+.za-ppinfo-table th.tl {
+    text-align: left
+}
+
+.za-ppinfo-table td.tc,
+.za-ppinfo-table th.tc {
+    text-align: center
+}
+
+.za-ppinfo-table td.tr,
+.za-ppinfo-table th.tr {
+    text-align: right
+}
+
+.za-ppinfo-table td.red {
+    color: #ff6f3c!important
+}
+
+.za-link-read {
+    float: right;
+    color: #38c267;
+    margin-right: 10px;
+    background: url(//static.zhongan.com/website/online/assets/images/za-link-read.png) left center no-repeat;
+    padding-left: 5px;
+    cursor: pointer
+}
+
+.za-acc-ent-QA {
+    width: 48%;
+    border: 1px solid #e8e8e8
+}
+
+.za-acc-ent-QA h1 span.gg,
+.za-acc-ent-QA h1 span.question {
+    padding: 5px 32px;
+    width: 26px;
+    height: 26px;
+    font-size: 18px;
+    font-weight: 700
+}
+
+.za-acc-ent-QA h1 {
+    line-height: 50px;
+    background: #f5f5f5;
+    text-align: center;
+    border-bottom: 1px solid #e8e8e8
+}
+
+.za-acc-ent-QA h1 span.question {
+    background: url(//static.zhongan.com/website/online/assets/images/za-QA-icon.png) left center no-repeat
+}
+
+.za-acc-ent-QA h1 span.gg {
+    background: url(//static.zhongan.com/website/online/assets/images/za-GG-icon.png) left center no-repeat
+}
+
+.bd-bt-dd-c {
+    border-bottom: 1px dotted #ccc
+}
+
+.za-acc-QA-gp {
+    margin: 0 15px
+}
+
+.za-acc-pol-list1 span {
+    float: left;
+    padding: 32px 0;
+    text-align: center
+}
+
+.za-acc-pol-list1 span.date {
+    padding: 15px 0;
+    line-height: 25px
+}
+
+.za-acc-orlist-tools {
+    padding: 0 10px;
+    height: 58px;
+    margin: 25px auto 0
+}
+
+.za-acc-orlist-tools>a,
+.za-acc-orlist-tools>span {
+    width: 60px;
+    height: 0;
+    float: left;
+    padding-top: 35px;
+    color: #40C16B;
+    cursor: pointer;
+    text-align: center
+}
+
+.za-acc-orlist-tools>a font {
+    display: none;
+    font-size: 14px
+}
+
+.za-acc-orlist-tools>a:hover font {
+    display: block
+}
+
+.za-acc-orlist-tools>a.za-my-icon-bgop1,
+.za-acc-orlist-tools>a.za-my-icon-bgop1:hover {
+    background-position: 13px -150px;
+    color: #40c16b
+}
+
+.za-acc-orlist-tools>a.za-my-icon-bgop2,
+.za-acc-orlist-tools>a.za-my-icon-bgop2:hover {
+    background-position: -43px -150px;
+    color: #40c16b
+}
+
+.za-acc-orlist-tools>a.za-my-icon-bgop3,
+.za-acc-orlist-tools>a.za-my-icon-bgop3:hover {
+    background-position: -100px -150px;
+    color: #40c16b
+}
+
+.za-acc-orlist-tools>a.za-my-icon-bgop4,
+.za-acc-orlist-tools>a.za-my-icon-bgop4:hover {
+    background-position: -156px -150px;
+    color: #40c16b
+}
+
+.za-acc-orlist-tools>a.za-my-icon-correct,
+.za-acc-orlist-tools>a.za-my-icon-correct:hover {
+    background-position: -86px -920px;
+    color: #40c16b
+}
+
+.za-acc-orlist-tools>a.za-my-icon-pay,
+.za-acc-orlist-tools>a.za-my-icon-pay:hover {
+    background-position: 14px -40px;
+    color: #40c16b
+}
+
+.za-acc-orlist-tools>a:hover {
+    height: 18px
+}
+
+.more_btn .icon.za-my-icon-bgop1,
+.more_btn .icon.za-my-icon-bgop1:hover {
+    background-position: 13px -150px;
+    color: #40c16b
+}
+
+.more_btn .icon.za-my-icon-bgop2,
+.more_btn .icon.za-my-icon-bgop2:hover {
+    background-position: -43px -150px;
+    color: #40c16b
+}
+
+.more_btn .icon.za-my-icon-bgop3,
+.more_btn .icon.za-my-icon-bgop3:hover {
+    background-position: -100px -150px;
+    color: #40c16b
+}
+
+.more_btn .icon.za-my-icon-bgop4,
+.more_btn .icon.za-my-icon-bgop4:hover {
+    background-position: -156px -150px;
+    color: #40c16b
+}
+
+.more_btn .icon.za-my-icon-correct,
+.more_btn .icon.za-my-icon-correct:hover {
+    background-position: -86px -920px;
+    color: #40c16b
+}
+
+.more_btn .icon.za-my-icon-pay,
+.more_btn .icon.za-my-icon-pay:hover {
+    background-position: 14px -40px;
+    color: #40c16b
+}
+
+.za-ins-item {
+    padding-top: 15px
+}
+
+.za-ins-item-group {
+    vertical-align: middle;
+    height: 45px
+}
+
+.za-ins-item p {
+    margin-bottom: 15px
+}
+
+.za-agree-ullist>li {
+    border-bottom: 1px dashed #bbb;
+    height: 25px;
+    margin: 0 10px;
+    padding: 10px
+}
+
+.za-agree-ullist>li>a {
+    color: #555
+}
+
+.za-agree-ullist>li>a:hover {
+    color: #40c16b;
+    text-decoration: underline
+}
+
+.za-accdec-irem {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+    margin-top: -2px;
+    width: 24px;
+    height: 27px;
+    background-image: url(//static.zhongan.com/website/online/assets/images/rem_icon.png);
+    background-repeat: no-repeat
+}
+
+.m-up-imgbd>span {
+    display: table-cell
+}
+
+.m-up-imglsit {
+    max-width: 640px
+}
+
+.m-up-imglsit>a {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 2px;
+    margin-bottom: 8px;
+    margin-right: 8px;
+    display: inline-block;
+    position: relative
+}
+
+.m-up-imglsit>a>img {
+    max-height: 100px;
+    vertical-align: top
+}
+
+.m-up-imglsit>a>.imgdel {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 20px;
+    height: 20px;
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-ins-icon.png);
+    background-position: 0 -204px
+}
+
+#bankAreaDropList td.grid-td-grid-hd1[width="40"],
+#bankBranchNameGirdDropList td.grid-td-grid-hd3[width="40"],
+#bankGirdDropList td.grid-td-grid-hd2[width="40"] {
+    width: 40px
+}
+
+#bankAreaDropList td.x-grid-rownumber,
+#bankBranchNameGirdDropList td.x-grid-rownumber,
+#bankGirdDropList td.x-grid-rownumber {
+    width: 40px;
+    text-align: center
+}
+
+.za-link-download {
+    float: right;
+    color: #38c267;
+    margin-right: 10px;
+    background: url(//static.zhongan.com/website/online/assets/images/za-link-download.png) left center no-repeat;
+    padding-left: 5px;
+    cursor: pointer
+}
+
+.m-manual {
+    display: block;
+    vertical-align: top;
+    max-width: 230px;
+    margin-top: 40px;
+    margin-left: 40px;
+    float: left
+}
+
+.m-manual-img {
+    height: 130px;
+    text-align: center
+}
+
+.m-manual-img>img {
+    vertical-align: bottom
+}
+
+.m-manual p {
+    margin-bottom: 25px;
+    line-height: 20px
+}
+
+.m-up-imgamplify {
+    max-width: 800px
+}
+
+.za-acc-orlist-th .too-bespeak {
+    font-size: 16px;
+    font-weight: 700;
+    float: right;
+    margin-right: 15px;
+    color: #40c16b;
+    cursor: pointer
+}
+
+.za-ins-mod {
+    width: 100%;
+    margin: 15px 0
+}
+
+.za-ins-mod .disable-cover,
+.za-ins-mod .disable-cover-1 {
+    position: absolute;
+    display: none;
+    background: url(0) no-repeat
+}
+
+.za-ins-mod-pitem .za-ins-select,
+.za-ins-mod.disabled .disable-cover,
+.za-ins-mod.select-idcard .disable-cover-1 {
+    display: block
+}
+
+.za-acc-instop,
+.za-acc-instop-bg1 {
+    background-position: 0 0
+}
+
+.za-ins-mod .disable-cover1 {
+    height: 105px;
+    bottom: 50px;
+    left: 0;
+    width: 100%
+}
+
+.za-ins-mod .disable-cover2,
+.za-ins-mod .disable-cover6 {
+    width: 45%;
+    height: 60px;
+    left: 50%;
+    bottom: 50px
+}
+
+.za-ins-mod .disable-cover3 {
+    width: 45%;
+    left: 0;
+    height: 155px;
+    bottom: 0
+}
+
+.za-ins-mod .disable-cover4 {
+    width: 45%;
+    left: 0;
+    bottom: 0;
+    height: 46px
+}
+
+.za-ins-mod .disable-cover5 {
+    width: 45%;
+    left: 50%;
+    bottom: 50px;
+    height: 100px
+}
+
+.za-ins-mod.disabled,
+.za-ins-mod.select-idcard {
+    position: relative
+}
+
+.za-com-margin-no {
+    margin: 0
+}
+
+.za-ins-mod-p {
+    line-height: 42px;
+    padding: 5px 0;
+    margin-bottom: 5px
+}
+
+.za-ins-mod-p .za-ins-nomarpad {
+    margin: 0;
+    padding: 0
+}
+
+.za-ins-mod-p .message {
+    padding-left: 120px
+}
+
+.za-ins-mod-p:after {
+    overflow: hidden;
+    content: "";
+    display: block;
+    height: 0
+}
+
+.za-ins-mod-pitem {
+    float: left;
+    width: 50%
+}
+
+.za-ins-mod-pitem.za-com-w100 {
+    width: 100%
+}
+
+.za-ins-mod-con .za-com-mr15 {
+    margin-right: 15px
+}
+
+.za-ins-mod-title {
+    width: 100px;
+    height: 32px;
+    line-height: 32px;
+    text-align: right;
+    float: left
+}
+
+.za-ins-mod-con {
+    line-height: 32px
+}
+
+.za-ins-mod-con .za-ins-select1 {
+    float: left;
+    height: 32px;
+    margin-right: 10px
+}
+
+.za-ins-bc-pink {
+    background-color: #FFFDF5
+}
+
+.za-ins-thbc-pink {
+    background-color: #FFF4E8
+}
+
+.za-ins-bc-gray {
+    background-color: #F6F6F6
+}
+
+.za-ins-border-pink {
+    border: 1px dashed #FFE6C9
+}
+
+.za-ins-border-gray {
+    border: 1px solid #E3E3E3
+}
+
+.za-ins-bt-gray {
+    border-top: 1px dashed #EEE
+}
+
+.za-ins-br-pink {
+    border-right: 1px dashed #FFE6C9
+}
+
+.za-ins-itemTab,
+.za-ins-itemTab tr {
+    width: 100%
+}
+
+.za-ins-itemTab tr>td {
+    line-height: 22px;
+    padding: 10px 0
+}
+
+.za-ins-itemTab .za-ins-tdstate {
+    height: 26px;
+    line-height: 26px;
+    padding: 18px 15px
+}
+
+.za-ins-itemTab .za-ins-tdstate>p>a {
+    color: #40c16b
+}
+
+.za-ins-itemTab .za-ins-tdstate>p>a:hover {
+    text-decoration: underline
+}
+
+table.za-ins-tabPink td {
+    padding-left: 15px;
+    border: 1px solid #eee
+}
+
+table.za-ins-tabPink td.tdTitle {
+    background-color: #FFFDF5;
+    text-align: center;
+    padding-left: 0;
+    width: 20%
+}
+
+table.za-com-ta-cen td {
+    text-align: center
+}
+
+table.za-ser-ta-cen td {
+    text-align: center;
+    padding: 0
+}
+
+table.za-ser-ta-cen td.tdTitle {
+    width: auto
+}
+
+.za-ins-tdwid70 {
+    width: 70%
+}
+
+.za-ins-tdwid50 {
+    width: 50%
+}
+
+.za-ins-tdwid40 {
+    width: 40%
+}
+
+.za-ins-tdwid30 {
+    width: 30%
+}
+
+.za-ins-tdwid20 {
+    width: 20%
+}
+
+.za-acc-orlist-th {
+    height: 36px;
+    line-height: 36px
+}
+
+.za-acc-instop p,
+.za-eleBlock {
+    line-height: 20px
+}
+
+.za-acc-orlist-th span {
+    float: left;
+    text-align: center
+}
+
+.za-acc-orlist-th.pad15 span {
+    padding: 0 0 0 15px
+}
+
+.za-eleBlock {
+    height: 48px;
+    word-wrap: break-word;
+    word-break: normal;
+    margin: 25px 0 0;
+    padding-top: 20px;
+    overflow: hidden
+}
+
+.za-acc-orlist-w_9 {
+    width: 9%
+}
+
+.za-acc-orlist-w_11 {
+    width: 11%
+}
+
+.za-acc-orlist-w_12 {
+    width: 12%
+}
+
+.za-acc-orlist-w_19 {
+    width: 19%
+}
+
+.za-acc-orlist-w_18 {
+    width: 18%
+}
+
+.za-acc-orlist-w180 {
+    width: 180px
+}
+
+.za-acc-orlist-w160 {
+    width: 160px
+}
+
+.za-acc-orlist-w60 {
+    width: 60px
+}
+
+.za-acc-orlist-w80 {
+    width: 80px
+}
+
+.za-acc-orlist-w90 {
+    width: 90px
+}
+
+.za-acc-orlist-w100 {
+    width: 100px
+}
+
+.za-acc-orlist-w108 {
+    width: 108px
+}
+
+.za-acc-orlist-w120 {
+    width: 120px
+}
+
+.za-acc-orlist-w140 {
+    width: 140px
+}
+
+.za-acc-orlist-w200 {
+    width: 200px
+}
+
+.za-acc-orlist-w270 {
+    width: 270px
+}
+
+.za-acc-orlist-w278 {
+    width: 278px
+}
+
+.za-acc-orlist-w220 {
+    width: 220px
+}
+
+.za-acc-orlist-w240 {
+    width: 240px
+}
+
+.za-acc-orlist-w260 {
+    width: 260px
+}
+
+.za-acc-orlist-w280 {
+    width: 280px
+}
+
+.za-com-w100 {
+    width: 100%
+}
+
+.za-acc-instop {
+    padding-left: 55px;
+    margin-bottom: 15px;
+    height: 40px;
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-deicon.png);
+    background-repeat: no-repeat
+}
+
+.za-acc-nav-list>li>a>.bg1,
+.za-acc-nav-list>li>a>.bg2,
+.za-acc-nav-list>li>a>.bg3,
+.za-acc-nav-list>li>a>.bg4,
+.za-acc-nav-list>li>a>.bg5,
+.za-acc-nav-list>li>a>.bg6,
+.za-acc-nav-list>li>a>.bg7,
+.za-acc-nav-list>li>a>.bg8,
+.za-acc-nav-list>li>a>.za-icon-point,
+.za-acc-pericon {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon.png);
+    background-repeat: no-repeat
+}
+
+.za-acc-own {
+    width: 550px
+}
+
+.za-acc-own>li {
+    float: left;
+    width: 250px;
+    line-height: 64px
+}
+
+.za-acc-progress {
+    width: 240px;
+    height: 27px;
+    background-color: #EEE;
+    border-radius: 5px
+}
+
+.za-acc-prog-num {
+    border: 1px solid #40C16B;
+    background-color: #40C16B;
+    color: #FFF;
+    text-indent: 1em;
+    font-weight: 600;
+    border-radius: 5px;
+    height: 25px;
+    line-height: 25px
+}
+
+.za-acc-pericon {
+    background-position: 0 -791px;
+    width: 15px;
+    height: 16px;
+    position: absolute;
+    margin-left: -20px
+}
+
+.za-acc-empty {
+    position: absolute;
+    padding-top: 50px;
+    background-color: #FFF;
+    height: 155px
+}
+
+.za-acc-emptyimg {
+    vertical-align: middle
+}
+
+.za-acc-emptytxt {
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 16px;
+    line-height: 22px
+}
+
+.za-acc-Insuritem {
+    width: 260px;
+    height: 205px;
+    float: left
+}
+
+.za-acc-Insuritem.za-brnone {
+    border-right: none
+}
+
+.za-acc-Insuritem p {
+    margin-bottom: 10px
+}
+
+.za-acc-way {
+    position: relative;
+    height: 205px
+}
+
+.za-acc-nav-list>li>a>.bg1 {
+    background-position: 0 -364px
+}
+
+.za-acc-nav-list>li>a>.bg2 {
+    background-position: 0 -411px
+}
+
+.za-acc-nav-list>li>a>.bg3 {
+    background-position: 0 -454px
+}
+
+.za-acc-nav-list>li>a>.bg4 {
+    background-position: 0 -500px
+}
+
+.za-acc-nav-list>li>a>.bg5 {
+    background-position: 0 -543px
+}
+
+.za-acc-nav-list>li>a>.bg6 {
+    background-position: 0 -832px
+}
+
+.za-acc-nav-list>li>a>.bg7 {
+    background-position: -243px 4px
+}
+
+.za-acc-nav-list>li>a>.bg8 {
+    background-position: 0 -966px
+}
+
+.za-acc-nav-list>li>a>.za-icon-point {
+    background-position: -40px -969px
+}
+
+.za-acc-w350 {
+    width: 350px
+}
+
+.za-acc-so .za-acc-so-txt {
+    padding: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 1px #ddd inset, 0 1px 0 #fff;
+    height: 23px;
+    line-height: 23px;
+    color: #666
+}
+
+.za-acc-w350 .za-acc-so-txt {
+    width: 260px;
+    float: left
+}
+
+.za-acc-so-but {
+    width: 70px;
+    border: 1px solid #ccc;
+    height: 35px;
+    line-height: 35px;
+    border-left: none;
+    float: left;
+    color: #999;
+    font-weight: 600;
+    cursor: pointer;
+    padding-left: 10px
+}
+
+.za-acc-orlist-type {
+    position: relative;
+    width: 100%
+}
+
+.za-acc-orlist-type ul {
+    margin-top: -1px;
+    position: absolute;
+    width: 100%;
+    border: 1px solid #E3E3E3;
+    display: none
+}
+
+.za-acc-orlist-type:hover ul {
+    background-color: #fff;
+    display: block;
+    top: 0
+}
+
+.za-acc-orlist-type>ul>li>a {
+    height: 32px;
+    line-height: 32px;
+    display: inherit;
+    text-align: center;
+    color: #666;
+    margin: 1px 2px
+}
+
+.account-mypolicy>a,
+.info_w110,
+.info_w300,
+.info_w350,
+.jigen_li,
+.lin_nor,
+.otherorder-detail_tit_right,
+.otherorders-del,
+.pro_pic1,
+a.pay_right {
+    display: inline-block
+}
+
+.za-acc-orlist-type>ul>li>a:hover {
+    background-color: #40C16B;
+    color: #FFF
+}
+
+.za-acc-orlist-type>ul>li>a.typeicon:hover {
+    background-color: #fff;
+    color: #666
+}
+
+.za-acc-orlist-type>ul>li>a.active {
+    background-color: #40C16B;
+    color: #FFF
+}
+
+#wait-process-tab,
+.za-body-bg-white {
+    background-color: #fff
+}
+
+.account-greena,
+.za-my-manual {
+    color: #40c16b
+}
+
+.za-acc-orlist-type .za-icon-arrow-down {
+    position: relative;
+    margin-right: -20px
+}
+
+.za-my-icon-goon {
+    color: #40c16b;
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-btns-icons-sprite.png);
+    background-position: 14px -40px;
+    background-repeat: no-repeat
+}
+
+.za-my-manual {
+    background-image: url(//static.zhongan.com/website/online/assets/images/manual.png);
+    background-position: 13px 0;
+    background-repeat: no-repeat
+}
+
+.account-mypolicy>a {
+    float: none;
+    vertical-align: top
+}
+
+.mypolicy-nopad {
+    padding: 0
+}
+
+.mypolicy-box,
+.otherorders-box {
+    margin: 30px 25px
+}
+
+.mypolicy-sub-tit {
+    margin-bottom: 30px
+}
+
+.mypolicy-sub-tit>a {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+    padding-right: 25px;
+    margin-right: 25px
+}
+
+.mypolicy-sub-tit>a.active {
+    color: #40c16b
+}
+
+#za-ins-tab {
+    border: none
+}
+
+#wait-process-tab {
+    width: auto;
+    padding: 0 20px;
+    border-bottom: solid 1px #40c16b
+}
+
+#wait-process-tab li {
+    border-right: none;
+    background-color: #f6f6f6;
+    margin-right: 3px;
+    padding: 0 20px
+}
+
+#wait-process-tab>li.active {
+    border: 1px solid #40c16b;
+    border-bottom: none;
+    background-color: #fff
+}
+
+.za-acc-orlist-dlbg2 {
+    border: 1px solid #e3e3e3
+}
+
+.za-acc-orlist-dlbg2 .za-acc-orlist-th {
+    background: #f6f6f6
+}
+
+.za-acc-orlist-dlbg2 .za-acc-orlist-br1 {
+    border-right: 1px solid #e3e3e3
+}
+
+.otherorders-pay {
+    background: #40c16b;
+    color: #fff;
+    padding: 5px 10px;
+    margin-left: 10px;
+    border-radius: 2px
+}
+
+.otherorders-del {
+    float: inherit;
+    vertical-align: baseline
+}
+
+.otherorder-detail {
+    width: 1180px;
+    margin: 0 auto;
+    border: 1px solid #ccc
+}
+
+.otherorder-detail_title {
+    background: #f9f9f9;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    text-indent: 2em;
+    font-weight: 600
+}
+
+.otherorder-detail_ul {
+    height: 100px
+}
+
+.jigen_li {
+    float: left;
+    font-size: 14px;
+    width: 50%;
+    height: 50px;
+    line-height: 50px
+}
+
+.otherorder-detail_w100 {
+    width: 100%
+}
+
+.otherorder-detail_tit_right {
+    width: 140px;
+    text-align: right
+}
+
+.otherorder-detail_wrap {
+    width: 1140px;
+    margin: 20px
+}
+
+.shop_info_tit {
+    height: 40px;
+    background: #eee;
+    line-height: 40px;
+    margin-top: 20px;
+    font-weight: 700
+}
+
+.lightcol,
+.za-acc-pol-list>div.za-my-handle>p {
+    margin-top: 5px
+}
+
+.info_w350 {
+    width: 350px
+}
+
+.info_w160 {
+    width: 160px;
+    display: inline-block
+}
+
+.info_w110 {
+    width: 110px
+}
+
+.info_w300 {
+    width: 300px
+}
+
+.info_tc {
+    text-align: center
+}
+
+.info_tl {
+    text-align: left
+}
+
+.pro_pic1 {
+    width: 68px;
+    height: 68px;
+    border: none;
+    vertical-align: middle;
+    margin-right: 10px
+}
+
+.info_line,
+.shop_info_cont {
+    height: 100px;
+    line-height: 100px
+}
+
+.shop_info_cont {
+    border-bottom: 1px #ccc solid;
+    font-size: 14px
+}
+
+.info_line {
+    vertical-align: middle
+}
+
+.lin_nor {
+    line-height: normal;
+    vertical-align: middle
+}
+
+.info_tr {
+    text-align: right
+}
+
+.info_money {
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px
+}
+
+.info_red {
+    color: #f60;
+    font-size: 18px;
+    font-weight: 700
+}
+
+a.pay_right {
+    width: 180px;
+    height: 40px;
+    line-height: 40px;
+    background: #40c16b;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600
+}
+
+.za-acc-pol-icon,
+.za-acc-pol-name {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-deicon.png);
+    background-position: 10px 0
+}
+
+.lightcol {
+    color: #b7b7b7
+}
+
+.za-acc-orlist-dlbg0 {
+    border: 1px solid #E3E3E3
+}
+
+.za-acc-orlist-dlbg0 .za-acc-orlist-th {
+    background-color: #F6F6F6
+}
+
+.za-acc-orlist-dlbg0 .za-acc-orlist-br {
+    border-right: 1px solid #E3E3E3
+}
+
+.za-acc-orlist-dlbg1 {
+    border: 1px solid #FFE6C9
+}
+
+.za-acc-orlist-dlbg1 .za-acc-orlist-th {
+    background-color: #fff4e8
+}
+
+.za-acc-orlist-dlbg1 .za-acc-orlist-br {
+    border-right: 1px solid #FFE6C9
+}
+
+.za-acc-orlist-gray .za-acc-orlist-th {
+    background-color: #F6F6F6
+}
+
+.za-acc-orTable td {
+    height: 80px;
+    text-align: center
+}
+
+.za-acc-orTable td p {
+    line-height: 22px
+}
+
+.za-acc-orTable td.tl {
+    text-align: left
+}
+
+.za-acc-pol-list span,
+.za-acc-pol-list>div {
+    text-align: center;
+    float: left
+}
+
+.za-acc-pol-list>div.za-my-handle {
+    padding: 10px 0
+}
+
+.za-acc-pol-list>div.za-my-handle .g-mar-lr20 {
+    margin: 0 20px
+}
+
+.za-acc-pol-list>div.za-my-handle>p>a {
+    color: #40c16b;
+    text-decoration: underline
+}
+
+.za-acc-pol-list span {
+    height: 60px;
+    line-height: 60px
+}
+
+.za-acc-pol-name {
+    margin: 10px 0;
+    vertical-align: middle;
+    padding-left: 60px;
+    text-align: left;
+    height: 40px;
+    display: table;
+    background-repeat: no-repeat
+}
+
+.za-my-minh600 {
+    min-height: 600px
+}
+
+.za-acc-pol-name p,
+.za-acc-pol-tools p {
+    line-height: 20px;
+    vertical-align: middle
+}
+
+.za-acc-pol-name1>a>i,
+.za-acc-pol-name1>a>span,
+.za-acc-pol-name1>i,
+.za-acc-pol-name1>span {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+    line-height: 20px
+}
+
+.za-acc-pol-name p {
+    display: table-cell;
+    height: 40px;
+    line-height: inherit;
+    widht: 160px
+}
+
+.za-acc-pol-name table.za-acc-pol-name-table {
+    width: 160px;
+    height: 40px;
+    vertical-align: middle
+}
+
+.za-acc-pol-name p.h40 {
+    height: 40px;
+    line-height: 40px
+}
+
+.za-acc-pol-tools {
+    padding: 10px 0;
+    vertical-align: middle;
+    text-align: center
+}
+
+.za-acc-pol-detail {
+    background-color: #F3F3F3;
+    margin: 0 10px 10px;
+    padding: 10px 0
+}
+
+.za-acc-pol-detail>ul>li {
+    float: left;
+    padding-right: 30px;
+    text-indent: 2em;
+    height: 24px;
+    line-height: 24px
+}
+
+.za-acc-pol-list .za-ins-end-btn {
+    height: 28px;
+    line-height: 28px;
+    width: 100px
+}
+
+.za-acc-gene-icon,
+.za-acc-pol-icon {
+    width: 60px;
+    background-repeat: no-repeat;
+    height: 40px
+}
+
+.za-acc-pol-icon.za-my-icon-bgpro1300005106,
+.za-acc-pol-icon.za-my-icon-bgpro1300290009,
+.za-acc-pol-icon.za-my-icon-bgpro1300290010,
+.za-acc-pol-icon.za-my-icon-bgpro1300290011,
+.za-acc-pol-icon.za-my-icon-bgpro1300930120,
+.za-acc-pol-icon.za-my-icon-bgpro1300930121,
+.za-acc-pol-icon.za-my-icon-bgpro90002 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 10px -1402px;
+    background-repeat: no-repeat
+}
+
+.za-acc-pol-icon.za-my-icon-bgpro5230001 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 10px -1472px;
+    background-repeat: no-repeat
+}
+
+.za-acc-gene-icon {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-gene-icon.png);
+    background-position: 10px 0
+}
+
+.za-my-icon-bgpro5030009,
+.za-my-icon-bgpro5075025,
+.za-my-icon-bgpro5075026 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/index/lawer.png);
+    background-position: 11px 0
+}
+
+i.za-my-icon-bgpro5030009,
+i.za-my-icon-bgpro5075025,
+i.za-my-icon-bgpro5075026 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/index/law_icon.png);
+    background-position: 6px -20px
+}
+
+.za-my-icon-bgpro1300550001,
+.za-my-icon-bgpro1300550002 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/account/icon_hospital.png)
+}
+
+i.za-my-icon-bgpro1300550001,
+i.za-my-icon-bgpro1300550002 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/account/icon_hospital.png);
+    background-position: 10px 0
+}
+
+.za-acc-instop.za-my-icon-bgpro1300005106,
+.za-acc-instop.za-my-icon-bgpro1300290009,
+.za-acc-instop.za-my-icon-bgpro1300290010,
+.za-acc-instop.za-my-icon-bgpro1300290011,
+.za-acc-instop.za-my-icon-bgpro1300930120,
+.za-acc-instop.za-my-icon-bgpro1300930121,
+.za-acc-instop.za-my-icon-bgpro90002 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 0 -1402px;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgpro1300005106,
+.za-my-icon-bgpro1300290009,
+.za-my-icon-bgpro1300290010,
+.za-my-icon-bgpro1300290011,
+.za-my-icon-bgpro1300930120,
+.za-my-icon-bgpro1300930121,
+.za-my-icon-bgpro90002 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 10px -1402px;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgpro1300580005 {
+    background: url(//static.zhongan.com/website/online/assets/images/pnss.png) 0 center no-repeat
+}
+
+i.za-my-icon-bgpro1300580005 {
+    background: url(//static.zhongan.com/website/online/assets/images/pnss.png) center no-repeat
+}
+
+.za-my-icon-bghead {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon.png);
+    background-position: 20px -200px;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bg1 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon.png);
+    background-position: 0 0;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgpro1,
+.za-my-icon-bgpro10083,
+.za-my-icon-bgpro1090280014,
+.za-my-icon-bgpro1300180003,
+.za-my-icon-bgpro1300180004,
+.za-my-icon-bgpro5240071,
+.za-my-icon-bgpro5240072 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon.png);
+    background-position: -210px -210px;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgpro10082,
+.za-my-icon-bgpro1090280015,
+.za-my-icon-bgpro1300180001,
+.za-my-icon-bgpro1300180002,
+.za-my-icon-bgpro2,
+.za-my-icon-bgpro5240073 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon.png);
+    background-position: -210px -280px;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgpro10084,
+.za-my-icon-bgpro1090280016,
+.za-my-icon-bgpro1300190001,
+.za-my-icon-bgpro1300190002,
+.za-my-icon-bgpro3,
+.za-my-icon-bgpro5240074,
+.za-my-icon-bgpro5240075 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon.png);
+    background-position: -210px -350px;
+    background-repeat: no-repeat;
+    height: 40px
+}
+
+.za-my-icon-bgpro10085,
+.za-my-icon-bgpro10087,
+.za-my-icon-bgpro1090080002,
+.za-my-icon-bgpro1090290003,
+.za-my-icon-bgpro1300190003,
+.za-my-icon-bgpro1300190004,
+.za-my-icon-bgpro1300190005,
+.za-my-icon-bgpro4,
+.za-my-icon-bgpro5040006,
+.za-my-icon-bgpro5240076,
+.za-my-icon-bgpro5240077 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon.png);
+    background-position: -210px -420px;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgpro10105,
+.za-my-icon-bgpro10106,
+.za-my-icon-bgpro1300210002,
+.za-my-icon-bgpro1300210003,
+.za-my-icon-bgpro5 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon.png);
+    background-position: -210px -700px;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgpro10107,
+.za-my-icon-bgpro10108,
+.za-my-icon-bgpro6 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon.png);
+    background-position: -210px -770px;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgpro10109,
+.za-my-icon-bgpro1090290001,
+.za-my-icon-bgpro7 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon.png);
+    background-position: -210px -840px;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgpro10081,
+.za-my-icon-bgpro8 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 10px 0;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgpro10013,
+.za-my-icon-bgpro9 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 10px -70px;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgpro10,
+.za-my-icon-bgpro10009,
+.za-my-icon-bgpro10011,
+.za-my-icon-bgpro10015 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 10px -140px;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgpro10089,
+.za-my-icon-bgpro11 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 10px -210px;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgpro10103,
+.za-my-icon-bgpro1090290004,
+.za-my-icon-bgpro12 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 10px -350px;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgpro10104,
+.za-my-icon-bgpro13 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 10px -420px;
+    background-repeat: no-repeat
+}
+
+.za-acc-instop.za-my-icon-bgpro10083,
+.za-acc-instop.za-my-icon-bgpro1300005021,
+.za-acc-instop.za-my-icon-bgpro1300005022,
+.za-acc-instop.za-my-icon-bgpro1300030001,
+.za-acc-instop.za-my-icon-bgpro1300180003,
+.za-acc-instop.za-my-icon-bgpro1300180004 {
+    background-position: -220px -210px
+}
+
+.za-acc-instop.za-my-icon-bgpro10082,
+.za-acc-instop.za-my-icon-bgpro1300180001,
+.za-acc-instop.za-my-icon-bgpro1300180002 {
+    background-position: -220px -280px
+}
+
+.za-acc-instop.za-my-icon-bgpro10084,
+.za-acc-instop.za-my-icon-bgpro1300190001,
+.za-acc-instop.za-my-icon-bgpro1300190002,
+.za-acc-instop.za-my-icon-bgpro90002 {
+    background-position: -220px -350px
+}
+
+.za-acc-instop.za-my-icon-bgpro10085,
+.za-acc-instop.za-my-icon-bgpro10087,
+.za-acc-instop.za-my-icon-bgpro1300190003,
+.za-acc-instop.za-my-icon-bgpro1300190004,
+.za-acc-instop.za-my-icon-bgpro1300190005,
+.za-acc-instop.za-my-icon-bgpro5040006 {
+    background-position: -220px -420px
+}
+
+.za-acc-instop.za-my-icon-bgpro10105,
+.za-acc-instop.za-my-icon-bgpro10106,
+.za-acc-instop.za-my-icon-bgpro1300210002,
+.za-acc-instop.za-my-icon-bgpro1300210003 {
+    background-position: -220px -700px
+}
+
+.za-acc-instop.za-my-icon-bgpro10107,
+.za-acc-instop.za-my-icon-bgpro10108 {
+    background-position: -220px -770px
+}
+
+.za-acc-instop.za-my-icon-bgpro10109 {
+    background-position: -220px -840px
+}
+
+.za-acc-instop.za-my-icon-bgpro10081,
+.za-acc-instop.za-my-icon-bgpro8 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 0 0;
+    background-repeat: no-repeat
+}
+
+.za-acc-instop.za-my-icon-bgpro10013,
+.za-acc-instop.za-my-icon-bgpro9 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 0 -70px;
+    background-repeat: no-repeat
+}
+
+.za-acc-instop.za-my-icon-bgpro10,
+.za-acc-instop.za-my-icon-bgpro10009,
+.za-acc-instop.za-my-icon-bgpro10011,
+.za-acc-instop.za-my-icon-bgpro10015 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 0 -140px;
+    background-repeat: no-repeat
+}
+
+.za-acc-instop.za-my-icon-bgpro10089,
+.za-acc-instop.za-my-icon-bgpro11 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 0 -210px;
+    background-repeat: no-repeat
+}
+
+.za-acc-instop.za-my-icon-bgpro10103,
+.za-acc-instop.za-my-icon-bgpro12 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 0 -350px;
+    background-repeat: no-repeat
+}
+
+.za-acc-instop.za-my-icon-bgpro10104,
+.za-acc-instop.za-my-icon-bgpro13 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 0 -420px;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgpro5,
+.za-my-icon-bgpro6,
+.za-my-icon-bgpro7,
+.za-my-icon-bgprospx,
+.za-my-icon-bgprotbb,
+.za-my-icon-bgprotyx {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon.png);
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgpro5 {
+    background-position: -210px -490px
+}
+
+.za-my-icon-bgpro6,
+.za-my-icon-bgprotyx {
+    background-position: -210px -560px
+}
+
+.za-my-icon-bgpro7,
+.za-my-icon-bgprospx,
+.za-my-icon-bgprotbb {
+    background-position: -210px -630px
+}
+
+.za-my-icon-bgproc8,
+.za-my-icon-bgprohyt {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 10px -280px;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgpro10117,
+.za-my-icon-bgpro14,
+.za-my-icon-bgprohltq,
+.za-my-icon-bgprozdf {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 10px -490px;
+    background-repeat: no-repeat
+}
+
+.za-acc-instop.za-my-icon-bgpro10117,
+.za-acc-instop.za-my-icon-bgpro14,
+.za-acc-instop.za-my-icon-bgprohltq,
+.za-acc-instop.za-my-icon-bgprozdf {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 0 -490px;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgpro10149,
+.za-my-icon-bgpro10150,
+.za-my-icon-bgpro10151,
+.za-my-icon-bgpro1090290002,
+.za-my-icon-bgpro15,
+.za-my-icon-bgpro5025020,
+.za-my-icon-bgprohyx {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 10px -560px;
+    background-repeat: no-repeat
+}
+
+.za-acc-instop.za-my-icon-bgpro10149,
+.za-acc-instop.za-my-icon-bgpro10150,
+.za-acc-instop.za-my-icon-bgpro10151,
+.za-acc-instop.za-my-icon-bgpro15,
+.za-acc-instop.za-my-icon-bgpro5025020,
+.za-acc-instop.za-my-icon-bgprohyx {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 0 -560px;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgpro5025049,
+.za-my-icon-bgpro5080005,
+.za-my-icon-bgprozyb {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 10px -1332px;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgpro16,
+.za-my-icon-bgpro80001,
+.za-my-icon-bgproysx {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 10px -630px;
+    background-repeat: no-repeat
+}
+
+.za-acc-instop.za-my-icon-bgpro16,
+.za-acc-instop.za-my-icon-bgpro80001,
+.za-acc-instop.za-my-icon-bgproysx {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 0 -630px;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgpro10066,
+.za-my-icon-bgpro17,
+.za-my-icon-bgprobcs {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 10px -700px;
+    background-repeat: no-repeat
+}
+
+.za-acc-instop.za-my-icon-bgpro10066,
+.za-acc-instop.za-my-icon-bgpro17,
+.za-acc-instop.za-my-icon-bgprobcs {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 0 -700px;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgpro10094,
+.za-my-icon-bgpro18,
+.za-my-icon-bgprohrb {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 10px -770px;
+    background-repeat: no-repeat
+}
+
+.za-acc-instop.za-my-icon-bgpro10094,
+.za-acc-instop.za-my-icon-bgpro18,
+.za-acc-instop.za-my-icon-bgprohrb {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 0 -770px;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgpro19,
+.za-my-icon-bgpro30015007,
+.za-my-icon-bgpro5015002,
+.za-my-icon-bgpro5025048,
+.za-my-icon-bgprouav {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 10px -840px;
+    background-repeat: no-repeat
+}
+
+.za-acc-instop.za-my-icon-bgpro19,
+.za-acc-instop.za-my-icon-bgpro30015007,
+.za-acc-instop.za-my-icon-bgpro5015002,
+.za-acc-instop.za-my-icon-bgpro5025048,
+.za-acc-instop.za-my-icon-bgprouav {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 0 -840px;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgpro10054,
+.za-my-icon-bgpro20,
+.za-my-icon-bgprokfxm {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 10px -910px;
+    background-repeat: no-repeat
+}
+
+.za-acc-instop.za-my-icon-bgpro10054,
+.za-acc-instop.za-my-icon-bgpro20,
+.za-acc-instop.za-my-icon-bgprokfxm {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 0 -910px;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgpro10088,
+.za-my-icon-bgpro21,
+.za-my-icon-bgprokflt {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 10px -980px;
+    background-repeat: no-repeat
+}
+
+.za-acc-instop.za-my-icon-bgpro10088,
+.za-acc-instop.za-my-icon-bgpro21,
+.za-acc-instop.za-my-icon-bgprokflt {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 0 -980px;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgpro10098,
+.za-my-icon-bgpro10099,
+.za-my-icon-bgpro22,
+.za-my-icon-bgprokfby {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 10px -1050px;
+    background-repeat: no-repeat
+}
+
+.za-acc-instop.za-my-icon-bgpro10098,
+.za-acc-instop.za-my-icon-bgpro10099,
+.za-acc-instop.za-my-icon-bgpro22,
+.za-acc-instop.za-my-icon-bgprokfby {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 0 -1050px;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgpro1090290005,
+.za-my-icon-bgpro1090290006,
+.za-my-icon-bgpro23,
+.za-my-icon-bgpro5045010,
+.za-my-icon-bgpro5045012 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 10px -1120px;
+    background-repeat: no-repeat
+}
+
+.za-acc-instop.za-my-icon-bgpro23,
+.za-acc-instop.za-my-icon-bgpro5045010,
+.za-acc-instop.za-my-icon-bgpro5045012 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 0 -1120px;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgpro1090290007,
+.za-my-icon-bgpro1090290008,
+.za-my-icon-bgpro1300005021,
+.za-my-icon-bgpro1300005022,
+.za-my-icon-bgpro1300030001,
+.za-my-icon-bgpro24,
+.za-my-icon-bgpro5045011,
+.za-my-icon-bgpro5045013 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 10px -1190px;
+    background-repeat: no-repeat
+}
+
+.za-acc-instop.za-my-icon-bgpro1090290007,
+.za-acc-instop.za-my-icon-bgpro1090290008,
+.za-acc-instop.za-my-icon-bgpro24,
+.za-acc-instop.za-my-icon-bgpro5045011,
+.za-acc-instop.za-my-icon-bgpro5045013 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 0 -1190px;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgpro1090290009,
+.za-my-icon-bgpro1090290010,
+.za-my-icon-bgpro1300005023,
+.za-my-icon-bgpro1300260006,
+.za-my-icon-bgpro25,
+.za-my-icon-bgpro5045007,
+.za-my-icon-bgpro5045008 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 10px -1260px;
+    background-repeat: no-repeat
+}
+
+.za-acc-instop.za-my-icon-bgpro1090290009,
+.za-acc-instop.za-my-icon-bgpro1090290010,
+.za-acc-instop.za-my-icon-bgpro1300005023,
+.za-acc-instop.za-my-icon-bgpro1300260006,
+.za-acc-instop.za-my-icon-bgpro25,
+.za-acc-instop.za-my-icon-bgpro5045007,
+.za-acc-instop.za-my-icon-bgpro5045008 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon1.png);
+    background-position: 0 -1260px;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgpro5045017,
+.za-my-icon-bgpro5045018,
+.za-my-icon-bgpro5045019 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon.png);
+    background-position: -210px -350px;
+    background-repeat: no-repeat;
+    height: 40px
+}
+
+.za-acc-instop.za-my-icon-bgpro5045017,
+.za-acc-instop.za-my-icon-bgpro5045018,
+.za-acc-instop.za-my-icon-bgpro5045019,
+.za-acc-instop.za-my-icon-bgpro90002 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon.png);
+    background-position: -220px -350px;
+    background-repeat: no-repeat;
+    height: 40px
+}
+
+.za-my-icon-bgpro5025054,
+.za-my-icon-bgpro5025055,
+.za-my-icon-bgprolyw {
+    background-image: url(//static.zhongan.com/website/online/assets/images/tooh.png);
+    height: 40px
+}
+
+.za-my-icon-bgpro0,
+.za-my-icon-bgpro5025054,
+.za-my-icon-bgpro5025055,
+.za-my-icon-bgprotxxpx {
+    background-image: url(//static.zhongan.com/website/online/assets/images/tx.png);
+    height: 40px
+}
+
+.za-my-icon-bgpro1000480001,
+.za-my-icon-bgpro1300530001,
+.za-my-icon-bgpro50620001,
+.za-my-icon-bgprobank51 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/51bank40.jpg);
+    height: 40px
+}
+
+.za-my-icon-bgpro1300005044 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/school/school40.png);
+    height: 40px
+}
+
+.za-acc-pol-name.za-my-icon-bgproxcly {
+    background-image: url(//static.zhongan.com/website/online/assets/images/server/za-my-ctrip.jpg);
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgop1,
+.za-my-icon-bgop2,
+.za-my-icon-bgop3,
+.za-my-icon-bgop4 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon.png)
+}
+
+.za-acc-Insuritem .za-my-icon-bgpro1 {
+    background-position: -220px -210px
+}
+
+.za-acc-Insuritem .za-my-icon-bgpro2 {
+    background-position: -220px -280px
+}
+
+.za-acc-Insuritem .za-my-icon-bgpro3 {
+    background-position: -220px -350px
+}
+
+.za-acc-Insuritem .za-my-icon-bgpro4 {
+    background-position: -220px -420px
+}
+
+.za-my-icon-bgop1 {
+    background-position: 13px -110px;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgop2 {
+    background-position: -43px -110px;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgop3 {
+    background-position: -100px -110px;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgop4 {
+    background-position: -156px -110px;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgop5,
+.za-my-icon-bgop6 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-operate.png);
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgop5 {
+    background-position: 13px 0
+}
+
+.za-my-icon-bgop6 {
+    background-position: -54px 0
+}
+
+.za-my-icon-bgop7 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon.png);
+    background-position: -214px -150px;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgop16 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-operate.png);
+    background-position: -54px -192px;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-correct {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon.png);
+    background-position: -86px -980px;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-pay {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-btns-icons-sprite.png);
+    background-position: 14px 0;
+    background-repeat: no-repeat
+}
+
+.za-acc-orlist-tools>a.za-my-icon-bgop5,
+.za-acc-orlist-tools>a.za-my-icon-bgop5:hover {
+    background-position: 13px -67px;
+    color: #40C16B
+}
+
+.za-acc-orlist-tools>a.za-my-icon-bgop6,
+.za-acc-orlist-tools>a.za-my-icon-bgop6:hover {
+    background-position: -54px -67px;
+    color: #40C16B
+}
+
+.za-acc-orlist-tools>a.za-my-icon-bgop16,
+.za-acc-orlist-tools>a.za-my-icon-bgop16:hover {
+    background-position: -54px -134px;
+    color: #40C16B
+}
+
+.za-acc-orlist-tools .za-my-icon-pro-rata,
+.za-acc-orlist-tools .za-my-icon-pro-rata:hover {
+    background: url(//static.zhongan.com/website/online/assets/images/account/icon_search_proRata.png) 13px 0 no-repeat;
+    color: #40C16B
+}
+
+.za-my-icon-clear {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon.png);
+    height: 16px;
+    padding-left: 20px;
+    background-position: -85px -789px;
+    background-repeat: no-repeat;
+    cursor: pointer
+}
+
+.za-my-enticon-bg1,
+.za-my-enticon-bg2 {
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+    vertical-align: top;
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon2.png);
+    display: inline-block
+}
+
+.za-my-enticon-bg1 {
+    background-position: 0 0;
+    background-repeat: no-repeat
+}
+
+.za-my-enticon-bg2 {
+    background-position: -52px 0;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgtit1,
+.za-my-icon-bgtit2>i {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon.png);
+    height: 25px;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgtit1 {
+    background-position: 5px -722px;
+    padding-left: 35px;
+    line-height: 25px
+}
+
+.za-my-icon-bgtit2 {
+    line-height: 25px;
+    height: 25px
+}
+
+.za-my-icon-bgtit2>i {
+    background-position: 0 -754px;
+    width: 25px;
+    float: left
+}
+
+.za-my-icon-bgtit3,
+.za-my-icon-bgtit4 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon.png);
+    height: 20px
+}
+
+.za-my-icon-bgtit3 {
+    background-position: 5px -270px;
+    padding-left: 35px;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgtit4 {
+    background-position: 5px -315px;
+    padding: 3px 35px;
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgno,
+.za-my-icon-bgyes {
+    height: 20px;
+    padding: 0 8px;
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon.png);
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgno {
+    background-position: 0 -620px
+}
+
+.za-my-icon-bgyes {
+    background-position: 0 -652px
+}
+
+.za-my-icon-bgso {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon.png);
+    background-position: 5px -675px;
+    background-repeat: no-repeat;
+    background-color: #F2F2F2
+}
+
+.za-my-icon-bgproskty {
+    height: 40px;
+    background-image: url(//static.zhongan.com/website/online/assets/images/skty.png);
+    background-repeat: no-repeat
+}
+
+.za-my-icon-bgpro5040005 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon.png);
+    background-position: -210px -420px;
+    background-repeat: no-repeat
+}
+
+.za-acc-instop.za-my-icon-bgpro1300030002,
+.za-acc-instop.za-my-icon-bgpro1300030003,
+.za-acc-pol-icon.za-my-icon-bgpro1300030002,
+.za-acc-pol-icon.za-my-icon-bgpro1300030003,
+.za-acc-pol-name.za-my-icon-bgpro1300030002,
+.za-acc-pol-name.za-my-icon-bgpro1300030003 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/hyb.png);
+    background-repeat: no-repeat
+}
+
+.za-my-deticon {
+    cursor: pointer
+}
+
+.za-my-deticon>a {
+    color: #5e5e5e
+}
+
+.za-btn-link,
+.za-my-infor tr a {
+    color: #40c16b;
+    text-decoration: underline
+}
+
+.za-my-deticon>b {
+    font-size: 0;
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon.png);
+    width: 12px;
+    height: 7px;
+    background-repeat: no-repeat;
+    margin-left: 15px;
+    vertical-align: middle;
+    display: inline-block
+}
+
+.za-my-deticon>b.bg {
+    background-position: -52px -794px
+}
+
+.za-my-deticon>b.bg1 {
+    background-position: -29px -793px
+}
+
+.za-my-infor .way>a {
+    width: 32px;
+    height: 32px;
+    float: left;
+    vertical-align: middle;
+    margin: 0 5px;
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-login-icon.png)
+}
+
+.za-my-infor .way>a.qq {
+    background-position: 0 0
+}
+
+.za-my-infor .way>a.alipy {
+    background-position: -52px 0
+}
+
+.za-my-infor .way>a.wx {
+    background-position: -104px 0
+}
+
+.za-my-infor .way>a.qq1,
+.za-my-infor .way>a.qq:hover {
+    background-position: 0 -66px
+}
+
+.za-my-infor .way>a.alipy1,
+.za-my-infor .way>a.alipy:hover {
+    background-position: -52px -66px
+}
+
+.za-my-infor .way>a.wx1,
+.za-my-infor .way>a.wx:hover {
+    background-position: -104px -66px
+}
+
+.za-btn-link {
+    background: 0 0;
+    font-family: 'microsoft yahei';
+    font-size: 14px;
+    cursor: pointer
+}
+
+.za-account-cont,
+.za-account-item-hd {
+    font-family: "Microsoft YaHei"
+}
+
+.za-my-page-h1 {
+    font-size: 30px;
+    text-align: center
+}
+
+.za-my-page-body {
+    width: 560px;
+    margin: 0 auto
+}
+
+.za-my-page-body span.pagetitle {
+    width: 140px;
+    display: block;
+    text-align: right;
+    margin-bottom: 20px;
+    float: left;
+    height: 34px;
+    line-height: 34px
+}
+
+.za-my-page-body span.improvetitle {
+    width: 120px;
+    float: left;
+    text-align: right;
+    line-height: 32px
+}
+
+.za-my-page-body .za-verify input.w120 {
+    width: 120px;
+    vertical-align: middle
+}
+
+.za-my-page-body .za-verify img {
+    vertical-align: middle;
+    margin: 0 5px;
+    cursor: pointer
+}
+
+.za-my-page-body .za-verify a {
+    color: #40C16B;
+    margin-left: 5px;
+    text-decoration: underline
+}
+
+.za-my-page-body-btn {
+    padding-left: 135px
+}
+
+.za-tuanxian-table td,
+.za-tuanxian-table th {
+    padding: 10px;
+    border-left: 1px solid #eee;
+    border-top: 1px solid #eee;
+    line-height: 18px;
+    text-align: center
+}
+
+.za-my-page-wid660 {
+    width: 660px
+}
+
+.za-acc-inter-top .za-ins-end-r {
+    width: 790px
+}
+
+.za-acc-inter-top .za-ins-end-h1 {
+    color: #999
+}
+
+.za-ins-pitem .za-com-show {
+    display: block
+}
+
+.za-tuanxian-table {
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    width: 100%
+}
+
+.za-tuanxian-table td {
+    color: #8b8a91
+}
+
+.za-tuanxian-table th {
+    background-color: #fffdf5
+}
+
+.za-tuanxian-table td.tl,
+.za-tuanxian-table th.tl {
+    text-align: left
+}
+
+.za-tuanxian-table td.tc,
+.za-tuanxian-table th.tc {
+    text-align: center
+}
+
+.za-tuanxian-table td.tr,
+.za-tuanxian-table th.tr {
+    text-align: right
+}
+
+.za-tuanxian-table td.red {
+    color: #ff6f3c!important
+}
+
+.za-acc-table {
+    border-right: 1px solid #e3e3e3;
+    border-bottom: 1px solid #e3e3e3;
+    width: 100%;
+    margin-bottom: 15px
+}
+
+.za-acc-table tr {
+    background-color: #f5f8fa
+}
+
+.za-acc-table td,
+.za-acc-table th {
+    text-align: left;
+    padding: 15px 12px;
+    border-left: 1px solid #e3e3e3;
+    border-top: 1px solid #e3e3e3
+}
+
+.za-acc-table.lh10 td,
+.za-acc-table.lh10 th {
+    padding: 8px 12px
+}
+
+.za-acc-table tr.pink {
+    background-color: #fff9e5
+}
+
+.eat-map {
+    position: relative;
+    margin-top: 25px
+}
+
+.eat-map-p,
+.eat-map-t,
+.eat-map-txt {
+    position: absolute
+}
+
+.eat-map #mapbg {
+    width: 100%
+}
+
+.eat-map-p {
+    cursor: pointer
+}
+
+.eat-map.hz .eat-map-p.p1 {
+    left: 405px;
+    top: 285px
+}
+
+.eat-map.hz .eat-map-p.p2 {
+    left: 385px;
+    top: 265px
+}
+
+.eat-map.hz .eat-map-p.p3 {
+    left: 355px;
+    top: 395px
+}
+
+.eat-map.hz .eat-map-p.p4 {
+    left: 345px;
+    top: 275px
+}
+
+.eat-map.hz .eat-map-p.p5 {
+    left: 567px;
+    top: 165px
+}
+
+.eat-map.sh .eat-map-p.p1 {
+    left: 335px;
+    top: 338px
+}
+
+.eat-map.sh .eat-map-p.p2 {
+    left: 345px;
+    top: 288px
+}
+
+.eat-map.sh .eat-map-p.p3 {
+    left: 215px;
+    top: 440px
+}
+
+.eat-map.sh .eat-map-p.p4 {
+    left: 385px;
+    top: 298px
+}
+
+.eat-map.sh .eat-map-p.p5 {
+    left: 515px;
+    top: 545px
+}
+
+.eat-map.bj .eat-map-p.p1 {
+    left: 435px;
+    top: 305px
+}
+
+.eat-map.bj .eat-map-p.p2 {
+    left: 455px;
+    top: 330px
+}
+
+.eat-map.bj .eat-map-p.p3 {
+    left: 405px;
+    top: 380px
+}
+
+.eat-map.bj .eat-map-p.p4 {
+    left: 325px;
+    top: 235px
+}
+
+.eat-map.bj .eat-map-p.p5 {
+    left: 435px;
+    top: 165px
+}
+
+.eat-map-t {
+    bottom: 25px;
+    left: -100px;
+    display: none;
+    z-index: 9
+}
+
+.eat-map-p:hover .eat-map-t {
+    display: block
+}
+
+.eat-map-txt {
+    top: 33px;
+    left: 40px
+}
+
+.eat-map-txt p {
+    font-size: 16px;
+    margin-bottom: 8px
+}
+
+.eat-map-txt p.name {
+    color: #38c267;
+    font-weight: 700;
+    margin-left: 20px;
+    margin-bottom: 13px
+}
+
+.za-acc-QA-gp p.za-acc-QA-Q {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 14px 0 10px;
+    color: #595959
+}
+
+.za-acc-QA-gp p.za-acc-QA-A {
+    line-height: 24px;
+    font-size: 14px;
+    padding: 0 0 15px;
+    color: grey;
+    display: none
+}
+
+.za-proc-table td,
+.za-proc-table th {
+    text-align: center;
+    padding: 18px 20px;
+    border-left: 1px solid #eee;
+    border-top: 1px solid #eee
+}
+
+.za-proc-table {
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    margin-bottom: 15px
+}
+
+.za-proc-table th>p {
+    line-height: inherit;
+    margin-bottom: 10px
+}
+
+.za-proc-table td {
+    line-height: 20px
+}
+
+.za-proc-table td>p {
+    line-height: inherit;
+    margin-bottom: 10px
+}
+
+.za-proc-table th {
+    line-height: 20px;
+    background-color: #38c167;
+    color: #fff
+}
+
+.za-proc-table td.gray {
+    background-color: #f5f7f8
+}
+
+.za-proc-table td.tl {
+    text-align: left
+}
+
+.za-proc-rem>p {
+    margin-bottom: 8px
+}
+
+.txerror {
+    color: red
+}
+
+.more_btn,
+.more_btn ul>li a {
+    color: #40c16b;
+    font-size: 16px
+}
+
+.za-claim-progress {
+    line-height: 20px;
+    padding-left: 2em;
+    margin-top: 20px
+}
+
+.za-claim-progress>img {
+    vertical-align: middle;
+    margin-left: 20px
+}
+
+.za-claim-progress>p {
+    padding-left: 140px
+}
+
+.za-claim-progress>p>span {
+    display: inline-block;
+    width: 191px;
+    text-align: center
+}
+
+.za-my-icon3 {
+    background-image: url(//static.zhongan.com/website/online/assets/images/za-my-icon3.png)!important;
+    background-repeat: no-repeat
+}
+
+.za-my-icon3.bg1 {
+    background-position: 14px -73px
+}
+
+.za-my-icon3.bg2 {
+    background-position: -55px -73px
+}
+
+.za-my-icon3.bg3 {
+    background-position: -124px -73px
+}
+
+.sliderBlock {
+    position: relative;
+    width: 310px;
+    margin-left: 0
+}
+
+.za-acc-orlist-w360 {
+    width: 360px
+}
+
+.more_btn {
+    width: 150px;
+    cursor: pointer;
+    float: right;
+    border-radius: 5px;
+    position: relative;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    top: -8px
+}
+
+.more_btn ul {
+    position: absolute;
+    background: #fff;
+    z-index: 99;
+    width: 100%;
+    border: 1px solid #ddd;
+    left: 0;
+    top: 40px;
+    padding: 0 10px;
+    border-radius: 3px
+}
+
+.more_btn ul>li {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: -1px;
+    position: relative
+}
+
+.more_btn ul>li a {
+    display: block;
+    width: 100%
+}
+
+.more_btn .icon {
+    display: inline-block;
+    width: 46px;
+    height: 35px;
+    padding: 0;
+    position: absolute;
+    top: 5px;
+    left: -12px
+}
+
+.more_btn .arrow {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAASCAYAAACnxdXaAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjFCOTZGQTIwQzMyNDExRTVBNzRGRTkxQkRBMjJGNUZGIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjFCOTZGQTIxQzMyNDExRTVBNzRGRTkxQkRBMjJGNUZGIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MjA2REIyRkZDMzIzMTFFNUE3NEZFOTFCREEyMkY1RkYiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MjA2REIzMDBDMzIzMTFFNUE3NEZFOTFCREEyMkY1RkYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4HFly+AAACHklEQVR42ryUTWsTURSG70wm38kkmSC0YOtHV5K66dIPVOrKRYlZthGUFiy40E2ha/sPSrf9CwUX3fgLXLh1GYUBV+IiJA2Yr+nzpmkJlNhMGj1wmJk7577vfc8951i1Ws2EtDi+hFeG30e4QP5MCmCHZQyCYNOyrG/5fH5PrnethcFwQsS6gD93HKecTCaN67oGQtPr9Uyr1ap0u91ffH8mrj5L0juQfoSw5HmegXywqHdstV6vz0P6g/evM0lvv99/ZNv2TjabnccvCGWRSMRkMhnD+hwxH4h9fF2lOtQcCrai0egGd2ji8filIKUbQo8Ub5DugCUf/4l3Qyslnbfwt6lU6kGhUDAQj43VP8UoVnvwxdBKRYjCN6TyPelzAft7SmxbhLqKu51O5x2qgQgOwfg+qVKLzeVYLLbO6ZNXEY6aYimulPaC8VJYVyrldAucbo1NmwAspdPpgYqJG/9MsYPa25C+RnEbzE9g+mOVErDK4yCXy93XHYUhHCVmv3p5GbJ9tdQ4pWkIX6CwqhTJ1fzT2vkdo1TD4xXKT8A75tfJKGkJ0l3Kf0UK1X/XNQQMKhrcZ+12Oz9M8Rdn2PwPqdJtqnRBzT8LwtHhIUyIb6JYVR0R6T1OsE2fVTVPE4mEmbUNMW+Q4irDw7JRuUWFPtUMVTr+lQm7WCwauJ5Yvu//Ju+e5uf/sGazaaxGoxGoyqZpjWmMuzWnAgwAJizDH82kNnsAAAAASUVORK5CYII=) no-repeat;
+    display: block;
+    width: 29px;
+    height: 9px;
+    position: absolute;
+    top: -9px;
+    right: 37px
+}
+
+.arrow_down {
+    border: 7px solid transparent;
+    border-top-color: #40c16b;
+    position: absolute;
+    top: 16px;
+    right: 24px
+}
+
+.za-gray-border {
+    border: 1px solid #ddd
+}
+
+.za-account-cont {
+    padding: 30px
+}
+
+.za-account-tips-mod {
+    min-height: 30px;
+    line-height: 30px;
+    color: #666;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #fff4e8;
+    border: 1px solid #ffe6c7
+}
+
+.za-account-item-bd .za-item-hd .za-col,
+.za-account-item-hd {
+    font-weight: 700;
+    background-color: #f6f6f6
+}
+
+.za-account-tips-mod .za-numb {
+    color: #ff6e31
+}
+
+.za-account-item-mod {
+    margin-bottom: 20px
+}
+
+.za-account-item-hd {
+    height: 40px;
+    line-height: 40px;
+    color: #333;
+    margin-bottom: 10px;
+    padding-left: 20px
+}
+
+div.za-account-item-list ul,
+ul.za-account-item-list {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    color: #666
+}
+
+.za-account-item-bd .za-item-bd,
+.za-account-item-bd .za-item-hd {
+    display: table-row;
+    line-height: 1.5;
+    text-align: center
+}
+
+.za-account-item-bd .za-col {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 5px
+}
+
+.za-account-item-bd .za-item-bd .za-col {
+    border-top: 1px solid #E3E3E3
+}
+
+.za-account-item-bd .za-item-bd .za-col-1,
+.za-account-item-bd .za-item-bd .za-col-2 {
+    font-family: arial, helvetica, sans-serif
+}
+
+.za-account-item-bd .za-col-1,
+.za-account-table .za-col-3 {
+    width: 28%
+}
+
+.za-account-item-bd .za-col-2 {
+    width: 44%
+}
+
+.za-account-item-bd .za-com-list-empty {
+    border: 0
+}
+
+.za-account-item-bd .txt-row {
+    display: block;
+    position: relative;
+    max-height: 48px;
+    text-align: left;
+    overflow: hidden
+}
+
+.za-account-item-bd .txt-row:after {
+    position: absolute;
+    right: 0;
+    top: 24px;
+    width: 18px;
+    height: 24px;
+    content: '...';
+    background-color: #fff;
+    overflow: hidden
+}
+
+@supports (-webkit-box-orient:vertical) {
+    .za-account-item-bd .txt-row {
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2
+    }
+    .za-account-item-bd .txt-row:after {
+        display: none
+    }
+}
+
+.za-account-icon,
+.za-icon-btns-account {
+    display: inline-block;
+    width: 60px;
+    background-position: center 0;
+    background-repeat: no-repeat
+}
+
+.za-account-intro-mod {
+    margin-top: 20px
+}
+
+.za-account-intro-hd {
+    height: 40px;
+    line-height: 40px;
+    font-family: "Microsoft YaHei";
+    text-align: center
+}
+
+.za-account-intro-item {
+    line-height: 1.5;
+    margin-top: 15px
+}
+
+.za-account-intro-item .za-intro-item-hd {
+    color: #37c266;
+    margin-bottom: 6px
+}
+
+.za-account-intro-item .za-intro-item-bd {
+    color: #666
+}
+
+.za-account-icon {
+    height: 40px
+}
+
+.za-icon-certificate {
+    background-image: url(//static.zhongan.com/website/online/assets/images/account/za-icon-certificate.png)
+}
+
+.za-icon-btns-account {
+    color: #40C16B;
+    padding-top: 35px
+}
+
+.za-icon-btns-account span {
+    display: block;
+    color: #40C16B;
+    visibility: hidden
+}
+
+.za-icon-btns-account:hover span {
+    visibility: visible
+}
+
+.za-btns-certificate {
+    background-image: url(//static.zhongan.com/website/online/assets/images/account/za-icon-certificate2.png)
+}
+
+.za-inline-block {
+    display: inline-block
+}
+
+.za-app-Qrcode-box {
+    width: 140px;
+    margin: 0 auto;
+    margin-top: 52px;
+}
+
+.za-app-Qrcode-box .pic {
+    width: 120px;
+    height: 120px;
+    box-shadow: 0 0 4px rgba(226, 76, 76, 0.1);
+    background-color: #fff;
+    padding: 10px;
+}
+
+.za-app-Qrcode-box .pic img {
+    width: 100%;
+    height: 100%;
+}
+
+.za-app-Qrcode-box .text {
+    width: 120px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    color: #464646;
+    line-height: 20px;
+    margin-top: 12px;
+}
+
+.za-app-Qrcode-box .text .text1 {
+    width: 74px;
+    padding-left: 16px;
+    background: url(http://static.zhongan.com/website/factoryOnline/assets/images/public/icon_scan.png) center left no-repeat;
+    background-size: 12px 12px;
+    margin: 0 auto;
+}
