@@ -9,13 +9,18 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
+
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain=true)
 @TableName(value = "insurance_user")
-public class User {
+/**
+ * 用户表
+ */
+public class User implements Serializable {
     //主键
     @TableId(type = IdType.AUTO)
     private int userId;

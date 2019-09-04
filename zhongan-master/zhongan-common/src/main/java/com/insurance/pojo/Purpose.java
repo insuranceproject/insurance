@@ -14,7 +14,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- *
+ *作业用途表
  * </p>
  *
  * @author yumian
@@ -26,14 +26,14 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Accessors(chain = true)
 @TableName(value = "insurance_purpose")
-public class Purpose extends Model<Purpose> {
+public class Purpose extends Model<Purpose>implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "purpose_id", type = IdType.AUTO)
-    private Integer purpose_id;
+    private Integer purposeId;
 
-    private String purpose_detail;
+    private String purposeDetail;
 
 
 }

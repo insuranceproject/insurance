@@ -10,9 +10,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
+
 /**
  * <p>
- *
+ *被保企业表
  * </p>
  *
  * @author yumian
@@ -24,20 +26,20 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 @Accessors(chain = true)
 @TableName(value = "Insurance_insuredcorp")
-public class Insuredcorp extends Model<Insuredcorp> {
+public class Insuredcorp extends Model<Insuredcorp> implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "incorp_id", type = IdType.AUTO)
-    private Integer incorp_id;
+    private Integer incorpId;
 
-    private Integer cert_id;
+    private Integer certId;
 
-    private Integer insured_id;
+    private Integer insuredId;
 
-    private String incorp_name;
+    private String incorpName;
 
-    private String incorp_number;
+    private String incorpNumber;
 
 
 }

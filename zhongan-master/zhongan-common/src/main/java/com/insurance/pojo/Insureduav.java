@@ -10,9 +10,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
+
 /**
  * <p>
- *
+ *被保无人机表
  * </p>
  *
  * @author yumian
@@ -24,22 +26,22 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 @Accessors(chain = true)
 @TableName(value = "Insurance_insureduav")
-public class Insureduav extends Model<Insureduav> {
+public class Insureduav extends Model<Insureduav> implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "uav_id", type = IdType.AUTO)
-    private Integer uav_id;
+    private Integer uavId;
 
-    private Integer purpose_id;
+    private Integer purposeId;
 
-    private Integer detail_id;
+    private Integer detailId;
 
-    private String uav_brand;
+    private String uavBrand;
 
-    private String uav_model;
+    private String uavModel;
 
-    private String uav_number;
+    private String uavNumber;
 
 
 }

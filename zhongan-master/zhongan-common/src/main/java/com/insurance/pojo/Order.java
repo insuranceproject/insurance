@@ -10,11 +10,12 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
  * <p>
- *
+ *订单表
  * </p>
  *
  * @author yumian
@@ -26,20 +27,20 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Accessors(chain = true)
 @TableName(value = "Insurance_order")
-public class Order extends Model<Order> {
+public class Order extends Model<Order> implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "order_id", type = IdType.AUTO)
-    private Integer order_id;
+    private Integer orderId;
 
-    private Integer user_id;
+    private Integer userId;
 
-    private LocalDateTime order_createtime;
+    private LocalDateTime orderCreatetime;
 
-    private Integer order_cost;
+    private Integer orderCost;
 
-    private Integer order_status;
+    private Integer orderStatus;
 
 
 }

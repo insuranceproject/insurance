@@ -1,6 +1,7 @@
 package com.insurance.pojo;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -9,12 +10,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.Accessors;
+import sun.plugin2.message.Serializer;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
  * <p>
- *
+ *实名认证表
  * </p>
  *
  * @author yumian
@@ -26,22 +29,22 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Accessors(chain = true)
 @TableName(value = "Insurance_authentication")
-public class Authentication extends Model<Authentication> {
+public class Authentication extends Model<Authentication> implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "auth_id", type = IdType.AUTO)
-    private Integer auth_id;
+    private Integer authId;
 
-    private Integer user_id;
+    private Integer userId;
 
-    private String auth_realname;
+    private String authRealname;
 
-    private String auth_identitycard;
+    private String authIdentitycard;
 
-    private LocalDateTime auth_borndate;
+    private LocalDateTime authBorndate;
 
-    private Integer auth_sex;
+    private Integer authSex;
 
 
 }

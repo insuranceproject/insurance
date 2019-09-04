@@ -10,9 +10,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
+
 /**
  * <p>
- *
+ *驾驶员表
  * </p>
  *
  * @author yumian
@@ -24,24 +26,24 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 @Accessors(chain = true)
 @TableName(value = "Insurance_driver")
-public class Driver extends Model<Driver> {
+public class Driver extends Model<Driver> implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "driver_id", type = IdType.AUTO)
-    private Integer driver_id;
+    private Integer driverId;
 
-    private Integer policy_id;
+    private Integer policyId;
 
-    private String driver_name;
+    private String driverName;
 
-    private String driver_cert;
+    private String driverCert;
 
-    private String driver_certnumber;
+    private String driverCertnumber;
 
-    private String driver_company;
+    private String driverCompany;
 
-    private String driver_snumber;
+    private String driverSnumber;
 
 
 }

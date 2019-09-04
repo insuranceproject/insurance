@@ -10,9 +10,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
+
 /**
  * <p>
- *
+ *无人机型号
  * </p>
  *
  * @author yumian
@@ -24,18 +26,18 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 @Accessors(chain = true)
 @TableName(value = "Insurance_navmodel")
-public class Navmodel extends Model<Navmodel> {
+public class Navmodel extends Model<Navmodel> implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "model_id", type = IdType.AUTO)
-    private Integer model_id;
+    private Integer modelId;
 
-    private Integer brand_id;
+    private Integer brandId;
 
-    private String model_name;
+    private String modelName;
 
-    private Integer model_price;
+    private Integer modelPrice;
 
 
 }

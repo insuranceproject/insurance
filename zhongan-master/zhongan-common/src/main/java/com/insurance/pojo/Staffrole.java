@@ -14,7 +14,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- *
+ *员工角色表
  * </p>
  *
  * @author yumian
@@ -26,14 +26,14 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Accessors(chain=true)
 @TableName(value = "insurance_staffrole")
-public class Staffrole extends Model<Staffrole> {
+public class Staffrole extends Model<Staffrole>implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "role_id", type = IdType.AUTO)
-    private Integer role_id;
+    private Integer roleId;
 
-    private String role_name;
+    private String roleName;
 
 
 }

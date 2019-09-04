@@ -10,9 +10,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
+
 /**
  * <p>
- *
+ *员工权限表
  * </p>
  *
  * @author yumian
@@ -24,16 +26,16 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 @Accessors(chain = true)
 @TableName(value = "Insurance_privileges")
-public class Privileges extends Model<Privileges> {
+public class Privileges extends Model<Privileges> implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "pri_id", type = IdType.AUTO)
-    private Integer pri_id;
+    private Integer priId;
 
-    private String pri_name;
+    private String priName;
 
-    private Integer pri_parentid;
+    private Integer priParentid;
 
 
 }

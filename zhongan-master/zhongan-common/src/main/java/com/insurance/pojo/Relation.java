@@ -14,7 +14,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- *
+ *产品父分类表
  * </p>
  *
  * @author yumian
@@ -26,14 +26,14 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Accessors(chain=true)
 @TableName(value = "insurance_relation")
-public class Relation extends Model<Relation> {
+public class Relation extends Model<Relation>implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "relation_id", type = IdType.AUTO)
-    private Integer relation_id;
+    private Integer relationId;
 
-    private String relation_name;
+    private String relationName;
 
 
 }

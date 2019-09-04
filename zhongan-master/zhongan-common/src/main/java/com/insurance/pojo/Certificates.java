@@ -9,12 +9,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.Accessors;
+import sun.plugin2.message.Serializer;
 
 import java.io.Serializable;
 
 /**
  * <p>
- *
+ *证件表
  * </p>
  *
  * @author yumian
@@ -26,16 +27,16 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Accessors(chain = true)
 @TableName(value = "Insurance_certificates")
-public class Certificates extends Model<Certificates> {
+public class Certificates extends Model<Certificates> implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "cert_id", type = IdType.AUTO)
-    private Integer cert_id;
+    private Integer certId;
 
-    private String cert_name;
+    private String certName;
 
-    private Integer cert_type;
+    private Integer certType;
 
 
 }

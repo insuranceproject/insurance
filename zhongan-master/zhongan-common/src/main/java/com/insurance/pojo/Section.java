@@ -14,7 +14,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- *
+ *年龄区间表
  * </p>
  *
  * @author yumian
@@ -26,16 +26,16 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Accessors(chain=true)
 @TableName(value = "insurance_section")
-public class Section extends Model<Section> {
+public class Section extends Model<Section> implements Serializable{
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "age_id", type = IdType.AUTO)
-    private Integer age_id;
+    private Integer ageId;
 
-    private Integer age_minage;
+    private Integer ageMinage;
 
-    private Integer age_maxage;
+    private Integer ageMaxage;
 
 
 }

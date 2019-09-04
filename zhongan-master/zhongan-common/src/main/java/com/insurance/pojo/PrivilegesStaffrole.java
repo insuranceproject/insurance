@@ -10,9 +10,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
+
 /**
  * <p>
- *
+ *员工角色与权限中间表
  * </p>
  *
  * @author yumian
@@ -24,16 +26,16 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 @Accessors(chain = true)
 @TableName(value = "Insurance_privileges_staffrole")
-public class PrivilegesStaffrole extends Model<PrivilegesStaffrole> {
+public class PrivilegesStaffrole extends Model<PrivilegesStaffrole> implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "ps_id", type = IdType.AUTO)
-    private Integer ps_id;
+    private Integer psId;
 
-    private Integer pri_id;
+    private Integer priId;
 
-    private Integer role_id;
+    private Integer roleId;
 
 
 }
