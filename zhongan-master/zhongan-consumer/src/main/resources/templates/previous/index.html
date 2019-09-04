@@ -48,7 +48,7 @@
             data-requiremodule="//static.zhongan.com/website/factoryOnline/widget/require-css.js"
             src="js/require-css.js"></script>
     <link type="text/css" rel="stylesheet" href="css/unslider.min.css">
-    <!--<script type="text/javascript">
+    <script type="text/javascript">
         $(function () {
            var num = 0;
            var num2 = 0;
@@ -62,6 +62,8 @@
                    $("#za-focus-list li").eq(num).removeClass("active");
                    num = 0;
                }
+               $(".za-slide-nav span:not(:eq("+num+"))").attr("style","transform: scaleX(0);");
+               $(".za-slide-nav span:eq("+num+")").attr("style","transform: scaleX(1);");
                $("#za-focus-list li").eq(num).addClass("active").siblings().removeClass("active");
                num++;
            },3000)
@@ -72,7 +74,7 @@
                     num3++;
                 }else{
                     $("#za-index-partner-list li").eq(num3).attr("style","opacity: 1;").addClass("unslider-active").siblings().attr("style","opacity: 0;").removeClass("unslider-active");
-                    num3&#45;&#45;;
+                    num3--;
                 }
             },3000)
             var index = $(".za-index-partner-list li").index();
@@ -82,11 +84,11 @@
                     index++;
                 }else{
                     $(".za-index-partner-list li:eq(1)").attr("style","opacity: 1;").addClass("unslider-active").siblings().attr("style","opacity: 0;").removeClass("unslider-active");
-                    index&#45;&#45;;
+                    index--;
                 }
             })
         })
-    </script>-->
+    </script>
 </head>
 <body>
 <input id="zamenukey" type="hidden" value="home">
