@@ -26,20 +26,20 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Accessors(chain = true)
 @TableName(value = "insurance_projectplan")
-public class Projectplan extends Model<Projectplan> {
+public class Projectplan extends Model<Projectplan> implements Serializable{
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "proplan_id", type = IdType.AUTO)
-    private Integer proplan_id;
+    private Integer proplanId;
 
-    private Integer project_id;
+    private Integer projectId;
 
-    private String proplan_name;
+    private String proplanName;
 
-    private Integer proplan_peoples;
+    private Integer proplanPeoples;
 
-    private Integer proplan_money;
+    private Integer proplanMoney;
 
 
 }

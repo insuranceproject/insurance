@@ -26,24 +26,24 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Accessors(chain = true)
 @TableName(value = "insurance_product")
-public class Product extends Model<Product> {
+public class Product extends Model<Product> implements Serializable{
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "product_id", type = IdType.AUTO)
-    private Integer product_id;
+    private Integer productId;
 
-    private String product_name;
+    private String productName;
 
-    private String product_special;
+    private String productSpecial;
 
-    private Integer parent_id;
+    private Integer parentId;
 
-    private Integer child_id;
+    private Integer childId;
 
-    private Integer proplan_id;
+    private Integer proplanId;
 
-    private Integer product_state;
+    private Integer productState;
 
 
 }

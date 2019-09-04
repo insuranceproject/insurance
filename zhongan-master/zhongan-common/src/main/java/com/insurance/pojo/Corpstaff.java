@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
+
 /**
  * <p>
  *
@@ -24,22 +26,22 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 @Accessors(chain = true)
 @TableName(value = "Insurance_corpstaff")
-public class Corpstaff extends Model<Corpstaff> {
+public class Corpstaff extends Model<Corpstaff> implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "staff_id", type = IdType.AUTO)
-    private Integer staff_id;
+    private Integer staffId;
 
-    private String staff_account;
+    private String staffAccount;
 
-    private String staff_password;
+    private String staffPassword;
 
-    private String staff_name;
+    private String staffName;
 
-    private Integer corp_id;
+    private Integer corpId;
 
-    private Integer staff_status;
+    private Integer staffStatus;
 
 
 }

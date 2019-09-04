@@ -26,14 +26,14 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Accessors(chain=true)
 @TableName(value = "insurance_uavbrand")
-public class Uavbrand extends Model<Uavbrand> {
+public class Uavbrand extends Model<Uavbrand> implements Serializable{
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "brand_id", type = IdType.AUTO)
-    private Integer brand_id;
+    private Integer brandId;
 
-    private String brand_name;
+    private String brandName;
 
 
 }

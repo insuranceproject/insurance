@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
+
 /**
  * <p>
  *
@@ -24,16 +26,16 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 @Accessors(chain = true)
 @TableName(value = "Insurance_childtype")
-public class Childtype extends Model<Childtype> {
+public class Childtype extends Model<Childtype> implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "child_id", type = IdType.AUTO)
-    private Integer child_id;
+    private Integer childId;
 
-    private String child_name;
+    private String childName;
 
-    private Integer parent_id;
+    private Integer parentId;
 
 
 }

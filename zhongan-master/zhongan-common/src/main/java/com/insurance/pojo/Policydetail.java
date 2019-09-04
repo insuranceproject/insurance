@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
@@ -26,28 +27,28 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Accessors(chain = true)
 @TableName(value = "Insurance_policydetail")
-public class Policydetail extends Model<Policydetail> {
+public class Policydetail extends Model<Policydetail> implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "detail_id", type = IdType.AUTO)
-    private Integer detail_id;
+    private Integer detailId;
 
-    private LocalDateTime policy_endtime;
+    private LocalDateTime policyEndtime;
 
-    private LocalDateTime policy_starttime;
+    private LocalDateTime policyStarttime;
 
-    private Integer policy_buyaddr;
+    private Integer policyBuyaddr;
 
-    private Integer insured_id;
+    private Integer insuredId;
 
-    private Integer holder_id;
+    private Integer holderId;
 
-    private Integer plan_id;
+    private Integer planId;
 
-    private Integer policy_id;
+    private Integer policyId;
 
-    private Integer proplan_id;
+    private Integer proplanId;
 
 
 }

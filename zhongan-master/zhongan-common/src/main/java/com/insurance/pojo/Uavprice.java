@@ -26,17 +26,17 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Accessors(chain=true)
 @TableName(value = "insurance_uavprice")
-public class Uavprice extends Model<Uavprice> {
+public class Uavprice extends Model<Uavprice> implements Serializable{
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "price_id", type = IdType.AUTO)
-    private Integer price_id;
+    private Integer priceId;
 
-    private Integer price_min;
+    private Integer priceMin;
 
-    private Integer price_max;
+    private Integer priceMax;
 
-    private Float price_rate;
+    private Float priceRate;
 
 }
