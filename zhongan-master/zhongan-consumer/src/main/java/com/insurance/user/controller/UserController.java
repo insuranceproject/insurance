@@ -38,18 +38,10 @@ public class UserController {
 		return  userClient.registered(user) == true ? "1":"2";
 	}
 
-	/**
-	 * 个人修改密码
-	 * @param user
-	 * @return
-	 */
-	@RequestMapping(value="/consumer/user/updateUserPassWord")
-	public boolean updateUserPassWord(User user){
-		return userClient.updateUserPassWord(user);
-	}
 
 	/**
 	 * 修改个人信息
+	 * 可以单独修改密码,用户名,以及绑定邮箱和修改邮箱
 	 * @param user
 	 * @return
 	 */

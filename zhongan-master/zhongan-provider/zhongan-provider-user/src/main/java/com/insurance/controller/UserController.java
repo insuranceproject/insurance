@@ -42,19 +42,10 @@ public class UserController implements UserControllerApi {
         return userService.save(user);
     }
 
-    /**
-     * 修改密码
-     * @param user
-     * @return
-     */
-    @PostMapping("/updateUserPassWord")
-    @Override
-    public boolean updateUserPassWord(@RequestBody User user) {
-        return userService.updateById(user);
-    }
 
     /**
      * 修改用户信息
+     * 可以单独修改密码,用户名,以及绑定邮箱和修改邮箱
      * @param user
      * @return
      */

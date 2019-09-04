@@ -27,16 +27,10 @@ public interface UserControllerApi {
     @ApiOperation("个人注册")
     public boolean registered(User user);
 
-    /**
-     * 个人修改密码
-     * @param user
-     * @return
-     */
-    @ApiOperation("个人修改密码")
-    public boolean updateUserPassWord(User user);
 
     /**
      * 修改个人信息
+     * 可以单独修改密码,用户名,以及绑定邮箱和修改邮箱
      * @param user
      * @return
      */
