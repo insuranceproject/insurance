@@ -14,7 +14,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- *
+ *年龄区间表
  * </p>
  *
  * @author yumian

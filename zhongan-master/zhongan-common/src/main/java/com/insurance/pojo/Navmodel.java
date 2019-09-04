@@ -14,7 +14,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- *
+ *无人机型号
  * </p>
  *
  * @author yumian

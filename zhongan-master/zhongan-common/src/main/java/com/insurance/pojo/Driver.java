@@ -14,7 +14,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- *
+ *驾驶员表
  * </p>
  *
  * @author yumian

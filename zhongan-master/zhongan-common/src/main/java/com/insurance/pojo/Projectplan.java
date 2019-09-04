@@ -14,7 +14,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- *
+ *计划方案表
  * </p>
  *
  * @author yumian

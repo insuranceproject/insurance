@@ -17,6 +17,9 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Accessors(chain=true)
 @TableName(value = "insurance_user")
+/**
+ * 用户表
+ */
 public class User implements Serializable {
     //主键
     @TableId(type = IdType.AUTO)

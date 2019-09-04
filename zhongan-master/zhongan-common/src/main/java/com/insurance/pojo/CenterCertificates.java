@@ -16,7 +16,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- *
+ *证件中间表
  * </p>
  *
  * @author yumian

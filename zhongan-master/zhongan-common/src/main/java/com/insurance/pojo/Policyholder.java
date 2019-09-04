@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 
 /**
  * <p>
- *
+ *投保人表
  * </p>
  *
  * @author yumian

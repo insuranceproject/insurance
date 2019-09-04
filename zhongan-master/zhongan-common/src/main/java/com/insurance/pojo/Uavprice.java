@@ -14,7 +14,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- *
+ *无人机投保费用表
  * </p>
  *
  * @author yumian

@@ -14,7 +14,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- *
+ *作业用途与无人品牌号中间表
  * </p>
  *
  * @author yumian

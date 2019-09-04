@@ -14,7 +14,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- *
+ *被保无人机表
  * </p>
  *
  * @author yumian
