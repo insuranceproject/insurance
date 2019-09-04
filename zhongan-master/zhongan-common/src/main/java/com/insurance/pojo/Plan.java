@@ -14,7 +14,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- *产品方案表
+ *
  * </p>
  *
  * @author yumian
@@ -26,7 +26,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Accessors(chain = true)
 @TableName(value = "Insurance_plan")
-public class Plan extends Model<Plan>implements Serializable {
+public class Plan extends Model<Plan> implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

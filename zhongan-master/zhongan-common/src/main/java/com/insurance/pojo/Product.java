@@ -14,7 +14,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- *产品父分类表
+ *
  * </p>
  *
  * @author yumian
@@ -26,7 +26,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Accessors(chain = true)
 @TableName(value = "insurance_product")
-public class Product extends Model<Product> implements Serializable{
+public class Product extends Model<Product> implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
