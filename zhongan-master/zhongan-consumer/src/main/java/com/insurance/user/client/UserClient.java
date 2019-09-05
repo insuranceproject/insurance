@@ -34,4 +34,12 @@ public interface UserClient {
      */
     @GetMapping("/user/updateUser")
     public boolean updateUser(User user);
+
+    /**
+     * 删除个人用户
+     * @param user
+     * @return
+     */
+    @GetMapping("/user/deleteUser")
+    public boolean deleteUser(User user);
 }

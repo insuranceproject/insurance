@@ -36,4 +36,12 @@ public interface UserControllerApi {
      */
     @ApiOperation("修改个人信息")
     public boolean updateUser(User user);
+
+    /**
+     * 删除个人用户
+     * @param user
+     * @return
+     */
+    @ApiOperation("删除个人用户")
+    public boolean deleteUser(User user);
 }

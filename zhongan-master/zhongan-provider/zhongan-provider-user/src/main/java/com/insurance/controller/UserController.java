@@ -55,5 +55,16 @@ public class UserController implements UserControllerApi {
         return userService.updateById(user);
     }
 
+    /**
+     * 删除个人用户
+     * @param user
+     * @return
+     */
+    @PostMapping("/deleteUser")
+    @Override
+    public boolean deleteUser(User user) {
+        return userService.removeById(user.getUserId());
+    }
+
 
 }
