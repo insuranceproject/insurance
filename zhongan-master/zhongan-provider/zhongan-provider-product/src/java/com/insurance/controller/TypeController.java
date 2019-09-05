@@ -21,6 +21,7 @@ public class TypeController implements TypeControllerApi {
     private TypeService typeService;
 
     @GetMapping("findAll")
+    @Override
     public List<Partype> findAll(){
         return typeService.list();
     }
