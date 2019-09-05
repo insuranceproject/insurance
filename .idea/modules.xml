@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Insurance.iml" filepath="$PROJECT_DIR$/.idea/Insurance.iml" />
-      <module fileurl="file://$PROJECT_DIR$/zhongan-master/zhongan.iml" filepath="$PROJECT_DIR$/zhongan-master/zhongan.iml" />
       <module fileurl="file://$PROJECT_DIR$/zhongan-master/zhongan-api/zhongan-api.iml" filepath="$PROJECT_DIR$/zhongan-master/zhongan-api/zhongan-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/zhongan-master/zhongan-common/zhongan-common.iml" filepath="$PROJECT_DIR$/zhongan-master/zhongan-common/zhongan-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/zhongan-master/zhongan-consumer/zhongan-consumer.iml" filepath="$PROJECT_DIR$/zhongan-master/zhongan-consumer/zhongan-consumer.iml" />
