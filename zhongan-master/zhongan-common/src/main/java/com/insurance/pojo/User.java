@@ -29,4 +29,8 @@ public class User implements Serializable {
     private String userPhonenumber;
     private String userEmail;
     private String userRole;
+
+    public User(String userName) {
+        this.userName = userName;
+    }
 }
