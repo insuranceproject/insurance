@@ -8,6 +8,7 @@ import com.aliyuncs.http.MethodType;
 import com.aliyuncs.profile.DefaultProfile;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.HtmlEmail;
+import org.junit.Test;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -35,6 +36,13 @@ public class CodeUtil {
         } catch (EmailException e) {
             e.printStackTrace();
         }
+    }
+
+    @Test
+    public void Test_1111(){
+        String phone="13434759606";
+        String code = smsCode(phone);
+        System.out.println(code);
     }
 
     /**
