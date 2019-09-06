@@ -38,13 +38,22 @@ public class UserController {
 	}
 
 	/**
-	 * 个人登陆
+	 * 个人用户名密码登陆
 	 * @param user
 	 * @return
 	 */
 	@RequestMapping(value="/consumer/user/login")
 	public User login(User user){
 		return userClient.login(user);
+	}
+
+	/**
+	 * 个人用户手机验证码快速登陆
+	 * @return
+	 */
+	@RequestMapping(value="/consumer/user/falsLogin")
+	public User falsLogin(User user){
+		return userClient.falsLogin(user);
 	}
 
 	/**
@@ -64,7 +73,13 @@ public class UserController {
 	 */
 	@RequestMapping(value="/consumer/user/registered")
 	public boolean registered(User user, String count,String codes,HttpSession session){
-        String code = null;
+		//由于点击获取验证码和注册两个按钮所以分了两个手机号参数
+		user.setUserPhonenumber(codes);
+		//调用通过手机查询用户的方法
+		userClient.falsLogin(user);
+		//生成6位随机数做验证码,用于随机生成用户名
+		Integer num = (int)((Math.random()*9+1)*100000);
+		String code = null;
         //判断
 	    if(count == "1"){
             //传入电话号码,返回验证码
@@ -80,6 +95,7 @@ public class UserController {
         if(session.getAttribute("phoue").equals(user.getUserPhonenumber())&&session.getAttribute("code").equals(codes)){
             //session里存的电话号码与验证码==提交上来的电话号码与验证码
             //允许注册
+			user.setUserName(num+"");	//用户名
             return  userClient.registered(user);
         }
         return false;
@@ -107,7 +123,7 @@ public class UserController {
      * @param user
      * @return
      */
-    @RequestMapping(value="/consumer/user/updateUser")
+    @RequestMapping(value="/consumer/user/deleteUser")
 	public boolean deleteUser(User user){
 	    return userClient.deleteUser(user);
     }

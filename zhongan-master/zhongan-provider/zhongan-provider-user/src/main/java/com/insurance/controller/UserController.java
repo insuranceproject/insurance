@@ -21,7 +21,7 @@ public class UserController implements UserControllerApi {
     }
 
     /**
-     * 登陆
+     * 用户名密码登陆
      * @param user
      * @return
      */
@@ -29,6 +29,17 @@ public class UserController implements UserControllerApi {
     @Override
     public User login(@RequestBody User user) {
         return userService.getOne(new QueryWrapper<User>().eq("user_name",user.getUserName()).eq("user_password",user.getUserPassword()));
+    }
+
+    /**
+     * 快速登陆
+     * @param user
+     * @return
+     */
+    @PostMapping("/falsLogin")
+    @Override
+    public User falsLogin(User user) {
+        return userService.getOne(new QueryWrapper<User>().eq("user_phonenumber",user.getUserPhonenumber()));
     }
 
     /**
