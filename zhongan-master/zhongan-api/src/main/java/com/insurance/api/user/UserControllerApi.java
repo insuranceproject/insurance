@@ -3,6 +3,7 @@ package com.insurance.api.user;
 import com.insurance.pojo.User;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.models.auth.In;
 
 @Api(value="用户管理接口",description = "用户接口，提供用户的增、删、改、查")
 public interface UserControllerApi {
@@ -53,4 +54,12 @@ public interface UserControllerApi {
      */
     @ApiOperation("删除个人用户")
     public boolean deleteUser(User user);
+
+    /**
+     * 根据用户名查询用户
+     * @param user
+  * @return
+     */
+    @ApiOperation("根据用户名查询用户")
+    public User getUserByName(User user);
 }

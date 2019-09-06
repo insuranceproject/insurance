@@ -78,4 +78,15 @@ public class UserController implements UserControllerApi {
     }
 
 
+    /**
+     * 根据用户名查询用户
+     * @param user
+     * @return
+     */
+    @Override
+    public User getUserByName(User user) {
+        return userService.getOne(new QueryWrapper<User>().eq("user_name",user.getUserName()));
+    }
+
+
 }

@@ -49,4 +49,12 @@ public interface UserClient {
      */
     @GetMapping("/user/deleteUser")
     public boolean deleteUser(User user);
+
+    /**
+     * 根据用户名查询用户
+     * @param user
+     * @return
+     */
+    @GetMapping("/user/getUserByName")
+    public User getUserByName(User user);
 }
