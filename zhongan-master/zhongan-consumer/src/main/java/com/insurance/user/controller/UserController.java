@@ -30,7 +30,7 @@ public class UserController {
 	@Autowired
 	private UserClient userClient;
 
-	private CodeUtil codeUtil;
+
 
 	@RequestMapping(value = "/consumer/user/getOne")
 	public User getOne(){
@@ -56,8 +56,9 @@ public class UserController {
 	 */
 	@RequestMapping(value="/consumer/user/falsLogin")
 	public User falsLogin(User user,String count,String codes,HttpSession session){
+		CodeUtil codeUtil = new CodeUtil();
 		//生成验证码
-		Integer num2 = (int)((Math.random()*9+1)*1000);
+		Integer num = (int)((Math.random()*9+1)*1000);
 		//用于接收验证码方法
 		String code = null;
 		//判断
@@ -67,7 +68,7 @@ public class UserController {
 			if(code != null){
 				//验证码不等于null则将手机号与验证码存入session用于点击注册时做判断
 				session.setAttribute("phone",user.getUserPhonenumber());
-				session.setAttribute("code",num2);
+				session.setAttribute("code",num);
 				return null;
 			}
 		}
@@ -91,6 +92,7 @@ public class UserController {
 	 */
 	@RequestMapping(value="/consumer/user/registered")
 	public boolean registered(User user, Integer count,String smsCode,String codes,HttpSession session){
+		CodeUtil codeUtil = new CodeUtil();
 		//由于点击获取验证码和注册两个按钮所以分了两个手机号参数
 		user.setUserPhonenumber(codes);
 		//调用通过手机查询用户的方法
@@ -112,11 +114,12 @@ public class UserController {
             }
         }
 	    //count不等于1 ,判断用户这次提交的手机号于发送给用户的验证码是否一致
-        if(session.getAttribute("phoue").equals(user.getUserPhonenumber())&&session.getAttribute("code").equals(smsCode)){
+        if(session.getAttribute("phone").equals(user.getUserPhonenumber())&&session.getAttribute("code").equals(smsCode)){
             //session里存的电话号码与验证码==提交上来的电话号码与验证码
             //允许注册
 			user.setUserName(num1+"");	//用户名
-            return  userClient.registered(user);
+			boolean b = userClient.registered(user);
+			return true;
         }
         return false;
 	}
