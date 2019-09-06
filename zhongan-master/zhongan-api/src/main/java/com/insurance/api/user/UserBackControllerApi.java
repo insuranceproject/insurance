@@ -3,6 +3,7 @@ package com.insurance.api.user;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.insurance.pojo.Policy;
 import com.insurance.pojo.User;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -13,5 +14,8 @@ public interface UserBackControllerApi {
 
     @ApiOperation("用户的分页显示")
     public IPage<User> UserPage(Page<User> page, String userName);
+
+    @ApiOperation("保单的分页显示")
+    public IPage<Policy> PolicyPage(Page<Policy> page, Integer number);
 
 }

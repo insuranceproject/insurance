@@ -4,16 +4,13 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.insurance.pojo.Policy;
-import com.insurance.pojo.User;
 
-public interface UserBackService extends IService<User> {
+public interface PolicyService extends IService<Policy> {
     /**
-     * 用户显示分页+模糊姓名查询
+     * 保单显示分页+保单号查询(不模糊)
      * @param page
+     * @param number
      * @return
      */
-    public IPage<User> selectUserPage(Page<User> page, String userName);
-
-
-
+    public IPage<Policy> selectPagePolicy(Page<Policy> page, Integer number);
 }

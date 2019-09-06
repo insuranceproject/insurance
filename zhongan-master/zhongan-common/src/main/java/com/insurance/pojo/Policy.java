@@ -4,13 +4,12 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import com.baomidou.mybatisplus.annotation.TableId;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
 
 /**
  * <p>
@@ -22,6 +21,7 @@ import java.io.Serializable;
  */
 @Getter
 @Setter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
@@ -40,6 +40,22 @@ public class Policy extends Model<Policy> implements Serializable {
     private Integer orderId;
 
     private Integer policyType;
+
+    //订单表的
+    private Integer orderNumber;   //订单编号
+
+    private Integer userId;     //订单所属人编号
+
+    private Date orderCreatetime;  //订单时间
+
+    private Integer orderCost;  //订单金额
+
+    private Integer orderStatus;   //订单状态
+
+
+
+/*    //订单表list
+    private List<Order> orderlist;*/
 
 
 }

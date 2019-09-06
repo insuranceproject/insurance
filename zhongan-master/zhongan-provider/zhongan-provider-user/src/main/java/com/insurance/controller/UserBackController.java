@@ -4,7 +4,9 @@ package com.insurance.controller;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.insurance.mapper.PolicyMapper;
 import com.insurance.mapper.UserMapper;
+import com.insurance.pojo.Policy;
 import com.insurance.pojo.User;
 import com.insurance.service.UserBackService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +15,10 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/userBack")
 public class UserBackController {
+
     @Autowired
     private UserMapper userMapper;
-    @Autowired
-    private UserBackService userBackService;
+
 
     /**
      * 后台用户分页+模糊姓名查询
@@ -38,5 +40,7 @@ public class UserBackController {
 
 
     }
+
+
 
 }
