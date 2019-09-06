@@ -18,6 +18,13 @@ public interface UserClient {
     public User login(User user);
 
     /**
+     * 快速登陆
+     * @return
+     */
+    @GetMapping("/user/falsLogin")
+    public User falsLogin(User user);
+
+    /**
      * 个人注册
      * @param user
      * @return
@@ -34,4 +41,12 @@ public interface UserClient {
      */
     @GetMapping("/user/updateUser")
     public boolean updateUser(User user);
+
+    /**
+     * 删除个人用户
+     * @param user
+     * @return
+     */
+    @GetMapping("/user/deleteUser")
+    public boolean deleteUser(User user);
 }

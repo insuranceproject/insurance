@@ -38,6 +38,13 @@
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
 
+        <!-- 引入Util包-->
+        <dependency>
+            <groupId>com.insurance</groupId>
+            <artifactId>zhongan-util</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
         <!-- 微服务配置中心
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -60,6 +67,7 @@
             <artifactId>spring-cloud-openfeign-core</artifactId>
             <version>2.1.1.RELEASE</version>
         </dependency>
+
 
 
     </dependencies>

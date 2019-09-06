@@ -12,12 +12,21 @@ public interface UserControllerApi {
     public User getOne();
 
     /**
-     * 个人登陆
+     * 个人用户名密码登陆
      * @param user
      * @return
      */
-    @ApiOperation("个人登陆")
+    @ApiOperation("个人用户名密码登陆")
     public User login(User user);
+
+    /**
+     *
+     * 个人用户快速登陆
+     * @param user
+     * @return
+     */
+    @ApiOperation("个人用户名密码登陆")
+    public User falsLogin(User user);
 
     /**
      * 个人注册
@@ -36,4 +45,12 @@ public interface UserControllerApi {
      */
     @ApiOperation("修改个人信息")
     public boolean updateUser(User user);
+
+    /**
+     * 删除个人用户
+     * @param user
+     * @return
+     */
+    @ApiOperation("删除个人用户")
+    public boolean deleteUser(User user);
 }
