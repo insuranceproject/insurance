@@ -86,6 +86,26 @@ public class UserController {
 		return null;
 	}
 
+    /**
+     * 获取验证码
+     * @return
+     */
+    @RequestMapping(value="/consumer/user/getSmsCode")
+	public String getSmsCode(HttpSession session,String codes){
+        CodeUtil codeUtil = new CodeUtil();
+        User user = new User();
+        user.setUserPhonenumber(codes);
+            //传入电话号码
+            String code = codeUtil.smsCode(user.getUserPhonenumber());
+            if(code != null){
+                //验证码不等于null则将手机号与验证码存入session用于点击注册时做判断
+                session.setAttribute("phone",user.getUserPhonenumber());
+                session.setAttribute("code",code);
+                return "y1";
+            }
+	    return null;
+    }
+
 	/**
 	 * 个人注册
 	 * 注册之前需要先查询,根据手机号查询用户,如果 !=null 则说明该手机号已被注册,不允许再次注册
@@ -100,12 +120,12 @@ public class UserController {
      * 用于判断用户点的是获取验证码按钮还是注册按钮
      *smsCode 传入的验证码
 	 * codes传入的手机号
-	 * @param user
+	 * @param
 	 * @return
 	 */
 	@RequestMapping(value="/consumer/user/registered")
-	public String registered(User user, Integer count,String smsCode,String codes,HttpSession session){
-		CodeUtil codeUtil = new CodeUtil();
+	public String registered(String codes,String smsCode,HttpSession session){
+        User user = new User();
 		user.setUserPhonenumber(codes);
 		//调用通过手机查询一个用户的方法
 		User user1 = userClient.falsLogin(user);
@@ -116,16 +136,7 @@ public class UserController {
 		//用于接收验证码
 		String code = null;
         //count == 1 进入获取验证码的模块
-	    if(1 == count){
-            //传入电话号码
-             code = codeUtil.smsCode(user.getUserPhonenumber());
-            if(code != null){
-                //验证码不等于null则将手机号与验证码存入session用于点击注册时做判断
-                session.setAttribute("phone",user.getUserPhonenumber());
-                session.setAttribute("code",code);
-                return "y1";
-            }
-        }
+
 	    //count不等于1 ,判断用户这次提交的手机号于发送给用户的验证码是否一致
         if(session.getAttribute("phone").equals(user.getUserPhonenumber())&&session.getAttribute("code").equals(smsCode)){
             //session里存的电话号码与验证码==提交上来的电话号码与验证码
@@ -169,6 +180,9 @@ public class UserController {
 	public String updateUser(User user,Integer count,HttpSession session,String rPassWord){
         //登陆后session存的对象
         User user1 = (User) session.getAttribute("user");
+        if(user1 == null){  //修改密码前进行用户判断,看是否能获取导user,获取不到则跳转导登陆页面
+            //user==null 跳转登陆页面
+        }
 	    //第一步,当前密码
 	    if(count == 1){
             //判断输入的密码是否与session里用户的密码一致
@@ -188,6 +202,7 @@ public class UserController {
         }
 		return null;
 	}
+
 
 
 
