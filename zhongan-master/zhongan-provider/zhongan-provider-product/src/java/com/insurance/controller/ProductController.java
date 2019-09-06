@@ -25,6 +25,7 @@ public class ProductController implements ProductControllerApi {
         return productService.list(new QueryWrapper<Product>().eq("parent_id",parId));
     }
 
+    @GetMapping("/findByChildId")
     @Override
     public List<Product> findByChildId(Integer childId) {
         return productService.list(new QueryWrapper<Product>().eq("child_id",childId));

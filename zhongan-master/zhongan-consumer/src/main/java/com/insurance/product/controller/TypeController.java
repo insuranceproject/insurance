@@ -6,6 +6,7 @@ import com.insurance.product.client.TypeClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,9 +20,9 @@ public class TypeController {
 
     @RequestMapping("/findAll")
     public String findAll(Model model){
-
         List<Partype> typeList = typeClient.findAll();
+        String a ="";
         model.addAttribute("typeList",typeList);
-        return "/previous/index";
+        return "/index";
     }
 }
