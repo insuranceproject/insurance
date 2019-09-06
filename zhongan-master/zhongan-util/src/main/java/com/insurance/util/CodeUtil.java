@@ -41,11 +41,9 @@ public class CodeUtil {
      * 发送短信验证码
      * @return
      */
-    public String smsCode(String phoue){
+    public String smsCode(String phoue,Integer num){
         DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou", "LTAI4FhukqTnk1uPYaEd6mER", "AIoqmWfWoaWjiAkhL478RaVweizwRP");
         IAcsClient client = new DefaultAcsClient(profile);
-        //生成4位随机数做验证码
-        Integer num = (int)((Math.random()*9+1)*1000);
         CommonRequest request = new CommonRequest();
         request.setMethod(MethodType.POST);
         request.setDomain("dysmsapi.aliyuncs.com");
