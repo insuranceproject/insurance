@@ -49,6 +49,7 @@ public class UserController {
 
 	/**
 	 * 个人用户手机验证码快速登陆
+	 *
 	 * 两个按钮,需要获取验证码
 	 *
 	 * @return
@@ -62,7 +63,7 @@ public class UserController {
 		//判断
 		if(count == "1"){
 			//传入电话号码,返回验证码
-			code = codeUtil.smsCode(user.getUserPhonenumber(),num2);
+			code = codeUtil.smsCode(user.getUserPhonenumber());
 			if(code != null){
 				//验证码不等于null则将手机号与验证码存入session用于点击注册时做判断
 				session.setAttribute("phone",user.getUserPhonenumber());
@@ -89,7 +90,7 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMapping(value="/consumer/user/registered")
-	public boolean registered(User user, Integer count,String codes,HttpSession session){
+	public boolean registered(User user, Integer count,String smsCode,String codes,HttpSession session){
 		//由于点击获取验证码和注册两个按钮所以分了两个手机号参数
 		user.setUserPhonenumber(codes);
 		//调用通过手机查询用户的方法
@@ -97,23 +98,21 @@ public class UserController {
 		userClient.falsLogin(user);
 		//生成6位随机数做验证码,用于随机生成用户名
 		Integer num1 = (int)((Math.random()*9+1)*100000);
-		//生成验证码
-		Integer num2 = (int)((Math.random()*9+1)*1000);
-		//用于接收验证码方法
+		//用于接收验证码
 		String code = null;
         //判断
 	    if(1 == count){
             //传入电话号码
-             code = codeUtil.smsCode(user.getUserPhonenumber(),num2);
-            if("OK".equals(code)){
+             code = codeUtil.smsCode(user.getUserPhonenumber());
+            if(code != null){
                 //验证码不等于null则将手机号与验证码存入session用于点击注册时做判断
                 session.setAttribute("phone",user.getUserPhonenumber());
-                session.setAttribute("num2",num2);
+                session.setAttribute("code",code);
                 return true;
             }
         }
 	    //count不等于1 ,判断用户这次提交的手机号于发送给用户的验证码是否一致
-        if(session.getAttribute("phoue").equals(user.getUserPhonenumber())&&session.getAttribute("code").equals(codes)){
+        if(session.getAttribute("phoue").equals(user.getUserPhonenumber())&&session.getAttribute("code").equals(smsCode)){
             //session里存的电话号码与验证码==提交上来的电话号码与验证码
             //允许注册
 			user.setUserName(num1+"");	//用户名

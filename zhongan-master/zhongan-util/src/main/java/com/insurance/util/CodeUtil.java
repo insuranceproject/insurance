@@ -17,9 +17,9 @@ public class CodeUtil {
     /**
      * 邮箱验证码
      */
-    public void emailCode(String emailNum){
+    public void emailCode(String emailNum) {
         //生成4位随机数做验证码
-        Integer num = (int)((Math.random()*9+1)*1000);
+        Integer num = (int) ((Math.random() * 9 + 1) * 1000);
         HtmlEmail email = new HtmlEmail();//创建一个HtmlEmail实例对象
         email.setHostName("smtp.qq.com");//邮箱的SMTP服务器，一般123邮箱的是smtp.123.com,qq邮箱为smtp.qq.com
         email.setCharset("utf-8");//设置发送的字符类型
@@ -29,7 +29,7 @@ public class CodeUtil {
             email.setAuthentication("1206862561@qq.com", "vrqlrgpwxiyxgbdi");//设置发送人到的邮箱和用户名和授权码(授权码是自己设置的)
             email.setSubject("狗子");//设置发送主题
             StringBuffer messageText = new StringBuffer();//内容以html格式发送,防止被当成垃圾邮件
-            messageText.append("<h2>请收好验证码"+num+"</h2></br>");
+            messageText.append("<h2>请收好验证码" + num + "</h2></br>");
             email.setMsg(messageText.toString());//设置发送内容
             email.send();//进行发送
         } catch (EmailException e) {
@@ -39,12 +39,14 @@ public class CodeUtil {
 
     /**
      * 发送短信验证码
+     *
      * @return
      */
-    public String smsCode(String phoue,Integer num){
+    public String smsCode(String phoue) {
         DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou", "LTAI4FhukqTnk1uPYaEd6mER", "AIoqmWfWoaWjiAkhL478RaVweizwRP");
         IAcsClient client = new DefaultAcsClient(profile);
-
+        //生成验证码
+        Integer num = (int) ((Math.random() * 9 + 1) * 1000);
         CommonRequest request = new CommonRequest();
         request.setMethod(MethodType.POST);
         request.setDomain("dysmsapi.aliyuncs.com");
@@ -54,7 +56,7 @@ public class CodeUtil {
         request.putQueryParameter("PhoneNumbers", phoue);
         request.putQueryParameter("SignName", "胖大虎的春天");
         request.putQueryParameter("TemplateCode", "SMS_173344197");
-        request.putQueryParameter("TemplateParam", "{\"code\":"+num+"}");
+        request.putQueryParameter("TemplateParam", "{\"code\":" + num + "}");
         try {
             CommonResponse response = client.getCommonResponse(request);
             String data = response.getData();
@@ -73,8 +75,6 @@ public class CodeUtil {
                 //str2[0]为KEY,str2[1]为值
                 map.put(str2[0], str2[1]);
             }
-            System.out.println(response.getData());
-            System.out.println(map.get("Message"));
             if ("OK".equals(map.get("Message"))) {
                 return num.toString();
             }
