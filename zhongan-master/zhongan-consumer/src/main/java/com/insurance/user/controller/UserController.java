@@ -91,16 +91,16 @@ public class UserController {
      * @return
      */
     @RequestMapping(value="/consumer/user/getSmsCode")
-	public String getSmsCode(HttpSession session,String codes){
+	public String getSmsCode(HttpSession session,String phone){
         CodeUtil codeUtil = new CodeUtil();
         User user = new User();
-        user.setUserPhonenumber(codes);
-            //传入电话号码
-            String code = codeUtil.smsCode(user.getUserPhonenumber());
-            if(code != null){
+        user.setUserPhonenumber(phone);
+            //传入电话号码,返回验证码
+            String smsCode = codeUtil.smsCode(user.getUserPhonenumber());
+            if(smsCode != null){
                 //验证码不等于null则将手机号与验证码存入session用于点击注册时做判断
                 session.setAttribute("phone",user.getUserPhonenumber());
-                session.setAttribute("code",code);
+                session.setAttribute("smsCode",smsCode);
                 return "y1";
             }
 	    return null;
@@ -124,29 +124,25 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMapping(value="/consumer/user/registered")
-	public String registered(String codes,String smsCode,HttpSession session){
+	public String registered(String phone,String smsCode,String passWord,HttpSession session){
         User user = new User();
-		user.setUserPhonenumber(codes);
+		user.setUserPhonenumber(phone);	//手机号封装进user
+		user.setUserPassword(passWord);	//封装密码
 		//调用通过手机查询一个用户的方法
 		User user1 = userClient.falsLogin(user);
 		//user1 !=null ,说明该手机号被注册了,直接return
 		if(user1 != null){
 			return "n";
 		}
-		//用于接收验证码
-		String code = null;
-        //count == 1 进入获取验证码的模块
-
-	    //count不等于1 ,判断用户这次提交的手机号于发送给用户的验证码是否一致
-        if(session.getAttribute("phone").equals(user.getUserPhonenumber())&&session.getAttribute("code").equals(smsCode)){
+	    //判断用户这次提交的手机号于发送给用户的验证码是否一致
+        if(session.getAttribute("phone").equals(user.getUserPhonenumber())&&session.getAttribute("smsCode").equals(smsCode)){
             //session里存的电话号码与验证码==提交上来的电话号码与验证码
             //允许注册
 			session.removeAttribute("phoue");	//进了这个方法这两个值在session里就没用了
-			session.removeAttribute("code");
+			session.removeAttribute("smsCode");
 			//随机生成用户名
 			Integer num1 = (int)((Math.random()*9+1)*100000);
-			user.setUserName(num1+"");	//用户名
-			//调用根据用户名查询用户方法
+			/*//调用根据用户名查询用户方法
 			User userByName = userClient.getUserByName(user);
 			//给循环定义一个表示kk,userByName!null 就是userByName有对象的时候就重新生成随机数
 			kk:while (userByName!=null){	// !=null 说明该用户有了重新生成用户名
@@ -156,8 +152,8 @@ public class UserController {
 				if(userByName == null){	//当userByName == null 就是userByName没有对象时 跳出循环
 					break kk;
 				}
-			}
-
+			}*/
+			user.setUserName(num1+"");	//封装用户名
 			boolean b = userClient.registered(user);
 			if(b){
 				User user2 = userClient.falsLogin(user);
