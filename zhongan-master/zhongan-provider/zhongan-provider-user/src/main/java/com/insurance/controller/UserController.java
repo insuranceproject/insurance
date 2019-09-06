@@ -25,7 +25,7 @@ public class UserController implements UserControllerApi {
      * @param user
      * @return
      */
-    @PostMapping("/login")
+    @GetMapping("/login")
     @Override
     public User login(@RequestBody User user) {
         return userService.getOne(new QueryWrapper<User>().eq("user_name",user.getUserName()).eq("user_password",user.getUserPassword()));
@@ -36,7 +36,7 @@ public class UserController implements UserControllerApi {
      * @param user
      * @return
      */
-    @PostMapping("/falsLogin")
+    @GetMapping("/falsLogin")
     @Override
     public User falsLogin(User user) {
         return userService.getOne(new QueryWrapper<User>().eq("user_phonenumber",user.getUserPhonenumber()));
@@ -47,7 +47,7 @@ public class UserController implements UserControllerApi {
      * @param user
      * @return
      */
-    @PostMapping("/registered")
+    @GetMapping("/registered")
     @Override
     public boolean registered(@RequestBody User user) {
         return userService.save(user);
@@ -60,7 +60,7 @@ public class UserController implements UserControllerApi {
      * @param user
      * @return
      */
-    @PostMapping("/updateUser")
+    @GetMapping("/updateUser")
     @Override
     public boolean updateUser(@RequestBody User user) {
         return userService.updateById(user);
@@ -71,7 +71,7 @@ public class UserController implements UserControllerApi {
      * @param user
      * @return
      */
-    @PostMapping("/deleteUser")
+    @GetMapping("/deleteUser")
     @Override
     public boolean deleteUser(User user) {
         return userService.removeById(user.getUserId());
