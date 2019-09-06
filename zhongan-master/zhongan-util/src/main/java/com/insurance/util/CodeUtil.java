@@ -44,6 +44,7 @@ public class CodeUtil {
     public String smsCode(String phoue,Integer num){
         DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou", "LTAI4FhukqTnk1uPYaEd6mER", "AIoqmWfWoaWjiAkhL478RaVweizwRP");
         IAcsClient client = new DefaultAcsClient(profile);
+
         CommonRequest request = new CommonRequest();
         request.setMethod(MethodType.POST);
         request.setDomain("dysmsapi.aliyuncs.com");

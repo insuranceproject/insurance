@@ -93,6 +93,7 @@ public class UserController {
 		//由于点击获取验证码和注册两个按钮所以分了两个手机号参数
 		user.setUserPhonenumber(codes);
 		//调用通过手机查询用户的方法
+
 		userClient.falsLogin(user);
 		//生成6位随机数做验证码,用于随机生成用户名
 		Integer num1 = (int)((Math.random()*9+1)*100000);
