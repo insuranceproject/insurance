@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<HTML
+        xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <LINK href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div th:fragment="head">
+    <div class="za-toolbar" data-ilog="1.589.zL6|a">
+        <div class="za-toolbar-layout">
+            <div class="za-toolbar-layout-logo"><a href="https://www.zhongan.com/" title="众安保险">众安保险</a></div>
+            <p class="za-toolbar-layout-slogan"><span>做有温度的保险</span></p>
+            <div class="za-toolbar-layout-entry"><input type="hidden" id="logoutUrl" value="/logOut"> <input
+                    type="hidden" id="domain" value="https://www.zhongan.com"> <input type="hidden" id="originDomain"
+                                                                                      value="https://www.zhongan.com">
+                <input type="hidden" id="appName" value="dm">
+                <!--<div class="entry-item entry-login" id="headerLogin">-->
+                <div id="headerLogin"
+                     style="    position: relative;display: inline;float: left;line-height: 34px;box-sizing: content-box;">
+                    <div class="entry-item entry-account" style="padding-right: 5px;padding-left: 5px;"><a id=""
+                                                                                                           href="https://www.zhongan.com/account/myAccount"
+                                                                                                           rel="nofollow"
+                                                                                                           class="entry-item-hd"><span>登录</span><i
+                            class="icon-drop" style="margin-left: 2px;"></i></a>
+                        <ul class="za-toolbar-sublist" style="left: 50%;transform: translateX(-47%);">
+                            <li class="sub-item"><a
+                                    href="https://login.zhongan.com/passport/login.htm?sourceApp=1&amp;target=https://www.zhongan.com/open/member/loginJump?logincallback=/account/myAccount"
+                                    rel="nofollow" title="个人登录">个人登录</a></li>
+                            <li class="sub-item"><a
+                                    href="https://login.zhongan.com/passport/open_platform.htm?sourceApp=3&amp;target=https://open.zhongan.com/promotion/loginJump?logincallback=/promotion/manager/home"
+                                    rel="nofollow" title="企业登录">企业登录</a></li>
+                        </ul>
+                    </div>
+                    <!--<a class="login-link" href="https://login.zhongan.com/passport/login.htm?sourceApp=1&target=https://www.zhongan.com/open/member/loginJump?logincallback=/account/myAccount">登录</a>-->
+                    <div class="entry-item entry-login" style="padding: 5px 0;"><i class="vline"></i></div>
+                    <!--<a class="register-link" href="https://login.zhongan.com/passport/register.htm?sourceApp=1&target=https://www.zhongan.com/open/member/loginJump?logincallback=/">注册</a>-->
+                    <div class="entry-item entry-account" style="padding-left: 5px;padding-right: 5px;"><a id=""
+                                                                                                           href="https://www.zhongan.com/account/myAccount"
+                                                                                                           rel="nofollow"
+                                                                                                           class="entry-item-hd"><span>注册</span><i
+                            class="icon-drop" style="margin-left: 2px;"></i></a>
+                        <ul class="za-toolbar-sublist" style="left: 50%;transform: translateX(-47%);">
+                            <li class="sub-item"><a
+                                    href="https://login.zhongan.com/passport/register.htm?sourceApp=1&amp;target=https://www.zhongan.com/open/member/loginJump?logincallback=/"
+                                    rel="nofollow" title="个人注册">个人注册</a></li>
+                            <li class="sub-item"><a
+                                    href="https://login.zhongan.com/passport/openPlatformRegister.htm?sourceApp=3&amp;target=https%3A%2F%2Fopen.zhongan.com%2Fpromotion%2FloginJump%3Flogincallback%3D%2Fpromotion%2Fmanager%2Fhome"
+                                    rel="nofollow" title="企业注册">企业注册</a></li>
+                        </ul>
+                    </div>
+                </div>            <!--</div>-->
+                <div class="entry-item entry-account"><a href="https://www.zhongan.com/account/myAccount"
+                                                         rel="nofollow" class="entry-item-hd"><span>个人中心</span><i
+                        class="icon-drop"></i></a>
+                    <ul class="za-toolbar-sublist">
+                        <li class="sub-item"><a href="https://www.zhongan.com/account/myPolicy" rel="nofollow"
+                                                title="我的订单">我的订单</a></li>
+                        <li class="sub-item"><a href="https://www.zhongan.com/account/employeeWelfare" rel="nofollow"
+                                                title="团险保单">团险保单</a></li>
+                        <li class="sub-item"><a href="https://www.zhongan.com/account/claimEnquiry" rel="nofollow"
+                                                title="理赔查询">理赔查询</a></li>
+                        <li class="sub-item"><a href="https://www.zhongan.com/account/myInfo" rel="nofollow"
+                                                title="我的资料">我的资料</a></li>
+                        <!--<li class="sub-item"><a href="https://www.zhongan.com/account/myInvest" rel="nofollow" title="我的投资" >我的投资</a></li>-->
+                        <!--<li class="sub-item"><a href="http://open.zhongan.com/innerweb/ygd/loanApplyRecord.htm" rel="nofollow" title="我的资产" >我的资产</a></li>-->
+                        <li class="sub-item"><a href="https://www.zhongan.com/account/myPoint" rel="nofollow"
+                                                title="我的积分">我的积分</a></li>
+                    </ul>
+                </div>
+                <div class="entry-item entry-eportal"><a href="https://www.zhongan.com/eportal/" rel="nofollow"><span>众安团险</span><i
+                        class="icon-drop"></i></a>
+                    <ul class="za-toolbar-sublist">
+                        <li class="sub-item"><a href="https://www.zhongan.com/eportal/employee.html" rel="nofollow"
+                                                title="员工商业保险">员工商业保险</a></li>
+                        <li class="sub-item"><a href="https://hr.zhongan.com/" rel="nofollow"
+                                                title="https://hr.zhongan.com">企业hr保单管理</a></li>
+                    </ul>
+                </div>
+                <div class="entry-item entry-open"><a href="https://open.zhongan.com/open/home/home.htm" rel="nofollow">开放平台</a>
+                </div>
+                <div class="entry-item entry-publicInfo"><a
+                        href="https://www.zhongan.com/channel/public/publicInfo2018.html"
+                        rel="nofollow"><span>公开信息披露</span><i class="icon-drop"></i></a>
+                    <ul class="za-toolbar-sublist">
+                        <li class="sub-item"><a href="https://www.zhongan.com/channel/public/publicInfo2018.html"
+                                                rel="nofollow" title="公开信息披露">公开信息披露</a></li>
+                        <li class="sub-item"><a href="https://www.zhongan.com/channel/internetInfo/internetInfo.html"
+                                                rel="nofollow" title="互联网保险信息披露">互联网保险信息披露</a></li>
+                    </ul>
+                </div>
+                <div class="entry-item entry-open"><a href="https://www.zhongan.com/corporate/announcements/"
+                                                      rel="nofollow">投资者关系 Investor Relations</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="za-main-nav">
+        <div class="za-main-nav-layout">
+            <ul class="za-main-nav-list" data-ilog="1.589.iR9|a" ilogbinded="true">
+                <li class="list-item"><a title="首页" class="list-item-hd active" id="zaNav_onlineIndex"
+                                         href="https://www.zhongan.com/index.html#channelEnName=onlineIndex">首页</a></li>
+                <li class="list-item"><a title="健康险" class="list-item-hd" id="zaNav_health"
+                                         href="https://www.zhongan.com/open/health#channelEnName=health">健康险</a> <i
+                        class="item-bg" style="width: 1349px; left: -75px;"></i>
+                    <div class="za-main-nav-pro">
+                        <ul class="za-main-nav-pro-list">
+                            <li><a href="https://www.zhongan.com/p/83398346#channelEnName=health"> <img
+                                    data-src="//static.zhongan.com/upload/online/material/1509704896994.png"
+                                    src="http://47.93.221.88/images/1509704896994.png"
+                                    alt="尊享e生·新全保通2017少儿版">
+                                <h3 class="pro-title" title="尊享e生·新全保通2017少儿版">尊享e生·新全保通2017少儿版</h3>
+                                <p class="pro-price"><span class="price-numb">200</span>元起</p></a></li>
+                            <li><a href="https://www.zhongan.com/p/83881372#channelEnName=health"> <img
+                                    data-src="//static.zhongan.com/upload/online/material/1509704812948.png"
+                                    src="http://47.93.221.88/images/1509704812948.png"
+                                    alt="尊享e生·新全保通2017成人版">
+                                <h3 class="pro-title" title="尊享e生·新全保通2017成人版">尊享e生·新全保通2017成人版</h3>
+                                <p class="pro-price"><span class="price-numb">245</span>元起</p></a></li>
+                            <li>
+                                <a href="https://ztg.zhongan.com/promote/entrance/promoteEntrance.do?promotionCode=INST190834380020&amp;redirectType=pc&amp;bizOrigin=zx2019pc#channelEnName=health">
+                                    <img data-src="//static.zhongan.com/upload/online/material/1497858674376.png"
+                                         src="http://47.93.221.88/images/1497858674376.png"
+                                         alt="尊享e生2019版">
+                                    <h3 class="pro-title" title="尊享e生2019版">尊享e生2019版</h3>
+                                    <p class="pro-price"><span class="price-numb">146</span>元起</p></a></li>
+                            <li><a href="https://www.zhongan.com/p/83052692#channelEnName=health"> <img
+                                    data-src="//static.zhongan.com/upload/online/material/1501577396494.png"
+                                    src="http://47.93.221.88/images/1501577396494.png"
+                                    alt="乐活e生·少儿重疾险">
+                                <h3 class="pro-title" title="乐活e生·少儿重疾险">乐活e生·少儿重疾险</h3>
+                                <p class="pro-price"><span class="price-numb">40</span>元起</p></a></li>
+                            <li><a href="https://www.zhongan.com/p/83190811#channelEnName=health"> <img
+                                    data-src="//static.zhongan.com/upload/online/material/1501577679673.png"
+                                    src="http://47.93.221.88/images/1501577679673.png"
+                                    alt="乐活e生·成人重疾险">
+                                <h3 class="pro-title" title="乐活e生·成人重疾险">乐活e生·成人重疾险</h3>
+                                <p class="pro-price"><span class="price-numb">60</span>元起</p></a></li>
+                            <li><a href="https://www.zhongan.com/p/83619954#channelEnName=health"> <img
+                                    data-src="//static.zhongan.com/upload/online/material/1497858765597.png"
+                                    src="http://47.93.221.88/images/1497858765597.png"
+                                    alt="儿童重大疾病险">
+                                <h3 class="pro-title" title="儿童重大疾病险">儿童重大疾病险</h3>
+                                <p class="pro-price"><span class="price-numb">34</span>元起</p></a></li>
+                            <li><a class="more-link" href="https://www.zhongan.com/open/health"> <img
+                                    data-src="//static.zhongan.com/website/factoryOnline/assets/images/public/more-product-icon.png"
+                                    src="http://47.93.221.88/images/more-product-icon.png"
+                                    alt="查看全部">
+                                <h3 class="pro-title" title="查看全部">查看全部</h3></a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="list-item"><a title="车险" class="list-item-hd" id="zaNav_chexian"
+                                         href="https://www.zhongan.com/open/castle/inputQueryInfo?utm_source=zyggbz#channelEnName=chexian">车险</a>
+                </li>
+                <li class="list-item"><a title="头条" class="list-item-hd" id="zaNav_index_toutiao"
+                                         href="https://www.zhongan.com/toutiao#channelEnName=index_toutiao">头条</a></li>
+            </ul>
+            <div class="za-main-nav-layout-qrcode">
+                <div class="entry-item"><a href="https://www.zhongan.com/open/active/app/appdownload"
+                                           class="entry-item-app">下载众安APP</a>
+                    <div class="za-main-nav-sublist">
+                        <div class="trangle"></div>
+                        <div class="QRcode">
+                            <div class="img"></div>
+                        </div>
+                        <div class="subtext"><p class="text1">扫码下载APP</p>
+                            <p>实时追踪服务进程</p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="za-main-nav-layout-entry" data-ilog="1.589.bV2|a" ilogbinded="true">
+                <div class="entry-item"><a href="https://www.zhongan.com/open/policy/insureService" rel="nofollow"
+                                           class="entry-item-hd">保险服务<i class="icon-drop"></i></a>
+                    <ul class="za-main-nav-sublist">
+                        <li class="sub-item"><i class="online_applyPgai"></i> <a
+                                href="https://www.zhongan.com/open/modify/putModify.htm" rel="nofollow" title="申请批改">申请批改</a>
+                        </li>
+                        <li class="sub-item"><i class="online_applyClaim"></i> <a
+                                href="https://www.zhongan.com/open/claim/putClaim" rel="nofollow" title="申请理赔">申请理赔</a>
+                        </li>
+                        <li class="sub-item"><i class="online_policyQuery"></i> <a
+                                href="https://www.zhongan.com/open/policy/policySearch" rel="nofollow"
+                                title="保单查询">保单查询</a></li>
+                        <li class="sub-item"><i class="online_applyValid"></i> <a
+                                href="https://www.zhongan.com/open/policy/policyVerify" rel="nofollow"
+                                title="保单验真">保单验真</a></li>
+                        <li class="sub-item"><i class="online_datadownload"></i> <a
+                                href="https://www.zhongan.com/open/policy/insureDownload" rel="nofollow" title="资料下载">资料下载</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div><!--end  mainNav-->
+</div>
+</body>
+</html>
