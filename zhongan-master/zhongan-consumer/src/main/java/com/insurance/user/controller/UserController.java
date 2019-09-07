@@ -5,10 +5,7 @@ import com.insurance.user.client.UserClient;
 import com.insurance.util.CodeUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 
@@ -103,16 +100,16 @@ public class UserController {
 
     /**
      * 个人注册
-	 * &&session.getAttribute("smsCode").equals(smsCode)
-	 * ,String smsCode
+	 *
+	 *
      * @param phone 用户输入手机号
      * @param smsCode   用户输入的验证码
      * @param passWord  用户输入的密码
      * @param session
      * @return  返回注册成功或失败
      */
-	@RequestMapping(value="/consumer/user/registered")
-	public String registered(String phone,String passWord,HttpSession session){
+	@PostMapping(value="/consumer/user/registered")
+	public String registered(String phone,String passWord,HttpSession session,String smsCode){
         User user = new User();
 		user.setUserPhonenumber(phone);	//手机号封装进user
 		user.setUserPassword(passWord);	//封装密码
@@ -123,7 +120,7 @@ public class UserController {
 			return "n";
 		}
 	    //判断用户这次提交的手机号于发送给用户的验证码是否一致
-        if(session.getAttribute("phone").equals(user.getUserPhonenumber())){
+      if(session.getAttribute("phone").equals(user.getUserPhonenumber())&&session.getAttribute("smsCode").equals(smsCode)){
             //session里存的电话号码与验证码==提交上来的电话号码与验证码
             //允许注册
 			session.removeAttribute("phone");	//进了这个方法这两个值在session里就没用了
@@ -149,7 +146,7 @@ public class UserController {
 				session.setAttribute("user",user2);
 				return "y";
 			}
-        }
+       }
         return "n";
 	}
 

@@ -3,6 +3,9 @@ package com.insurance.user.client;
 import com.insurance.pojo.User;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.Mapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @FeignClient("PROVIDER-USER")
 public interface UserClient {
@@ -21,7 +24,7 @@ public interface UserClient {
      * 快速登陆
      * @return
      */
-    @GetMapping("/user/falsLogin")
+    @PostMapping("/user/falsLogin")
     public User falsLogin(User user);
 
     /**
@@ -29,8 +32,8 @@ public interface UserClient {
      * @param user
      * @return
      */
-    @GetMapping("/user/registered")
-    public boolean registered(User user);
+    @PostMapping("/user/registered")
+    public boolean registered(@RequestBody User user);
 
 
     /**
