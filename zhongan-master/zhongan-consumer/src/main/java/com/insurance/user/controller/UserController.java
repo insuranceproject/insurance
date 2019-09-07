@@ -38,11 +38,22 @@ public class UserController {
 
 	/**
 	 * 个人用户名密码登陆
-	 * @param user
+	 * @param userName
+	 * @param passWord
+	 * @param session
 	 * @return
 	 */
 	@RequestMapping(value="/consumer/user/login")
-	public String login(User user,HttpSession session){
+	public String login(String userName,String passWord,HttpSession session){
+		if(userName == null || "".equals(userName)){	//用户名不能为空
+			return "n";
+		}
+		if(passWord == null || "".equals(passWord)){	//密码不能为空
+			return "n";
+		}
+		User user = new User();
+		user.setUserPassword(passWord);
+		user.setUserName(userName);
 		User user1 = userClient.login(user);
 		if(user1 != null){
 			session.setAttribute("user",user1);
@@ -168,38 +179,71 @@ public class UserController {
 	}
 
 
-
+	/**
+	 * 修改密码
+	 * 第一步,点击修改
+	 * @param session
+	 * @return
+	 */
+	@RequestMapping(value="/consumer/user/updatePassWord1")
+	public String updatePassWord1(HttpSession session){
+		//登陆后session存的对象
+		User user = (User) session.getAttribute("user");
+		if(user != null){  //修改密码前进行用户判断,看是否能获取导user,获取不到则跳转导登陆页面
+			return "y";
+		}
+		return "n";
+	}
 
 	/**
 	 * 修改密码
-	 * @param user
+	 * 身份验证,第二步
+	 * @param session
+	 * @param passWord	输入密码
 	 * @return
 	 */
-	@RequestMapping(value="/consumer/user/updateUser")
-	public String updateUser(User user,Integer count,HttpSession session,String rPassWord){
-        //登陆后session存的对象
-        User user1 = (User) session.getAttribute("user");
-        if(user1 == null){  //修改密码前进行用户判断,看是否能获取导user,获取不到则跳转导登陆页面
-            //user==null 跳转登陆页面
-        }
-	    //第一步,当前密码
-	    if(count == 1){
-            //判断输入的密码是否与session里用户的密码一致
-            if(user1.getUserPassword().equals(user.getUserPassword())){ //一致,跳到第二步的页面
-                return "y";
-            }
-	    }
-	    if(count == 2){ //第二步会穿过来两个值,密码与重复密码
-	        if(user.getUserPassword().equals(rPassWord)){   //两个密码都一样,允许提交修改密码
-	            //根据id修改信息,将session里的userid传入对象
-	            user.setUserId(user1.getUserId());
-                boolean b = userClient.updateUser(user);
-                if(b){  //修改成功!
-                    return "y";
-                }
-            }
-        }
-		return null;
+	public String updatePassWord2(HttpSession session,String passWord){
+		//登陆后session存的对象
+		User user = (User) session.getAttribute("user");
+		if(user == null){  //修改密码前进行用户判断,看是否能获取导user,获取不到则跳转导登陆页面
+			return "n";
+		}
+		if(passWord == null || "".equals(passWord)){	//密码不能为空
+			return "n";
+		}
+		if(user.getUserPassword().equals(passWord)){	//session里user的密码与,输入密码一致,允许进行下一步
+			return "y";
+		}
+		return "n";
+	}
+
+
+	/**
+	 *
+	 * @param session
+	 * @param passWord	新登陆密码
+	 * @param rPassWord	确认新登陆密码
+	 * @return
+	 */
+	public String updatePassWord3(HttpSession session,String passWord,String rPassWord){
+		//登陆后session存的对象
+		User user = (User) session.getAttribute("user");
+		if(user == null){  //修改密码前进行用户判断,看是否能获取导user,获取不到则跳转导登陆页面
+			return "n";
+		}
+		if(passWord.equals(rPassWord)){	//两次密码输入一致,允许修改
+			//根据id修改信息,将session里的userid传入对象
+			user.setUserId(user.getUserId());
+			boolean b = userClient.updateUser(user);
+			if(b){  //修改成功!
+				//调用查询用户方法,将修改密码后的新用户传入session
+				User user1 = userClient.falsLogin(user);
+				if(user1 != null){
+					return "y";
+				}
+			}
+		}
+		return "n";
 	}
 
 
