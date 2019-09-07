@@ -5,4 +5,10 @@ import com.insurance.pojo.User;
 
 
 public interface UserService extends IService<User> {
+    /**
+     * 登陆
+     * @param user
+     * @return
+     */
+    public User getUser(User user);
 }

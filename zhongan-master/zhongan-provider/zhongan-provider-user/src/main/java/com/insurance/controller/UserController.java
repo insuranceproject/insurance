@@ -5,6 +5,9 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.insurance.api.user.UserControllerApi;
 import com.insurance.pojo.User;
 import com.insurance.service.UserService;
+import org.apache.ibatis.annotations.Result;
+import org.apache.ibatis.annotations.Results;
+import org.apache.ibatis.annotations.Select;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,10 +28,10 @@ public class UserController implements UserControllerApi {
      * @param user
      * @return
      */
-    @PostMapping("/login")
+    @PostMapping("/getUser")
     @Override
-    public User login(@RequestBody User user) {
-        return userService.getOne(new QueryWrapper<User>().eq("user_name",user.getUserName()).eq("user_password",user.getUserPassword()));
+    public User getUser(@RequestBody User user) {
+        return userService.getUser(user);
     }
 
     /**
