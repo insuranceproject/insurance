@@ -292,7 +292,7 @@ public class UserController {
 			user.setUserName(values);
 			user.setUserPhonenumber(null);
 		}
-		User user1 = userClient.getUserByName(user);
+		User user1 = userClient.getUser(user);
 		if(user1 != null){	//用户存在
 			session.setAttribute("user1",user1);
 			return "y";
