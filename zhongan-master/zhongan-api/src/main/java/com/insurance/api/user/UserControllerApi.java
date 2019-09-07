@@ -1,5 +1,6 @@
 package com.insurance.api.user;
 
+import com.insurance.pojo.Authentication;
 import com.insurance.pojo.User;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -62,4 +63,11 @@ public interface UserControllerApi {
      */
     @ApiOperation("根据用户名查询用户")
     public User getUserByName(User user);
+
+    /**
+     * 根据用户id查询用户实名信息
+     * @return
+     */
+    @ApiOperation("根据用户id查询用户实名信息")
+    public Authentication getUserAuthentication(Integer userId);
 }

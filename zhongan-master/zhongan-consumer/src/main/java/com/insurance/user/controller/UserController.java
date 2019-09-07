@@ -1,8 +1,10 @@
 package com.insurance.user.controller;
 
+import com.insurance.pojo.Authentication;
 import com.insurance.pojo.User;
 import com.insurance.user.client.UserClient;
 import com.insurance.util.CodeUtil;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -110,6 +112,23 @@ public class UserController {
 		}
 		return null;
 	}
+
+	/**
+	 * 获取实名信息
+	 * @return
+	 */
+	@RequestMapping(value="/consumer/user/getUserAuthentication")
+	public String getUserAuthentication(HttpSession session){
+		User user = (User) session.getAttribute("user");
+		Authentication authentication = userClient.getUserAuthentication(user.getUserId());
+		if(authentication != null){
+			//不等于空说明用户实名了,直接传入session就好
+			session.setAttribute("users",authentication);
+			return "y";
+		}
+		return "n";
+	}
+
 
     /**
      * 获取验证码
@@ -220,6 +239,7 @@ public class UserController {
 	 * @param passWord	输入密码
 	 * @return
 	 */
+	@RequestMapping(value="/consumer/user/updatePassWord2")
 	public String updatePassWord2(HttpSession session,String passWord){
 		//登陆后session存的对象
 		User user = (User) session.getAttribute("user");
@@ -243,6 +263,7 @@ public class UserController {
 	 * @param rPassWord	确认新登陆密码
 	 * @return
 	 */
+	@RequestMapping(value="/consumer/user/updatePassWord3")
 	public String updatePassWord3(HttpSession session,String passWord,String rPassWord){
 		//登陆后session存的对象
 		User user = (User) session.getAttribute("user");
@@ -306,7 +327,7 @@ public class UserController {
 	 * @param session
 	 * @return
 	 */
-	@RequestMapping(value="/consumer/user/retrievePassWord1")
+	@RequestMapping(value="/consumer/user/retrievePassWord2")
 	public String retrievePassWord2(String smsCode,HttpSession session){
 		User user = (User) session.getAttribute("user1");	//获取用户
 		if(user == null){
@@ -325,6 +346,7 @@ public class UserController {
 	 * @param rPassWord	确认新登陆密码
 	 * @return
 	 */
+	@RequestMapping(value="/consumer/user/retrievePassWord3")
 	public String retrievePassWord3(HttpSession session,String passWord,String rPassWord){
 		User user = (User) session.getAttribute("user1");	//获取用户
 		if(user == null){
@@ -339,6 +361,42 @@ public class UserController {
 				User user1 = userClient.falsLogin(user);
 				if(user1 != null){
 					session.setAttribute("user",user1);
+					return "y";
+				}
+			}
+		}
+		return "n";
+	}
+
+	/**
+	 * 修改用户名
+	 * 修改用户名,先点击修改,再输入值,再点击完成,传进来一个value
+	 * 1.先获取对象,看看对象是否失效
+	 * 2.根据value查询数据库是否有值
+	 * 3.没有值则进行修改,否则提示用户用户名重复
+	 * @param session
+	 * @param userName	//用户传进来的用户名
+	 * @return
+	 */
+	@RequestMapping(value="/consumer/user/modifyUserName")
+	public String modifyUserName(HttpSession session,String userName){
+		User user = (User) session.getAttribute("user");
+		if(user == null){	//判断用户是否失效
+			return "n";	//失效,需要跳到登陆页面,让用户登陆
+		}
+		User user1 = new User();
+		user1.setUserName(userName);	//封装用户名
+		User byName = userClient.getUserByName(user);	//调用根据用户名查询用户方法
+		if(byName == null){
+			//为空,允许修改
+			user1.setUserId(user.getUserId());	//封装id
+			boolean b = userClient.updateUser(user1);
+			if(b){
+				//修改成功!重新查询该用户存入session
+				User user2 = userClient.getUserByName(user1);
+				session.removeAttribute("user");	//将session里的user移除,方便后面的user添加
+				if(user2 != null){
+					session.setAttribute("user",user2);
 					return "y";
 				}
 			}

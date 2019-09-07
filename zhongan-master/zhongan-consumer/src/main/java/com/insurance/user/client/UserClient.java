@@ -1,5 +1,6 @@
 package com.insurance.user.client;
 
+import com.insurance.pojo.Authentication;
 import com.insurance.pojo.User;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -60,4 +61,14 @@ public interface UserClient {
      */
     @GetMapping("/user/getUserByName")
     public User getUserByName(User user);
+
+
+
+    /**
+     * 根据用户id查询用户实名信息
+     * @param
+     * @return
+     */
+    @GetMapping("/user/getUserAuthentication")
+    public Authentication getUserAuthentication(Integer userId);
 }

@@ -37,11 +37,10 @@
                 }, 1000);
                 var phone = $("#phone").val();
                 $.post("/consumer/user/getSmsCode?phone="+phone,function (resout) {
-                    if(resout == "y"){
+                    if(resout != "y"){
                         alert(resout)
                     }
-                    alert(resout)
-                })
+                });
             })
 
             $("#Btn").click(function () {
@@ -51,10 +50,9 @@
                 var smsCode = $("#messageNumber").val();
                 $.post("/consumer/user/registered?passWord="+pwd+"&phone="+phone+"&smsCode="+smsCode,function (resout) {
                     if(resout == "y"){
-                        alert(resout)
+                        window.location = "../index.html";
                     }
-                    alert(resout)
-                })
+                });
 
                 // $.ajax(
                 //     url="consumer/user/setUser",

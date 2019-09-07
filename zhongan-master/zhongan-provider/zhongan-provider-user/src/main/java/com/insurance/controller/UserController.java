@@ -3,6 +3,7 @@ package com.insurance.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.insurance.api.user.UserControllerApi;
+import com.insurance.pojo.Authentication;
 import com.insurance.pojo.User;
 import com.insurance.service.UserService;
 import org.apache.ibatis.annotations.Result;
@@ -88,9 +89,21 @@ public class UserController implements UserControllerApi {
      * @param user
      * @return
      */
+    @GetMapping("/getUserByName")
     @Override
     public User getUserByName(@RequestBody User user) {
         return userService.getOne(new QueryWrapper<User>().eq("user_name",user.getUserName()));
+    }
+
+    /**
+     * 根据用户id查询用户实名信息
+     * @param
+     * @return
+     */
+    @GetMapping("/getUserAuthentication")
+    @Override
+    public Authentication getUserAuthentication(Integer userId) {
+        return userService.getUserAuthentication(userId);
     }
 
 
