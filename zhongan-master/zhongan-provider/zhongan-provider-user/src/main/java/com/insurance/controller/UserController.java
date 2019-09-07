@@ -33,17 +33,19 @@ public class UserController implements UserControllerApi {
 
     /**
      * 快速登陆
+     * 根据手机号查询
      * @param user
      * @return
      */
     @PostMapping("/falsLogin")
     @Override
-    public User falsLogin(User user) {
+    public User falsLogin(@RequestBody User user) {
         return userService.getOne(new QueryWrapper<User>().eq("user_phonenumber",user.getUserPhonenumber()));
     }
 
     /**
      * 注册
+     * 新增一个用户
      * @param user
      * @return
      */
@@ -73,7 +75,7 @@ public class UserController implements UserControllerApi {
      */
     @GetMapping("/deleteUser")
     @Override
-    public boolean deleteUser(User user) {
+    public boolean deleteUser(@RequestBody User user) {
         return userService.removeById(user.getUserId());
     }
 
@@ -84,7 +86,7 @@ public class UserController implements UserControllerApi {
      * @return
      */
     @Override
-    public User getUserByName(User user) {
+    public User getUserByName(@RequestBody User user) {
         return userService.getOne(new QueryWrapper<User>().eq("user_name",user.getUserName()));
     }
 

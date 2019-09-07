@@ -60,8 +60,12 @@ public class UserController {
      */
 	@RequestMapping(value="/consumer/user/falsLogin")
 	public String falsLogin(String phone,HttpSession session,String smsCode){
-		//用于接收验证码方法
-		String code = null;
+		if(smsCode == null || "".equals(smsCode)){	//验证码不能为空
+			return "n";
+		}
+		if(phone == null || "".equals(phone)){	//手机号不能为空
+			return "n";
+		}
 		//判断用户这次提交的手机号于发送给用户的验证码是否一致
 		if(session.getAttribute("phone").equals(phone)&&session.getAttribute("smsCode").equals(smsCode)){
             session.removeAttribute("phone");	//进了这个方法这两个值在session里就没用了
@@ -86,6 +90,9 @@ public class UserController {
      */
     @RequestMapping(value="/consumer/user/getSmsCode")
 	public String getSmsCode(HttpSession session,String phone){
+		if(phone == null || "".equals(phone)){	//手机号不能为空
+			return "n";
+		}
         CodeUtil codeUtil = new CodeUtil();
             //传入电话号码,返回验证码
             String smsCode = codeUtil.smsCode(phone);
@@ -93,7 +100,7 @@ public class UserController {
                 //验证码不等于null则将手机号与验证码存入session用于点击注册时做判断
                 session.setAttribute("phone",phone);
                 session.setAttribute("smsCode",smsCode);
-                return "y1";
+                return "y";
             }
 	    return null;
     }
@@ -110,6 +117,16 @@ public class UserController {
      */
 	@PostMapping(value="/consumer/user/registered")
 	public String registered(String phone,String passWord,HttpSession session,String smsCode){
+		if(smsCode == null || "".equals(smsCode)){	//验证码不能为空
+			return "n";
+		}
+		if(phone == null || "".equals(phone)){	//手机号不能为空
+			return "n";
+		}
+		if(passWord == null || "".equals(passWord)){	//密码不能为空
+			return "n";
+		}
+		System.out.println(smsCode+",11111111");
         User user = new User();
 		user.setUserPhonenumber(phone);	//手机号封装进user
 		user.setUserPassword(passWord);	//封装密码

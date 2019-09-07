@@ -35,18 +35,38 @@
                         num = 3;
                     }
                 }, 1000);
+                var phone = $("#phone").val();
+                $.post("/consumer/user/getSmsCode?phone="+phone,function (resout) {
+                    if(resout == "y"){
+                        alert(resout)
+                    }
+                    alert(resout)
+                })
             })
 
-            $("#registerBtn").click(function () {
+            $("#Btn").click(function () {
                 alert(111)
                 var pwd = $("#password").val();
                 var phone = $("#phone").val();
-                $.getJSON("consumer/user/setUser?passWord="+pwd+"&phone="+phone,function (resout) {
+                var smsCode = $("#messageNumber").val();
+                $.post("/consumer/user/registered?passWord="+pwd+"&phone="+phone+"&smsCode="+smsCode,function (resout) {
                     if(resout == "y"){
-                        alert(2)
+                        alert(resout)
                     }
-                    alert(3)
+                    alert(resout)
                 })
+
+                // $.ajax(
+                //     url="consumer/user/setUser",
+                //     type="POST",
+                //     dataType="JSON",
+                //     data={"passWord":pwd,"phone":phone}
+                //     success()
+                // )
+                /*$.post("/consumer/user/registered?passWord="+pwd+"&phone="+phone,function(rs){
+                    console.log(rs);
+                })*/
+
             })
 
         })
@@ -60,12 +80,12 @@
 
 <div class="wrapper" style="margin-top: -54px;">
     <div class="login-top">
-        <img alt="众安保险" class="logo" id="topLogo" src="images/logo.png">
-        <img alt="众安保险" class="slog" src="images/logo_slog.png">
+        <img alt="众安保险" class="logo" id="topLogo" src="http://47.93.221.88/userpervious/images/logo.png">
+        <img alt="众安保险" class="slog" src="http://47.93.221.88/userpervious/images/logo_slog.png">
     </div>
     <div class="bg-wrap">
         <div class="pos-img">
-            <img alt="众安保险" class="img" src="images/bg-big.png">
+            <img alt="众安保险" class="img" src="http://47.93.221.88/userpervious/images/bg-big.png">
         </div>
         <div class="za-rect-box">
             <div class="za-login-form">
@@ -198,7 +218,7 @@
                     </div>
                     <div class="form-item">
                         <p class="login-tip " id="loginTip"></p>
-                        <button type="button" class="ui-btn btn-large" id="registerBtn">立即注册</button>
+                        <button type="button" class="ui-btn btn-large" id="Btn">立即注册</button>
                     </div>
                 </div>
                 <div class="form-item">
