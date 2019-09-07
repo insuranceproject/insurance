@@ -35,14 +35,14 @@ public class Policy extends Model<Policy> implements Serializable {
 
     private Integer policyStauts;
 
-    private Integer policyNumber;
+    private String policyNumber;
 
     private Integer orderId;
 
     private Integer policyType;
 
-    //订单表的
-    private Integer orderNumber;   //订单编号
+
+    /*private String orderNumber;   //订单编号
 
     private Integer userId;     //订单所属人编号
 
@@ -50,12 +50,7 @@ public class Policy extends Model<Policy> implements Serializable {
 
     private Integer orderCost;  //订单金额
 
-    private Integer orderStatus;   //订单状态
-
-
-
-/*    //订单表list
-    private List<Order> orderlist;*/
+    private Integer orderStatus;   //订单状态*/
 
 
 }

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-@FeignClient("PROVIDER-PRODUCT")
+@FeignClient("provider-product")
 public interface TypeClient {
     @GetMapping("/type/findAll")
     public List<Partype> findAll();

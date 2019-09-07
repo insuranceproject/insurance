@@ -1,9 +1,7 @@
 package com.insurance.controller;
 
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.github.pagehelper.PageInfo;
 import com.insurance.mapper.PolicyMapper;
 import com.insurance.pojo.Policy;
 import com.insurance.service.PolicyService;
@@ -19,16 +17,18 @@ public class PolicyController {
 
     @Autowired
     private PolicyService policyService;
+    @Autowired
+    private PolicyMapper policyMapper;
 
     @PostMapping("/selectPolicyPage")
-    public IPage<Policy> PolicyPage(int pageNo, int pageSize, Integer number){
-        Page<Policy> page=new Page<>(pageNo,pageSize);
-        QueryWrapper<Policy> queryWrapper = new QueryWrapper<>();
-        /*if (number!=0){
-            queryWrapper.eq("policy_number",number);
-        }*/
-        IPage<Policy> PolicyPage=policyService.selectPagePolicy(page,number);
+    public PageInfo<Policy> PolicyPage(Integer pageNo, Integer PageSize, String number){
+        PageInfo<Policy> policyPageInfo = policyService.selectPagePolicy(pageNo, PageSize, number);
+        System.out.println(policyPageInfo);
+        return policyPageInfo;
+    }
 
-        return PolicyPage;
+    @PostMapping("/zz")
+    public Policy PolicyPage(){
+        return policyMapper.selectById(1);
     }
 }
