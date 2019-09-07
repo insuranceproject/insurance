@@ -39,7 +39,7 @@ public class UserController {
 	/**
 	 * 个人用户名密码登陆
      *
-	 * @param userName
+	 * @param values
 	 * @param passWord
 	 * @param session
 	 * @return
@@ -198,7 +198,7 @@ public class UserController {
 
 
 	/**
-	 * 修改密码
+	 * 修改密码1
 	 * 第一步,点击修改
 	 * @param session
 	 * @return
@@ -214,7 +214,7 @@ public class UserController {
 	}
 
 	/**
-	 * 修改密码
+	 * 修改密码2
 	 * 身份验证,第二步
 	 * @param session
 	 * @param passWord	输入密码
@@ -237,7 +237,7 @@ public class UserController {
 
 
 	/**
-	 *
+	 *修改密码3
 	 * @param session
 	 * @param passWord	新登陆密码
 	 * @param rPassWord	确认新登陆密码
@@ -257,6 +257,88 @@ public class UserController {
 				//调用查询用户方法,将修改密码后的新用户传入session
 				User user1 = userClient.falsLogin(user);
 				if(user1 != null){
+					session.setAttribute("user",user1);
+					return "y";
+				}
+			}
+		}
+		return "n";
+	}
+
+
+	/**
+	 *找回密码1
+	 * @param values	//账户
+	 * @return
+	 */
+	@RequestMapping(value="/consumer/user/retrievePassWord1")
+	public String retrievePassWord1(String values,HttpSession session){
+		User user = new User();
+		//邮箱的java正则表达式
+		String em = "^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$";
+		//手机的java正则表达式
+		String ph = "^((13[0-9])|(15[^4,\\D])|(17[0-9])|(18[0,5-9]))\\d{8}$";
+		//判断values的值与正则表达式做匹配
+		if(values.matches(em)){
+			user.setUserEmail(values);
+			user.setUserName(null);
+			user.setUserPhonenumber(null);
+		}else if(values.matches(ph)){
+			user.setUserEmail(null);
+			user.setUserName(null);
+			user.setUserPhonenumber(values);
+		}else{  //不匹配邮箱与手机号,values赋值给用户米
+			user.setUserEmail(null);
+			user.setUserName(values);
+			user.setUserPhonenumber(null);
+		}
+		User user1 = userClient.getUserByName(user);
+		if(user1 != null){	//用户存在
+			session.setAttribute("user1",user1);
+			return "y";
+		}
+		return "n";	//用户不存在
+	}
+
+	/**
+	 * 找回密码2
+	 * @param smsCode
+	 * @param session
+	 * @return
+	 */
+	@RequestMapping(value="/consumer/user/retrievePassWord1")
+	public String retrievePassWord2(String smsCode,HttpSession session){
+		User user = (User) session.getAttribute("user1");	//获取用户
+		if(user == null){
+			return "n";	//用户失效,跳回确认账户页面
+		}
+		if(session.getAttribute("smsCode").equals(smsCode)){	//判断,用户输入的验证码与session里保存的验证码是否一致
+			return "y";	//身份验证成功!允许跳入修改密码页面
+		}
+		return "n";
+	}
+
+	/**
+	 *找回密码3
+	 * @param session
+	 * @param passWord	新登陆密码
+	 * @param rPassWord	确认新登陆密码
+	 * @return
+	 */
+	public String retrievePassWord3(HttpSession session,String passWord,String rPassWord){
+		User user = (User) session.getAttribute("user1");	//获取用户
+		if(user == null){
+			return "n";	//用户失效,跳回确认账户页面
+		}
+		if(passWord.equals(rPassWord)){	//两次密码输入一致,允许修改
+			//根据id修改信息,将session里的userid传入对象
+			user.setUserId(user.getUserId());
+			boolean b = userClient.updateUser(user);
+			if(b){  //修改成功!
+				//调用查询用户方法,将修改密码后的新用户传入session
+				User user1 = userClient.falsLogin(user);
+				if(user1 != null){
+					session.setAttribute("user",user1);
 					return "y";
 				}
 			}
