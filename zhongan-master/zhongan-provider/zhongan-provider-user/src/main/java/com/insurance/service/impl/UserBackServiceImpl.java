@@ -4,7 +4,6 @@ package com.insurance.service.impl;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.insurance.mapper.PolicyMapper;
 import com.insurance.mapper.UserMapper;
 import com.insurance.pojo.Policy;
 import com.insurance.pojo.User;

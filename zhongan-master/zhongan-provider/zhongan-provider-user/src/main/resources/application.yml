@@ -9,7 +9,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/zhongan
     username: root
-    password: 123
+    password: root
   dbcp2:
     min-idle: 5
     initial-size: 5
