@@ -16,6 +16,14 @@ public interface UserMapper extends BaseMapper<User> {
      */
     public IPage<User> selectPageVo(Page page, String userName);
 
+   /* @Select("<script>SELECT * FROM `insurance_user` where user_password = #{userPassword} and " +
+            "<if test=' userEmail != null '> user_email = #{userEmail} </if>  "
+            + " <if test='userPhonenumber !=null '> user_phonenumber = #{userPhonenumber} </if> "
+            + " <if test='userName !=null '> user_name = #{userName} </if> </script>")*/
 
-
+    @Select("<script>SELECT * FROM `insurance_user` where user_password = #{userPassword} and " +
+            "<if test=' userEmail != null '> user_email = #{userEmail} </if>  "
+            + " <if test='userPhonenumber !=null '> user_phonenumber = #{userPhonenumber} </if> "
+            + " <if test='userName !=null '> user_name = #{userName} </if> </script>")
+   public User getUser(User user);
 }

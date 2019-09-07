@@ -17,8 +17,8 @@ public interface UserClient {
      * @param user
      * @return
      */
-    @GetMapping("/user/login")
-    public User login(User user);
+    @GetMapping("/user/getUser")
+    public User getUser(User user);
 
     /**
      * 快速登陆

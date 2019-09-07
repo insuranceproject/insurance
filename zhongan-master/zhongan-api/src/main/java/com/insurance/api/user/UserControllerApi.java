@@ -13,12 +13,12 @@ public interface UserControllerApi {
     public User getOne();
 
     /**
-     * 个人用户名密码登陆
+     * 个人普通登陆
      * @param user
      * @return
      */
-    @ApiOperation("个人用户名密码登陆")
-    public User login(User user);
+    @ApiOperation("个人普通登陆")
+    public User getUser(User user);
 
     /**
      *

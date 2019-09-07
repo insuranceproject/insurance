@@ -38,27 +38,45 @@ public class UserController {
 
 	/**
 	 * 个人用户名密码登陆
+     *
 	 * @param userName
 	 * @param passWord
 	 * @param session
 	 * @return
 	 */
 	@RequestMapping(value="/consumer/user/login")
-	public String login(String userName,String passWord,HttpSession session){
-		if(userName == null || "".equals(userName)){	//用户名不能为空
+	public String login(String values,String passWord,HttpSession session){
+		if(values == null || "".equals(values)){	//用户名不能为空
 			return "n";
 		}
 		if(passWord == null || "".equals(passWord)){	//密码不能为空
 			return "n";
 		}
 		User user = new User();
-		user.setUserPassword(passWord);
-		user.setUserName(userName);
-		User user1 = userClient.login(user);
-		if(user1 != null){
-			session.setAttribute("user",user1);
-			return "y";
-		}
+		user.setUserPassword(passWord); //给密码赋值
+		//邮箱的java正则表达式
+        String em = "^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$";
+        //手机的java正则表达式
+        String ph = "^((13[0-9])|(15[^4,\\D])|(17[0-9])|(18[0,5-9]))\\d{8}$";
+        //判断values的值与正则表达式做匹配
+        if(values.matches(em)){
+            user.setUserEmail(values);
+            user.setUserName(null);
+            user.setUserPhonenumber(null);
+        }else if(values.matches(ph)){
+            user.setUserEmail(null);
+            user.setUserName(null);
+            user.setUserPhonenumber(values);
+        }else{  //不匹配邮箱与手机号,values赋值给用户米
+            user.setUserEmail(null);
+            user.setUserName(values);
+            user.setUserPhonenumber(null);
+        }
+        User user1 = userClient.getUser(user);
+        if(user1 != null){
+            session.setAttribute("user",user1);
+            return "y";
+        }
 		return null;
 	}
 

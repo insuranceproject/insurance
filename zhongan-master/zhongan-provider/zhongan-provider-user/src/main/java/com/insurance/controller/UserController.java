@@ -28,14 +28,10 @@ public class UserController implements UserControllerApi {
      * @param user
      * @return
      */
-    @PostMapping("/login")
+    @PostMapping("/getUser")
     @Override
-    @Select("<script>SELECT * FROM `insurance_user` where user_password = #{userPassword} and " +
-            "<if test=' userEmail != null '> user_email = #{userEmail} </if>  "
-            + " <if test='userPhonenumber !=null '> user_phonenumber = #{userPhonenumber} </if> "
-            + " <if test='userName !=null '> user_name = #{userName} </if> </script>")
-    public User login(@RequestBody User user) {
-        return userService.getOne(new QueryWrapper<User>().eq("user_name",user.getUserName()).eq("user_password",user.getUserPassword()));
+    public User getUser(@RequestBody User user) {
+        return userService.getUser(user);
     }
 
     /**
