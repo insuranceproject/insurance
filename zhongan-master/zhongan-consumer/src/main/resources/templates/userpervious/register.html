@@ -36,26 +36,30 @@
                     }
                 }, 1000);
                 var phone = $("#phone").val();
-                $.post("/consumer/user/getSmsCode?phone="+phone,function (resout) {
-                    if(resout != "y"){
+                $.post("/consumer/user/getSmsCode?phone=" + phone, function (resout) {
+                    if (resout == "y") {
+                        alert(resout)
+                    }else{
                         alert("验证码发送失败");
                     }
-                })
-            })
+                });
+            });
+
 
             $("#Btn").click(function () {
                 var pwd = $("#password").val();
                 var phone = $("#phone").val();
                 var smsCode = $("#messageNumber").val();
-                $.post("/consumer/user/registered?passWord="+pwd+"&phone="+phone+"&smsCode="+smsCode,function (resout) {
-                    alert(resout);
-                    if(resout == "y"){
-                        window.location.href="index.html";
+                $.post("/consumer/user/registered?passWord=" + pwd + "&phone=" + phone + "&smsCode=" + smsCode, function (resout) {
+                    if (resout == "y") {
+                        window.location = "../index.html";
+                    }else{
+                        alert(resout)
                     }
-                })
+                });
             })
-
         })
+
     </script>
 </head>
 
