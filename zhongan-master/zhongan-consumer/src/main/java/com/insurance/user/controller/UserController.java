@@ -41,14 +41,14 @@ public class UserController {
 	/**
 	 * 个人用户名密码登陆
      *
-	 * @param values
+	 * @param loginName
 	 * @param passWord
 	 * @param session
 	 * @return
 	 */
 	@RequestMapping(value="/consumer/user/login")
-	public String login(String values,String passWord,HttpSession session){
-		if(values == null || "".equals(values)){	//用户名不能为空
+	public String login(String loginName,String passWord,HttpSession session){
+		if(loginName == null || "".equals(loginName)){	//用户名不能为空
 			return "n";
 		}
 		if(passWord == null || "".equals(passWord)){	//密码不能为空
@@ -57,28 +57,28 @@ public class UserController {
 		User user = new User();
 		user.setUserPassword(passWord); //给密码赋值
 		//邮箱的java正则表达式
-        String em = "^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$";
-        //手机的java正则表达式
-        String ph = "^((13[0-9])|(15[^4,\\D])|(17[0-9])|(18[0,5-9]))\\d{8}$";
-        //判断values的值与正则表达式做匹配
-        if(values.matches(em)){
-            user.setUserEmail(values);
-            user.setUserName(null);
-            user.setUserPhonenumber(null);
-        }else if(values.matches(ph)){
-            user.setUserEmail(null);
-            user.setUserName(null);
-            user.setUserPhonenumber(values);
-        }else{  //不匹配邮箱与手机号,values赋值给用户米
-            user.setUserEmail(null);
-            user.setUserName(values);
-            user.setUserPhonenumber(null);
-        }
-        User user1 = userClient.getUser(user);
-        if(user1 != null){
-            session.setAttribute("user",user1);
-            return "y";
-        }
+		String em = "^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$";
+		//手机的java正则表达式
+		String ph = "^((13[0-9])|(15[^4,\\D])|(17[0-9])|(18[0,5-9]))\\d{8}$";
+		//判断values的值与正则表达式做匹配
+		if(loginName.matches(em)){
+			user.setUserEmail(loginName);
+			user.setUserName(null);
+			user.setUserPhonenumber(null);
+		}else if(loginName.matches(ph)){
+			user.setUserEmail(null);
+			user.setUserName(null);
+			user.setUserPhonenumber(loginName);
+		}else{  //不匹配邮箱与手机号,values赋值给用户米
+			user.setUserEmail(null);
+			user.setUserName(loginName);
+			user.setUserPhonenumber(null);
+		}
+		User user1 = userClient.getUser(user);
+		if(user1 != null){
+			session.setAttribute("user",user1);
+			return "y";
+		}
 		return null;
 	}
 
@@ -99,15 +99,15 @@ public class UserController {
 		}
 		//判断用户这次提交的手机号于发送给用户的验证码是否一致
 		if(session.getAttribute("phone").equals(phone)&&session.getAttribute("smsCode").equals(smsCode)){
-            session.removeAttribute("phone");	//进了这个方法这两个值在session里就没用了
-            session.removeAttribute("smsCode");
-            User user = new User();
-            user.setUserPhonenumber(phone);
+			session.removeAttribute("phone");	//进了这个方法这两个值在session里就没用了
+			session.removeAttribute("smsCode");
+			User user = new User();
+			user.setUserPhonenumber(phone);
 			User user1 = userClient.falsLogin(user);	//根据手机号查询一个用户
-            if(user1 != null){
-                session.setAttribute("user",user1);
-                return "y";
-            }
+			if(user1 != null){
+				session.setAttribute("user",user1);
+				return "y";
+			}
 			return null;
 		}
 		return null;
@@ -175,7 +175,7 @@ public class UserController {
 			return "n";
 		}
 		System.out.println(smsCode+",11111111");
-        User user = new User();
+		User user = new User();
 		user.setUserPhonenumber(phone);	//手机号封装进user
 		user.setUserPassword(passWord);	//封装密码
 		//调用通过手机查询一个用户的方法
@@ -184,10 +184,10 @@ public class UserController {
 		if(user1 != null){
 			return "n";
 		}
-	    //判断用户这次提交的手机号于发送给用户的验证码是否一致
-      if(session.getAttribute("phone").equals(user.getUserPhonenumber())&&session.getAttribute("smsCode").equals(smsCode)){
-            //session里存的电话号码与验证码==提交上来的电话号码与验证码
-            //允许注册
+		//判断用户这次提交的手机号于发送给用户的验证码是否一致
+		if(session.getAttribute("phone").equals(user.getUserPhonenumber())&&session.getAttribute("smsCode").equals(smsCode)){
+			//session里存的电话号码与验证码==提交上来的电话号码与验证码
+			//允许注册
 			session.removeAttribute("phone");	//进了这个方法这两个值在session里就没用了
 			session.removeAttribute("smsCode");
 			//随机生成用户名
@@ -211,8 +211,8 @@ public class UserController {
 				session.setAttribute("user",user2);
 				return "y";
 			}
-       }
-        return "n";
+		}
+		return "n";
 	}
 
 

@@ -27,15 +27,7 @@ public class UserBackController {
      */
     @PostMapping("/selectUserPage")
     public IPage<User> UserPage(int pageNo, int pageSize, String userName) {
-        Page<User> page = new Page<>(pageNo, pageSize);
-
-        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
-        if (userName!=null&&userName!=""){
-            queryWrapper.like("user_name", "%"+userName+"%");
-        }
-
-        IPage<User> userIPage = userMapper.selectPage(page, queryWrapper);
-        return userIPage;
+        return null;
 
 
     }
