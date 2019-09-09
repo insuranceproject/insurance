@@ -13,8 +13,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 @EnableFeignClients
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 public class Consumer80_App {
-	public static void main(String[] args) {
-
-		SpringApplication.run(Consumer80_App.class, args);
+	public static void main(String[] args)	{
+		SpringApplication.run( Consumer80_App.class, args);
 	}
 }

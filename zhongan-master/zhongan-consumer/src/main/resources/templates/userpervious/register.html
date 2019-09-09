@@ -38,33 +38,21 @@
                 var phone = $("#phone").val();
                 $.post("/consumer/user/getSmsCode?phone="+phone,function (resout) {
                     if(resout != "y"){
-                        alert(resout)
+                        alert("验证码发送失败");
                     }
-                });
+                })
             })
 
             $("#Btn").click(function () {
-                alert(111)
                 var pwd = $("#password").val();
                 var phone = $("#phone").val();
                 var smsCode = $("#messageNumber").val();
                 $.post("/consumer/user/registered?passWord="+pwd+"&phone="+phone+"&smsCode="+smsCode,function (resout) {
+                    alert(resout);
                     if(resout == "y"){
-                        window.location = "../index.html";
+                        window.location.href="index.html";
                     }
-                });
-
-                // $.ajax(
-                //     url="consumer/user/setUser",
-                //     type="POST",
-                //     dataType="JSON",
-                //     data={"passWord":pwd,"phone":phone}
-                //     success()
-                // )
-                /*$.post("/consumer/user/registered?passWord="+pwd+"&phone="+phone,function(rs){
-                    console.log(rs);
-                })*/
-
+                })
             })
 
         })

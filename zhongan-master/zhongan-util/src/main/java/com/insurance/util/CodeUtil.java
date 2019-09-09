@@ -50,7 +50,7 @@ public class CodeUtil {
      *
      * @return
      */
-    public String smsCode(String phoue) {
+    public String smsCode(String phone) {
         DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou", "LTAI4FhukqTnk1uPYaEd6mER", "AIoqmWfWoaWjiAkhL478RaVweizwRP");
         IAcsClient client = new DefaultAcsClient(profile);
         //生成验证码
@@ -61,7 +61,7 @@ public class CodeUtil {
         request.setVersion("2017-05-25");
         request.setAction("SendSms");
         request.putQueryParameter("RegionId", "cn-hangzhou");
-        request.putQueryParameter("PhoneNumbers", phoue);
+        request.putQueryParameter("PhoneNumbers", phone);
         request.putQueryParameter("SignName", "胖大虎的春天");
         request.putQueryParameter("TemplateCode", "SMS_173344197");
         request.putQueryParameter("TemplateParam", "{\"code\":" + num + "}");
