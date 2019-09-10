@@ -18,7 +18,7 @@ public class CodeUtil {
     /**
      * 邮箱验证码
      */
-    public void emailCode(String emailNum) {
+    public String emailCode(String emailNum) {
         //生成4位随机数做验证码
         Integer num = (int) ((Math.random() * 9 + 1) * 1000);
         HtmlEmail email = new HtmlEmail();//创建一个HtmlEmail实例对象
@@ -33,15 +33,17 @@ public class CodeUtil {
             messageText.append("<h2>请收好验证码" + num + "</h2></br>");
             email.setMsg(messageText.toString());//设置发送内容
             email.send();//进行发送
+            return num.toString();
         } catch (EmailException e) {
             e.printStackTrace();
         }
+        return null;
     }
 
     @Test
     public void Test_1111(){
-        String phone="13434759606";
-        String code = smsCode(phone);
+        String emailNum="1643797953@qq.com";
+        String code = emailCode(emailNum);
         System.out.println(code);
     }
 

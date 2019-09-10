@@ -70,4 +70,20 @@ public interface UserControllerApi {
      */
     @ApiOperation("根据用户id查询用户实名信息")
     public Authentication getUserAuthentication(Integer userId);
+
+    /**
+     * 根据邮箱查询用户
+     * @param user
+     * @return
+     */
+    @ApiOperation("根据邮箱查询用户")
+    public User getUserByEmail(User user);
+
+    /**
+     * 根据用户id查询用户
+     * @param user
+     * @return
+     */
+    @ApiOperation("根据用户id查询用户")
+    public User getUserById(User user);
 }
