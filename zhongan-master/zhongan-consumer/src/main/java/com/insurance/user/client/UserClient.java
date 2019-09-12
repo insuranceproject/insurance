@@ -3,10 +3,7 @@ package com.insurance.user.client;
 import com.insurance.pojo.Authentication;
 import com.insurance.pojo.User;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.Mapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 @FeignClient("PROVIDER-USER")
 public interface UserClient {
@@ -71,4 +68,28 @@ public interface UserClient {
      */
     @GetMapping("/user/getUserAuthentication")
     public Authentication getUserAuthentication(Integer userId);
+
+    /**
+     * 根据邮箱查询用户
+     * @param user
+     * @return
+     */
+    @PostMapping("/user/getUserByEmail")
+    public User getUserByEmail(User user);
+
+    /**
+     * 根据用户id查询用户
+     * @param user
+     * @return
+     */
+    @PostMapping("/user/getUserById")
+    public User getUserById(User user);
+
+    /**
+     * 保存一条实名认证信息
+     * @param authentication
+     * @return
+     */
+    @PostMapping("/user/saveAuthentication")
+    public boolean saveAuthentication(Authentication authentication);
 }
