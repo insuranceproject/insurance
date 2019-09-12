@@ -1,6 +1,8 @@
 package com.insurance.user.controller;
 
+import com.insurance.corp.client.CorpClient;
 import com.insurance.pojo.Authentication;
+import com.insurance.pojo.Corp;
 import com.insurance.pojo.User;
 import com.insurance.user.client.UserClient;
 import com.insurance.util.CodeUtil;
@@ -19,6 +21,8 @@ public class UserController {
 
     @Autowired
     private UserClient userClient;
+    @Autowired
+    private CorpClient corpClient;
 
 
     @RequestMapping(value = "/consumer/user/getOne")
@@ -166,6 +170,7 @@ public class UserController {
      * @param session
      * @param emails  收件人邮箱
      */
+    @RequestMapping(value = "/consumer/user/getEmailCode")
     public String getEmailCode(HttpSession session, String emails) {
         if (emails == null || "".equals(emails)) {    //手机号不能为空
             return "n";
@@ -315,6 +320,29 @@ public class UserController {
     }
 
     /**
+     * 传输用户2
+     *
+     * @return
+     */
+    @RequestMapping(value = "/consumer/user/transmitUser2")
+    public ModelAndView transmitUser2(HttpSession session, Integer count) {
+        User user = (User) session.getAttribute("user1");
+        ModelAndView modelAndView = new ModelAndView();
+        //截取用户名
+        String userName = user.getUserName().substring(0, 3) + "*****" + user.getUserName().substring(user.getUserName().length() - 2);
+        //截取手机号
+        String phone = user.getUserPhonenumber().substring(0, 3) + "*****" + user.getUserPhonenumber().substring(8, user.getUserPhonenumber().length());
+        //截取邮箱
+        String email = user.getUserEmail().substring(0, 1) + "*****" + user.getUserEmail().substring(user.getUserEmail().indexOf("@"));
+        modelAndView.addObject(userName);
+        modelAndView.addObject(phone);
+        modelAndView.addObject(email);
+        modelAndView.addObject(count);
+        modelAndView.setViewName("userpervious/identityVerify.html");
+        return modelAndView;
+    }
+
+    /**
      * 找回密码1
      *
      * @param values //账户
@@ -330,8 +358,8 @@ public class UserController {
         //判断values的值与正则表达式做匹配
         if (values.matches(em)) {
             user.setUserEmail(values);
-        //    user.setUserName(null);
-         //   user.setUserPhonenumber(null);
+            //    user.setUserName(null);
+            //   user.setUserPhonenumber(null);
 
             User user1 = userClient.getUserByEmail(user);
             if (user1 != null) {    //用户存在
@@ -350,25 +378,6 @@ public class UserController {
             }
         }
         return "n";    //用户不存在
-    }
-
-    /**
-     *传输用户2
-     * @return
-     */
-    @RequestMapping(value = "/consumer/user/transmitUser2")
-    public ModelAndView transmitUser2(HttpSession session,Integer count){
-        User user = (User) session.getAttribute("user1");
-        ModelAndView modelAndView = new ModelAndView();
-        String userName = user.getUserName().substring(0, 3) + "*****" + user.getUserName().substring(user.getUserName().length()-2);
-        String phone = user.getUserPhonenumber().substring(0, 3) + "*****" + user.getUserPhonenumber().substring(8, user.getUserPhonenumber().length());
-        String email = user.getUserEmail().substring(0, 1) + "*****" + user.getUserEmail().substring(user.getUserEmail().indexOf("@"));
-        modelAndView.addObject(userName);
-        modelAndView.addObject(phone);
-        modelAndView.addObject(email);
-        modelAndView.addObject(count);
-        modelAndView.setViewName("userpervious/identityVerify.html");
-        return modelAndView;
     }
 
     /**
@@ -392,12 +401,13 @@ public class UserController {
 
     /**
      * 找回密码2-邮箱验证码
+     *
      * @param emailCode 邮箱验证码
      * @param session
      * @return
      */
     @RequestMapping(value = "/consumer/user/retrievePassWordEmail2")
-    public String retrievePassWordEmail2(String emailCode, HttpSession session){
+    public String retrievePassWordEmail2(String emailCode, HttpSession session) {
         User user = (User) session.getAttribute("user1");    //获取用户
         if (user == null) {
             return "n";    //用户失效,跳回确认账户页面
@@ -475,17 +485,192 @@ public class UserController {
         return "n";
     }
 
-
     /**
-     * 后台删除用户
-     * 根据id删除将id传入User
+     * 绑定(修改)邮箱1
      *
-     * @param user
+     * @param session
      * @return
      */
-    @RequestMapping(value = "/consumer/user/deleteUser")
-    public String deleteUser(User user) {
-        userClient.deleteUser(user);
-        return null;
+    @RequestMapping(value = "/consumer/user/bindEmail1")
+    public ModelAndView bindEmail1(HttpSession session, ModelAndView modelAndView) {
+        User user = (User) session.getAttribute("user");
+        if (user != null) {   //session里的用户为空则跳回登陆页面,提示用户登陆
+            //截取手机号
+            String phone = user.getUserPhonenumber().substring(0, 3) + "*****" + user.getUserPhonenumber()
+                    .substring(8, user.getUserPhonenumber().length());
+            modelAndView.addObject("phone", phone);  //将手机号保存在modelandview里
+            modelAndView.setViewName("");   //跳转页面
+            return modelAndView;
+        }
+        //没有获取到user,返回登陆页面叫用户登陆
+        modelAndView.setViewName("");   //跳转页面
+        return modelAndView;
     }
+
+    /**
+     * 绑定(修改)邮箱2 手机验证码
+     * 判断手机验证码是否相等
+     *
+     * @param session
+     * @return
+     */
+    @RequestMapping(value = "/consumer/user/bindEmail2ByPhone")
+    public ModelAndView bindEmail2ByPhone(HttpSession session, ModelAndView modelAndView, String smsCode) {
+        User user = (User) session.getAttribute("user");
+        if (user != null) {   //session里的用户为空则跳回登陆页面,提示用户登陆
+            if (session.getAttribute("smsCode").equals(smsCode)) {    //判断验证码相等则允许下一步
+                modelAndView.setViewName("");
+                return modelAndView;
+            }
+        }
+        //验证码不相等...
+        modelAndView.setViewName("");
+        return modelAndView;
+    }
+
+    /**
+     * 绑定(修改)邮箱2 邮箱验证码
+     * @param session
+     * @param modelAndView
+     * @param emailCode
+     * @return
+     */
+    public ModelAndView bindEmail2ByEmail(HttpSession session,ModelAndView modelAndView,String emailCode){
+        User user = (User) session.getAttribute("user");
+        if (user != null) {   //session里的用户为空则跳回登陆页面,提示用户登陆
+            if (session.getAttribute("emailCode").equals(emailCode)) {    //判断验证码相等则允许下一步
+                modelAndView.setViewName("");
+                return modelAndView;
+            }
+        }
+        //验证码不相等...
+        modelAndView.setViewName("");
+        return modelAndView;
+    }
+
+    /**
+     * 绑定(修改)邮箱3
+     * 判断邮箱是否被使用
+     *
+     * @param session
+     * @return
+     */
+    @RequestMapping(value = "/consumer/user/bindEmail3")
+    public String bindEmail3(HttpSession session, String emails) {
+        User user = (User) session.getAttribute("user");
+        if (user != null) {   //session里的用户为空则跳回登陆页面,提示用户登陆
+            //不为空
+            User user1 = new User();
+            user1.setUserEmail(emails);
+            User userByEmail = userClient.getUserByEmail(user1);    //调用根据邮箱查询user
+            if (userByEmail != null) {
+                //判断userByEmail不为空,说明邮箱已被个人用户使用
+                return "n";
+            }
+            Corp corpByEmail = corpClient.getCorpByEmail(emails);
+            if (corpByEmail != null) {
+                //判断corpByEmail不为空,说明已被企业用户使用
+                return "n";
+            }
+        }
+        return "y"; //双判断为空,说明该邮箱未被使用
+    }
+
+    /**
+     * 绑定(修改)邮箱4
+     * 判断传入的验证码与邮箱是否与session里的一致
+     *
+     * @param session
+     * @param emails  传入的邮箱
+     * @param smsCode 传入的验证码
+     * @return
+     */
+    @RequestMapping(value = "/consumer/user/bindEmail4")
+    public String bindEmail4(HttpSession session, String emails, String smsCode) {
+        User user = (User) session.getAttribute("user");
+        if (user != null) {   //session里的用户为空则跳回登陆页面,提示用户登陆
+            //判断,session里的邮箱与验证是否与传入的一致
+            if (session.getAttribute("emails").equals(emails) && session.getAttribute("smsCode").equals(smsCode)) {
+                //一致
+                return "y";
+            }
+        }
+        return "n";
+    }
+
+
+    /**
+     * 实名认证1
+     * 选择验证方式
+     *
+     * @param session
+     * @return
+     */
+    @RequestMapping(value = "/consumer/user/realNameAuthentication1")
+    public ModelAndView realNameAuthentication1(HttpSession session, ModelAndView modelAndView) {
+        User user = (User) session.getAttribute("user");
+        if (user != null) {   //判断,user是否为空
+            return modelAndView;
+        }
+        return modelAndView;
+    }
+
+    /**
+     * 实名认证2
+     * 身份验证
+     *
+     * @param session
+     * @param modelAndView
+     * @param smsCode      传入的手机验证码
+     * @return
+     */
+    @RequestMapping(value = "/consumer/user/realNameAuthentication2ByPhone")
+    public ModelAndView realNameAuthentication2ByPhone(HttpSession session, ModelAndView modelAndView, String smsCode) {
+        User user = (User) session.getAttribute("user");
+        if (user != null) {   //判断,user是否为空
+            if (session.getAttribute("smsCode").equals(smsCode)) {    //判断验证码相等则允许下一步
+                modelAndView.setViewName("");
+                return modelAndView;
+            }
+            return modelAndView;
+        }
+        return modelAndView;
+    }
+
+    /**
+     * 实名认证3
+     * @param session
+     * @param modelAndView
+     * @param authRealname  真实姓名
+     * @param authIdentitycard  身份证号
+     * @return
+     */
+    public ModelAndView realNameAuthentication3(HttpSession session, ModelAndView modelAndView, String authRealname, String authIdentitycard) {
+        User user = (User) session.getAttribute("user");
+        if (user != null) {   //判断,user是否为空
+            CodeUtil codeUtil = new CodeUtil();
+            //调用实名认证方法,返回实名认证实体类
+            Authentication authentication = codeUtil.realNameAuthentication(authRealname, authIdentitycard);
+            authentication.setUserId(user.getUserId()); //将用户id传入实名认证种
+            modelAndView.setViewName("");
+            return modelAndView;
+        }
+        return modelAndView;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

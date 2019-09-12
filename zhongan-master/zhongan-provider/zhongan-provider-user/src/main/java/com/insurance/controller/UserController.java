@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.insurance.api.user.UserControllerApi;
 import com.insurance.pojo.Authentication;
 import com.insurance.pojo.User;
+import com.insurance.service.AuthenticationService;
 import com.insurance.service.UserService;
 import io.swagger.annotations.ApiOperation;
 import org.apache.ibatis.annotations.Result;
@@ -18,6 +19,8 @@ import org.springframework.web.bind.annotation.*;
 public class UserController implements UserControllerApi {
     @Autowired
     private UserService userService;
+    @Autowired
+    private AuthenticationService authenticationService;
 
 
     @GetMapping("/getOne")
@@ -112,7 +115,7 @@ public class UserController implements UserControllerApi {
      * @return
      */
     @Override
-    @GetMapping("/getUserByEmail")
+    @PostMapping("/getUserByEmail")
     public User getUserByEmail(@RequestBody User user) {
         return userService.getOne(new QueryWrapper<User>().eq("user_email",user.getUserEmail()));
     }
@@ -123,9 +126,20 @@ public class UserController implements UserControllerApi {
      * @return
      */
     @Override
-    @GetMapping("/getUserById")
-    public User getUserById(User user) {
+    @PostMapping("/getUserById")
+    public User getUserById(@RequestBody User user) {
         return userService.getOne(new QueryWrapper<User>().eq("user_id",user.getUserId()));
+    }
+
+    /**
+     * 保存一条实名认证信息
+     * @param authentication
+     * @return
+     */
+    @Override
+    @PostMapping("/saveAuthentication")
+    public boolean saveAuthentication(Authentication authentication) {
+        return authenticationService.save(authentication);
     }
 
 

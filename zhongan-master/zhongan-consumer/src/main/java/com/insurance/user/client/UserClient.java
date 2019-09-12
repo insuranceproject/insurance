@@ -74,14 +74,22 @@ public interface UserClient {
      * @param user
      * @return
      */
-    @GetMapping("/user/getUserByEmail")
-    public User getUserByEmail(@RequestParam("user") User user);
+    @PostMapping("/user/getUserByEmail")
+    public User getUserByEmail(User user);
 
     /**
      * 根据用户id查询用户
      * @param user
      * @return
      */
-    @GetMapping("/user/getUserById")
+    @PostMapping("/user/getUserById")
     public User getUserById(User user);
+
+    /**
+     * 保存一条实名认证信息
+     * @param authentication
+     * @return
+     */
+    @PostMapping("/user/saveAuthentication")
+    public boolean saveAuthentication(Authentication authentication);
 }

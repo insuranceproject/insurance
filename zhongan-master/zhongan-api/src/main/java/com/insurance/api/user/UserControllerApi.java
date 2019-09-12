@@ -86,4 +86,11 @@ public interface UserControllerApi {
      */
     @ApiOperation("根据用户id查询用户")
     public User getUserById(User user);
+
+    /**
+     * 保存一条实名认证信息
+     * @return
+     */
+    @ApiOperation("保存一条实名认证信息")
+    public boolean saveAuthentication(Authentication authentication);
 }

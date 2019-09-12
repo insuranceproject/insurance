@@ -32,7 +32,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 短信验证码工具类
+ * 身份证实名工具类
  */
 public class HttpUtils {
 
