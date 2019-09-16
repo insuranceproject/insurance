@@ -1,14 +1,14 @@
 package com.insurance.user.client;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.insurance.pojo.User;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.Mapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 @FeignClient("PROVIDER-USER")
 public interface UserClient {
+
+
     @GetMapping("/user/getOne")
     public User getOne();
 

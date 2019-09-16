@@ -17,5 +17,5 @@ public interface OrderControllerApi {
      * @return
      */
     @ApiOperation("保单的分页显示")
-    public PageInfo<Policy> PolicyPage(Integer pageNo, Integer pageSize, String number);
+    public String PolicyPage(Integer pageNo, Integer pageSize, String number);
 }

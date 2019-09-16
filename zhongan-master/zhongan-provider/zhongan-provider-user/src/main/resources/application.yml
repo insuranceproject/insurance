@@ -41,7 +41,6 @@ mybatis-plus:
     logic-not-delete-value: 1
     refresh: true
 
-
 eureka:
   client: #客户端注册进eureka服务列表内
     service-url:
@@ -52,3 +51,6 @@ eureka:
     leaseRenewalIntervalInSeconds: 10  #租期更新时间间隔（默认30秒）
     leaseExpirationDurationInSeconds: 30 #租期到期时间（默认90秒）
 
+#分页合理化配置
+pagehelper:
+  reasonable: true

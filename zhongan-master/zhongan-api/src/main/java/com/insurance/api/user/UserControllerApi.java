@@ -8,9 +8,11 @@ import io.swagger.models.auth.In;
 @Api(value="用户管理接口",description = "用户接口，提供用户的增、删、改、查")
 public interface UserControllerApi {
 
+/*
 
     @ApiOperation("计划查询")
     public User getOne();
+*/
 
     /**
      * 个人普通登陆
