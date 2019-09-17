@@ -1,5 +1,5 @@
 server:
-  port: 80
+  port: 81
 
 spring:
   thymeleaf:
@@ -15,6 +15,19 @@ spring:
   application:
     name: consumer
 
+  #用于分布式存储
+  redis:
+    port: 6379
+    database: 0
+    host: 47.93.221.88
+    password: admin
+    timeout: 60s
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 5
+        min-idle: -1
 eureka:
   client:
     register-with-eureka: true
@@ -23,3 +36,19 @@ eureka:
   instance:
     instance-id: consumer-80
     prefer-ip-address: true     #访问路径可以显示IP地址
+
+
+#hystrix的超时时间
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: true
+        isolation:
+          thread:
+            timeoutInMilliseconds: 30000
+#ribbon的超时时间
+ribbon:
+  ReadTimeout: 30000
+  ConnectTimeout: 30000

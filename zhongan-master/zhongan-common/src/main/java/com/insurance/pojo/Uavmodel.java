@@ -25,8 +25,8 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-@TableName(value = "Insurance_navmodel")
-public class Navmodel extends Model<Navmodel> implements Serializable {
+@TableName(value = "Insurance_uavmodel")
+public class Uavmodel extends Model<Uavmodel> implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

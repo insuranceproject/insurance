@@ -7,7 +7,6 @@ import com.insurance.pojo.Authentication;
 import com.insurance.pojo.User;
 import com.insurance.service.AuthenticationService;
 import com.insurance.service.UserService;
-import io.swagger.annotations.ApiOperation;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;

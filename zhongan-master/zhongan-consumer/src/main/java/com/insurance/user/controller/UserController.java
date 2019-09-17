@@ -366,7 +366,7 @@ public class UserController {
                 session.setAttribute("user1", user1);
                 return "y1";
             }
-        } else if (values.matches(ph)) {
+        } else if (values.matches(em)) {
             user.setUserEmail(null);
             user.setUserName(null);
             user.setUserPhonenumber(values);
