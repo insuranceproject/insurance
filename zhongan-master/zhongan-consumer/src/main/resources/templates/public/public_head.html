@@ -4,11 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <LINK href="css/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="http://47.93.221.88/js/jquery-1.8.1.min.js"></script>
+    <script>
+        $(function () {
+            $(".list-item").hover(function () {
+                var id = $(this).attr("i");
+
+                $.getJSON("/consumer/product/findByParId",{"parId":id},function (result) {
+                    $(".list-item[i="+id+"]>.za-main-nav-pro").empty();
+                    if (result != null && result != ""){
+                        var div = " <div class='za-main-nav-pro'>";
+                        div+="<ul class='za-main-nav-pro-list'>";
+                        for (var i = 0; i<result.length; i++){
+                            var product = result[i];
+                            div+="<li><a href='/consumer/product/"+product.productId+"'>";
+                            div+="<img data-src='http://47.93.221.88/images/1509704896994.png'";
+                            div+="src='"+product.productImg+"' alt='"+product.productName+"'>";
+                            div+=" <h3 class='pro-title' title='"+product.productName+"' >"+product.productName+"</h3>";
+                            div+="<p class=\"pro-price\"><span class=\"price-numb\">"+product.productPrice+"</span>元起</p></a></li>";
+                        }
+                        if(result.length>=6){
+                            div+="<li><a class=\"more-link\" href=\"https://www.zhongan.com/open/exclusive\">";
+                            div+="<img data-src=\"\" src=\"\" alt=\"查看全部\"><h3 class=\"pro-title\" title=\"查看全部\">查看全部</h3></a></li>";
+                        }
+                        div+="</ul></div>";
+                        $(".list-item[i="+id+"]").append(div);
+                    }
+                })
+            });
+        })
+    </script>
 </head>
 <body>
-<div th:fragment="head">
-    <div class="za-toolbar" data-ilog="1.589.zL6|a">
+    <div class="za-toolbar" data-ilog="1.589.zL6|a" th:fragment="head">
         <div class="za-toolbar-layout">
             <div class="za-toolbar-layout-logo"><a href="https://www.zhongan.com/" title="众安保险">众安保险</a></div>
             <p class="za-toolbar-layout-slogan"><span>做有温度的保险</span></p>
@@ -95,61 +123,16 @@
             </div>
         </div>
     </div>
-    <div class="za-main-nav">
+    <div class="za-main-nav" th:fragment="nav">
         <div class="za-main-nav-layout">
             <ul class="za-main-nav-list" data-ilog="1.589.iR9|a" ilogbinded="true">
                 <li class="list-item"><a title="首页" class="list-item-hd active" id="zaNav_onlineIndex"
                                          href="https://www.zhongan.com/index.html#channelEnName=onlineIndex">首页</a></li>
-                <li class="list-item"><a title="健康险" class="list-item-hd" id="zaNav_health"
-                                         href="https://www.zhongan.com/open/health#channelEnName=health">健康险</a> <i
+                <li class="list-item" th:each="type:${typeList}" th:i="${type.parentId}"><a th:title="${type.parentTypename}" th:i="${type.parentId}" th:text="${type.parentTypename}" th:value="${type.parentId}" title="健康险" class="list-item-hd"
+                                                                                            href="#">健康险</a> <i
                         class="item-bg" style="width: 1349px; left: -75px;"></i>
-                    <div class="za-main-nav-pro">
-                        <ul class="za-main-nav-pro-list">
-                            <li><a href="https://www.zhongan.com/p/83398346#channelEnName=health"> <img
-                                    data-src="//static.zhongan.com/upload/online/material/1509704896994.png"
-                                    src="http://47.93.221.88/images/1509704896994.png"
-                                    alt="尊享e生·新全保通2017少儿版">
-                                <h3 class="pro-title" title="尊享e生·新全保通2017少儿版">尊享e生·新全保通2017少儿版</h3>
-                                <p class="pro-price"><span class="price-numb">200</span>元起</p></a></li>
-                            <li><a href="https://www.zhongan.com/p/83881372#channelEnName=health"> <img
-                                    data-src="//static.zhongan.com/upload/online/material/1509704812948.png"
-                                    src="http://47.93.221.88/images/1509704812948.png"
-                                    alt="尊享e生·新全保通2017成人版">
-                                <h3 class="pro-title" title="尊享e生·新全保通2017成人版">尊享e生·新全保通2017成人版</h3>
-                                <p class="pro-price"><span class="price-numb">245</span>元起</p></a></li>
-                            <li>
-                                <a href="https://ztg.zhongan.com/promote/entrance/promoteEntrance.do?promotionCode=INST190834380020&amp;redirectType=pc&amp;bizOrigin=zx2019pc#channelEnName=health">
-                                    <img data-src="//static.zhongan.com/upload/online/material/1497858674376.png"
-                                         src="http://47.93.221.88/images/1497858674376.png"
-                                         alt="尊享e生2019版">
-                                    <h3 class="pro-title" title="尊享e生2019版">尊享e生2019版</h3>
-                                    <p class="pro-price"><span class="price-numb">146</span>元起</p></a></li>
-                            <li><a href="https://www.zhongan.com/p/83052692#channelEnName=health"> <img
-                                    data-src="//static.zhongan.com/upload/online/material/1501577396494.png"
-                                    src="http://47.93.221.88/images/1501577396494.png"
-                                    alt="乐活e生·少儿重疾险">
-                                <h3 class="pro-title" title="乐活e生·少儿重疾险">乐活e生·少儿重疾险</h3>
-                                <p class="pro-price"><span class="price-numb">40</span>元起</p></a></li>
-                            <li><a href="https://www.zhongan.com/p/83190811#channelEnName=health"> <img
-                                    data-src="//static.zhongan.com/upload/online/material/1501577679673.png"
-                                    src="http://47.93.221.88/images/1501577679673.png"
-                                    alt="乐活e生·成人重疾险">
-                                <h3 class="pro-title" title="乐活e生·成人重疾险">乐活e生·成人重疾险</h3>
-                                <p class="pro-price"><span class="price-numb">60</span>元起</p></a></li>
-                            <li><a href="https://www.zhongan.com/p/83619954#channelEnName=health"> <img
-                                    data-src="//static.zhongan.com/upload/online/material/1497858765597.png"
-                                    src="http://47.93.221.88/images/1497858765597.png"
-                                    alt="儿童重大疾病险">
-                                <h3 class="pro-title" title="儿童重大疾病险">儿童重大疾病险</h3>
-                                <p class="pro-price"><span class="price-numb">34</span>元起</p></a></li>
-                            <li><a class="more-link" href="https://www.zhongan.com/open/health"> <img
-                                    data-src="//static.zhongan.com/website/factoryOnline/assets/images/public/more-product-icon.png"
-                                    src="http://47.93.221.88/images/more-product-icon.png"
-                                    alt="查看全部">
-                                <h3 class="pro-title" title="查看全部">查看全部</h3></a></li>
-                        </ul>
-                    </div>
                 </li>
+
                 <li class="list-item"><a title="车险" class="list-item-hd" id="zaNav_chexian"
                                          href="https://www.zhongan.com/open/castle/inputQueryInfo?utm_source=zyggbz#channelEnName=chexian">车险</a>
                 </li>

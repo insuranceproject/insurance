@@ -64,7 +64,11 @@
             <artifactId>junit</artifactId>
             <scope>compile</scope>
         </dependency>
-
+        <!-- mongodb -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

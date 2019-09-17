@@ -1,6 +1,7 @@
 package com.insurance.pojo;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -44,6 +45,14 @@ public class Product extends Model<Product> implements Serializable {
     private Integer proplanId;
 
     private Integer productState;
+
+    private  String productImg;
+
+    private Integer productPrice;
+
+
+    @TableField(exist = false)
+    private ProductMongo productMongo;
 
 
 }

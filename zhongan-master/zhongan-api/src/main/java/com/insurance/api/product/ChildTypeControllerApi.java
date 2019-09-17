@@ -1,4 +1,4 @@
-package com.insurance.api.childtype;
+package com.insurance.api.product;
 
 import com.insurance.pojo.Childtype;
 import io.swagger.annotations.Api;
