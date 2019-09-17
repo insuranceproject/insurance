@@ -1,7 +1,7 @@
 package com.insurance.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.insurance.api.childtype.ChildTypeControllerApi;
+import com.insurance.api.product.ChildTypeControllerApi;
 import com.insurance.pojo.Childtype;
 import com.insurance.service.ChildTypeService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,7 @@
 package com.insurance.pojo;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -11,6 +12,7 @@ import lombok.Setter;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * <p>
@@ -34,6 +36,8 @@ public class Uavbrand extends Model<Uavbrand> implements Serializable{
     private Integer brandId;
 
     private String brandName;
+
+
 
 
 }

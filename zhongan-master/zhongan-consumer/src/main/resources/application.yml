@@ -10,8 +10,6 @@ spring:
     suffix: .html
   resources:
       static-locations: classpath:/templates/,classpath:/static/,classpath:/public/
-  main:
-    allow-bean-definition-overriding: true
 
   #spring:
   application:
@@ -25,7 +23,3 @@ eureka:
   instance:
     instance-id: consumer-80
     prefer-ip-address: true     #访问路径可以显示IP地址
-
-feign:
-  hystrix:
-    enabled: true
