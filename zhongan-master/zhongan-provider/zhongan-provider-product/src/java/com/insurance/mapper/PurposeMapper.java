@@ -8,5 +8,4 @@ import java.util.List;
 
 public interface PurposeMapper extends BaseMapper<Purpose> {
 
-    public List<Purpose> findByBrandId(Integer brandId);
 }
