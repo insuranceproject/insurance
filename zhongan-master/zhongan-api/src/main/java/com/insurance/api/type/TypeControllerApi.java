@@ -1,4 +1,4 @@
-package com.insurance.api.product;
+package com.insurance.api.type;
 
 import com.insurance.pojo.Partype;
 import io.swagger.annotations.Api;
