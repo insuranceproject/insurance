@@ -1,6 +1,5 @@
 package com.insurance.user.controller;
 
-import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.insurance.pojo.User;
 import com.insurance.user.client.UserClient;
 import com.insurance.util.CodeUtil;
@@ -307,7 +306,7 @@ public class UserController {
 	 * @param session
 	 * @return
 	 */
-	@RequestMapping(value="/consumer/user/retrievePassWord2")
+	@RequestMapping(value="/consumer/user/retrievePassWord1")
 	public String retrievePassWord2(String smsCode,HttpSession session){
 		User user = (User) session.getAttribute("user1");	//获取用户
 		if(user == null){

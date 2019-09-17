@@ -1,5 +1,6 @@
 package com.insurance.api.user;
 
+import com.insurance.pojo.Authentication;
 import com.insurance.pojo.User;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -64,4 +65,34 @@ public interface UserControllerApi {
      */
     @ApiOperation("根据用户名查询用户")
     public User getUserByName(User user);
+
+    /**
+     * 根据用户id查询用户实名信息
+     * @return
+     */
+    @ApiOperation("根据用户id查询用户实名信息")
+    public Authentication getUserAuthentication(Integer userId);
+
+    /**
+     * 根据邮箱查询用户
+     * @param user
+     * @return
+     */
+    @ApiOperation("根据邮箱查询用户")
+    public User getUserByEmail(User user);
+
+    /**
+     * 根据用户id查询用户
+     * @param user
+     * @return
+     */
+    @ApiOperation("根据用户id查询用户")
+    public User getUserById(User user);
+
+    /**
+     * 保存一条实名认证信息
+     * @return
+     */
+    @ApiOperation("保存一条实名认证信息")
+    public boolean saveAuthentication(Authentication authentication);
 }
