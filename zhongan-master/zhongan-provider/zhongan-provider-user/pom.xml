@@ -60,6 +60,11 @@
             <artifactId>mybatis-plus-extension</artifactId>
             <version>3.0.7.1</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <version>1.2.10</version>
+        </dependency>
     </dependencies>
 
 </project>

@@ -15,10 +15,4 @@ public interface ProductControllerApi {
 
     @ApiOperation("根据子分类id查询对应的产品")
     public List<Product> findByChildId(Integer childId);
-
-    @ApiOperation("根据产品id查询对应的产品信息")
-    public Product findByProId(Integer proId);
-
-    @ApiOperation("根据产品id查询对应的产品信息与保障范围详情")
-    public Product findInfomation(Integer proId);
 }

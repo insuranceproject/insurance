@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<HTML
+        xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title2</title>
+</head>
+<body>
+<DIV class="profile"  th:fragment="nav"><span th:text="'您好,'+${session.uname} ">您好，admin</span> <SPAN class="return"><A
+        href="/sub-inlet">返回列表dsdas</A></SPAN>
+    <SPAN class="addnew"><A href="/add-purview">添加新投票</A></SPAN>
+    <SPAN class="modify"><A href="/modify-purview">维护</A></SPAN>
+    <SPAN class="return"><A
+            href="/user-exit">注销</A></SPAN></DIV>
+</body>
+</html>

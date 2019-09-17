@@ -1,6 +1,5 @@
 package com.insurance.api.user;
 
-import com.insurance.pojo.Authentication;
 import com.insurance.pojo.User;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -9,9 +8,11 @@ import io.swagger.models.auth.In;
 @Api(value="用户管理接口",description = "用户接口，提供用户的增、删、改、查")
 public interface UserControllerApi {
 
+/*
 
     @ApiOperation("计划查询")
     public User getOne();
+*/
 
     /**
      * 个人普通登陆
@@ -63,34 +64,4 @@ public interface UserControllerApi {
      */
     @ApiOperation("根据用户名查询用户")
     public User getUserByName(User user);
-
-    /**
-     * 根据用户id查询用户实名信息
-     * @return
-     */
-    @ApiOperation("根据用户id查询用户实名信息")
-    public Authentication getUserAuthentication(Integer userId);
-
-    /**
-     * 根据邮箱查询用户
-     * @param user
-     * @return
-     */
-    @ApiOperation("根据邮箱查询用户")
-    public User getUserByEmail(User user);
-
-    /**
-     * 根据用户id查询用户
-     * @param user
-     * @return
-     */
-    @ApiOperation("根据用户id查询用户")
-    public User getUserById(User user);
-
-    /**
-     * 保存一条实名认证信息
-     * @return
-     */
-    @ApiOperation("保存一条实名认证信息")
-    public boolean saveAuthentication(Authentication authentication);
 }

@@ -9,15 +9,12 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/zhongan
     username: root
-    password: 123
+    password: root
   dbcp2:
     min-idle: 5
     initial-size: 5
     max-total: 5
     max-wait-millis: 200
-  data:
-    mongodb:
-      uri: mongodb://47.93.221.88:27017/zhongan
 
   #用于分布式存储
   redis:

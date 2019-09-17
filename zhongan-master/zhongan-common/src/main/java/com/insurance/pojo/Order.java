@@ -34,8 +34,6 @@ public class Order extends Model<Order> implements Serializable {
     @TableId(value = "order_id", type = IdType.AUTO)
     private Integer orderId;
 
-    private String orderNumber;
-
     private Integer userId;
 
     private LocalDateTime orderCreatetime;
@@ -43,8 +41,6 @@ public class Order extends Model<Order> implements Serializable {
     private Integer orderCost;
 
     private Integer orderStatus;
-
-    private Integer corpId;
 
 
 }

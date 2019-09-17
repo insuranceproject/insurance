@@ -1,117 +1,202 @@
 <!DOCTYPE html>
-<html>
-  
-  <head>
+<HTML lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
     <meta charset="UTF-8">
     <title>欢迎页面-X-admin2.0</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="css/font.css">
-    <link rel="stylesheet" href="css/xadmin.css">
-    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="lib/layui/layui.js" charset="utf-8"></script>
-    <script type="text/javascript" src="js/xadmin.js"></script>
+    <meta name="viewport"
+          content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi"/>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="/manager/css/font.css">
+    <link rel="stylesheet" href="/manager/css/xadmin.css">
+    <script type="text/javascript" src="/manager/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/manager/lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/manager/js/xadmin.js"></script>
     <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
     <!--[if lt IE 9]>
-      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
-      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <script src="/manager/js/html5.min.js"></script>
+    <script src="/manager/js/respond.min.js"></script>
     <![endif]-->
-  </head>
-  
-  <body>
-    <div class="x-body">
-        <form class="layui-form">
-          <div class="layui-form-item">
-              <label for="L_email" class="layui-form-label">
-                  <span class="x-red">*</span>邮箱
-              </label>
-              <div class="layui-input-inline">
-                  <input type="text" id="L_email" name="email" required="" lay-verify="email"
-                  autocomplete="off" class="layui-input">
-              </div>
-              <div class="layui-form-mid layui-word-aux">
-                  <span class="x-red">*</span>将会成为您唯一的登入名
-              </div>
-          </div>
-          <div class="layui-form-item">
-              <label for="L_username" class="layui-form-label">
-                  <span class="x-red">*</span>昵称
-              </label>
-              <div class="layui-input-inline">
-                  <input type="text" id="L_username" name="username" required="" lay-verify="nikename"
-                  autocomplete="off" class="layui-input">
-              </div>
-          </div>
-          <div class="layui-form-item">
-              <label for="L_pass" class="layui-form-label">
-                  <span class="x-red">*</span>密码
-              </label>
-              <div class="layui-input-inline">
-                  <input type="password" id="L_pass" name="pass" required="" lay-verify="pass"
-                  autocomplete="off" class="layui-input">
-              </div>
-              <div class="layui-form-mid layui-word-aux">
-                  6到16个字符
-              </div>
-          </div>
-          <div class="layui-form-item">
-              <label for="L_repass" class="layui-form-label">
-                  <span class="x-red">*</span>确认密码
-              </label>
-              <div class="layui-input-inline">
-                  <input type="password" id="L_repass" name="repass" required="" lay-verify="repass"
-                  autocomplete="off" class="layui-input">
-              </div>
-          </div>
-          <div class="layui-form-item">
-              <label for="L_repass" class="layui-form-label">
-              </label>
-              <button  class="layui-btn" lay-filter="add" lay-submit="">
-                  增加
-              </button>
-          </div>
-      </form>
-    </div>
-    <script>
-      layui.use(['form','layer'], function(){
-          $ = layui.jquery;
+</head>
+<script type="text/javascript">
+    var isPs = true;
+
+    function qiehuan() {
+        var Input = document.getElementById('L_pass');
+        if (isPs) {
+            Input.setAttribute("type", "text");
+            $('#btn').css("background", "url('/manager/images/眼睛5.png') no-repeat");
+            isPs = false;
+        } else {
+            Input.setAttribute("type", "password");
+            $('#btn').css("background", "url('/manager/images/眼睛1.png') no-repeat");
+            isPs = true;
+        }
+
+
+    }
+</script>
+<style type="text/css">
+    #btn {
+        position: absolute;
+        top: 13px;
+        right: 7px;
+        display: block;
+        background: url('/manager/images/眼睛1.png') no-repeat;
+        width: 16px;
+        height: 16px;
+    }
+
+    #L_email, #phone, #L_role {
+        background-color: rgba(240, 236, 244, 0.42);
+    }
+</style>
+<body>
+<div class="x-body">
+    <form class="layui-form">
+        <input name="userId" type="hidden" th:value="${findByIdUser.getUserId()}">
+        <div class="layui-form-item">
+            <label for="L_email" class="layui-form-label">
+                <span class="x-red">*</span>邮箱
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="L_email" name="email" required="" lay-verify="email"
+                       autocomplete="off" class="layui-input" th:value="${findByIdUser.getUserEmail()}" readonly>
+            </div>
+            <div class="layui-form-mid layui-word-aux">
+                <span class="x-red">*</span>将会成为您的登入名
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label for="phone" class="layui-form-label">
+                <span class="x-red">*</span>手机
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="phone" name="userPhonenumber" required="" lay-verify="phone"
+                       autocomplete="off" class="layui-input" th:value="${findByIdUser.getUserPhonenumber()}" readonly>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label for="L_role" class="layui-form-label">
+                <span class="x-red">*</span>权限级别
+            </label>
+            <div class="layui-input-inline">
+                <select id="L_role" name="role" required="" lay-verify="role"
+                        autocomplete="off" class="layui-input"
+                        th:disabled="${findByIdUser.getUserRole()=='1'}">
+                    <option value="1" th:selected="${findByIdUser.getUserRole()=='1'}" disabled>超级管理员</option>
+                    <option value="2" th:selected="${findByIdUser.getUserRole()=='2'}">管理员</option>
+                    <option value="3" th:selected="${findByIdUser.getUserRole()=='3'}">普通用户</option>
+                </select>
+            </div>
+            <div class="layui-form-mid layui-word-aux">
+                <span class="x-red">*</span>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label for="L_username" class="layui-form-label">
+                <span class="x-red">*</span>用户名
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="L_username" name="username" required="" lay-verify="nikename"
+                       autocomplete="off" class="layui-input" th:value="${findByIdUser.getUserName()}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label for="L_pass" class="layui-form-label">
+                <span class="x-red">*</span>密码
+            </label>
+            <div class="layui-input-inline">
+                <input type="password" id="L_pass" name="pass" required="" lay-verify="pass"
+                       autocomplete="off" class="layui-input" th:value="${findByIdUser.getUserPassword()}">
+                <a id="btn" onclick="qiehuan()"></a>
+
+            </div>
+            <div class="layui-form-mid layui-word-aux">
+                6到16个字符
+            </div>
+        </div>
+        <!--<div class="layui-form-item">
+            <label for="L_repass" class="layui-form-label">
+                <span class="x-red">*</span>确认密码
+            </label>
+            <div class="layui-input-inline">
+                <input type="password" id="L_repass" name="repass" required="" lay-verify="repass"
+                autocomplete="off" class="layui-input">
+            </div>
+        </div>-->
+        <div class="layui-form-item">
+            <label for="L_pass" class="layui-form-label">
+            </label>
+            <button class="layui-btn" lay-filter="update" lay-submit="">
+                修改
+            </button>
+        </div>
+    </form>
+</div>
+<script>
+    layui.use(['form', 'layer'], function () {
+        $ = layui.jquery;
         var form = layui.form
-        ,layer = layui.layer;
-      
+            , layer = layui.layer;
+
         //自定义验证规则
         form.verify({
-          nikename: function(value){
-            if(value.length < 5){
-              return '昵称至少得5个字符啊';
+            nikename: function (value) {
+                if (value.length < 1) {
+                    return '昵称不能为空啊';
+                }
             }
-          }
-          ,pass: [/(.+){6,12}$/, '密码必须6到12位']
-          ,repass: function(value){
-              if($('#L_pass').val()!=$('#L_repass').val()){
-                  return '两次密码不一致';
-              }
-          }
+            , pass: [/(.+){6,12}$/, '密码必须6到12位']
+            /*,repass: function(value){
+                if($('#L_pass').val()!=$('#L_repass').val()){
+                    return '两次密码不一致';
+                }
+            }*/
         });
 
         //监听提交
-        form.on('submit(add)', function(data){
-          console.log(data);
-          //发异步，把数据提交给php
-          layer.alert("增加成功", {icon: 6},function () {
-              // 获得frame索引
-              var index = parent.layer.getFrameIndex(window.name);
-              //关闭当前frame
-              parent.layer.close(index);
-          });
-          return false;
+        form.on('submit(update)', function (data) {
+            console.log(data);
+            //发异步，把数据提交给php
+            var userId, username, userPassword, userPhonenumber, userEmail,userRole;
+            userId=$('input[name="userId"]').val();
+            username = $('input[name="username"]').val();
+            userPassword = $('input[name="pass"]').val();
+            userPhonenumber = $('input[name="userPhonenumber"]').val();
+            userEmail = $('input[name="email"]').val();
+            userRole= $('select[name="role"]').val();
+            $.ajax({
+                url: '/consumer/userBack/updateUser',
+                data: {
+                    'userId': userId,
+                    'username': username,
+                    'userPassword': userPassword,
+                    'userPhonenumber': userPhonenumber,
+                    'userEmail': userEmail,
+                    'userRole':userRole
+                },
+                type: "post",
+                dataType: 'json',
+                success: function (status) {
+                    console.log(status);
+                    layer.alert("修改成功", {icon: 6}, function () {
+                        // 获得frame索引
+                        var index = parent.layer.getFrameIndex(window.name);
+                        //关闭当前frame
+                        parent.layer.close(index);
+                        parent.location.reload();
+                    });
+                }
+            })
+            return false;
         });
-        
-        
-      });
-  </script>
 
-  </body>
+
+    });
+</script>
+
+</body>
 
 </html>

@@ -13,9 +13,7 @@ import org.apache.ibatis.annotations.Param;
 public interface UserBackControllerApi {
 
     @ApiOperation("用户的分页显示")
-    public IPage<User> UserPage(Page<User> page, String userName);
+    public String selectUserPage(Integer pageNo,Integer pageSize, String userName);
 
-    @ApiOperation("保单的分页显示")
-    public IPage<Policy> PolicyPage(Page<Policy> page, Integer number);
 
 }

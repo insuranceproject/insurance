@@ -3,9 +3,7 @@ package com.insurance.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.insurance.api.user.UserControllerApi;
-import com.insurance.pojo.Authentication;
 import com.insurance.pojo.User;
-import com.insurance.service.AuthenticationService;
 import com.insurance.service.UserService;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
@@ -18,8 +16,6 @@ import org.springframework.web.bind.annotation.*;
 public class UserController implements UserControllerApi {
     @Autowired
     private UserService userService;
-    @Autowired
-    private AuthenticationService authenticationService;
 
 
     @GetMapping("/getOne")
@@ -62,6 +58,7 @@ public class UserController implements UserControllerApi {
         return userService.save(user);
     }
 
+
     /**
      * 修改用户信息
      * 可以单独修改密码,用户名,以及绑定邮箱和修改邮箱
@@ -91,54 +88,9 @@ public class UserController implements UserControllerApi {
      * @param user
      * @return
      */
-    @GetMapping("/getUserByName")
     @Override
     public User getUserByName(@RequestBody User user) {
         return userService.getOne(new QueryWrapper<User>().eq("user_name",user.getUserName()));
-    }
-
-    /**
-     * 根据用户id查询用户实名信息
-     * @param
-     * @return
-     */
-    @GetMapping("/getUserAuthentication")
-    @Override
-    public Authentication getUserAuthentication(Integer userId) {
-        return userService.getUserAuthentication(userId);
-    }
-
-    /**
-     * 根据邮箱查询用户
-     * @param user
-     * @return
-     */
-    @Override
-    @PostMapping("/getUserByEmail")
-    public User getUserByEmail(@RequestBody User user) {
-        return userService.getOne(new QueryWrapper<User>().eq("user_email",user.getUserEmail()));
-    }
-
-    /**
-     * 根据用户id查询用户
-     * @param user
-     * @return
-     */
-    @Override
-    @PostMapping("/getUserById")
-    public User getUserById(@RequestBody User user) {
-        return userService.getOne(new QueryWrapper<User>().eq("user_id",user.getUserId()));
-    }
-
-    /**
-     * 保存一条实名认证信息
-     * @param authentication
-     * @return
-     */
-    @Override
-    @PostMapping("/saveAuthentication")
-    public boolean saveAuthentication(Authentication authentication) {
-        return authenticationService.save(authentication);
     }
 
 
