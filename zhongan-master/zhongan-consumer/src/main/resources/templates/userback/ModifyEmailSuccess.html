@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<!-- saved from url=(0073)https://www.zhongan.com/account/modifyLoginPassword1?accountModifyClass=1 -->
-<html xmlns:th="http://www.thymeleaf.org" style=""
+<!-- saved from url=(0119)https://www.zhongan.com/account/accountInfoModifySuccess?accountModifyClass=1&accountAuthenticationWay=5&isBindingFlag= -->
+<html style=""
       class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <script id="_1567839096897_667" src="http://47.93.221.88/previous/userback/json/detect.json"></script>
+    <script id="_1567839239449_2468" src="http://47.93.221.88/previous/userback/json/detect.json"></script>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link type="image/x-icon" rel="shortcut icon"
@@ -21,20 +21,32 @@
     <script src="http://47.93.221.88/previous/userback/js/hm(1).js"></script>
     <script src="http://47.93.221.88/previous/userback/js/modernizr.js"></script>
     <!--[if lt IE 9]>
-    <script src="//static.zhongan.com/website/online/resource/res/js/html5shiv.js"></script>
+    <script src="http://47.93.221.88/previous/userback/js/html5shiv.js"></script>
     <![endif]-->
     <link href="http://47.93.221.88/previous/userback/css/za-base.min.css" type="text/css" rel="stylesheet">
     <link href="http://47.93.221.88/previous/userback/css/personalCenter.min.css" type="text/css" rel="stylesheet">
     <link href="http://47.93.221.88/previous/userback/css/myInfo.css" type="text/css" rel="stylesheet">
-
-    <link href="http://47.93.221.88/previous/userback/css/myInfo(1).css" type="text/css" rel="stylesheet">
     <link href="http://47.93.221.88/previous/userback/css/identity.css" type="text/css" rel="stylesheet">
-    <script src="http://47.93.221.88/previous/userback/js/login.js"></script>
-    <script type="text/javascript" src="http://47.93.221.88/previous/userback/js/jquery-1.8.1.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="http://47.93.221.88/previous/userback/css/iframes.css">
+    <link href="http://47.93.221.88/previous/userback/css/remedy.css" rel="stylesheet">
+    <style>
+
+        .identity-page .za-rect-box .mail-success {
+            margin: 38px auto;
+            width: 300px;
+            line-height: 30px;
+            text-align: left;
+            position: relative;
+        }
+
+        ;
+
+    </style>
     <meta name="viewport" content="width=1300, user-scalable=yes, minimum-scale=.4, maximum-scale=2.0">
-    <script type="text/javascript" id="zaHeaderLogin" src="http://47.93.221.88/previous/userback/js/za-bootstrap.js"></script>
-    <script type="text/javascript" src="http://47.93.221.88/previous/userback/js/callback.js"></script>
+    <script type="text/javascript" id="zaHeaderLogin"
+            src="http://47.93.221.88/previous/userback/js/jquery-1.8.1.min.js"></script>
+    <script type="text/javascript" id="zaHeaderLogin"
+            src="http://47.93.221.88/previous/userback/js/za-bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://47.93.221.88/previous/userback/js/iframes.css">
     <style>@charset "utf-8";
     @font-face {
         font-family: 'nc_iconfont';
@@ -1586,47 +1598,7 @@
         border-left-color: #fff;
         right: -30px
     }</style>
-    <script type="text/javascript">
-        //验证密码
-        function identify(password){
-            regExp=/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,21}$/;
-            if(password == ""){
-                $(".ui-input").removeClass("za-input-hover-green").addClass("za-input-hover-red");
-                $(".error-text").text("请输入密码");
-                $(".form-error").show();
-                return false;
-            }
-            else if(!regExp.test(password)){
-                $(".ui-input").removeClass("za-input-hover-green").addClass("za-input-hover-red");
-                $(".error-text").text("请输入有效的密码");
-                $(".form-error").show();
-                return false;
-            }
-            else{
-                $(".form-error").hide();
-                return true;
-            }
-        }
-        $(function () {
-            var phone = $("#phone").text();
-            $("#password").focus(function () {
-                $(".ui-input").removeClass("za-input-hover-red").addClass("za-input-hover-green");
-            })
-            $(".btn-next").click(function () {
-                var password = $("#password").val();
-                identify(password);
-                $.post("/consumer/user/updatePassWord2?passWord="+password,function (resout) {
-                    if(resout == "y"){
-                        window.location = "/userback/modifyLoginPassword2.html?phone="+phone;
-                    }else{
-                        $(".ui-input").removeClass("za-input-hover-green").addClass("za-input-hover-red");
-                        $(".error-text").text("请输入当前登录密码");
-                        $(".form-error").show();
-                    }
-                })
-            })
-        })
-    </script>
+    <script type="text/javascript" src="http://47.93.221.88/previous/userback/js/callback.js"></script>
 </head>
 <body leftindex="3" class="bgf2f2f2 identity-page">
 <link href="http://47.93.221.88/previous/userback/css/za-common.css" rel="stylesheet"><!--header  start-->
@@ -1752,7 +1724,8 @@
                     <ul class="za-main-nav-pro-list">
                         <li><a href="https://www.zhongan.com/p/82761035#channelEnName=travel"> <img
                                 data-src="//static.zhongan.com/upload/online/material/1526721427049.png"
-                                src="http://47.93.221.88/previous/userback/js/1526721427049.png" alt="飞享e生升级版">
+                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
+                                alt="飞享e生升级版">
                             <h3 class="pro-title">飞享e生升级版</h3>
                             <p class="pro-price"><span class="price-numb">79</span>元起</p></a></li>
                     </ul>
@@ -1765,17 +1738,20 @@
                     <ul class="za-main-nav-pro-list">
                         <li><a href="https://www.zhongan.com/p/82138393#channelEnName=accident"> <img
                                 data-src="//static.zhongan.com/upload/online/material/1536205132057.png"
-                                src="http://47.93.221.88/previous/userback/js/1536205132057.png" alt="众享e家·意外险">
+                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
+                                alt="众享e家·意外险">
                             <h3 class="pro-title">众享e家·意外险</h3>
                             <p class="pro-price"><span class="price-numb">398</span>元起</p></a></li>
                         <li><a href="https://www.zhongan.com/p/82208550#channelEnName=accident"> <img
                                 data-src="//static.zhongan.com/upload/online/material/1496915833372.png"
-                                src="http://47.93.221.88/previous/userback/js/1496915833372.png" alt="骑行保共享单车意外险">
+                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
+                                alt="骑行保共享单车意外险">
                             <h3 class="pro-title">骑行保共享单车意外险</h3>
                             <p class="pro-price"><span class="price-numb">5</span>元起</p></a></li>
                         <li><a href="https://www.zhongan.com/p/82232099#channelEnName=accident"> <img
                                 data-src="//static.zhongan.com/upload/online/material/1486986235534.png"
-                                src="http://47.93.221.88/previous/userback/js/1486986235534.png" alt="私家车驾驶员&lt;br/&gt;意外险">
+                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
+                                alt="私家车驾驶员&lt;br/&gt;意外险">
                             <h3 class="pro-title">私家车驾驶员<br>意外险</h3>
                             <p class="pro-price"><span class="price-numb">1</span>元起</p></a></li>
                     </ul>
@@ -1789,32 +1765,27 @@
                         <li>
                             <a href="https://ztg.zhongan.com/promote/entrance/promoteEntrance.do?promotionCode=INST190834380020&amp;redirectType=pc&amp;bizOrigin=zx2019pc#channelEnName=health">
                                 <img data-src="//static.zhongan.com/upload/online/material/1497858674376.png"
-                                     src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                     alt="尊享e生2019版">
+                                     src="http://47.93.221.88/previous/userback/js/1497858674376.png" alt="尊享e生2019版">
                                 <h3 class="pro-title">尊享e生2019版</h3>
                                 <p class="pro-price"><span class="price-numb">146</span>元起</p></a></li>
                         <li><a href="https://www.zhongan.com/p/83398346#channelEnName=health"> <img
                                 data-src="//static.zhongan.com/upload/online/material/1509704896994.png"
-                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="尊享e生·新全保通2017少儿版">
+                                src="http://47.93.221.88/previous/userback/js/1509704896994.png" alt="尊享e生·新全保通2017少儿版">
                             <h3 class="pro-title">尊享e生·新全保通2017少儿版</h3>
                             <p class="pro-price"><span class="price-numb">200</span>元起</p></a></li>
                         <li><a href="https://www.zhongan.com/p/83881372#channelEnName=health"> <img
                                 data-src="//static.zhongan.com/upload/online/material/1509704812948.png"
-                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="尊享e生·新全保通2017成人版">
+                                src="http://47.93.221.88/previous/userback/js/1509704812948.png" alt="尊享e生·新全保通2017成人版">
                             <h3 class="pro-title">尊享e生·新全保通2017成人版</h3>
                             <p class="pro-price"><span class="price-numb">245</span>元起</p></a></li>
                         <li><a href="https://www.zhongan.com/p/83890638#channelEnName=health"> <img
                                 data-src="//static.zhongan.com/upload/online/material/1497410361174.png"
-                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="女性专属疾病险">
+                                src="http://47.93.221.88/previous/userback/js/1497410361174.png" alt="女性专属疾病险">
                             <h3 class="pro-title">女性专属疾病险</h3>
                             <p class="pro-price"><span class="price-numb">20</span>元起</p></a></li>
                         <li><a href="https://www.zhongan.com/open/userInfo/healthDetail#channelEnName=health"> <img
                                 data-src="${subColumns.imageUrlOne}"
-                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="臻享 个人高端医疗保险">
+                                src="http://47.93.221.88/previous/userback/js/${subColumns.imageUrlOne}" alt="臻享 个人高端医疗保险">
                             <h3 class="pro-title">臻享 个人高端医疗保险</h3>
                             <p class="pro-price"><span class="price-numb">7060</span>元起</p></a></li>
                     </ul>
@@ -1868,65 +1839,35 @@
         <li>&gt;</li>
         <li><a href="https://www.zhongan.com/account/myAccount">我的账户</a></li>
         <li>&gt;</li>
-        <li>修改登录密码</li>
+        <li>修改邮箱</li>
     </ul>
 </div>
-
-
 <!--main start-->
 <div class="wrapper">
     <div class="za-rect-box">
         <div class="za-top">
-            <span class="title">修改登录密码</span>
+            <span class="title">修改邮箱</span>
         </div>
-
         <div class="step">
-            <ul class="step-ul">
+            <ul class="step-ul step-four">
+                <li><span class="line line-active"></span><span class="circle circle-active"></span>
+                    <p class="p-active">验证方式</p></li>
                 <li><span class="line line-active"></span><span class="circle circle-active"></span>
                     <p class="p-active">验证身份</p></li>
-                <li><span class="line"></span><span class="circle"></span>
-                    <p>修改登录密码</p></li>
-                <li><span class="line"></span><span class="circle"></span>
-                    <p>修改成功</p><span class="line"></span></li>
+                <li><span class="line line-active"></span><span class="circle circle-active"></span>
+                    <p class="p-active">修改邮箱</p></li>
+                <li><span class="line line-active"></span><span class="circle circle-active"></span>
+                    <p class="p-active">修改成功</p><span class="line line-active"></span></li>
             </ul>
-
         </div>
+        <div class="mail-success">
+            <i class="acSuccess"></i>
+            <div class="ml70">
+                <div class="fz24">修改邮箱成功</div>
 
-        <div class="za-account-form">
-            <div class="bind-w">
-                <form id="aform" method="post" action="https://www.zhongan.com/account/modifyLoginPassword1.htm"
-                      autocomplete="off" aria-disabled="false" aria-pressed="false">
-                    <input name="_csrf_token" type="hidden" value="5QkwvfphQXqdwOSMlHzEL1">
-                    <input type="hidden" name="action" value="account/MyInfoAction">
-                    <!-- action执行value=1的方法-->
-                    <input type="hidden" name="event_submit_doModifyLoginPassword1" value="1">
-                    <input type="hidden" name="_fm.pe._0.a" value="1">
-                    <input type="hidden" name="_fm.pe._0.acc" value="5">
+                <div class="fz20"><a href="/consumer/user/getUserAuthentication?count=1">返回我的资料</a>或<a
+                        class="result-green" href="/index.html">首页</a></div>
 
-                    <div class="form-item">
-                        <div class="bd account form-item">
-                            <label>账户：</label>
-                            <span id="phone" style="display: none" th:text="${session.user.userPhonenumber}"></span>
-                            <span class="phone">
-                                <span th:text="${#strings.substring(session.user.userPhonenumber,0,3)}"></span>
-                                *****
-                                <span th:text="${#strings.substring(session.user.userPhonenumber,8)}"></span>
-                            </span>
-                        </div>
-                        <div class="form-item">
-                            <label>当前登录密码：</label>
-                            <div class="ui-input ui-input-bd">
-                                <input type="password" style="display:none;"> <!--onblur="myBlur(this,checkOldPw);"-->
-                                <input type="password" title="password" autocomplete="off" aria-disabled="false"
-                                       aria-pressed="false" maxlength="20" id="password" name="_fm.pe._0.old" value=""
-                                       class="pholder" data-error="请输入当前登录密码" data-type="input" onfocus="myFocus(this);"
-                                       placeholder="请输入当前登录密码">
-                            </div>
-                            <div class="form-error" style="display: none"><i></i><label class="error-text w280"></label></div>
-                        </div>
-                        <div class="btn w300 btn-next">下一步</div>
-                    </div>
-                </form>
             </div>
         </div>
     </div>
@@ -1937,7 +1878,8 @@
 <div class="za-footer">
     <div class="za-footer-layout">
         <div class="za-footer-help">
-            <div class="help-item"><h4 class="help-item-hd">众安保险</h4>
+            <div class="help-item">
+                <h4 class="help-item-hd">众安保险</h4>
                 <ul class="za-footer-help-list">
                     <li class="help-list-item"><a href="https://www.zhongan.com/corporate/" target="_blank" title="关于我们"
                                                   rel="nofollow">关于我们</a></li>
@@ -1952,7 +1894,8 @@
                                                   target="_blank" title="风险提示" rel="nofollow">风险提示</a></li>
                 </ul>
             </div>
-            <div class="help-item"><h4 class="help-item-hd">发现</h4>
+            <div class="help-item">
+                <h4 class="help-item-hd">发现</h4>
                 <ul class="za-footer-help-list">
                     <li class="help-list-item"><a href="https://www.zhongan.com/channel/sitemap/sitemap.html"
                                                   target="_blank" title="网站地图">网站地图</a></li>
@@ -1970,14 +1913,16 @@
                                                   title="众安安全应急响应中心" rel="nofollow">众安安全应急响应中心</a></li>
                 </ul>
             </div>
-            <div class="help-item"><h4 class="help-item-hd">关注众安</h4>
+            <div class="help-item">
+                <h4 class="help-item-hd">关注众安</h4>
                 <ul class="za-footer-help-list">
                     <li class="help-list-item"><i class="icon-chat"></i>微信公众号<span class="code code-chat"></span></li>
                     <li class="help-list-item"><i class="icon-alipay"></i>支付宝服务窗<span class="code code-alipay"></span>
                     </li>
                 </ul>
             </div>
-            <div class="help-item help-item-server"><h4 class="help-item-hd">客户服务</h4>
+            <div class="help-item help-item-server">
+                <h4 class="help-item-hd">客户服务</h4>
                 <div class="server-tel" style="font-size: 15px"><i class="icon-tel"></i><span class="tel-numb"
                                                                                               style="font-size: 16px">1010-9955 </span>
                     <div>全国统一服务热线</div>
@@ -1990,24 +1935,25 @@
                 <p class="server-email" style="font-size: 15px"><i class="icon-email"></i><a
                         href="mailto:cs@zhongan.com">客服邮箱：cs@zhongan.com</a></p>
                 <p class="server-email" style="font-size: 15px"><i class="icon-email"></i><a
-                        href="mailto:jubao@zhongan.com">保险欺诈举报邮箱：jubao@zhongan.com</a></p></div>
+                        href="mailto:jubao@zhongan.com">保险欺诈举报邮箱：jubao@zhongan.com</a></p>
+            </div>
         </div>
-        <div class="za-footer-bd"><h4 class="footer-logo"><a href="https://www.zhongan.com/" title="众安保险">众安保险</a></h4>
+        <div class="za-footer-bd">
+            <h4 class="footer-logo"><a href="https://www.zhongan.com/" title="众安保险">众安保险</a></h4>
             <p class="footer-copyright"><a target="_blank"
                                            href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010102004862"
-                                           rel="nofollow"><img src="http://47.93.221.88/previous/userback/images/police.png"
-                                                               style="vertical-align:-6px;margin-right:8px;"
-                                                               alt="沪公网安备 31010102004862号">沪公网安备 31010102004862号</a><a
-                    target="_blank" rel="nofollow" style="margin-left: 17px" href="http://www.miitbeian.gov.cn/"><img
-                    src="http://47.93.221.88/previous/userback/images/network.png" alt="沪ICP备13041135号-1"
-                    style="vertical-align:-4px;margin-right:8px;">沪ICP备13041135号-1</a><a target="_blank"
-                                                                                         style="margin-left: 17px"
-                                                                                         href="https://218.242.124.22:8082/businessCheck/verifKey.do?showType=extShow&amp;serial=9031000020170721110206000001942333-SAIC_SHOW_310000-20131111112754954041&amp;signData=MEUCIGONA4AG1pExDb6kOnq0gaicafgHzjVrZpf3YseTN5ZkAiEA/+LP3riJh9rj8/NlhMQS6OWt02fu1TeXWB59GYeY29w="
-                                                                                         rel="nofollow"><img width="20"
-                                                                                                             src="http://47.93.221.88/previous/userback/images/lz2.jpg"
-                                                                                                             alt="沪工商备 20131111112754954"
-                                                                                                             style="vertical-align:-4px;margin-right:8px;">沪工商备
-                20131111112754954</a></p></div>
+                                           rel="nofollow">
+                <img src="http://47.93.221.88/previous/userback/images/police.png" style="vertical-align:-6px;margin-right:8px;"
+                     alt="沪公网安备 31010102004862号">沪公网安备 31010102004862号</a>
+                <a target="_blank" rel="nofollow" style="margin-left: 17px" href="http://www.miitbeian.gov.cn/">
+                    <img src="http://47.93.221.88/previous/userback/images/network.png" alt="沪ICP备13041135号-1"
+                         style="vertical-align:-4px;margin-right:8px;">沪ICP备13041135号-1</a>
+                <a target="_blank" style="margin-left: 17px"
+                   href="https://218.242.124.22:8082/businessCheck/verifKey.do?showType=extShow&amp;serial=9031000020170721110206000001942333-SAIC_SHOW_310000-20131111112754954041&amp;signData=MEUCIGONA4AG1pExDb6kOnq0gaicafgHzjVrZpf3YseTN5ZkAiEA/+LP3riJh9rj8/NlhMQS6OWt02fu1TeXWB59GYeY29w="
+                   rel="nofollow">
+                    <img width="20" src="http://47.93.221.88/previous/userback/images/lz2.jpg" alt="沪工商备 20131111112754954"
+                         style="vertical-align:-4px;margin-right:8px;">沪工商备 20131111112754954</a></p>
+        </div>
     </div>
 </div><!--end  footer--><!--统计代码-->
 <script>var _hmt = _hmt || [];
@@ -2029,106 +1975,17 @@
     s.parentNode.insertBefore(bp, s);
 })();</script>
 <script src="http://47.93.221.88/previous/userback/js/jquery-1.8.1.min.js"></script>
-<script src="http://47.93.221.88/previous/userback/js/bui-min.js"></script>
+<script src="http://47.93.221.88/previous/userback/js/login.js"></script>
 <script type="text/javascript" charset="utf-8" src="http://47.93.221.88/previous/userback/js/dee-dragSelector-1.0.js"></script>
 <script type="text/javascript" charset="utf-8" src="http://47.93.221.88/previous/userback/js/nc.js"></script>
 <script src="http://47.93.221.88/previous/userback/js/common.js"></script>
 <script src="http://47.93.221.88/previous/userback/js/appDownload.js"></script>
 <link href="http://47.93.221.88/previous/userback/css/appDownload.css" rel="stylesheet">
 <script src="http://47.93.221.88/previous/userback/js/validate.js"></script>
-<!--<script src="http://47.93.221.88/previous/userback/js/account.js"></script>-->
-<script>
-    function checkOldPw(fun) {
-        $.ajax({
-            type: "POST",
-            dataType: "json",
-            url: "/account/MyInfoScreen/checkModifyLoginPassword1.json",
-            data: {
-                "oldLoginPassword": $.trim($('#password').val()),
-            },
-            success: function (data) {
-                if (data.returnCode && data.returnCode == 'success') {
-                    if (fun) fun();
-                } else {
-                    errorMessage($('#password'), $('#password').attr('data-error'));
-                    if (fun) fun();
-                }
-                ;
-            }
-        });
-    };
-    $(function () {
-        $("body").on("click", ".btn-next", function () {
-            var msg = validateCheck($('#password'));
-            if (msg) {
-                checkOldPw(function () {
-                    $('#aform')[0].submit();
-                });
-            }
-        });
-    });
-
-</script>
+<script src="http://47.93.221.88/previous/userback/js/account.js"></script>
 <script src="http://47.93.221.88/previous/userback/js/ilog.min.js"></script>
-<script type="text/javascript">
-    BUI.use('bui/overlay', function (Overlay) {
-
-
-        function timeMessage(obj) {
-            window.parent.zaMessageShow(obj.msg, 'timer', '', '确认', '', obj.data);
-            if ('undefined' != obj.data) {
-                setTimeout(function () {
-                    window.location.href = obj.data.url;
-                }, obj.data.second)
-            }
-        };
-
-        function fnparentMessage(title, type) {
-            if (title && typeof window.parent.zaMessageShow === 'function') {
-                if (type) {
-                    window.parent ? window.parent.zaMessageShow(title, type) : zaMessageShow(title, type);
-                } else {
-                    window.parent ? window.parent.zaMessageShow(title) : zaMessageShow(title);
-                }
-                ;
-
-
-            }
-        }
-    });
-</script>
-<script type="text/javascript">
-    BUI.use('bui/overlay', function (Overlay) {
-
-        var msg = '';
-        fnparentMessage(msg, 'error');
-
-
-        function timeMessage(obj) {
-            window.parent.zaMessageShow(obj.msg, 'timer', '', '确认', '', obj.data);
-            if ('undefined' != obj.data) {
-                setTimeout(function () {
-                    window.location.href = obj.data.url;
-                }, obj.data.second)
-            }
-        };
-
-        function fnparentMessage(title, type) {
-            if (title && typeof window.parent.zaMessageShow === 'function') {
-                if (type) {
-                    window.parent ? window.parent.zaMessageShow(title, type) : zaMessageShow(title, type);
-                } else {
-                    window.parent ? window.parent.zaMessageShow(title) : zaMessageShow(title);
-                }
-                ;
-
-
-            }
-        }
-    });
-</script>
-
 <script src="http://47.93.221.88/previous/userback/js/za-bootstrap-pc.js"></script>
+
 
 </body>
 </html>

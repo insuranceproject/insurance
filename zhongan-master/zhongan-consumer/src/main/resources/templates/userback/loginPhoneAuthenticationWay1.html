@@ -1,34 +1,93 @@
 <!DOCTYPE html>
-<!-- saved from url=(0039)https://www.zhongan.com/account/myOrder -->
+<!-- saved from url=(0081)https://www.zhongan.com/account/loginPhoneAuthenticationWay1?accountModifyClass=3 -->
 <html style=""
       class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <script id="_1566994675657_4504" src="http://47.93.221.88/previous/userback/json/detect.json"></script>
+    <script id="_1568253419882_3163" src="http://47.93.221.88/previous/userback/json/detect.json"></script>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link type="image/x-icon" rel="shortcut icon"
           href="https://static.zhongan.com/website/online/assets/images/favicon.ico">
-    <title>我的保单_会员中心 - 众安保险官网</title>
-    <meta name="Keywords" content="">
-    <meta name="Description" content="">
+    <title>
+        我的信息_会员中心 - 众安保险官网
+    </title>
+    <meta name="Keywords" content="重大疾病保险,重大疾病保险哪家好,众安保险">
+    <meta name="Description" content="众安成人重大疾病保险，0.2元/天起超低保费,40种重大疾病保障，确诊即赔，100%获得赔偿，30万最高保额，48小时内无理由退保，详情请登录众安保险官网">
     <script type="text/javascript" async="" src="http://47.93.221.88/previous/userback/js/fm.js"></script>
     <script src="http://47.93.221.88/previous/userback/js/hm.js"></script>
     <script src="http://47.93.221.88/previous/userback/js/hm.js"></script>
     <script src="http://47.93.221.88/previous/userback/js/push.js"></script>
     <script src="http://47.93.221.88/previous/userback/js/hm(1).js"></script>
     <script src="http://47.93.221.88/previous/userback/js/modernizr.js"></script>
+    <!--[if lt IE 9]>
+    <script src="//static.zhongan.com/website/online/resource/res/js/html5shiv.js"></script>
+    <![endif]-->
     <link href="http://47.93.221.88/previous/userback/css/za-base.min.css" type="text/css" rel="stylesheet">
     <link href="http://47.93.221.88/previous/userback/css/personalCenter.min.css" type="text/css" rel="stylesheet">
+    <link href="http://47.93.221.88/previous/userback/css/myInfo.css" type="text/css" rel="stylesheet">
+    <link href="http://47.93.221.88/previous/userback/css/identity.css" type="text/css" rel="stylesheet">
+    <link href="http://47.93.221.88/previous/userback/css/antiSlider.min.css" rel="stylesheet">
+    <link href="http://47.93.221.88/previous/userback/css/loginReset.css" rel="stylesheet">
     <link href="http://47.93.221.88/previous/userback/css/remedy.css" rel="stylesheet">
+    <style type="text/css">
+        #za-idcontrol {
+            text-align: left !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+    </style>
     <script src="http://47.93.221.88/previous/userback/js/login.js"></script>
     <script type="text/javascript" src="http://47.93.221.88/previous/userback/js/jquery-1.8.1.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/iframes.css">
+    <link rel="stylesheet" type="text/css" href="http://47.93.221.88/previous/userback/css/iframes.css">
     <meta name="viewport" content="width=1300, user-scalable=yes, minimum-scale=.4, maximum-scale=2.0">
-    <script type="text/javascript" id="zaHeaderLogin" src="http://47.93.221.88/previous/userback/js/za-bootstrap.js"></script>
+    <script type="text/javascript" id="zaHeaderLogin"
+            src="http://47.93.221.88/previous/userback/js/za-bootstrap.js"></script>
     <script type="text/javascript" src="http://47.93.221.88/previous/userback/js/callback.js"></script>
+    <script type="text/javascript">
+        function setTime(){
+            var num = 61;
+            var time = setInterval(function () {
+                num--;
+                $("#messageButton").val("重新获取(" + num + ")");
+                $("#messageButton").addClass("message-button-active");
+                if (num < 0) {
+                    clearInterval(time);
+                    $("#messageButton").val("获取短信验证码");
+                    $("#messageButton").removeClass("message-button-active");
+                    $("#messageButton").removeAttr("disabled");
+                }
+            }, 1000);
+        }
+        $(function () {
+            var phone = location.search.substring(7);
+            $(".phone-val").text(phone.substring(0,3)+"*****"+phone.substring(8));
+            $(".phone").text(phone.substring(0,3)+"*****"+phone.substring(8));
+            $("#messageButton").click(function () {
+                $.post("/consumer/user/getSmsCode1?phone="+phone,function (resout) {
+                    if(resout == "n"){
+                        $(".message").append("<div class=\"form-error\"><i></i><label class=\"error-text w280\">验证码发送失败</label></div>")
+                        return;
+                    }else{
+                        setTime();
+                    }
+                })
+            })
+            $(".btn-next").click(function () {
+                var smsCode = $("#verify").val();
+                $.post("/consumer/user/bindEmail2ByPhone?smsCode="+smsCode,function (resout) {
+                    if(resout == "y"){
+                        window.location = "/userback/loginPhoneAuthenticationWay2.html?phone="+phone;
+                    }else{
+                        $(".form-error").remove();
+                        $(".message").append("<div class=\"form-error\"><i></i><label class=\"error-text w280\">验证码验证失败</label></div>")
+                    }
+                })
+            })
+        })
+    </script>
 </head>
-<body leftindex="0" class="">
+<body leftindex="3" class="bgf2f2f2 identity-page">
 <link href="http://47.93.221.88/previous/userback/css/za-common.css" rel="stylesheet"><!--header  start-->
 <div class="za-toolbar" data-ilog="1.589.zL6|a" ilogbinded="true">
     <div class="za-toolbar-layout">
@@ -42,7 +101,7 @@
             <!--<div class="entry-item entry-login" id="headerLogin">-->
             <div id="headerLogin"
                  style="    position: relative;display: inline;float: left;line-height: 34px;box-sizing: content-box;">
-                <a href="https://www.zhongan.com/account/myAccount" title="点击进入我的账户">za19ki6q84</a><i class="vline"></i><a
+                <a href="https://www.zhongan.com/account/myAccount" title="点击进入我的账户">za19lxk0c9</a><i class="vline"></i><a
                     href="https://www.zhongan.com/logOut">退出</a></div>            <!--</div>-->
             <div class="entry-item entry-account"><a id="" href="https://www.zhongan.com/account/myAccount"
                                                      rel="nofollow" class="entry-item-hd"><span>个人中心</span><i
@@ -96,15 +155,9 @@
                                      href="https://www.zhongan.com/index.html#channelEnName=onlineIndex">首页</a></li>
             <li class="list-item"><a title="特色保险" class="list-item-hd" id="zaNav_exclusive"
                                      href="https://www.zhongan.com/open/exclusive#channelEnName=exclusive">特色保险</a> <i
-                    class="item-bg" style="width: 1519px; left: -160px;"></i>
+                    class="item-bg" style="width: 1349px; left: -75px;"></i>
                 <div class="za-main-nav-pro">
                     <ul class="za-main-nav-pro-list">
-                        <li><a href="https://www.zhongan.com/p/84779612#channelEnName=exclusive"> <img
-                                data-src="//static.zhongan.com/upload/online/material/1516947371920.png"
-                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="汪星保宠物责任险">
-                            <h3 class="pro-title" title="汪星保宠物责任险">汪星保宠物责任险</h3>
-                            <p class="pro-price"><span class="price-numb">19.9</span>元起</p></a></li>
                         <li>
                             <a href="https://digital.zhongan.com/uav/uavIndex.htm?promotionCode=PCGW#channelEnName=exclusive">
                                 <img data-src="//static.zhongan.com/upload/online/material/1486985693103.png"
@@ -119,12 +172,6 @@
                                      alt="无人机第三者责任险-企业版">
                                 <h3 class="pro-title" title="无人机第三者责任险-企业版">无人机第三者责任险-企业版</h3>
                                 <p class="pro-price"><span class="price-numb">300</span>元起</p></a></li>
-                        <li><a href="https://www.zhongan.com/p/82416126#channelEnName=exclusive"> <img
-                                data-src="//static.zhongan.com/upload/online/material/1495876751921.png"
-                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="爱享e家 家财意外险">
-                            <h3 class="pro-title" title="爱享e家 家财意外险">爱享e家 家财意外险</h3>
-                            <p class="pro-price"><span class="price-numb">188</span>元起</p></a></li>
                         <li><a href="https://www.zhongan.com/p/83759098#channelEnName=exclusive"> <img
                                 data-src="//static.zhongan.com/upload/online/material/1505470489356.png"
                                 src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
@@ -137,6 +184,18 @@
                                 alt="银行卡盗刷险">
                             <h3 class="pro-title" title="银行卡盗刷险">银行卡盗刷险</h3>
                             <p class="pro-price"><span class="price-numb">5</span>元起</p></a></li>
+                        <li><a href="http://pc.zhongan.com/open/netSafe/netWork#channelEnName=exclusive"> <img
+                                data-src="//static.zhongan.com/upload/online/material/1514880818003.png"
+                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
+                                alt="网络安全信息保险">
+                            <h3 class="pro-title" title="网络安全信息保险">网络安全信息保险</h3>
+                            <p class="pro-price"><span class="price-numb">20000</span>元起</p></a></li>
+                        <li><a href="https://www.zhongan.com/p/84277153#channelEnName=exclusive"> <img
+                                data-src="//static.zhongan.com/upload/online/material/1493796142382.png"
+                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
+                                alt="电信诈骗资金损失险">
+                            <h3 class="pro-title" title="电信诈骗资金损失险">电信诈骗资金损失险</h3>
+                            <p class="pro-price"><span class="price-numb">9.9</span>元起</p></a></li>
                         <li><a class="more-link" href="https://www.zhongan.com/open/exclusive"> <img
                                 data-src="//static.zhongan.com/website/factoryOnline/assets/images/public/more-product-icon.png"
                                 src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
@@ -147,56 +206,21 @@
             </li>
             <li class="list-item"><a title="航旅险" class="list-item-hd" id="zaNav_travel"
                                      href="https://www.zhongan.com/open/travel#channelEnName=travel">航旅险</a> <i
-                    class="item-bg" style="width: 1519px; left: -160px;"></i>
+                    class="item-bg" style="width: 1349px; left: -75px;"></i>
                 <div class="za-main-nav-pro">
                     <ul class="za-main-nav-pro-list">
                         <li><a href="https://www.zhongan.com/p/82761035#channelEnName=travel"> <img
                                 data-src="//static.zhongan.com/upload/online/material/1526721427049.png"
                                 src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
                                 alt="飞享e生升级版">
-                            <h3 class="pro-title" title="飞享e生升级版">飞享e生升级版</h3>
+                            <h3 class="pro-title">飞享e生升级版</h3>
                             <p class="pro-price"><span class="price-numb">79</span>元起</p></a></li>
-                        <li><a href="https://www.zhongan.com/p/81510950#channelEnName=travel"> <img
-                                data-src="//static.zhongan.com/upload/online/material/1486983788235.png"
-                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="东南亚旅游意外险">
-                            <h3 class="pro-title" title="东南亚旅游意外险">东南亚旅游意外险</h3>
-                            <p class="pro-price"><span class="price-numb">30</span>元起</p></a></li>
-                        <li><a href="https://www.zhongan.com/p/81176313#channelEnName=travel"> <img
-                                data-src="//static.zhongan.com/upload/online/material/1486984019112.png"
-                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="台湾旅行意外险">
-                            <h3 class="pro-title" title="台湾旅行意外险">台湾旅行意外险</h3>
-                            <p class="pro-price"><span class="price-numb">50</span>元起</p></a></li>
-                        <li><a href="https://www.zhongan.com/p/81381168#channelEnName=travel"> <img
-                                data-src="//static.zhongan.com/upload/online/material/1486983964669.png"
-                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="港澳游旅行意外险">
-                            <h3 class="pro-title" title="港澳游旅行意外险">港澳游旅行意外险</h3>
-                            <p class="pro-price"><span class="price-numb">30</span>元起</p></a></li>
-                        <li><a href="https://www.zhongan.com/p/81691190#channelEnName=travel"> <img
-                                data-src="//static.zhongan.com/upload/online/material/1498012344281.png"
-                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="飞享日本旅行险">
-                            <h3 class="pro-title" title="飞享日本旅行险">飞享日本旅行险</h3>
-                            <p class="pro-price"><span class="price-numb">60</span>元起</p></a></li>
-                        <li><a href="https://www.zhongan.com/p/81922714#channelEnName=travel"> <img
-                                data-src="//static.zhongan.com/upload/online/material/1486984171231.png"
-                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="短途及周边游">
-                            <h3 class="pro-title" title="短途及周边游">短途及周边游</h3>
-                            <p class="pro-price"><span class="price-numb">5</span>元起</p></a></li>
-                        <li><a class="more-link" href="https://www.zhongan.com/open/travel"> <img
-                                data-src="//static.zhongan.com/website/factoryOnline/assets/images/public/more-product-icon.png"
-                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="查看全部">
-                            <h3 class="pro-title" title="查看全部">查看全部</h3></a></li>
                     </ul>
                 </div>
             </li>
             <li class="list-item"><a title="意外险" class="list-item-hd" id="zaNav_accident"
                                      href="https://www.zhongan.com/open/accident#channelEnName=accident">意外险</a> <i
-                    class="item-bg" style="width: 1519px; left: -160px;"></i>
+                    class="item-bg" style="width: 1349px; left: -75px;"></i>
                 <div class="za-main-nav-pro">
                     <ul class="za-main-nav-pro-list">
                         <li><a href="https://www.zhongan.com/p/82138393#channelEnName=accident"> <img
@@ -222,51 +246,40 @@
             </li>
             <li class="list-item"><a title="健康险" class="list-item-hd" id="zaNav_health"
                                      href="https://www.zhongan.com/open/health#channelEnName=health">健康险</a> <i
-                    class="item-bg" style="width: 1519px; left: -160px;"></i>
+                    class="item-bg" style="width: 1349px; left: -75px;"></i>
                 <div class="za-main-nav-pro">
                     <ul class="za-main-nav-pro-list">
-                        <li><a href="https://www.zhongan.com/p/83398346#channelEnName=health"> <img
-                                data-src="//static.zhongan.com/upload/online/material/1509704896994.png"
-                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="尊享e生·新全保通2017少儿版">
-                            <h3 class="pro-title" title="尊享e生·新全保通2017少儿版">尊享e生·新全保通2017少儿版</h3>
-                            <p class="pro-price"><span class="price-numb">200</span>元起</p></a></li>
-                        <li><a href="https://www.zhongan.com/p/83881372#channelEnName=health"> <img
-                                data-src="//static.zhongan.com/upload/online/material/1509704812948.png"
-                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="尊享e生·新全保通2017成人版">
-                            <h3 class="pro-title" title="尊享e生·新全保通2017成人版">尊享e生·新全保通2017成人版</h3>
-                            <p class="pro-price"><span class="price-numb">245</span>元起</p></a></li>
                         <li>
                             <a href="https://ztg.zhongan.com/promote/entrance/promoteEntrance.do?promotionCode=INST190834380020&amp;redirectType=pc&amp;bizOrigin=zx2019pc#channelEnName=health">
                                 <img data-src="//static.zhongan.com/upload/online/material/1497858674376.png"
                                      src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
                                      alt="尊享e生2019版">
-                                <h3 class="pro-title" title="尊享e生2019版">尊享e生2019版</h3>
+                                <h3 class="pro-title">尊享e生2019版</h3>
                                 <p class="pro-price"><span class="price-numb">146</span>元起</p></a></li>
-                        <li><a href="https://www.zhongan.com/p/83052692#channelEnName=health"> <img
-                                data-src="//static.zhongan.com/upload/online/material/1501577396494.png"
+                        <li><a href="https://www.zhongan.com/p/83398346#channelEnName=health"> <img
+                                data-src="//static.zhongan.com/upload/online/material/1509704896994.png"
                                 src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="乐活e生·少儿重疾险">
-                            <h3 class="pro-title" title="乐活e生·少儿重疾险">乐活e生·少儿重疾险</h3>
-                            <p class="pro-price"><span class="price-numb">40</span>元起</p></a></li>
-                        <li><a href="https://www.zhongan.com/p/83190811#channelEnName=health"> <img
-                                data-src="//static.zhongan.com/upload/online/material/1501577679673.png"
+                                alt="尊享e生·新全保通2017少儿版">
+                            <h3 class="pro-title">尊享e生·新全保通2017少儿版</h3>
+                            <p class="pro-price"><span class="price-numb">200</span>元起</p></a></li>
+                        <li><a href="https://www.zhongan.com/p/83881372#channelEnName=health"> <img
+                                data-src="//static.zhongan.com/upload/online/material/1509704812948.png"
                                 src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="乐活e生·成人重疾险">
-                            <h3 class="pro-title" title="乐活e生·成人重疾险">乐活e生·成人重疾险</h3>
-                            <p class="pro-price"><span class="price-numb">60</span>元起</p></a></li>
-                        <li><a href="https://www.zhongan.com/p/83619954#channelEnName=health"> <img
-                                data-src="//static.zhongan.com/upload/online/material/1497858765597.png"
+                                alt="尊享e生·新全保通2017成人版">
+                            <h3 class="pro-title">尊享e生·新全保通2017成人版</h3>
+                            <p class="pro-price"><span class="price-numb">245</span>元起</p></a></li>
+                        <li><a href="https://www.zhongan.com/p/83890638#channelEnName=health"> <img
+                                data-src="//static.zhongan.com/upload/online/material/1497410361174.png"
                                 src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="儿童重大疾病险">
-                            <h3 class="pro-title" title="儿童重大疾病险">儿童重大疾病险</h3>
-                            <p class="pro-price"><span class="price-numb">34</span>元起</p></a></li>
-                        <li><a class="more-link" href="https://www.zhongan.com/open/health"> <img
-                                data-src="//static.zhongan.com/website/factoryOnline/assets/images/public/more-product-icon.png"
+                                alt="女性专属疾病险">
+                            <h3 class="pro-title">女性专属疾病险</h3>
+                            <p class="pro-price"><span class="price-numb">20</span>元起</p></a></li>
+                        <li><a href="https://www.zhongan.com/open/userInfo/healthDetail#channelEnName=health"> <img
+                                data-src="${subColumns.imageUrlOne}"
                                 src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="查看全部">
-                            <h3 class="pro-title" title="查看全部">查看全部</h3></a></li>
+                                alt="臻享 个人高端医疗保险">
+                            <h3 class="pro-title">臻享 个人高端医疗保险</h3>
+                            <p class="pro-price"><span class="price-numb">7060</span>元起</p></a></li>
                     </ul>
                 </div>
             </li>
@@ -312,95 +325,175 @@
         </div>
     </div>
 </div><!--end  mainNav-->
-<div class="za-buy-product2 za-body-bg-gray">
-    <div class="za-nav-flag za-l-w za-margin-auto"><a href="https://www.zhongan.com/index">众安保险首页</a>&nbsp;&gt;&nbsp;<a
-            href="https://www.zhongan.com/account/myAccount">我的账户</a>&nbsp;&gt;&nbsp;我的保单
-    </div>
-    <div class="za-product-intruduction za-l-w za-margin-auto za-clearfix tp">
-        <div id="za-layout-left" class="za-acc-l-w za-com-ta-cen" data-ilog="1.74.zH3|a" ilogbinded="true">
-            <div class="za-acc-nav-toolbar za-fz22 za-my-icon-bghead"><a
-                    href="https://www.zhongan.com/account/myAccount" rel="nofollow">我的账户</a></div>
-            <ul class="za-com-nav-list za-acc-nav-list">
-                <li><a href="https://www.zhongan.com/account/myPolicy" rel="nofollow" class="hover"><b
-                        class="bg1"></b><span>我的订单</span></a>
-                </li>
-                <li><a href="https://www.zhongan.com/account/employeeWelfare" rel="nofollow"><b class="bg6"></b><span>团险保单</span></a>
-                </li>
-                <li><a href="https://www.zhongan.com/account/claimEnquiry" rel="nofollow"><b
-                        class="bg2"></b><span>理赔查询</span></a>
-                </li>
-                <!--li><a href="/account/waitProcess" rel="nofollow"><b class="bg3"></b><span>等待处理</span></a></li-->
-                <li><a href="https://www.zhongan.com/account/myInfo" rel="nofollow"><b class="bg4"></b><span>我的资料</span></a>
-                </li>
-                <!--li><a href="/account/transpwd" rel="nofollow"><b class="bg7"></b><span>我的投资</span></a></li-->
-                <!-- <li><a href="/account/myOrder"><b class="bg7"></b><span>我的订单</span></a></li> -->
-                <!--li><a href="http://open.zhongan.com/innerweb/ygd/loanApplyRecord.htm"><b class="bg8"></b><span>我的资产</span></a></li-->
-                <li><a href="https://www.zhongan.com/account/myPoint"><b class="za-icon-point"></b><span>我的积分</span></a>
-                </li>
-            </ul>
-            <div class="za-app-Qrcode-box">
-                <div class="pic">
-                    <img src="http://47.93.221.88/previous/userback/images/QR_pcmyaccount.png">
-                </div>
-                <div class="text ">
-                    <p class="text1">扫码下载APP</p>
-                    <p>实时追踪服务进程</p>
-                </div>
-            </div>
+<div class="accountMenu">
+    <ul>
+        <li><a href="https://www.zhongan.com/">众安保险</a></li>
+        <li>&gt;</li>
+        <li><a href="https://www.zhongan.com/account/myAccount">我的账户</a></li>
+        <li>&gt;</li>
+        <li>绑定邮箱</li>
+    </ul>
+</div>
+<!--main start-->
+<div class="wrapper">
+    <div class="za-rect-box">
+        <div class="za-top">
+            <span class="title">绑定邮箱</span>
         </div>
-        <div class="za-f-l">
-            <div class="za-acc-item za-my-minh600 za-acc-item-nopad">
-                <div id="mypolicy-tab-top" class="za-ins-tabs">
-                    <ul class="za-clearfix za-fz16" data-ilog="1.23.aB1|a" ilogbinded="true">
-                        <li><a href="https://www.zhongan.com/account/myPolicy">我的保单</a></li>
-                        <li><a href="https://www.zhongan.com/account/myInsuranceCertificate">我的凭证</a></li>
-                        <li class="active"><a href="https://www.zhongan.com/account/myOrder">其他订单</a></li>
-                    </ul>
-                </div>
-                <div class="otherorders-box">
-                    <div class="za-acc-orlist-th za-ins-border-gray za-ins-bc-gray za-clearfix">
-                        <span class="za-acc-orlist-w120">订单类型</span>
-                        <span class="za-acc-orlist-w200">订单信息</span>
+        <div class="step">
+            <ul class="step-ul step-four">
+                <li><span class="line line-active"></span><span class="circle circle-active"></span>
+                    <p class="p-active">验证方式</p></li>
+                <li><span class="line line-active"></span><span class="circle circle-active"></span>
+                    <p class="p-active">验证身份</p></li>
+                <li><span class="line"></span><span class="circle"></span>
+                    <p>绑定邮箱</p></li>
+                <li><span class="line"></span><span class="circle"></span>
+                    <p>绑定成功</p><span class="line"></span></li>
+            </ul>
+        </div>
+        <div class="za-account-form">
+            <div class="bd account form-item">
+                <label>账户：</label>
+                <span class="phone">175*****177</span>
+            </div>
+            <form id="aform" method="post" action="https://www.zhongan.com/account/loginPhoneAuthenticationWay1.htm"
+                  autocomplete="off" aria-disabled="false" aria-pressed="false">
+                <input name="_csrf_token" type="hidden" value="4CZUiaaSCMpBeRqFvyMqg2">
+                <input type="hidden" name="action" value="account/MyInfoAction">
+                <!-- action执行value=1的方法-->
+                <input type="hidden" name="event_submit_doLoginPhoneAuthentication1" value="1">
+                <input type="hidden" name="_fm.pe._0.a" value="3">
+                <input type="hidden" name="_fm.pe._0.acc" value="0">
+                <input type="hidden" name="_fm.pe._0.o" value="17508497177" id="mobilePhone">
+                <input id="zamenukey" type="hidden" value="service">
+                <input type="hidden" id="token" name="token" value="854ca4d691c658ab092ecbacc75c4337">
+                <input type="hidden" id="appkey" name="appkey" value="1999">
+                <input type="hidden" name="" value="" id="antifraud_sceneId">
+                <input type="hidden" name="" value="" id="antifraud_deviceId">
+                <input type="hidden" name="" value="" id="antifraud_afs_token">
 
-                        <span class="za-acc-orlist-w120">实付金额（元）</span>
-                        <span class="za-acc-orlist-w120">
-                    <div class="za-acc-orlist-type">
-                        <em class="disabled typeicon">订单状态<i class="za-icon za-icon-arrow-down"></i></em>
-                        <ul>
-                            <li><a class="typeicon">订单状态<i class="za-icon za-icon-arrow-down"></i></a></li>
-                            <li><a href="javascript:;" onclick="reLoad(&#39;all&#39;,1)" class="active">全部</a></li>
-                            <li><a href="javascript:;" onclick="reLoad(&#39;1&#39;,2)">待支付</a></li>
-                            <li><a href="javascript:;" onclick="reLoad(&#39;3&#39;,3)">已支付</a></li>
-                        </ul>
-                    </div>
-                </span>
-                        <span class="za-acc-orlist-w260">操作</span>
-                    </div>
-                    <div id="za-pol-list" style="display: none;">
-                        <div class="bui-simple-list demo-list clearfix" aria-disabled="false">
-                            <ul></ul>
+                <div class="bind-w">
+                    <div class="form-item">
+                        <div class="ui-input loginName">
+                            <label>当前手机号码：</label>
+                            <span class="phone-val">175*****177</span>
                         </div>
                     </div>
-                    <div id="za-pol-paging" class="za-com-paging" style="display: none;">
-                        <ul class="bui-pagingbar-number bui-pagingbar bui-bar pagination pull-right" role="toolbar"
-                            id="bar1" aria-disabled="false">
-                            <li class="bui-bar-item bui-inline-block disabled" aria-disabled="true" id="prev"><a
-                                    href="javascript:;">&lt;&lt;</a></li>
-                            <li class="bui-bar-item bui-button-number bui-inline-block active" aria-disabled="false"
-                                id="1"><a href="https://www.zhongan.com/account/myOrder">1</a></li>
-                            <li class="bui-bar-item bui-inline-block disabled" aria-disabled="true" id="next"><a
-                                    href="javascript:;">&gt;&gt;</a></li>
-                        </ul>
+                    <div class="form-item">
+                        <label>验证码：</label>
+                        <div id="zaCodeSlider" style="position:absolute;left:152px;top:0;">
+                            <div id="za-idcontrol" class=""
+                                 style="width: 300px; height: 40px; line-height: 40px; background-color: rgb(255, 255, 255);">
+                                <div id="za-id-radar" class="">
+                                    <svg id="radar-init" width="16px" height="16px" viewBox="0 0 16 16"
+                                         style="display: block;">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g transform="translate(-127.000000, -34.000000)" fill-rule="nonzero">
+                                                <g transform="translate(115.000000, 24.000000)">
+                                                    <g transform="translate(12.000000, 10.000000)">
+                                                        <g>
+                                                            <path d="M7.99212795,15.9842559 C3.57817342,15.9842559 0,12.4060825 0,7.99212795 C0,3.57817342 3.57817342,0 7.99212795,0 C12.4060825,0 15.9843719,3.57817342 15.9843719,7.99212795 C15.9843719,12.4060825 12.4060825,15.9842559 7.99212795,15.9842559 Z M7.99212795,0.999026854 C4.12993041,0.999026854 0.999012365,4.1299449 0.999012365,7.99214244 C0.999012365,11.85434 4.12993041,14.985258 7.99212795,14.985258 C11.8543255,14.985258 14.9851421,11.85434 14.9851421,7.99214244 C14.9851421,4.1299449 11.85434,0.999026854 7.99212795,0.999026854 Z M7.3462615,11.0773999 C7.15125943,11.2725034 6.8349717,11.2725034 6.63995514,11.0773999 C6.44485162,10.8823978 6.44485162,10.5661101 6.63995514,10.3709921 L9.81873233,7.99212795 L6.63998414,5.6132638 C6.44488061,5.41826172 6.44488061,5.101974 6.63998414,4.90685598 C6.83498621,4.71185391 7.15127394,4.71185391 7.3462905,4.90685598 L10.8784165,7.63888056 C11.0734186,7.83398408 11.0734186,8.15027181 10.8784165,8.34538983 L7.3462615,11.0773999 Z"
+                                                                  id="za-anti-radar-init-path" fill="#4F7FF2"></path>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                    <svg id="radar-loading" width="18px" height="17px" viewBox="0 0 18 17"
+                                         style="display: none;">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g transform="translate(-126.000000, -411.000000)" fill-rule="nonzero"
+                                               fill="#CCCCCC">
+                                                <g transform="translate(115.000000, 401.000000)">
+                                                    <g transform="translate(20.000000, 18.400000) rotate(164.000000) translate(-20.000000, -18.400000) translate(12.000000, 10.000000)">
+                                                        <path id="za-anti-radar-loading-path"
+                                                              d="M8.10286845,1.30224671 C11.2508328,1.30224671 13.8981557,3.44169337 14.6731372,6.34512476 L14.6731372,6.25801893 C14.6731372,6.61772841 14.9645511,6.90914228 15.3242606,6.90914228 C15.6836806,6.90914228 15.9753839,6.61772841 15.9753839,6.25801893 C15.9849337,6.22560745 15.973937,6.19464293 15.9658341,6.16252083 C15.9571525,6.10406443 15.9423937,6.04792312 15.9192426,5.99525447 C14.990596,2.5440113 11.8478406,0 8.10286845,0 C3.62776995,0 0,3.62776995 0,8.10286845 C0,12.5779669 3.62776995,16.2057369 8.10286845,16.2057369 C11.8932746,16.2057369 15.0722035,13.6026904 15.9577312,10.0877818 C15.9643872,10.0299042 15.9753839,9.97202656 15.9753839,9.91125504 C15.9753839,9.55154556 15.6836807,9.26013169 15.3242606,9.26013169 C15.0004352,9.26013169 14.7339087,9.49714059 14.6835552,9.80707531 C13.9265158,12.7374198 11.2696431,14.9034902 8.10286845,14.9034902 C4.34689953,14.9034902 1.30224671,11.8588374 1.30224671,8.10286845 C1.30224671,4.34689953 4.34689953,1.30224671 8.10286845,1.30224671 Z"></path>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                    <svg id="radar-success" width="16px" height="16px" viewBox="0 0 16 16"
+                                         style="display: none">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g transform="translate(-127.000000, -233.000000)">
+                                                <g transform="translate(115.000000, 223.000000)">
+                                                    <g transform="translate(12.000000, 10.000000)"
+                                                       id="za-anti-radar-success-path" fill="#379C6C">
+                                                        <path d="M8,0 C3.58928571,0 0,3.58928571 0,8 C0,12.4107143 3.58928571,16 8,16 C12.4107143,16 16,12.4107143 16,8 C16,3.58928571 12.4107143,0 8,0 Z"></path>
+                                                        <path d="M8,14.9816964 C4.15140763,14.9816964 1.01830357,11.8503417 1.01830357,8 C1.01830357,4.15140763 4.14965827,1.01830357 8,1.01830357 C11.8503417,1.01830357 14.9816964,4.15140763 14.9816964,8 C14.9816964,11.8503417 11.8503417,14.9816964 8,14.9816964 Z"
+                                                              fill="#FFFFFF"></path>
+                                                        <path d="M11.2678571,5.30357143 L6.95357143,9.55357143 L4.73035714,7.39107143 C4.62857143,7.29285714 4.49464286,7.2375 4.35357143,7.2375 L4.34642857,7.2375 C4.20178571,7.23928571 4.06607143,7.29821429 3.96607143,7.40178571 C3.75892857,7.61607143 3.7625,7.95892857 3.97678571,8.16607143 L6.58035714,10.6982143 C6.68392857,10.8 6.82142857,10.85 6.95714286,10.85 C7.09464286,10.85 7.23214286,10.7982143 7.33571429,10.6964286 L12.0267857,6.075 C12.1303571,5.97321429 12.1875,5.8375 12.1892857,5.69464286 C12.1910714,5.55 12.1357143,5.41428571 12.0339286,5.31071429 C11.8232143,5.09642857 11.4803571,5.09464286 11.2678571,5.30357143 L11.2678571,5.30357143 Z"></path>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                    <svg id="radar-fail" width="16px" height="16px" viewBox="0 0 16 16"
+                                         style="display: none">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g transform="translate(-125.000000, -314.000000)">
+                                                <g transform="translate(115.000000, 304.000000)">
+                                                    <g transform="translate(10.000000, 10.000000)"
+                                                       id="za-anti-radar-fail-path" fill="#EF4836">
+                                                        <path d="M8,16 C3.56923077,16 0,12.4307692 0,8 C0,3.56923077 3.56923077,0 8,0 C12.4307692,0 16,3.56923077 16,8 C16,12.4307692 12.4307692,16 8,16 Z"></path>
+                                                        <path d="M8,1.23076923 C4.24615384,1.23076923 1.23076923,4.24615384 1.23076923,8 C1.23076923,11.7538462 4.24615384,14.7692308 8,14.7692308 C11.7538462,14.7692308 14.7692308,11.7538462 14.7692308,8 C14.7692308,4.24615384 11.7538462,1.23076923 8,1.23076923 L8,1.23076923 Z"
+                                                              fill="#FFFFFF"></path>
+                                                        <path d="M6.64615384,7.38461539 C6.64615384,7.2 6.52307692,7.01538463 6.33846153,6.95384616 L3.32307692,5.53846153 C3.07692308,5.41538461 2.83076923,5.53846153 2.70769231,5.78461539 C2.58461539,6.03076923 2.70769231,6.33846155 2.95384616,6.46153847 L4.98461539,7.38461539 L2.83076923,8.36923077 C2.58461539,8.49230769 2.46153847,8.8 2.58461539,9.04615384 C2.64615386,9.23076923 2.83076923,9.35384616 3.01538461,9.35384616 C3.07692308,9.35384616 3.13846153,9.35384616 3.2,9.29230769 L6.33846153,7.87692308 C6.58461537,7.75384616 6.64615384,7.56923077 6.64615384,7.38461539 L6.64615384,7.38461539 Z"></path>
+                                                        <path d="M13.1692308,8.30769231 L11.0153846,7.38461539 L13.0461538,6.46153847 C13.2923077,6.33846155 13.4153846,6.03076923 13.2923077,5.78461539 C13.1692308,5.53846155 12.9230769,5.41538462 12.6769231,5.53846153 L9.66153847,6.95384616 C9.47692308,7.01538462 9.35384616,7.2 9.35384616,7.38461539 C9.35384616,7.56923078 9.47692308,7.75384616 9.66153847,7.81538461 L12.8,9.23076923 C12.8615385,9.2923077 12.9230769,9.2923077 12.9846154,9.29230769 C13.1692308,9.29230769 13.3538462,9.16923077 13.4153846,8.98461539 C13.5384615,8.73846155 13.4153846,8.43076923 13.1692308,8.30769231 L13.1692308,8.30769231 Z"></path>
+                                                        <path d="M9.29230769,9.53846153 L6.70769231,9.53846153 C6.46153847,9.53846153 6.21538463,9.78461538 6.21538461,10.0307692 C6.21538459,10.2769231 6.46153845,10.5230769 6.70769231,10.5230769 L9.29230769,10.5230769 C9.53846153,10.5230769 9.78461538,10.2769231 9.78461539,10.0307692 C9.78461541,9.78461539 9.53846155,9.53846155 9.29230769,9.53846153 Z"></path>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                    <svg id="radar-pending" width="18px" height="16px" viewBox="0 0 18 4"
+                                         style="display: none">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g transform="translate(-569.000000, -262.000000)" fill="#D8D8D8"
+                                               id="za-anti-radar-pending-path">
+                                                <g transform="translate(569.000000, 262.000000)">
+                                                    <circle cx="2" cy="2" r="2"></circle>
+                                                    <circle cx="9" cy="2" r="2"></circle>
+                                                    <circle cx="16" cy="2" r="2"></circle>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <span id="za-id-label">点击此验证</span></div>
+                        </div>
                     </div>
-                    <div class="za-com-list-empty">还没享受保障？快去<a href="https://www.zhongan.com/">逛逛</a>吧~</div>
+                    <div class="form-item">
+                        <div class="ui-input message" data-type="verify">
+                            <label>短信验证码：</label>
+                            <div class="verify-w">
+                                <input type="text" style="display:none;">
+                                <input type="text" autocomplete="off" aria-disabled="false" aria-pressed="false"
+                                       name="messageNumber" title="verify" id="verify"
+                                       class="message-number message-number-bd pholder" maxlength="6"
+                                       onfocus="myFocus(this);" data-error="6位短信验证码" onblur="myBlur(this);"
+                                       placeholder="请输入短信验证码">
+                                <input type="button" name="messageButton" id="messageButton" class="message-button"
+                                       value="获取短信验证码">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="other">
+                        <a href="/consumer/user/bindEmail1?num=1">通过其他方式验证身份&gt;&gt;</a>
+                    </div>
+                    <div class="btn w300 btn-next">下一步</div>
                 </div>
-            </div>
-
+            </form>
         </div>
     </div>
 </div>
 
-<input type="hidden" id="status" value="all">
+<!--main end-->
+
+
 <!--footer  start-->
 <div class="za-footer">
     <div class="za-footer-layout">
@@ -478,6 +571,13 @@
                 20131111112754954</a></p></div>
     </div>
 </div><!--end  footer--><!--统计代码-->
+<script type="text/javascript">
+    $(function () {
+        $(".btn-next").click(function () {
+            alert(11);
+        })
+    })
+</script>
 <script>var _hmt = _hmt || [];
 (function () {
     var hm = document.createElement("script");
@@ -501,13 +601,109 @@
 <script src="http://47.93.221.88/previous/userback/js/common.js"></script>
 <script src="http://47.93.221.88/previous/userback/js/appDownload.js"></script>
 <link href="http://47.93.221.88/previous/userback/css/appDownload.css" rel="stylesheet">
-<script src="http://47.93.221.88/previous/userback/js/ilog.min.js"></script>
-<script src="http://47.93.221.88/previous/userback/js/myOrder.js"></script>
-<script src="http://47.93.221.88/previous/userback/js/policy-common.js"></script>
+<script src="http://47.93.221.88/previous/userback/js/validate.js"></script>
+<!--<script src="http://47.93.221.88/previous/userback/js/account.js"></script>-->
+<script src="http://47.93.221.88/previous/userback/js/dunkey.js"></script>
+<script src="http://47.93.221.88/previous/userback/js/antiSlider.min.js"></script>
+<script src="http://47.93.221.88/previous/userback/js/atfSlider.js"></script>
 <script>
-    $(".za-com-nav-list > li > a").eq($("body").attr("leftindex")).addClass("hover");
+    $(function () {
+        if (astSlider && typeof astSlider === 'function') {
+            // astSlider(containerId,envId,asmId,host,width,height,cb);
+            var atfOpts = {
+                id: '#zaCodeSlider',
+                envId: '#prd',
+                asmId: '#loginEmailAuthenticationWay1',
+                host: 'https://af.zhongan.io/',
+                width: '300px',
+                height: '40px'
+            };
+            astSlider(atfOpts);
+        }
+        ;
+
+        $("body").on("click", ".btn-next", function () {
+            var msg = validateCheck($('#verify'));
+            if (msg) {
+                myBlur($('#Verify'));
+                $('#aform')[0].submit();
+            }
+        });
+        var ss = new sendMsg({
+            target: '#messageButton',
+            callback: function (e) {
+                dragSelectorCheck(function () {//点击获取手机验证码前,要校验图片验证码
+
+                    zaAjaxMaskShow();
+                    ss.send();
+                    var mobilePhone = '17508497177';
+                    var codeNumber = $.trim($("#codeNumber").val());
+                    $.ajax({
+                        type: "POST",
+                        url: "/open/common/verification_code_screen/get_message_code_new.json",
+                        data: {
+                            "mobilePhone": mobilePhone,
+                            "imgCode": codeNumber,
+                            "hiddenFlag": "3"
+                        },
+                        success: function (data) {
+                            zaAjaxMaskHide();
+                            data = eval("(" + data + ")");
+                            var status = data.status;
+                            if (status == 'ok') {
+                                zaMessageShow(data.msg, "success");
+                                ss.send();
+                            } else {
+                                zaMessageShow(data.msg, "error");
+                                refreshAst();
+                                return;
+                            }
+                            ;
+                        },
+                        error: function (e, h) {
+
+                        },
+                    });
+                });
+            }
+        });
+    });
+
 </script>
+<script src="http://47.93.221.88/previous/userback/js/ilog.min.js"></script>
+<script type="text/javascript">
+    BUI.use('bui/overlay', function (Overlay) {
+
+        var msg = '';
+        fnparentMessage(msg, 'error');
+
+
+        function timeMessage(obj) {
+            window.parent.zaMessageShow(obj.msg, 'timer', '', '确认', '', obj.data);
+            if ('undefined' != obj.data) {
+                setTimeout(function () {
+                    window.location.href = obj.data.url;
+                }, obj.data.second)
+            }
+        };
+
+        function fnparentMessage(title, type) {
+            if (title && typeof window.parent.zaMessageShow === 'function') {
+                if (type) {
+                    window.parent ? window.parent.zaMessageShow(title, type) : zaMessageShow(title, type);
+                } else {
+                    window.parent ? window.parent.zaMessageShow(title) : zaMessageShow(title);
+                }
+                ;
+
+
+            }
+        }
+    });
+</script>
+
 <script src="http://47.93.221.88/previous/userback/js/za-bootstrap-pc.js"></script>
 
+<div id="userdata_el" style="visibility: hidden; position: absolute;"></div>
 </body>
 </html>

@@ -13,56 +13,74 @@
     <title>登录</title>
     <link href="https://static.zhongan.com/website/online/assets/images/favicon.ico" rel="shortcut icon"
           type="image/x-icon">
-    <link href="http://47.93.221.88/userpervious/css/common-login.css" rel="stylesheet">
-    <link href="http://47.93.221.88/userpervious/css/antiSlider.min.css" rel="stylesheet">
-    <link href="http://47.93.221.88/userpervious/css/login-common.css" rel="stylesheet">
-    <link href="http://47.93.221.88/userpervious/css/login2.css" rel="stylesheet">
-    <link href="http://47.93.221.88/userpervious/css/agreement_statement.css" rel="stylesheet">
-    <script src="http://47.93.221.88/userpervious/js/jquery-1.8.1.min.js"></script>
+    <link href="http://47.93.221.88/previous/userpervious/css/common-login.css" rel="stylesheet">
+    <link href="http://47.93.221.88/previous/userpervious/css/antiSlider.min.css" rel="stylesheet">
+    <link href="http://47.93.221.88/previous/userpervious/css/login-common.css" rel="stylesheet">
+    <link href="http://47.93.221.88/previous/userpervious/css/login2.css" rel="stylesheet">
+    <link href="http://47.93.221.88/previous/userpervious/css/agreement_statement.css" rel="stylesheet">
+    <script src="http://47.93.221.88/previous/userpervious/js/jquery-1.8.1.min.js"></script>
     <script type="text/javascript">
+        function setTime(){
+            var num = 61;
+            var time = setInterval(function () {
+                num--;
+                $("#messageButton").val("重新获取(" + num + ")");
+                $("#messageButton").addClass("message-button-active");
+                if (num < 0) {
+                    clearInterval(time);
+                    $("#messageButton").val("获取验证码");
+                    $("#messageButton").removeClass("message-button-active");
+                    $("#messageButton").removeAttr("disabled");
+                }
+            }, 1000);
+        }
         $(function () {
             $("#loginBtn1").click(function () {
                 var loginName = $("#loginName").val();
                 var password = $("#password").val();
                 $.post("/consumer/user/login?loginName="+loginName+"&passWord="+password,function (resout) {
                     if(resout == "y"){
-                        window.location = "../index.html";
+                        window.location = "/consumer/user/getUserAuthentication";
                     }
                 })
             })
             $("#messageButton").bind("click", function () {
-                var num = 61;
-                var time = setInterval(function () {
-                    num--;
-                    $("#messageButton").val("重新获取(" + num + ")");
-                    $("#messageButton").addClass("message-button-active");
-                    if (num < 0) {
-                        clearInterval(time);
-                        $("#messageButton").val("获取验证码");
-                        $("#messageButton").removeClass("message-button-active");
-                        $("#messageButton").removeAttr("disabled");
-                        num = 3;
-                    }
-                }, 1000);
                 var phone = $("#phone").val();
-                $.post("/consumer/user/getSmsCode?phone="+phone,function (resout) {
-                    if(resout != "y"){
-                        alert("验证码发送失败");
+                $.post("/consumer/user/estimateUserIsExist?phone="+phone,function (resout) {
+                    if(resout == "n"){
+                        $.post("/consumer/user/getSmsCode1?phone="+phone,function (resout) {
+                            if(resout != "y"){
+                                $(".content").text("验证码发送失败");
+                                $(".overlay").attr("style","display:block");
+                            }else{
+                                setTime();
+                                $("#loginTip").text("验证码已发送，注意查看手机").attr("style","color:#12c286");
+                            }
+                        })
+                    }else{
+                        $(".content").text("该账户不存在");
+                        $(".overlay").attr("style","display:block");
                     }
                 })
+            })
+            $(".close,.btn-sure").click(function () {
+                $(".overlay").attr("style","display:none");
             })
             $("#loginBtn2").click(function () {
                 var phone = $("#phone").val();
                 var smsCode = $("#messageNumber").val();
                 $.post("/consumer/user/falsLogin?smsCode="+smsCode+"&phone="+phone,function (resout) {
                     if(resout == "y"){
-                        window.location = "../index.html";
+                        window.location = "/consumer/user/getUserAuthentication";
                     }
                 })
             })
         })
         function register(){
             window.location = "register.html";
+        }
+        function reset() {
+            window.location = "reset.html";
         }
     </script>
 </head>
@@ -74,20 +92,20 @@
 <input type="hidden" id="AfHost" value="https://af.zhongan.io">
 <div class="wrapper" style="margin-top: -54px;">
     <div class="login-top">
-        <img alt="众安保险" class="logo" id="topLogo" src="http://47.93.221.88/userpervious/images/logo.png">
-        <img alt="众安保险" class="slog" src="http://47.93.221.88/userpervious/images/logo_slog.png">
+        <img alt="众安保险" class="logo" id="topLogo" src="http://47.93.221.88/previous/userpervious/images/logo.png">
+        <img alt="众安保险" class="slog" src="http://47.93.221.88/previous/userpervious/images/logo_slog.png">
 
     </div>
     <div class="bg-wrap">
         <div class="pos-img">
-            <img alt="众安保险" class="img" src="http://47.93.221.88/userpervious/images/bg-big.png">
+            <img alt="众安保险" class="img" src="http://47.93.221.88/previous/userpervious/images/bg-big.png">
 
         </div>
         <div class="za-rect-box">
             <div class="login-way-icon">
                 <div class="icon-way">
-                    <img alt="扫码登录" class="qr" onclick="changeLoginWay(0);" src="http://47.93.221.88/userpervious/images/icon_qr.png">
-                    <img alt="密码登录" class="pc" onclick="changeLoginWay(1);" src="http://47.93.221.88/userpervious/images/icon_pc.png">
+                    <img alt="扫码登录" class="qr" onclick="changeLoginWay(0);" src="http://47.93.221.88/previous/userpervious/images/icon_qr.png">
+                    <img alt="密码登录" class="pc" onclick="changeLoginWay(1);" src="http://47.93.221.88/previous/userpervious/images/icon_pc.png">
                 </div>
                 <div class="pc-tip" id="wayPcTip">账号密码登录在这里哦</div>
             </div>
@@ -205,7 +223,7 @@
                         <div class="form-item">
                             <p class="login-tip" id="loginTip1"></p>
                             <div class="ui-btn btn-large" id="loginBtn1" onclick="doLogin(1);">登 录</div>
-                            <div class="login-tip-right" id="" onclick="skipToReset();">
+                            <div class="login-tip-right" id="" onclick="reset();">
                                 忘记密码?
                             </div>
                         </div>
@@ -284,7 +302,7 @@
                                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAYAAAA8AXHiAAAPSUlEQVR4Xu2d6XrjzAqEJ/d/0fkex3aOJANvFS1lOWF+Tm80FMUiyXn79+/f+78T/r2/a9u8vb19nqau2YoXrac9t+PbvZ7nZ+ujdZHM3fMrtW/PyeR/ric9du6xComblTVEwEl0uedyMgJdaID1qiHS/bcCi4SLDO54OgFGHe8wBjEenX0mmDssQ7ZRGY2cmsYdPX0yFgk/wLprgMJnxMyR7kjfjpEHWAR5YXwY61VJvwZYZwkahaDMU59nOuOUO0R7qncjjBOjOOeQnGexZFS4UJrQucdtzzAUqpuRcgdYOTyjqi+rBAdYBz06wKMcrkp66RzVUT48LWiHqP9H3u+Mn+mUUd6nphRd3V3KWGRwJ9wMsP5XOBz1RmnEAKtgvAHWAOsTHpRcU/hT85DV0p3onpjVGacQ5OxVOZuj24rRSDdZXvhloVBVAjVdCWyrCu0Y1lkzwCq0tVKldNmlKsm7e0ae6oCkM/dPA0tVGLHLdh8yfifBJBYkGqd7VjJne0dOt6oHuifd46zkXj3nNu/LHukMsO5m6ejhVwOL0EjjlPusdpfVUOj0nFZkIrbuNDuv2PODPR69OdVGZGtl/JLXZjoXobztq/fcsstvBusA6/GiYMdrO+xACh9gKbyUz3l7V4O+cc5K0uyIQ+cQC0ZXUp8WqPMytdF6Z1zNwTp9RcPsu6kDrIPmyKBq9UoGoXOc8QEWaduomrahLNt2GGuvmR/JWBR2tldwwlnEAJUHduRw1gjYf5mS5XjRPaqektMbWz2TKuIOC+5kUnMsxzgDrD32qMyvnIuKiIy56cxvBRbFefJuKtMjlutUhcSWDhOQTHRnCr+qQR05qNtfyUzMl+mWwmqZvA+w7l/Gddh61UEGWIU7DGPdlaOGJacIcYD3rYx1hVdGF6JmJoWa7TjScfAoI9rfYRdVPtJnB2yO7kg3jh4oBwyLlGfyToogD1FjtaMcMiIpr6rAMoCSwUmmlhGKZ3lKjqO+ikNFFaU+hJGd7p6f2DuHhggVP0JQDZPNc8IryRmNd+QjmcjpKPkm4NA4RY7IGQgPtEZ+bUZlh21OQR5whRFJiXSPK2QaYBVaJYM4XtsxXuUhFkVvmHUYa2+JDhGk+WkVCrv9nw5wiM4rau4m346zHO+khorbOhX4pG/Sq3qOkmaQ06HuBlh7NVPYIoVHRlMNPsAK3p0ib6LxYayc2VR2VAH8pYxFhqekWF1PYUvdZ1skOGtI+XRPWk8gqFogTo7jzI3y04h5aU8a3+pu6dVkUiKFBTXsZMBZPV8FpCMnyfTngEXK64QqB+Gqkan6vIJxiKXozJW7KWGLwFwxFjmtc3dskFLGHwnaAZ6q8B3FQiOWjEyKonuoMqvGprsNsIJfTR7GUmF4n+foy5n7LYwVPStUvdZ57qeyoGeKV4Ns13celWQMUslFaQTJpLLbauETyZmdrTJ7Nu/zfSzyAALG6voOoMgTB1h7rQ6wTJRRY5HGlTxmGCsGacpYK283RBR/zBWec4g9jvNoHwcMFKo646shhHynU/1me6qh9kyZlt5uGGC9mkLNTc40Iu31rcCKhHOSczXpdS55ltcSIzkOQkYkPVbrCZR0NtnLyZOjCBLZOGXu6m/pkKBOOCJBo70GWAQlTs5vM6o0hJyOQv4A62EDYgVStGfq+2yVpUk2OpuI4EsZS/1gVQ11FFZIydS2IGajUOTsHz3XI+PT/dRQSL1Eah2obN8BY8aCu70GWLmpB1j8Kk/atI1yrBWvy5hNbTdkZq48+Cx5b2evMlIHjGqII7btjNMasmc2Hr42c5ahVDomxWZ5SmREZS81HFFYrcLymbla5JROqHzKSfYguxMIt+MDrAM6hrE4NSBH/2D+qPPeqR6IKVQPS2N28VUzgaETXilBJTl/ehETsVgmc8V4mW4HWAVjVSFogFX/KfEB1gArJB01wiBjUShzEtkqqaawRZ3eiK4d9qB7qgms0/+hnhOFpec4ndmp4K4oMnY5Fil8gHXXALUTqII7y+mcCk1t1ZDTE0bkBmn3oMrrsz07BiEjR54eebXDBMQuFEIqmYh5HXYh5o1A4tgb7VV13p2DqKJQDdJRLimcwusAa8/GxEy38QFW8RCYGG+FebN8588xVoediCkU5FO4IqY7nqEmytt8ieSke1L4o7Ck6p6YldjeyZMpVOKdOr/oR1UKGapzwRXlUygkeQdYr6FygCWEwgEWaaABrLN+xogQHIU0WqM+WroiRGiq1mYR46kRoMu8pGfVNvQQe5dXDrA0cKzM+pPAqr6EpmSw60GVh6pGUNsbR0BQYzGq5sjjKf9TCwrSd3ZntbolOTu5b+Zw5ZfQdNEB1mvuQcZRO+/kYARWJ2xVbExONcB6aGAYywvqbWCp72N54txnU3+HvFs9k8BCIYDYgeRw2GOFHSiCZHt37EC2qZj3tlZ+bYaUS4JElYe6hs4eYN3MmP8bYBnf4EVJ9hksSexGzkCJtAsA5Z4k87cAq9N5p7hLNBmx13NPonsKO5HhuoxW3bNjzI8QsfCKtdOv2+qhApZqS8Vpd/INsPjbOQIrsVjEOh0W+VXAuqJBqoYD8pYsDDz/n4xD49E+VKZHzErAoicIBFy6h8r2jpy0J+XM5c8YZXRPhw6w4j9+SeFJyadW0ogBVqAB1es7+ZQTYoax9sbJyKf1G6QUwirGIiNmVRMly+SNZT2+GSRgUgggNlcZR5XXTaqP56u2zM5J7dX51WRVGKrgVCNuq6lVhdN6VaZumvBngKX+KEiHMToscoXBKHdZvZvqaOT1XTnofCoOyNmq8exs+bcbupc+CkVKGGD5ZiadDrCKnxFayV2GsV6hdTVRfCbvkfKzRPs5N6VBsbt8Vg5G3fqMAwisK5XoKvMSb1G/jdIQFVgdNvzIiaPvClf7UOpjiwHW3fwd4w2wDq5D7NJpR9Cew1ivAL6csTqPdFSadUJpxXJZu0H1dGohOON0dyeEudWWI6cTDarUxjlzl04NsPjPuZF3qwDPHEQFq2PkbweW+tsNpDyK+Z1HIeT9NK4m31Q1OuV6pCeSg4BL96RiqpK/E1UotUiT9+dC8hAyCIFN9VRVscd5ZFACTOVMVPVluolAMMAqLEwgGsbaK4+YouNMFFUisJMcNL7dcze3+ls66aLN32WuPJAu6jBK5dV0eao0iTHoHg7z0VkdQKnM7+hblSOtyAdY6380YIB118Aw1gMJV4bnbm9NZQqa1ykiaE/LgarOexYKVQGI9imERec7dE5zo94ZrYkKm7P0RCG7Uyzd1lR3coqQAdZDAwSSAVbvQxIC+AeYO1/pULK4kmgTGxLF0zjJvlo5RYxGyT8BXF1PxRbtkwFG1dnW7gMs4YfZKGQTmMmgA6yCTkj5z6XqvOyojhGdXG8Y666Bjs5CxnISM5pL4awzToBSgUvApnNoXJWDdKCec9uH5tJ4JXO3oAjfx1rJE0hh3fEV5VDukY2relCLBOfu6n1/PbBIKcQEkVc4zBf1nNQ+FIVVeibaGXfKeBWYWa5GYYts10nOaY3MWCTcAOuuIQK7ykSRPgdYwbPEYaw98LaO+n/NWET3xFhOWKtolGh91ZNpPZ2vOkimL2otqLpRWxiUP3bsmjnFTrfql9AdAVQjKSEkMmhkpFUmUGUmww6wHhoaxrpDYYDlUUiGm/BLaJXuqfJRjbRlrFVPp1B3BaNRQt4pbCKDOc7vzH3qhM50IDfAOmiLgEmJdmUkYkRqRjpgceZeAqzqYwolSXOTdic3IQ+i0p48rOqNEQiypHglOSc2Ve9D87p3I/nC5J2EcTygCoEDrFdNUygl26ipCwEjOsfpnQ2wHhocxmLIXgIsYiknOY+8ivaPPKzLeJU3Oveg8KuOk0kdmYhpqrZMWtUVP+yShVKZscjwnctTgupUhavGIRB0wEh7qo7R0a2T96lFxjBWgAIyDoFggJX/Eg5Vx+Uv+qmGIea4ugohOs/koxwrWkcKjZhA0c9tjsPmZJuIvZw1FF7pngOsQ7edQtUAaw+5DKzlX/9SO8aVtx2Tdqdb32lWkqc6d6oKjs4+Wz05+SsxK4G96q05juTMHWAJcWoV4A7Yq6TaCfmqzA5YnLkDrAFWqQFi1u3i7dzW51/UKaZxNTGMhHa8pgplSliqQgwpnNiloyPBBz6ndPZXWU7SXeeDVRKaxgdY/GWNAyJVn1QVDrAKrauJrOR1xc81DWO9f1ghZebqj423u67FO+9RIrsVkEJdhCkycobD6lGHIxOdT2DvsBPtGcmk/t8RMFFKURUZH+sHWNxdJrAPsO4w24VS9YfXMqZRvc3xsCrp7vaPKq+jOzieHnlypDsHjA6wz7pnZQMpjRhgEaziPMIBxgCLdfxCeeKS8se/lJhedY9VGY50ra4bxrprytFD+SU0KZ7K12g9hbJuwVDJ2pGT7p6Nrzx+IRbMzlTTDNK9c2dqKQ2wHG0KcwdYD3ZTP6YQdPo5hcr4aC9ilcpDnOS20wQkeel80t3K3ZVE+nk+MZtzT9pribGImh2FryiXznEer6jhSJ1HoMryyyjh3/6fk+8MsAorDGPtlfPjgdVpN3SScsVzqzlR7vKcT0lpNl7tSSHGYVgMG/DhAoUo0kNHd6Sb6Mwdow6w+CepiR06jka5HjmiCtbMQVbASGH6I7wPsAZYUQ52GmNRAkx0TOGIPGTF67OwdOadjvLRmTSeJeKVHqhg6IRn0lH3HuFDaKLhCuFU5agA3FJ4tid5FSnNcZYB1l4D2CCt3m7IAHZWEzCK1Y7XkQNc0U+jM0nhSoFydCTVQRzd0dzOPcPkvcMk1B9ygEPsQ1VIxT6qYYhtSdlHlo2YfYBVaGAYK1fOMNZdN+WLft1Q2GEPKp/VPWmfs0IAsXXGkivnUz9uF4o2b/ESEbjMqjD3AEvR0mYOGYnyugHWQihU2SXzMDWfiow4jPUIRX+FsSK6paRa9W4KEeo+WfJdOYqSsKt5F+mDQp0zrhK108fanX9Fu6ESmpp8xGLR3gOs+6dYPx5YHTSTV5I3Ugg7i/FITvXuXTCTHogdqzTBKShI3zROerqk8/5VICAjqcpxQmVkWOchNck8wBJ+V2o17BG7kJEGWPtEnprgzrjMWDSRxgkEq+ur/Qlg2dkEvGqcnIbGo3yI7kGJNI2vnhkBLwPjJa/NRKFwgJVrgHpfpE96HLbilN28bYB1sLcaDoiRaHyVPbbrfyKw/gPTjo9bPQaVnwAAAABJRU5ErkJggg=="
                                      style="display: block;"></div>
                             <div class="qr-fresh" style="display: none;">
-                                <img alt="" class="fresh-img" src="http://47.93.221.88/userpervious/images/icon_refresh.png">
+                                <img alt="" class="fresh-img" src="http://47.93.221.88/previous/userpervious/images/icon_refresh.png">
                                 <p class="fresh-desc">登录失败</p>
                                 <div class="fresh-btn" onclick="loadQrAndQueryQrIsVaildTimer();">点击刷新</div>
 
@@ -292,7 +310,7 @@
 
                         </div>
                         <div class="phone-img opcityPhoneRight" id="phoneImg">
-                            <img alt="" src="http://47.93.221.88/userpervious/images/ex_phone.png">
+                            <img alt="" src="http://47.93.221.88/previous/userpervious/images/ex_phone.png">
 
                         </div>
                     </div>
@@ -317,7 +335,16 @@
         </div>
     </div>
     <div class="popup-page">
-        <div class="overlay"></div>
+        <div class="overlay" style="display: none;">
+            <div class="popup">
+                <div class="layer-top">
+                    <span class="name">提示</span>
+                    <span class="close">×</span>
+                </div>
+                <div class="content"><i class="icon-error"></i></div>
+                <div class="btn-sure">知道了</div>
+            </div>
+        </div>
     </div>
     <div class="za-footer-bd">
         <h4 class="footer-logo">
@@ -344,30 +371,30 @@
         id="afs_token" name="TokenId" type="hidden"> <input id="sceneId" name="sceneId" type="hidden"
                                                             value="za_login#prd#pc_login_3">
 </form>
-<script src="http://47.93.221.88/userpervious/js/jquery.min.js">
+<script src="http://47.93.221.88/previous/userpervious/js/jquery.min.js">
 
 </script>
-<script src="http://47.93.221.88/userpervious/js/iback.js">
+<script src="http://47.93.221.88/previous/userpervious/js/iback.js">
 </script>
-<script src="http://47.93.221.88/userpervious/js/validate.js">
+<script src="http://47.93.221.88/previous/userpervious/js/validate.js">
 
 </script>
-<script src="http://47.93.221.88/userpervious/js/resetCommon.js">
+<script src="http://47.93.221.88/previous/userpervious/js/resetCommon.js">
 
 </script>
-<script src="http://47.93.221.88/userpervious/js/popup.js">
+<script src="http://47.93.221.88/previous/userpervious/js/popup.js">
 
 </script>
-<script src="http://47.93.221.88/userpervious/js/qrcode.min.js">
+<script src="http://47.93.221.88/previous/userpervious/js/qrcode.min.js">
 
 </script>
-<script src="http://47.93.221.88/userpervious/js/jsencrypt.min.js">
+<script src="http://47.93.221.88/previous/userpervious/js/jsencrypt.min.js">
 </script>
-<script src="http://47.93.221.88/userpervious/js/login2.js">
+<script src="http://47.93.221.88/previous/userpervious/js/login2.js">
 </script>
-<script src="http://47.93.221.88/userpervious/js/dunkey.js">
+<script src="http://47.93.221.88/previous/userpervious/js/dunkey.js">
 </script>
-<script src="http://47.93.221.88/userpervious/js/antiSlider.min.js">
+<script src="http://47.93.221.88/previous/userpervious/js/antiSlider.min.js">
 
 </script>
 

@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<!-- saved from url=(0162)https://login.zhongan.com/passport/reset.htm?sourceApp=1&target=https%3A%2F%2Fwww.zhongan.com%2Fopen%2Fmember%2FloginJump%3Flogincallback%3D%2Faccount%2FmyAccount -->
-<html>
+<!-- saved from url=(0170)https://login.zhongan.com/passport/modifyPhonePw.htm?sourceApp=1&target=https%3A%2F%2Fwww.zhongan.com%2Fopen%2Fmember%2FloginJump%3Flogincallback%3D%2Faccount%2FmyAccount -->
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title>众安保险—重置密码—众安在线财产保险股份有限公司</title>
     <meta name="keywords" content="会员登录，众安保险，互联网保险，网上支付，保单查询，在线理赔，让保险有温度">
     <meta name="description" content="众安保险是国内首家也是唯一一家互联网保险公司，个性化定制风险解决方案，全方位采用互联网先进科技，追求流畅、贴心、温暖的用户体验。">
+    <title>修改密码--手机OTP验证</title>
     <link type="image/x-icon" rel="shortcut icon"
           href="https://static.zhongan.com/website/online/assets/images/favicon.ico">
-    <link href="http://47.93.221.88/previous/userpervious/css/reset-common.css" rel="stylesheet">
-    <link href="http://47.93.221.88/previous/userpervious/css/popup.css" rel="stylesheet">
+    <link href="http://47.93.221.88/previous/userpervious/css/common.css" rel="stylesheet">
+    <!--<link href=http://47.93.221.88/previous/userpervious/css/popup.css" rel="stylesheet">-->
     <link href="http://47.93.221.88/previous/userpervious/css/identity.css" rel="stylesheet">
     <link href="http://47.93.221.88/previous/userpervious/css/antiSlider.min.css" rel="stylesheet">
     <link href="http://47.93.221.88/previous/userpervious/css/loginReset.css" rel="stylesheet">
-    <script type="text/javascript" src="http://47.93.221.88/previous/userpervious/js/jquery-1.8.1.min.js"></script>
+    <script src="http://47.93.221.88/previous/userpervious/js/jquery-1.8.1.min.js"></script>
     <style>
         #za-idcontrol {
             padding-left: 0;
@@ -31,6 +31,27 @@
     </style>
     <script type="text/javascript">
         $(function () {
+            $("#messageButton").bind("click", function () {
+                var num = 61;
+                var time = setInterval(function () {
+                    num--;
+                    $("#messageButton").val("重新获取(" + num + ")");
+                    $("#messageButton").addClass("message-button-active");
+                    if (num < 0) {
+                        clearInterval(time);
+                        $("#messageButton").val("获取短信验证码");
+                        $("#messageButton").removeClass("message-button-active");
+                        $("#messageButton").removeAttr("disabled");
+                    }
+                }, 1000);
+                var phone = $("#phone").text();
+                $.post("/consumer/user/getSmsCode1?phone="+phone,function (resout) {
+                    if(resout != "y"){
+                        clearInterval(time);
+                        alert("验证码发送失败");
+                    }
+                })
+            })
             $('input').blur(
                 function () {
                     var self = $(this),check = true;
@@ -44,68 +65,25 @@
                 var self = $(this);
                 self.parent().removeClass("za-input-hover-red").addClass("za-input-hover-green");
             });
-            // 每步的确认按钮
-            $('#btnStep1').click(function () {
-                var $this = $(this), form = $this.parents('.modify-w'), check = true;
-                form.find('input').each(function () {
-                    var li = $(this).parents('.form-item'), error = li.find('.form-error');
-                    $(this).parent().removeClass('.za-input-hover-red');
-                    if (error.length) {
-                        error.remove();
+            // 确认按钮
+            $("#btnStep1").click(function () {
+                var smsCode = $("#smsCode").val();
+                var loginName = $("span[name='loginName']").text();
+                $.post("/consumer/user/retrievePassWordPhoue2?smsCode="+smsCode,function (resout) {
+                    if (resout == "y"){
+                        window.location = "/userpervious/no_login_set_password.html?loginName="+loginName;
                     }
-                    if (!$(this).is(":hidden") && validate($(this)) == false) {
-                        check = false;
-                    }
-                });
-                if (!check) {
-                    return false;
-                }
-                doFirstStep();
+                })
             });
-
-        });
-        function validate(input) {
-            var result = true;
-            var validate = new Validate();
-            var name = input.attr("name"), value = $.trim(input.val());
-            switch (name) {
-                case "loginName":
-                    if (!value) {
-                        errorMessage(input, '请输入您的手机号/邮箱');
-                        result = false;
-                        break;
-                    }
-                    if (!validate.isMobile(value) && !validate.isEmail(value)) {
-                        errorMessage(input, '手机号/邮箱不正确');
-                        result = false;
-                        break;
-                    }
-                    break;
-            }
-            return result;
-        }
-        function doFirstStep() {
-            var loginName = $("#loginName").val();
-            $.post("/consumer/user/retrievePassWord1?values="+loginName,function (resout) {
-                if(resout == "y1"){
-                    window.location = "/consumer/user/transmitUser2?count=1&num=0";
-                }else if(resout == "y2"){
-                    window.location = "/consumer/user/transmitUser2?count=2&num=0";
-                }
-            })
-        }
+        })
     </script>
 </head>
-
 <body class="identity-page">
-<input type="hidden" id="basePath" name="basePath" value="https://login.zhongan.com/">
-<input type="hidden" id="sourceApp" name="sourceApp" value="1">
 <input type="hidden" id="target_t" name="target_t"
        value="https%3A%2F%2Fwww.zhongan.com%2Fopen%2Fmember%2FloginJump%3Flogincallback%3D%2Faccount%2FmyAccount">
-<input type="hidden" id="deviceId" name="deviceId">
-<input type="hidden" id="afs_token" name="TokenId">
-<input type="hidden" id="sceneId" name="sceneId" value="za_login#prd#pc_reset_1">
-<div class="wrapper" style="margin-top: 49.5px; display: block;">
+<input type="hidden" id="basePath" name="basePath" value="https://login.zhongan.com/">
+<input type="hidden" id="hasCertificate" name="hasCertificate" value="">
+<div class="wrapper" style="margin-top: -20px; display: block;">
     <!--main start-->
     <div class="za-rect-box">
         <div class="za-top">
@@ -115,48 +93,44 @@
         <div class="step">
             <ul class="step-ul step-four">
                 <li>
-                    <span class="line line-active "></span>
+                    <span class="line line-active"></span>
                     <span class="circle circle-active"></span>
-
                     <p class="p-active">确认账户</p>
                 </li>
                 <li>
-                    <span class="line "></span>
-                    <span class="circle "></span>
-
-                    <p>验证身份</p>
+                    <span class="line line-active"></span>
+                    <span class="circle circle-active"></span>
+                    <p class="p-active">验证身份</p>
                 </li>
                 <li>
-                    <span class="line "></span>
-                    <span class="circle "></span>
-
+                    <span class="line"></span>
+                    <span class="circle"></span>
                     <p>修改密码</p>
                 </li>
                 <li>
                     <span class="line"></span>
                     <span class="circle"></span>
-
                     <p>修改成功</p>
                     <span class="line"></span>
                 </li>
             </ul>
         </div>
         <div class="za-account-form">
-            <div class="modify-w">
-
-
+            <div class="bd account form-item">
+                <label>账户：</label>
+                <span name="loginName" class="phone" th:text="${userName}">za******c9</span>
+            </div>
+            <div class="bind-w">
                 <div class="form-item">
-                    <label>账户：</label>
-
-                    <div class="ui-input login">
-                        <input class="seraph-phone" type="text" name="loginName" id="loginName" data-type="input"
-                               autocomplete="off" placeholder="用户名/手机号/邮箱">
-                        <span class="placehld" style="display: none;">用户名/手机号/邮箱</span>
+                    <div class="ui-input loginName">
+                        <label>手机号码：</label>
+                        <span id="phone" style="display: none" th:text="${phoneNumber}"></span>
+                        <span class="phone-val" name="bindPhone" th:text="${phone}">175****177</span>
                     </div>
                 </div>
                 <div class="form-item">
                     <label>安全验证：</label>
-                    <div class="ui-input login" style="padding:0;border:none;width:285px">
+                    <div class="ui-input ui-input-bd" style="padding:0;border:none;width:285px">
                         <div id="slider" style="width: 283px; position: relative;background: #eee;height: 34px;"
                              class="slider-style">
                             <div id="za-idcontrol" class=""
@@ -243,13 +217,26 @@
                         </div>
                     </div>
                 </div>
-
+                <div class="form-item">
+                    <div class="ui-input message" data-type="verify">
+                        <label>短信验证码：</label>
+                        <div class="verify-w">
+                            <input type="text" name="smsCode" id="smsCode" class="message-number message-number-bd"
+                                   data-type="input" placeholder="请输入短信验证码"
+                                   onkeyup="value=this.value.replace(/\D+/g,&#39;&#39;)" maxlength="6"
+                                   autocomplete="off">
+                            <span class="placehld" style="display: none;">请输入短信验证码</span>
+                            <input type="button" name="messageButton" id="messageButton" class="message-button"
+                                   value="获取短信验证码">
+                        </div>
+                    </div>
+                </div>
+                <div class="other">
+                    <a href="https://login.zhongan.com/passport/modifyPhonePw.htm?sourceApp=1&amp;target=https%3A%2F%2Fwww.zhongan.com%2Fopen%2Fmember%2FloginJump%3Flogincallback%3D%2Faccount%2FmyAccount#"
+                       onclick="skipToIdentityVerify();">通过其他方式验证身份&gt;&gt;</a>
+                </div>
                 <div class="btn w300 btn-next" id="btnStep1">下一步</div>
-
-
             </div>
-
-
         </div>
     </div>
     <!--main end-->
@@ -257,6 +244,20 @@
         <div class="overlay">
         </div>
     </div>
+    <form class="u-fm p-form" autocomplete="off" id="modifyVerifyCodePwdStep" method="post">
+        <input type="hidden" name="action" value="passport/modifyPhonePwdAction">
+        <input type="hidden" id="doSubmit" name="event_submit_execute" value="1">
+        <input name="_csrf_token" type="hidden" value="Hkjo8ctiRbN1tNl1JmzON6">
+        <input type="hidden" id="sourceApp" name="sourceApp" value="1">
+        <input type="hidden" id="target" name="target"
+               value="https://www.zhongan.com/open/member/loginJump?logincallback=/account/myAccount">
+        <input type="hidden" id="resetLoginName" name="_fm.m._0.r">
+        <input type="hidden" id="verifyCode" name="_fm.m._0.v" value="">
+        <input type="hidden" id="deviceId" name="_fm.m._0.d">
+        <input type="hidden" id="afs_token" name="TokenId">
+        <input type="hidden" id="sceneId" name="sceneId" value="za_login#prd#pc_reset_2">
+
+    </form>
     <!-- footer start -->
     <div class="za-m-copyright  g-doc-w g-mar-auto f-oh">
         <a target="_blank" href="http://www.miibeian.gov.cn/">沪ICP备13041135号-1</a> CopyRight 众安保险 allRight Reserved
@@ -267,14 +268,16 @@
 <script src="http://47.93.221.88/previous/userpervious/js/setting.js"></script>
 <script src="http://47.93.221.88/previous/userpervious/js/jquery.poshytip.min.js"></script>
 <script src="http://47.93.221.88/previous/userpervious/js/validate.js"></script>
-<script src="http://47.93.221.88/previous/userpervious/js/resetCommon.js"></script>
 <script src="http://47.93.221.88/previous/userpervious/js/popup.js"></script>
-<!--<script src="http://47.93.221.88/previous/userpervious/js/reset.js"></script>-->
+<script src="http://47.93.221.88/previous/userpervious/js/resetCommon.js"></script>
+<!--<script src="http://47.93.221.88/previous/userpervious/js/modifyPhonePw.js"></script>-->
 <!--
- <script type="text/javascript"  src="/web/js/passport/reset.js"></script>
+<script src="/web/js/passport/resetCommon.js"></script>
+<script src="/web/js/passport/modifyPhonePw.js"></script>
 -->
 <script src="http://47.93.221.88/previous/userpervious/js/dunkey.js"></script>
 <script src="http://47.93.221.88/previous/userpervious/js/antiSlider.min.js"></script>
+
 <script>
     window.onload = function () {
         initClickIdentify();
@@ -283,7 +286,7 @@
     function initClickIdentify() {
         new ClickIdentifyControl({
             container: "#slider", //必填 容器id
-            sId: "za_login#prd#pc_reset_1",  // 必填 埋点场景ID
+            sId: "za_login#prd#pc_reset_2",  // 必填 埋点场景ID
             host: "https://af.zhongan.io", //https://test-af.zhongan.io  或者 https://af.zhongan.io
             placeholdLabel: "智能检测中",  // 可选， loading时显示内容 可以根据业务场景更改内容
             onSuccess: function (did, token, sId) {
@@ -299,7 +302,6 @@
         initClickIdentify();
     }
 </script>
-
 
 <div id="userdata_el" style="visibility: hidden; position: absolute;"></div>
 </body>

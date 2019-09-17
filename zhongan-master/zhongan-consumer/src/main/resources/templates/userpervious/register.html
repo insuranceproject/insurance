@@ -14,38 +14,49 @@
     <meta name="description" content="众安保险是国内首家也是唯一一家互联网保险公司，个性化定制风险解决方案，全方位采用互联网先进科技，追求流畅、贴心、温暖的用户体验。">
     <link type="image/x-icon" rel="shortcut icon"
           href="https://static.zhongan.com/website/online/assets/images/favicon.ico">
-    <link href="http://47.93.221.88/userpervious/css/register-common.css" rel="stylesheet">
-    <link href="http://47.93.221.88/userpervious/css/antiSlider.min.css" rel="stylesheet">
-    <link href="http://47.93.221.88/userpervious/css/login-common.css" rel="stylesheet">
-    <link href="http://47.93.221.88/userpervious/css/register2.css" rel="stylesheet">
-    <script type="text/javascript" src="http://47.93.221.88/userpervious/js/jquery-1.8.1.min.js"></script>
+    <link href="http://47.93.221.88/previous/userpervious/css/register-common.css" rel="stylesheet">
+    <link href="http://47.93.221.88/previous/userpervious/css/antiSlider.min.css" rel="stylesheet">
+    <link href="http://47.93.221.88/previous/userpervious/css/login-common.css" rel="stylesheet">
+    <link href="http://47.93.221.88/previous/userpervious/css/register2.css" rel="stylesheet">
+    <script type="text/javascript" src="http://47.93.221.88/previous/userpervious/js/jquery-1.8.1.min.js"></script>
     <script type="text/javascript">
+        function setTime(){
+            var num = 61;
+            var time = setInterval(function () {
+                num--;
+                $("#messageButton").val("重新获取(" + num + ")");
+                $("#messageButton").addClass("message-button-active");
+                if (num < 0) {
+                    clearInterval(time);
+                    $("#messageButton").val("获取验证码");
+                    $("#messageButton").removeClass("message-button-active");
+                    $("#messageButton").removeAttr("disabled");
+                }
+            }, 1000);
+        }
         $(function () {
             $("#messageButton").bind("click", function () {
-                var num = 61;
-                var time = setInterval(function () {
-                    num--;
-                    $("#messageButton").val("重新获取(" + num + ")");
-                    $("#messageButton").addClass("message-button-active");
-                    if (num < 0) {
-                        clearInterval(time);
-                        $("#messageButton").val("获取验证码");
-                        $("#messageButton").removeClass("message-button-active");
-                        $("#messageButton").removeAttr("disabled");
-                        num = 3;
-                    }
-                }, 1000);
                 var phone = $("#phone").val();
-                $.post("/consumer/user/getSmsCode?phone=" + phone, function (resout) {
-                    if (resout == "y") {
-                        alert(resout)
+                $.post("/consumer/user/estimateUserIsExist?phone="+phone,function (resout) {
+                    if(resout == "y"){
+                        $.post("/consumer/user/getSmsCode1?phone=" + phone, function (resout) {
+                            if (resout == "y") {
+                                setTime();
+                                $("#loginTip").text("验证码已发送，注意查看手机").attr("style","color:#12c286");
+                            }else{
+                                $(".content").text("验证码发送失败");
+                                $(".overlay").attr("style","display:block");
+                            }
+                        });
                     }else{
-                        alert("验证码发送失败");
+                        $(".content").text("账户已经存在");
+                        $(".overlay").attr("style","display:block");
                     }
-                });
+                })
             });
-
-
+            $(".close,.btn-sure").click(function () {
+                $(".overlay").attr("style","display:none");
+            })
             $("#Btn").click(function () {
                 var pwd = $("#password").val();
                 var phone = $("#phone").val();
@@ -54,12 +65,12 @@
                     if (resout == "y") {
                         window.location = "../index.html";
                     }else{
-                        alert(resout)
+                        $(".content").text("注册失败");
+                        $(".overlay").attr("style","display:block");
                     }
                 });
             })
         })
-
     </script>
 </head>
 
@@ -70,12 +81,12 @@
 
 <div class="wrapper" style="margin-top: -54px;">
     <div class="login-top">
-        <img alt="众安保险" class="logo" id="topLogo" src="http://47.93.221.88/userpervious/images/logo.png">
-        <img alt="众安保险" class="slog" src="http://47.93.221.88/userpervious/images/logo_slog.png">
+        <img alt="众安保险" class="logo" id="topLogo" src="http://47.93.221.88/previous/userpervious/images/logo.png">
+        <img alt="众安保险" class="slog" src="http://47.93.221.88/previous/userpervious/images/logo_slog.png">
     </div>
     <div class="bg-wrap">
         <div class="pos-img">
-            <img alt="众安保险" class="img" src="http://47.93.221.88/userpervious/images/bg-big.png">
+            <img alt="众安保险" class="img" src="http://47.93.221.88/previous/userpervious/images/bg-big.png">
         </div>
         <div class="za-rect-box">
             <div class="za-login-form">
@@ -222,7 +233,16 @@
         </div>
     </div>
     <div class="popup-page">
-        <div class="overlay"></div>
+        <div class="overlay" style="display: none;">
+            <div class="popup">
+                <div class="layer-top">
+                    <span class="name">提示</span>
+                    <span class="close">×</span>
+                </div>
+                <div class="content"><i class="icon-error"></i></div>
+                <div class="btn-sure">知道了</div>
+            </div>
+        </div>
     </div>
     <div class="za-footer-bd">
         <h4 class="footer-logo">
@@ -253,15 +273,15 @@
             type="hidden" id="sceneId" name="sceneId" value="za_login#prd#pc_register_1">
     </form>
 </div>
-<script src="http://47.93.221.88/userpervious/js/jquery.min.js"></script>
-<script src="http://47.93.221.88/userpervious/js/iback.js"></script>
-<script src="http://47.93.221.88/userpervious/js/validate.js"></script>
-<script src="http://47.93.221.88/userpervious/js/setting.js"></script>
-<script src="http://47.93.221.88/userpervious/js/popup.js"></script>
-<script src="http://47.93.221.88/userpervious/js/resetCommon.js"></script>
-<script src="http://47.93.221.88/userpervious/js/register2.js"></script>
-<script src="http://47.93.221.88/userpervious/js/dunkey.js"></script>
-<script src="http://47.93.221.88/userpervious/js/antiSlider.min.js"></script>
+<script src="http://47.93.221.88/previous/userpervious/js/jquery.min.js"></script>
+<script src="http://47.93.221.88/previous/userpervious/js/iback.js"></script>
+<script src="http://47.93.221.88/previous/userpervious/js/validate.js"></script>
+<script src="http://47.93.221.88/previous/userpervious/js/setting.js"></script>
+<script src="http://47.93.221.88/previous/userpervious/js/popup.js"></script>
+<script src="http://47.93.221.88/previous/userpervious/js/resetCommon.js"></script>
+<script src="http://47.93.221.88/previous/userpervious/js/register2.js"></script>
+<script src="http://47.93.221.88/previous/userpervious/js/dunkey.js"></script>
+<script src="http://47.93.221.88/previous/userpervious/js/antiSlider.min.js"></script>
 
 <script>
     window.onload = function () {
