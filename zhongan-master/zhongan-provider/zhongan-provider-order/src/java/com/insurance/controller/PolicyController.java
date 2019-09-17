@@ -17,12 +17,18 @@ public class PolicyController {
 
     @Autowired
     private PolicyService policyService;
+    @Autowired
+    private PolicyMapper policyMapper;
 
-    @RequestMapping("/selectPolicyPage")
+    @PostMapping("/selectPolicyPage")
     public PageInfo<Policy> PolicyPage(Integer pageNo, Integer PageSize, String number){
         PageInfo<Policy> policyPageInfo = policyService.selectPagePolicy(pageNo, PageSize, number);
         System.out.println(policyPageInfo);
         return policyPageInfo;
     }
 
+    @PostMapping("/zz")
+    public Policy PolicyPage(){
+        return policyMapper.selectById(1);
+    }
 }

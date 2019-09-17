@@ -16,6 +16,14 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
+
+        <!-- 引入comm通用包，可以使用Dept -->
+        <dependency>
+            <groupId>com.insurance</groupId>
+            <artifactId>zhongan-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
         <!--手机验证码-->
         <dependency>
             <groupId>com.aliyun</groupId>
@@ -56,7 +64,11 @@
             <artifactId>junit</artifactId>
             <scope>compile</scope>
         </dependency>
-
+        <!-- mongodb -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

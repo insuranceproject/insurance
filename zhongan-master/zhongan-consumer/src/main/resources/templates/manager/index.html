@@ -1,5 +1,5 @@
 <!doctype html>
-<HTML lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>众安保险管理</title>
@@ -9,19 +9,12 @@
     <meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
-    <link rel="shortcut icon" href="/manager/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="/manager/css/font.css">
-	<link rel="stylesheet" href="/manager/css/xadmin.css">
-    <script type="text/javascript" src="/manager/js/jquery.min.js"></script>
-    <script src="/manager/lib/layui/layui.js" charset="utf-8"></script>
-    <script type="text/javascript" src="/manager/js/xadmin.js"></script>
-    <script type="text/javascript">
-        $(function(){
-            /*$("#nav a").click(function(){
-               alert($(this).attr("c"));
-            });*/
-        })
-    </script>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/font.css">
+	<link rel="stylesheet" href="css/xadmin.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/xadmin.js"></script>
 
 </head>
 <body>
@@ -61,14 +54,14 @@
       <div id="side-nav">
         <ul id="nav">
             <li>
-                <a c="1" href="javascript:;">
+                <a href="javascript:;">
                     <i class="iconfont">&#xe6b8;</i>
                     <cite>用户管理</cite>
                     <i class="iconfont nav_right">&#xe697;</i>
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a c="2" _href="selectUserPage?pageNo=1&pageSize=1&userName" >
+                        <a _href="member-list.html">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>用户列表</cite>
 
@@ -77,14 +70,14 @@
                 </ul>
             </li>
             <li>
-                <a c="3" href="javascript:;">
+                <a href="javascript:;">
                     <i class="iconfont">&#xe723;</i>
                     <cite>订单管理</cite>
                     <i class="iconfont nav_right">&#xe697;</i>
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a c="4" _href="/consumer/userBack/orderListHtml">
+                        <a _href="order-list.html">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>订单列表</cite>
                         </a>
@@ -92,14 +85,14 @@
                 </ul>
             </li>
             <li>
-                <a c="5" href="javascript:;">
+                <a href="javascript:;">
                     <i class="iconfont">&#xe723;</i>
                     <cite>保单管理</cite>
                     <i class="iconfont nav_right">&#xe697;</i>
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a c="6" _href="policy-list.html">
+                        <a _href="policy-list.html">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>保单列表</cite>
                         </a>
@@ -107,14 +100,14 @@
                 </ul>
             </li>
             <li>
-                <a c="7" href="javascript:;">
+                <a href="javascript:;">
                     <i class="iconfont">&#xe723;</i>
-                    <cite>产品管理</cite>
+                    <cite>分类管理</cite>
                     <i class="iconfont nav_right">&#xe697;</i>
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a c="8" _href="/consumer/userBack/cateHtml">
+                        <a _href="cate.html">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>多级分类</cite>
                         </a>
@@ -122,32 +115,32 @@
                 </ul>
             </li>
             <li>
-                <a c="9" href="javascript:;">
+                <a href="javascript:;">
                     <i class="iconfont">&#xe726;</i>
                     <cite>管理员管理</cite>
                     <i class="iconfont nav_right">&#xe697;</i>
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a c="10" _href="admin-list.html">
+                        <a _href="admin-list.html">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>管理员列表</cite>
                         </a>
                     </li >
                     <li>
-                        <a c="11" _href="admin-role.html">
+                        <a _href="admin-role.html">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>角色管理</cite>
                         </a>
                     </li >
                     <li>
-                        <a c="12" _href="admin-cate.html">
+                        <a _href="admin-cate.html">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>权限分类</cite>
                         </a>
                     </li >
                     <li>
-                        <a c="13" _href="admin-rule.html">
+                        <a _href="admin-rule.html">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>权限管理</cite>
                         </a>
@@ -155,14 +148,14 @@
                 </ul>
             </li>
             <li>
-                <a c="14" href="javascript:;">
+                <a href="javascript:;">
                     <i class="iconfont">&#xe6b4;</i>
                     <cite>图标字体</cite>
                     <i class="iconfont nav_right">&#xe697;</i>
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a c="15" _href="unicode.html">
+                        <a _href="unicode.html">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>图标对应字体</cite>
                         </a>
@@ -182,7 +175,7 @@
           </ul>
           <div class="layui-tab-content">
             <div class="layui-tab-item layui-show">
-                <iframe th:src="@{'/consumer/userBack/welcomeHtml'}" frameborder="0" scrolling="yes" name="myFrame" class="x-iframe"></iframe>
+                <iframe src='welcome.html' frameborder="0" scrolling="yes" class="x-iframe"></iframe>
             </div>
           </div>
         </div>

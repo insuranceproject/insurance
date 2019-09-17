@@ -2,6 +2,7 @@ package com.insurance.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.insurance.mapper.UserMapper;
+import com.insurance.pojo.Authentication;
 import com.insurance.pojo.User;
 import com.insurance.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,5 +20,10 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     @Override
     public User getUser(User user) {
         return userMapper.getUser(user);
+    }
+
+    @Override
+    public Authentication getUserAuthentication(Integer userId) {
+        return userMapper.getUserAuthentication(userId);
     }
 }
