@@ -7,12 +7,15 @@ import com.insurance.pojo.Policy;
 import com.insurance.service.PolicyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 
 @RestController
-@RequestMapping("/Policy")
+@RequestMapping("/policy")
 public class PolicyController {
 
     @Autowired
@@ -30,5 +33,15 @@ public class PolicyController {
     @PostMapping("/zz")
     public Policy PolicyPage(){
         return policyMapper.selectById(1);
+    }
+
+    /**
+     * 根据用户id查询保单
+     * @param userId
+     * @return
+     */
+    @PostMapping("/getPolicyByUserId")
+    public List<Policy> getPolicyByUserId(@RequestBody Integer userId){
+        return policyService.getPolicyByUserId(userId);
     }
 }
