@@ -736,7 +736,25 @@ public class UserController {
      * 再根据保单id查询保单详情,拿其中的截至日期与当前时间相对比,判断是否过期
      * @return
      */
+    @RequestMapping(value = "/consumer/user/getEffectiveInsurance")
     public String getEffectiveInsurance(HttpSession session){
+        User user = (User) session.getAttribute("user");
+        //根据用户id获取保单
+        List<Policy> policyList = orderClient.getPolicyByUserId(user.getUserId());  //调用根据用户id获取保单方法
+        Integer count1 = 0; //有效
+        Integer count2 = 0; //无效
+        for (Policy p:policyList) {
+            if(p.getPolicyStauts() == 1){   //有效加一
+                count1 += 1;
+            }else if(p.getPolicyStauts() == 2){ //无效加一
+                count2 += 1;
+            }
+        }
+        return null;
+    }
+
+    @RequestMapping(value = "/consumer/user/getPolicyByUserId")
+    public String getPolicyByUserId(HttpSession session){
         User user = (User) session.getAttribute("user");
         List<Policy> policyList = orderClient.getPolicyByUserId(user.getUserId());  //调用根据用户id获取保单方法
         if(policyList != null){ //判断list里不为空则循环list
@@ -768,5 +786,6 @@ public class UserController {
         }
         return null;
     }
+
 
 }
