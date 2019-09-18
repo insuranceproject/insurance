@@ -139,12 +139,27 @@ public class UserController {
      */
     @RequestMapping(value = "/consumer/user/getUserAuthentication")
     public ModelAndView getUserAuthentication(HttpSession session,ModelAndView modelAndView,Integer count) {
-        session.removeAttribute("users");
+        session.removeAttribute("users");   //移除之前实名信息
         TimeUtil timeUtil = new TimeUtil();
-        session.setAttribute("hours",timeUtil.getHours());
+        session.setAttribute("hours",timeUtil.getHours());  //储存时间
         User user = (User) session.getAttribute("user");
         Authentication authentication = userClient.getUserAuthentication(user.getUserId());    //调用查询实名信息方法,返回实名信息对象
         session.setAttribute("users", authentication);
+        //资料完整度
+        Integer num = 0;
+        if(user.getUserPhonenumber() != null && user.getUserPhonenumber()!= ""){
+            num += 1;
+        }
+        if(user.getUserEmail() != null && user.getUserEmail() != ""){
+            num += 1;
+        }
+        if(user.getUserPassword() != null && user.getUserPassword() != ""){
+            num += 1;
+        }
+        if(authentication != null){
+            num += 1;
+        }
+        modelAndView.addObject("dataIntegrity",num / 4 * 100);
         if(count == null){
             modelAndView.setViewName("/userback/myAccount.html");
         }else if(count == 1){
