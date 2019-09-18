@@ -6,11 +6,8 @@ import com.insurance.pojo.Corp;
 import com.insurance.pojo.User;
 import com.insurance.user.client.UserClient;
 import com.insurance.util.CodeUtil;
-import org.apache.commons.mail.EmailException;
-import org.apache.commons.mail.HtmlEmail;
-import org.apache.ibatis.annotations.Param;
+import com.insurance.util.TimeUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -23,7 +20,6 @@ public class UserController {
     private UserClient userClient;
     @Autowired
     private CorpClient corpClient;
-
 
     @RequestMapping(value = "/consumer/user/getOne")
     public User getOne() {
@@ -121,6 +117,19 @@ public class UserController {
     }
 
     /**
+     * 退出登录
+     * @param modelAndView
+     * @param session
+     * @return
+     */
+    @RequestMapping(value = "/consumer/user/logOut")
+    public ModelAndView logOut(ModelAndView modelAndView,HttpSession session){
+        session.removeAttribute("user");
+        modelAndView.setViewName("/consumer/type/findAll");
+        return modelAndView;
+    }
+
+    /**
      * 获取实名信息
      * 实名信息主要显示在个人后台的用户资料里
      * 进入个人后台需要用户登路
@@ -129,15 +138,19 @@ public class UserController {
      * @return
      */
     @RequestMapping(value = "/consumer/user/getUserAuthentication")
-    public String getUserAuthentication(HttpSession session) {
+    public ModelAndView getUserAuthentication(HttpSession session,ModelAndView modelAndView,Integer count) {
+        session.removeAttribute("users");
+        TimeUtil timeUtil = new TimeUtil();
+        session.setAttribute("hours",timeUtil.getHours());
         User user = (User) session.getAttribute("user");
         Authentication authentication = userClient.getUserAuthentication(user.getUserId());    //调用查询实名信息方法,返回实名信息对象
-        if (authentication != null) {
-            //不等于空说明用户实名了,直接传入session就好
-            session.setAttribute("users", authentication);
-            return "y";
+        session.setAttribute("users", authentication);
+        if(count == null){
+            modelAndView.setViewName("/userback/myAccount.html");
+        }else if(count == 1){
+            modelAndView.setViewName("/userback/myInfo.html");
         }
-        return "n";
+        return modelAndView;
     }
 
     /**
@@ -147,8 +160,8 @@ public class UserController {
      * @param phone   发送验证码手机号
      * @return 返回成功发送或者发送失败
      */
-    @RequestMapping(value = "/consumer/user/getSmsCode")
-    public String getSmsCode(HttpSession session, String phone) {
+    @RequestMapping(value = "/consumer/user/getSmsCode1")
+    public String getSmsCode1(HttpSession session, String phone) {
         if (phone == null || "".equals(phone)) {    //手机号不能为空
             return "n";
         }
@@ -165,6 +178,22 @@ public class UserController {
     }
 
     /**
+     * 判断用户是否存在
+     * @return
+     */
+    @RequestMapping(value = "/consumer/user/estimateUserIsExist")
+    public String estimateUserIsExist(String phone,User user){
+        user.setUserPhonenumber(phone);
+        //调用通过手机查询一个用户的方法
+        User user1 = userClient.falsLogin(user);
+        //user1 !=null ,说明该手机号被注册了,直接return
+        if (user1 != null) {
+            return "n";
+        }
+        return "y";
+    }
+
+    /**
      * 获取邮箱验证码
      *
      * @param session
@@ -172,7 +201,7 @@ public class UserController {
      */
     @RequestMapping(value = "/consumer/user/getEmailCode")
     public String getEmailCode(HttpSession session, String emails) {
-        if (emails == null || "".equals(emails)) {    //手机号不能为空
+        if (emails == null || "".equals(emails)) {    //邮箱不能为空
             return "n";
         }
         CodeUtil codeUtil = new CodeUtil();
@@ -206,16 +235,9 @@ public class UserController {
         if (passWord == null || "".equals(passWord)) {    //密码不能为空
             return "n";
         }
-        System.out.println(smsCode + ",11111111");
         User user = new User();
         user.setUserPhonenumber(phone);    //手机号封装进user
         user.setUserPassword(passWord);    //封装密码
-        //调用通过手机查询一个用户的方法
-        User user1 = userClient.falsLogin(user);
-        //user1 !=null ,说明该手机号被注册了,直接return
-        if (user1 != null) {
-            return "n";
-        }
         //判断用户这次提交的手机号于发送给用户的验证码是否一致
         if (session.getAttribute("phone").equals(user.getUserPhonenumber()) && session.getAttribute("smsCode").equals(smsCode)) {
             //session里存的电话号码与验证码==提交上来的电话号码与验证码
@@ -255,13 +277,15 @@ public class UserController {
      * @return
      */
     @RequestMapping(value = "/consumer/user/updatePassWord1")
-    public String updatePassWord1(HttpSession session) {
+    public ModelAndView updatePassWord1(HttpSession session,ModelAndView modelAndView) {
         //登陆后session存的对象
         User user = (User) session.getAttribute("user");
         if (user != null) {  //修改密码前进行用户判断,看是否能获取导user,获取不到则跳转导登陆页面
-            return "y";
+            modelAndView.setViewName("/userback/modifyLoginPassword1.html");
+            return modelAndView;
         }
-        return "n";
+        modelAndView.setViewName("/userpervious/login.html");
+        return modelAndView;
     }
 
     /**
@@ -306,6 +330,7 @@ public class UserController {
         if (passWord.equals(rPassWord)) {    //两次密码输入一致,允许修改
             //根据id修改信息,将session里的userid传入对象
             user.setUserId(user.getUserId());
+            user.setUserPassword(rPassWord);
             boolean b = userClient.updateUser(user);
             if (b) {  //修改成功!
                 //调用查询用户方法,将修改密码后的新用户传入session
@@ -317,29 +342,6 @@ public class UserController {
             }
         }
         return "n";
-    }
-
-    /**
-     * 传输用户2
-     *
-     * @return
-     */
-    @RequestMapping(value = "/consumer/user/transmitUser2")
-    public ModelAndView transmitUser2(HttpSession session, Integer count) {
-        User user = (User) session.getAttribute("user1");
-        ModelAndView modelAndView = new ModelAndView();
-        //截取用户名
-        String userName = user.getUserName().substring(0, 3) + "*****" + user.getUserName().substring(user.getUserName().length() - 2);
-        //截取手机号
-        String phone = user.getUserPhonenumber().substring(0, 3) + "*****" + user.getUserPhonenumber().substring(8, user.getUserPhonenumber().length());
-        //截取邮箱
-        String email = user.getUserEmail().substring(0, 1) + "*****" + user.getUserEmail().substring(user.getUserEmail().indexOf("@"));
-        modelAndView.addObject(userName);
-        modelAndView.addObject(phone);
-        modelAndView.addObject(email);
-        modelAndView.addObject(count);
-        modelAndView.setViewName("userpervious/identityVerify.html");
-        return modelAndView;
     }
 
     /**
@@ -358,9 +360,8 @@ public class UserController {
         //判断values的值与正则表达式做匹配
         if (values.matches(em)) {
             user.setUserEmail(values);
-            //    user.setUserName(null);
-            //   user.setUserPhonenumber(null);
-
+            user.setUserName(null);
+            user.setUserPhonenumber(null);
             User user1 = userClient.getUserByEmail(user);
             if (user1 != null) {    //用户存在
                 session.setAttribute("user1", user1);
@@ -370,7 +371,6 @@ public class UserController {
             user.setUserEmail(null);
             user.setUserName(null);
             user.setUserPhonenumber(values);
-
             User user1 = userClient.falsLogin(user);
             if (user1 != null) {    //用户存在
                 session.setAttribute("user1", user1);
@@ -378,6 +378,37 @@ public class UserController {
             }
         }
         return "n";    //用户不存在
+    }
+
+    /**
+     *传输用户2
+     * @return
+     */
+    @RequestMapping(value = "/consumer/user/transmitUser2")
+    public ModelAndView transmitUser2(HttpSession session,Integer count,Integer num){
+        User user = (User) session.getAttribute("user1");
+        ModelAndView modelAndView = new ModelAndView();
+        String userName = user.getUserName().substring(0, 3) + "*****" + user.getUserName().substring(user.getUserName().length()-2);
+        modelAndView.addObject("userName",userName);
+        if(count == 1){
+            String email = user.getUserEmail().substring(0, 1) + "*****" + user.getUserEmail().substring(user.getUserEmail().indexOf("@"));
+            modelAndView.addObject("email",email);
+            modelAndView.addObject("userEmail",user.getUserEmail());
+        }
+        if(count == 2){
+            String phone = user.getUserPhonenumber().substring(0, 3) + "*****" + user.getUserPhonenumber().substring(8);
+            modelAndView.addObject("phone",phone);
+            modelAndView.addObject("phoneNumber",user.getUserPhonenumber());
+        }
+        modelAndView.addObject("count",count);
+        if(num == 1){
+            modelAndView.setViewName("/userpervious/ModifyMailPw.html");
+        }else if(num == 2){
+            modelAndView.setViewName("/userpervious/modifyPhonePw.html");
+        }else{
+            modelAndView.setViewName("/userpervious/identityVerify.html");
+        }
+        return modelAndView;
     }
 
     /**
@@ -401,13 +432,12 @@ public class UserController {
 
     /**
      * 找回密码2-邮箱验证码
-     *
      * @param emailCode 邮箱验证码
      * @param session
      * @return
      */
     @RequestMapping(value = "/consumer/user/retrievePassWordEmail2")
-    public String retrievePassWordEmail2(String emailCode, HttpSession session) {
+    public String retrievePassWordEmail2(String emailCode, HttpSession session){
         User user = (User) session.getAttribute("user1");    //获取用户
         if (user == null) {
             return "n";    //用户失效,跳回确认账户页面
@@ -435,6 +465,7 @@ public class UserController {
         if (passWord.equals(rPassWord)) {    //两次密码输入一致,允许修改
             //根据id修改信息,将session里的userid传入对象
             user.setUserId(user.getUserId());
+            user.setUserPassword(rPassWord);
             boolean b = userClient.updateUser(user);
             if (b) {  //修改成功!
                 //调用查询用户方法,将修改密码后的新用户传入session
@@ -468,7 +499,7 @@ public class UserController {
         User user1 = new User();
         user1.setUserName(userName);    //封装用户名
         User byName = userClient.getUserByName(user);    //调用根据用户名查询用户方法
-        if (byName == null) {
+        if (byName != null) {
             //为空,允许修改
             user1.setUserId(user.getUserId());    //封装id
             boolean b = userClient.updateUser(user1);
@@ -492,18 +523,18 @@ public class UserController {
      * @return
      */
     @RequestMapping(value = "/consumer/user/bindEmail1")
-    public ModelAndView bindEmail1(HttpSession session, ModelAndView modelAndView) {
+    public ModelAndView bindEmail1(HttpSession session, ModelAndView modelAndView,Integer num) {
         User user = (User) session.getAttribute("user");
         if (user != null) {   //session里的用户为空则跳回登陆页面,提示用户登陆
-            //截取手机号
-            String phone = user.getUserPhonenumber().substring(0, 3) + "*****" + user.getUserPhonenumber()
-                    .substring(8, user.getUserPhonenumber().length());
-            modelAndView.addObject("phone", phone);  //将手机号保存在modelandview里
-            modelAndView.setViewName("");   //跳转页面
+            if(num == 1){  //num == 1 绑定邮箱
+                modelAndView.setViewName("/userback/chooseAuthenticationWay.html");   //跳转页面
+            }else if(num == 2){  //num == 2 修改邮箱
+                modelAndView.setViewName("/userback/ModifyEmail.html");   //跳转页面
+            }
             return modelAndView;
         }
         //没有获取到user,返回登陆页面叫用户登陆
-        modelAndView.setViewName("");   //跳转页面
+        modelAndView.setViewName("/userpervious/login.html");   //跳转页面
         return modelAndView;
     }
 
@@ -515,37 +546,33 @@ public class UserController {
      * @return
      */
     @RequestMapping(value = "/consumer/user/bindEmail2ByPhone")
-    public ModelAndView bindEmail2ByPhone(HttpSession session, ModelAndView modelAndView, String smsCode) {
+    public String bindEmail2ByPhone(HttpSession session, String smsCode) {
         User user = (User) session.getAttribute("user");
         if (user != null) {   //session里的用户为空则跳回登陆页面,提示用户登陆
             if (session.getAttribute("smsCode").equals(smsCode)) {    //判断验证码相等则允许下一步
-                modelAndView.setViewName("");
-                return modelAndView;
+                return "y";
             }
         }
         //验证码不相等...
-        modelAndView.setViewName("");
-        return modelAndView;
+        return "n";
     }
 
     /**
      * 绑定(修改)邮箱2 邮箱验证码
      * @param session
-     * @param modelAndView
      * @param emailCode
      * @return
      */
-    public ModelAndView bindEmail2ByEmail(HttpSession session,ModelAndView modelAndView,String emailCode){
+    @RequestMapping(value = "/consumer/user/bindEmail2ByEmail")
+    public String bindEmail2ByEmail(HttpSession session,String emailCode){
         User user = (User) session.getAttribute("user");
         if (user != null) {   //session里的用户为空则跳回登陆页面,提示用户登陆
             if (session.getAttribute("emailCode").equals(emailCode)) {    //判断验证码相等则允许下一步
-                modelAndView.setViewName("");
-                return modelAndView;
+                return "y";
             }
         }
         //验证码不相等...
-        modelAndView.setViewName("");
-        return modelAndView;
+        return "n";
     }
 
     /**
@@ -565,12 +592,12 @@ public class UserController {
             User userByEmail = userClient.getUserByEmail(user1);    //调用根据邮箱查询user
             if (userByEmail != null) {
                 //判断userByEmail不为空,说明邮箱已被个人用户使用
-                return "n";
+                return "n1";
             }
             Corp corpByEmail = corpClient.getCorpByEmail(emails);
             if (corpByEmail != null) {
                 //判断corpByEmail不为空,说明已被企业用户使用
-                return "n";
+                return "n2";
             }
         }
         return "y"; //双判断为空,说明该邮箱未被使用
@@ -590,14 +617,17 @@ public class UserController {
         User user = (User) session.getAttribute("user");
         if (user != null) {   //session里的用户为空则跳回登陆页面,提示用户登陆
             //判断,session里的邮箱与验证是否与传入的一致
-            if (session.getAttribute("emails").equals(emails) && session.getAttribute("smsCode").equals(smsCode)) {
+            if (session.getAttribute("emails").equals(emails) && session.getAttribute("emailCode").equals(smsCode)) {
                 //一致
+                User user1 = new User();
+                user1.setUserEmail(emails);
+                user1.setUserId(user.getUserId());
+                userClient.updateUser(user1);
                 return "y";
             }
         }
         return "n";
     }
-
 
     /**
      * 实名认证1
@@ -610,8 +640,10 @@ public class UserController {
     public ModelAndView realNameAuthentication1(HttpSession session, ModelAndView modelAndView) {
         User user = (User) session.getAttribute("user");
         if (user != null) {   //判断,user是否为空
+            modelAndView.setViewName("/userback/Certification.html");
             return modelAndView;
         }
+        modelAndView.setViewName("/userpervious/login.html");
         return modelAndView;
     }
 
@@ -620,57 +652,61 @@ public class UserController {
      * 身份验证
      *
      * @param session
-     * @param modelAndView
      * @param smsCode      传入的手机验证码
      * @return
      */
     @RequestMapping(value = "/consumer/user/realNameAuthentication2ByPhone")
-    public ModelAndView realNameAuthentication2ByPhone(HttpSession session, ModelAndView modelAndView, String smsCode) {
+    public String realNameAuthentication2ByPhone(HttpSession session, String smsCode) {
         User user = (User) session.getAttribute("user");
         if (user != null) {   //判断,user是否为空
             if (session.getAttribute("smsCode").equals(smsCode)) {    //判断验证码相等则允许下一步
-                modelAndView.setViewName("");
-                return modelAndView;
+                return "y";
             }
-            return modelAndView;
+            return "n";
         }
-        return modelAndView;
+        return "n";
     }
 
     /**
+     * 实名认证2
+     * 身份验证
+     *
+     * @param session
+     * @param smsCode      传入的邮箱验证码
+     * @return
+     */
+    @RequestMapping(value = "/consumer/user/realNameAuthentication2ByEmail")
+    public String realNameAuthentication2ByEmail(HttpSession session, String smsCode) {
+        User user = (User) session.getAttribute("user");
+        if (user != null) {   //判断,user是否为空
+            if (session.getAttribute("emailCode").equals(smsCode)) {    //判断验证码相等则允许下一步
+                return "y";
+            }
+            return "n";
+        }
+        return "n";
+    }
+
+     /**
      * 实名认证3
      * @param session
-     * @param modelAndView
      * @param authRealname  真实姓名
      * @param authIdentitycard  身份证号
      * @return
      */
-    public ModelAndView realNameAuthentication3(HttpSession session, ModelAndView modelAndView, String authRealname, String authIdentitycard) {
+    @RequestMapping(value = "/consumer/user/realNameAuthentication3")
+    public String realNameAuthentication3(HttpSession session, String authRealname, String authIdentitycard) {
         User user = (User) session.getAttribute("user");
         if (user != null) {   //判断,user是否为空
             CodeUtil codeUtil = new CodeUtil();
             //调用实名认证方法,返回实名认证实体类
             Authentication authentication = codeUtil.realNameAuthentication(authRealname, authIdentitycard);
             authentication.setUserId(user.getUserId()); //将用户id传入实名认证种
-            modelAndView.setViewName("");
-            return modelAndView;
+            System.out.println("实名认证:"+authentication.toString());
+            userClient.saveAuthentication(authentication);
+            return "y";
         }
-        return modelAndView;
+        return "n";
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
