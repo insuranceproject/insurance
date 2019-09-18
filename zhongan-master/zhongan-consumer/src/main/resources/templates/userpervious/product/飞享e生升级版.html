@@ -4,6 +4,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>《飞享e生》人身意外保险-火车地铁航空出行保险-众安保险官网</title>
+    <link type="image/x-icon" rel="shortcut icon"
+          href="https://static.zhongan.com/website/online/assets/images/favicon.ico">
     <link href="http://47.93.221.88/previous/userpervious/product/css/main.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="http://47.93.221.88/previous/userpervious/product/css/index2.css">
     <link rel="stylesheet" type="text/css" href="http://47.93.221.88/previous/userpervious/product/css/customize.css">
@@ -12,6 +14,27 @@
     <link type="text/css" rel="stylesheet" href="http://47.93.221.88/previous/userpervious/product/css/zeroCalendar.css">
     <link type="text/css" rel="stylesheet" href="http://47.93.221.88/previous/userpervious/product/css/zeroSelect.css">
     <script  src="http://47.93.221.88/previous/userpervious/product/js/zz.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(".td-3 tr:not(:first)").hover(function () {
+                $(this).addClass("plan-mask-active").siblings().removeClass("plan-mask-active");
+                $("#planMaskSelectPanel>div:eq("+$(this).index()+")").addClass("plan-mask-active").siblings().removeClass("plan-mask-active");
+            })
+            $("#planMaskSelectPanel>div:not(:first)").hover(function () {
+                $(this).addClass("plan-mask-active").siblings().removeClass("plan-mask-active");
+                $(".td-3 tr:eq("+$(this).index()+")").addClass("plan-mask-active").siblings().removeClass("plan-mask-active");
+            })
+            $("#c-select-wrap").click(function () {
+                if($(this).attr("class") == "c-select-wrap active"){
+                    $(this).removeClass("active");
+                    $(".c-select-options").slideUp("500");
+                }else{
+                    $(this).addClass("active");
+                    $(".c-select-options").slideDown("500");
+                }
+            })
+        })
+    </script>
 
 </head>
 <body class="prduct-detail">
@@ -1029,13 +1052,14 @@
                             <p>保障计划</p>
                             <div class="preminm-factor-control" id="planListWrap">
                                 <input id="planList" value="0" class="c-control-hidden za-select-target">
-                                <div class="c-select-wrap">
+                                <div class="c-select-wrap" id="c-select-wrap">
                                     <div class="c-select">
                                         <div class="c-selected-text js-selected-text">黄金版</div>
                                         <b></b></div>
                                 </div>
                             </div>
                         </div>
+                        <div class="c-select-options" style="top: 650px; width: 180px;"><ul class="c-options js-options"><li class="c-options-selected">黄金版</li><li class="">铂金版</li></ul>			</div>
                         <div class="premium-factor-selected-price">
                             <b id="selectedPlanPrice">79</b>
                             <span>元</span>

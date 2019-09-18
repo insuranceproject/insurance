@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<!-- saved from url=(0177)https://cashier.zhongan.com/za-cashier-web/cashier/official/pc/officialWebPay.htm?od=e58f95ed52a40d87e1a3df94f005fa7c6f3ce45c7e01857054172baba0a888be&merchantCode=1605001601&t=1 -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>保单支付_众安保险官网版_众安保险官网</title>
+    <!--统一加载公共js与css文件-->
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <!--[if lt IE 9]>
+    <script src="/za-cashier-web/javascripts/bui/html5/html5shiv.js"></script>
+    <![endif]-->
+    <!-- 主页所需css，单独使用 -->
+    <link href="http://47.93.221.88/previous/userpervious/product/css/bootstrap.css" rel="stylesheet">
+    <link href="http://47.93.221.88/previous/userpervious/product/css/bui-min.css" rel="stylesheet">
+    <link type="image/x-icon" rel="shortcut icon"
+          href="https://static.zhongan.com/website/online/assets/images/favicon.ico">
+    <!--[if IE 8]>
+    <style>* {
+        box-sizing: inherit;
+    }</style> <![endif]-->
+
+    <!-- bui js -->
+    <script charset="utf-8" src="http://47.93.221.88/previous/userpervious/product/js/UrlChangeTracker.js"></script>
+    <script src="http://47.93.221.88/previous/userpervious/product/js/push.js"></script>
+    <script src="http://47.93.221.88/previous/userpervious/product/js/hm.js"></script>
+    <script src="http://47.93.221.88/previous/userpervious/product/js/hm(1).js"></script>
+    <script src="http://47.93.221.88/previous/userpervious/product/js/jquery-1.8.1.min.js"></script>
+    <script src="http://47.93.221.88/previous/userpervious/product/js/seed-min.js"></script>
+    <script src="http://47.93.221.88/previous/userpervious/product/js/hbList.js"></script>
+    <!-- <script src="/za-cashier-web/javascripts/lib/react.min.js"></script>
+    <script src="/za-cashier-web/javascripts/lib/payReactUI.min.js"></script> -->
+    <script src="http://47.93.221.88/previous/userpervious/product/js/cashierCommon.js"></script>
+    <script src="http://47.93.221.88/previous/userpervious/product/js/cashierWebCommon.js"></script>
+
+    <style type="text/css">
+        .mod-steps {
+            width: 788px;
+            margin-right: auto;
+            margin-left: auto;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .mod-steps .steps-list {
+            display: table;
+            table-layout: fixed;
+            width: 100%;
+            margin-top: 50px
+        }
+
+        .mod-steps .item {
+            display: table-cell
+        }
+
+        .mod-steps .item:first-child .shape {
+            border-radius: 3px 0 0 3px
+        }
+
+        .mod-steps .shape {
+            display: block;
+            position: relative;
+            height: 6px;
+            margin-bottom: 10px;
+            background-color: #c9c9c9;
+            box-shadow: 0 -1px 0 #c9c9c9
+        }
+
+        .mod-steps .shape:after {
+            position: absolute;
+            right: 0;
+            top: -5px;
+            width: 16px;
+            height: 16px;
+            content: '';
+            background: url(//static.zhongan.com/website/factoryOnline/assets/images/order/bg-step-shape.png);
+            overflow: hidden
+        }
+
+        .mod-steps .txt {
+            display: block;
+            line-height: 1.5;
+            font-size: 16px;
+            text-align: center;
+            color: #c9c9c9
+        }
+
+        .mod-steps .active .shape, .mod-steps .finished .shape {
+            background-color: #12c186;
+            box-shadow: 0 -1px 0 #4ba486
+        }
+
+        .mod-steps .active .shape:after, .mod-steps .finished .shape:after {
+            background-position: 0 -20px
+        }
+
+        .mod-steps .active .txt, .mod-steps .finished .txt {
+            color: #12c186
+        }
+    </style>
+
+    <script type="text/javascript">
+        /**
+         * 检查支付方式
+         * */
+        function checkPayment(form) {
+            var _payChannel = $("#payChannel").val()
+            if (_payChannel == 'wxpay' || _payChannel == 'lakala') {
+                return false;
+            } else {
+                return true;
+            }
+        }
+    </script>
+
+    <!-- 千里眼项目引入js插件 -->
+    <script>
+        window.st_conf = {
+            end: '/dm/open/cashier/cashier_pay_return.do',
+            type: 'history'
+        }
+    </script>
+
+    <script src="http://47.93.221.88/previous/userpervious/product/js/eye.js"></script>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?acea3d0365fa5bc7ccbd0a6bca32db48";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <meta name="viewport" content="width=1300, user-scalable=yes, minimum-scale=.4, maximum-scale=2.0">
+    <script type="text/javascript" id="zaHeaderLogin" src="http://47.93.221.88/previous/userpervious/product/js/za-bootstrap.js"></script>
+</head>
+<body>
+<!-- Top Begin-->
+<link href="http://47.93.221.88/previous/userpervious/product/css/za-common.css" rel="stylesheet"><!--header  start-->
+<div class="za-toolbar" data-ilog="1.589.zL6|a" ilogbinded="true">
+    <div class="za-toolbar-layout">
+        <div class="za-toolbar-layout-logo"><a href="https://www.zhongan.com/" title="众安保险" rel="nofollow">众安保险</a>
+        </div>
+        <p class="za-toolbar-layout-slogan"><span>做有温度的保险</span></p>
+        <div class="za-toolbar-layout-entry"><input type="hidden" id="logoutUrl" value="/logOut"> <input type="hidden"
+                                                                                                         id="domain"
+                                                                                                         value="http://cashier.zhongan.com/za-cashier-web">
+            <input type="hidden" id="originDomain" value="https://www.zhongan.com"> <input type="hidden" id="appName"
+                                                                                           value="zhonganCashierPC">
+            <!--<div class="entry-item entry-login" id="headerLogin">-->
+            <div id="headerLogin"
+                 style="    position: relative;display: inline;float: left;line-height: 34px;box-sizing: content-box;">
+                <a href="https://www.zhongan.com/account/myAccount" title="点击进入我的账户">za19lxk0c9</a></div>
+            <!--</div>-->
+            <div class="entry-item entry-account"><a href="https://www.zhongan.com/account/myAccount"
+                                                     class="entry-item-hd" rel="nofollow"><span>个人中心</span><i
+                    class="icon-drop"></i></a>
+                <ul class="za-toolbar-sublist">
+                    <li class="sub-item"><a href="https://www.zhongan.com/account/myPolicy" title="我的订单" rel="nofollow">我的订单</a>
+                    </li>
+                    <li class="sub-item"><a href="https://www.zhongan.com/account/employeeWelfare" title="团险保单"
+                                            rel="nofollow">团险保单</a></li>
+                    <li class="sub-item"><a href="https://www.zhongan.com/account/claimEnquiry" title="理赔查询"
+                                            rel="nofollow">理赔查询</a></li>
+                    <li class="sub-item"><a href="https://www.zhongan.com/account/myInfo" title="我的资料" rel="nofollow">我的资料</a>
+                    </li>
+                    <li class="sub-item"><a href="https://www.zhongan.com/account/myInvest" title="我的投资" rel="nofollow">我的投资</a>
+                    </li>
+                    <li class="sub-item"><a href="http://open.zhongan.com/innerweb/ygd/loanApplyRecord.htm" title="我的资产"
+                                            rel="nofollow">我的资产</a></li>
+                    <li class="sub-item"><a href="https://www.zhongan.com/account/myPoint" title="我的积分" rel="nofollow">我的积分</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="entry-item entry-eportal"><a href="https://www.zhongan.com/eportal/"
+                                                     rel="nofollow"><span>众安团险</span><i class="icon-drop"></i></a>
+                <ul class="za-toolbar-sublist">
+                    <li class="sub-item"><a href="https://www.zhongan.com/eportal/employee.html" title="员工商业保险"
+                                            rel="nofollow">员工商业保险</a></li>
+                    <li class="sub-item"><a href="https://hr.zhongan.com/" title="https://hr.zhongan.com"
+                                            rel="nofollow">企业hr保单管理</a></li>
+                </ul>
+            </div>
+            <div class="entry-item entry-mobile-download"><a href="https://www.zhongan.com/open/active/app/appdownload">下载APP</a>
+            </div>
+            <div class="entry-item entry-open"><a href="https://open.zhongan.com/open/home/home.htm" target="_blank"
+                                                  rel="nofollow">开放平台</a></div>
+            <div class="entry-item entry-publicInfo"><a
+                    href="https://www.zhongan.com/channel/public/publicInfo2018.html" target="_blank"
+                    rel="nofollow"><span>公开信息披露</span><i class="icon-drop"></i></a>
+                <ul class="za-toolbar-sublist">
+                    <li class="sub-item"><a href="https://www.zhongan.com/channel/public/publicInfo2018.html"
+                                            title="公开信息披露" rel="nofollow">公开信息披露</a></li>
+                    <li class="sub-item"><a href="https://www.zhongan.com/channel/internetInfo/internetInfo.html"
+                                            title="互联网保险信息披露" rel="nofollow">互联网保险信息披露</a></li>
+                </ul>
+            </div>
+            <div class="entry-item entry-open"><a href="https://www.zhongan.com/corporate/announcements/"
+                                                  rel="nofollow">投资者关系 Investor Relations</a></div>
+        </div>
+    </div>
+</div>
+<script src="http://47.93.221.88/previous/userpervious/product/js/headerLogin.js"></script>    <!--end  header-->    <!-- Top End-->
+
+<div class="mod-steps">
+    <ul class="steps-list">
+        <li class="item  active "><span class="shape"></span><span class="txt">填写投保信息</span></li>
+        <li class="item  active "><span class="shape"></span><span class="txt">确认投保信息</span></li>
+        <li class="item  active "><span class="shape"></span><span class="txt">保费支付</span></li>
+        <li class="item "><span class="shape"></span><span class="txt">完成</span></li>
+    </ul>
+</div>
+
+<div class="nb-container container" style="margin-bottom:40px;padding:30px;">
+    <div class="gw_shyt_logo"></div>
+    <p class="nb_h2_tip">请在<span id="countDownText" name="countDownText"><span class="text-count"> 29 </span>分<span
+            class="text-count"> 10 </span>秒</span>内完成支付，逾期订单将自动取消。</p>
+    <table class="table table-bordered text-center">
+        <tbody>
+        <tr>
+            <td class="table-label">订单号</td>
+            <td>P000019042560431</td>
+            <td class="table-label">产品名称</td>
+            <td>众安保险官网版</td>
+        </tr>
+        <tr>
+            <td class="table-label">保障起期</td>
+            <td>2019-09-18 00:00:00</td>
+            <td class="table-label">保障止期</td>
+            <td>2020-09-17 23:59:59</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="nb_yh_tip">
+        <label class="nb_yh_label fz18">实付金额</label>
+        <span class="nb_yh_content"> <strong class="text-count fz20">¥ 79.00</strong>
+				</span>
+    </div>
+
+    <form id="payForm" target="_blank"
+          action="https://cashier.zhongan.com/za-cashier-web/cashier/pc/cashierWebPayAction/pay.do"
+          onsubmit="return checkPayment(this)" class="bui-form bui-form-field-container" aria-disabled="false"
+          method="get" aria-pressed="false">
+        <div class="nb_pay_tip"><strong>支付方式</strong></div>
+        <ul id="shytPay" class="list-group">
+            <li id="channelItem" class="list-group-item checked" data-type="wxpay" data-ilog="10.442.wI0.442wx"
+                ilogbinded="true">
+                <div class="nb_pay_item">
+                    <i class="shyt-checkbox"></i>
+                    <img style="height:30px;" src="http://47.93.221.88/previous/userpervious/product/images/shyt_pay_wx.png">
+                    <span class="shyt-count pull-right">支付<strong class="text-count fz20">79.00</strong>元</span>
+                </div>
+            </li>
+            <li id="channelItem" class="list-group-item" data-type="alipay" data-ilog="10.442.wI0.442zfb"
+                ilogbinded="true">
+                <div class="nb_pay_item">
+                    <i class="shyt-checkbox"></i>
+                    <img style="height:30px;" src="http://47.93.221.88/previous/userpervious/product/images/shyt_pay_zfb.png">
+                    <span class="shyt-count pull-right">支付<strong class="text-count fz20">79.00</strong>元</span>
+                </div>
+            </li>
+            <!-- 花呗开始 -->
+            <li id="channelItem" class="list-group-item" data-type="anthb" data-ilog="10.442.wI0.442hb"
+                ilogbinded="true">
+                <div class="nb_pay_item anthb">
+                    <i class="shyt-checkbox"></i>
+                    <img style="height:24px;" src="http://47.93.221.88/previous/userpervious/product/images/icon_huabei.png">
+                    <span><i id="hbTip" class="icon-huabei"></i><span id="minamt">¥ 26.33</span><span
+                            id="showTitleDesc"> x 3 （免手续费,  共计79.00元）</span></span>
+                    <span id="showWithoutFee" class="text-bradge">0息分期</span>
+                    <span class="shyt-count pull-right">
+				支付
+				<strong id="totalAmt" class="text-count fz20">79.00</strong>
+				元
+			</span>
+                </div>
+                <div class="huaBeiListView" style="display:none;">
+                    <div class="nb-hb-bb"></div>
+                    <ul id="hbList" class="list-group nb-hb-list">
+                    </ul>
+                </div>
+                <div id="showHbUrl" style="color:#40c16b;margin-bottom:10px;display: none;"><a
+                        href="https://ds.alipay.com/fd-iiiblm8p/index.html" target="_blank">查看是否享有分期服务</a></div>
+            </li>
+            <!-- 花呗结束 -->
+            <li id="channelItem" class="list-group-item" data-type="unionpay" data-ilog="10.442.wI0.442yl"
+                ilogbinded="true">
+                <div class="nb_pay_item">
+                    <i class="shyt-checkbox"></i>
+                    <img style="height:30px;" src="http://47.93.221.88/previous/userpervious/product/images/union-pay.png">
+                    <span class="shyt-count pull-right">支付<strong class="text-count fz20">79.00</strong>元</span>
+                </div>
+            </li>
+        </ul>
+        <div class="row">
+            <button data-ilog="10.442.wI0.442zfqr" type="submit" id="submitButton" class="nb-gw-link" ilogbinded="true">
+                立即支付
+            </button>
+        </div>
+        <input type="hidden" id="expireTimeInterval" name="expireTimeInterval" value="1750526" class="bui-form-field"
+               aria-disabled="false" style="display: none;">
+        <input type="hidden" id="payChannel" name="payChannel" class="bui-form-field" aria-disabled="false"
+               value="wxpay" style="display: none;">
+        <input type="hidden" id="zaOrderNo" name="zaOrderNo" value="90190917110737829617663669688670"
+               class="bui-form-field" aria-disabled="false" style="display: none;">
+        <input type="hidden" id="od" name="od" value="e58f95ed52a40d87e1a3df94f005fa7c6f3ce45c7e01857054172baba0a888be"
+               class="bui-form-field" aria-disabled="false" style="display: none;">
+        <input type="hidden" id="amt" name="amt" value="79.00" class="bui-form-field" aria-disabled="false"
+               style="display: none;">
+        <input type="hidden" id="antHBNum" name="antHBNum" value="3" class="bui-form-field" aria-disabled="false"
+               style="display: none;">
+        <input type="hidden" id="merchantCode" name="merchantCode" value="1605001601" class="bui-form-field"
+               aria-disabled="false" style="display: none;">
+    </form>
+</div>
+
+<div id="weixinDialog" class="hidden">
+    <div class="nb-weixinQrcode">
+        <img id="qrcodeImageId" haveclick="false" class="nb-qrcode-img"
+             src="https://cashier.zhongan.com/za-cashier-web/cashier/official/pc/officialWebPay.htm?od=e58f95ed52a40d87e1a3df94f005fa7c6f3ce45c7e01857054172baba0a888be&amp;merchantCode=1605001601&amp;t=1">
+    </div>
+</div>
+
+<!-- 拉卡拉弹出框Begin -->
+<div id="LKLDialog" class="hidden">
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="lkl-qrcode">
+                <img id="lakalaQrcode" haveclick="false" class="center-block" style="width: 100%;"
+                     src="https://cashier.zhongan.com/za-cashier-web/cashier/official/pc/officialWebPay.htm?od=e58f95ed52a40d87e1a3df94f005fa7c6f3ce45c7e01857054172baba0a888be&amp;merchantCode=1605001601&amp;t=1">
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <img class="lkl-tip center-block" src="http://47.93.221.88/previous/userpervious/product/js/lkl-pc.png">
+        </div>
+    </div>
+</div>
+
+<!-- 拉卡拉弹出框 End -->
+
+<!-- 保存弹出提示信息 Begin -->
+<!-- 保存弹出提示信息 Begin -->
+<input type="hidden" id="alipayAlertMsg" value="">
+<input type="hidden" id="wxpayAlertMsg" value="">
+<input type="hidden" id="anthbAlertMsg" value="">
+<input type="hidden" id="creditinstalmentAlertMsg" value="众安分期系统升级维护中，请选择其他支付方式，给您带来不便敬请谅解！">
+<input type="hidden" id="unionpayAlertMsg" value="">
+<input type="hidden" id="unionpayB2BAlertMsg" value="">
+<input type="hidden" id="lakalaAlertMsg" value="">
+<input type="hidden" id="mshAlertMsg" value="马上花分期系统维护升级中,给您带来的不便,敬请谅解。">
+<!-- 保存弹出提示信息 End -->
+<!-- 保存弹出提示信息 End -->
+
+<!-- Footer Begin-->
+<!--footer  start-->
+<div class="za-footer">
+    <div class="za-footer-layout">
+        <div class="za-footer-help">
+            <div class="help-item"><h4 class="help-item-hd">众安保险</h4>
+                <ul class="za-footer-help-list">
+                    <li class="help-list-item"><a href="https://cashier.zhongan.com/corporate/" target="_blank"
+                                                  title="关于我们" rel="nofollow">关于我们</a></li>
+                    <li class="help-list-item"><a href="https://cashier.zhongan.com/channel/about/newsList.html"
+                                                  target="_blank" title="新闻中心" rel="nofollow">新闻中心</a></li>
+                    <li class="help-list-item"><a href="https://cashier.zhongan.com/open/about/job" target="_blank"
+                                                  title="加入我们" rel="nofollow">加入我们</a></li>
+                    <!--<li class="help-list-item"><a href="https://www.zhongan.com/channel/public/2018xiaozhao/index.html" target="_blank" title="2019校园招聘" rel="nofollow">2019校园招聘</a></li>-->
+                    <li class="help-list-item"><a href="https://cashier.zhongan.com/channel/about/website.html"
+                                                  target="_blank" title="隐私声明" rel="nofollow">隐私声明</a></li>
+                    <li class="help-list-item"><a href="https://cashier.zhongan.com/channel/about/fengxiantishi.html"
+                                                  target="_blank" title="风险提示" rel="nofollow">风险提示</a></li>
+                </ul>
+            </div>
+            <div class="help-item"><h4 class="help-item-hd">发现</h4>
+                <ul class="za-footer-help-list">
+                    <li class="help-list-item"><a href="https://cashier.zhongan.com/channel/sitemap/sitemap.html"
+                                                  target="_blank" title="网站地图">网站地图</a></li>
+                    <li class="help-list-item"><a href="https://www.zhongan.com/chexianjisuanqi/" target="_blank"
+                                                  title="车险计算器">车险计算器</a></li>
+                    <li class="help-list-item"><a href="https://www.zhongan.io/" target="_blank" title="众安科技">众安科技</a>
+                    </li>
+                    <li class="help-list-item"><a href="http://open.zhongan.com/" target="_blank"
+                                                  title="众安开放平台">众安开放平台</a></li>
+                    <li class="help-list-item"><a href="https://xd.zhongan.io/" target="_blank" title="众安小贷"
+                                                  rel="nofollow">众安小贷</a></li>
+                    <li class="help-list-item"><a href="https://cashier.zhongan.com/open/about/feedback" target="_blank"
+                                                  title="投诉与建议" rel="nofollow">投诉与建议</a></li>
+                    <li class="help-list-item"><a href="https://security.zhongan.com/" target="_blank"
+                                                  title="众安安全应急响应中心" rel="nofollow">众安安全应急响应中心</a></li>
+                </ul>
+            </div>
+            <div class="help-item"><h4 class="help-item-hd">关注众安</h4>
+                <ul class="za-footer-help-list">
+                    <li class="help-list-item"><i class="icon-chat"></i>微信公众号<span class="code code-chat"></span></li>
+                    <li class="help-list-item"><i class="icon-alipay"></i>支付宝服务窗<span class="code code-alipay"></span>
+                    </li>
+                </ul>
+            </div>
+            <div class="help-item help-item-server"><h4 class="help-item-hd">客户服务</h4>
+                <div class="server-tel" style="font-size: 15px"><i class="icon-tel"></i><span class="tel-numb"
+                                                                                              style="font-size: 16px">1010-9955 </span>
+                    <div>全国统一服务热线</div>
+                    <div>健康险报案服务时间：7×24小时</div>
+                </div>
+                <div class="server-tel" style="font-size: 15px"><i class="icon-tel"></i><span class="tel-numb"
+                                                                                              style="font-size: 16px">021-80399188</span>
+                    <div>举报建议及投诉电话</div>
+                </div>
+                <p class="server-email" style="font-size: 15px"><i class="icon-email"></i><a
+                        href="mailto:cs@zhongan.com">客服邮箱：cs@zhongan.com</a></p>
+                <p class="server-email" style="font-size: 15px"><i class="icon-email"></i><a
+                        href="mailto:jubao@zhongan.com">保险欺诈举报邮箱：jubao@zhongan.com</a></p></div>
+        </div>
+        <div class="za-footer-bd"><h4 class="footer-logo"><a href="https://www.zhongan.com/" title="众安保险">众安保险</a></h4>
+            <p class="footer-copyright"><a target="_blank"
+                                           href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010102004862"
+                                           rel="nofollow"><img src="http://47.93.221.88/previous/userpervious/product/images/police.png"
+                                                               style="vertical-align:-6px;margin-right:8px;"
+                                                               alt="沪公网安备 31010102004862号">沪公网安备 31010102004862号</a><a
+                    target="_blank" rel="nofollow" style="margin-left: 17px" href="http://www.miitbeian.gov.cn/"><img
+                    src="http://47.93.221.88/previous/userpervious/product/images/network.png" alt="沪ICP备13041135号-1"
+                    style="vertical-align:-4px;margin-right:8px;">沪ICP备13041135号-1</a><a target="_blank"
+                                                                                         style="margin-left: 17px"
+                                                                                         href="https://218.242.124.22:8082/businessCheck/verifKey.do?showType=extShow&amp;serial=9031000020170721110206000001942333-SAIC_SHOW_310000-20131111112754954041&amp;signData=MEUCIGONA4AG1pExDb6kOnq0gaicafgHzjVrZpf3YseTN5ZkAiEA/+LP3riJh9rj8/NlhMQS6OWt02fu1TeXWB59GYeY29w="
+                                                                                         rel="nofollow"><img width="20"
+                                                                                                             src="http://47.93.221.88/previous/userpervious/product/images/lz2.jpg"
+                                                                                                             alt="沪工商备 20131111112754954"
+                                                                                                             style="vertical-align:-4px;margin-right:8px;">沪工商备
+                20131111112754954</a></p></div>
+    </div>
+</div><!--end  footer--><!--统计代码-->
+<script>var _hmt = _hmt || [];
+(function () {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?ecc6d381dd1b2d77f324681c7a9d76d5";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();</script><!--百度自动推送代码2-->
+<script>(function () {
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();</script>    <!-- Footer End-->
+<link href="http://47.93.221.88/previous/userpervious/product/css/shyt-gw.css" rel="stylesheet">
+<script src="http://47.93.221.88/previous/userpervious/product/js/officialWebPay.js"></script>
+<!--  ilog -->
+<script src="http://47.93.221.88/previous/userpervious/product/js/ilog.min.js"></script>
+
+<div class="bui-tooltip bui-overlay bui-ext-position x-align-top x-align-tc-bc" aria-disabled="false"
+     style="visibility: hidden; left: 79.9531px; top: 408.875px;">
+    <div style="margin-left:150px;background-color:#ffffd6;padding:15px;border:1px solid #ddd;" class="tips-content">
+        <strong style="color:#333333;">花呗分期是什么</strong><br>花呗分期是蚂蚁微贷提供的先消费后 分期还款的网购服务。<br><strong
+            style="color:#333333;">花呗分期特点</strong><br>1.0首付，支持3，6，9期付款<br>2.3期0手续费<br>3.还款超方便<br>方法a:自动还款，支持支付宝余额、
+        借记卡快捷、余额宝自动还款<br>方法b:主动还款<br>&gt;登录支付宝www.alipay.com-首页-蚂蚁花呗,查看账单及还款<br>&gt;登录支付宝钱包-财富-蚂蚁花呗，查看账单及还款<p></p></div>
+    <s class="x-align-arrow"><s class="x-align-arrow-inner"></s></s></div>
+</body>
+</html>

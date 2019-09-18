@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<!-- saved from url=(0167)https://cashier.zhongan.com/za-cashier-web/cashier/pc/cashierWebPay.htm?od=e58f95ed52a40d87e0abdd91f704f37f653dec5d7c018575551e29a1ada986b7&merchantCode=1606002301&t=1 -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- 默认都是 众安保险 -->
+    <title>众安保险</title>
+    <!--统一加载公共js与css文件-->
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <!--[if lt IE 9]>
+    <script src="/za-cashier-web/javascripts/bui/html5/html5shiv.js"></script>
+    <![endif]-->
+    <!-- 主页所需css，单独使用 -->
+    <link href="http://47.93.221.88/previous/userpervious/product/css/bootstrap.css" rel="stylesheet">
+    <link href="http://47.93.221.88/previous/userpervious/product/css/bui-min.css" rel="stylesheet">
+    <link href="http://47.93.221.88/previous/userpervious/product/css/shyt.css" rel="stylesheet">
+    <link type="image/x-icon" rel="shortcut icon"
+          href="https://cdn-open.zhongan.com/shyt/manage/TVXdGWzanknBGzqT4dfsaj77.png">
+    <link href="http://47.93.221.88/previous/userpervious/product/css/swiper.min.css" rel="stylesheet">
+    <!-- bui js -->
+    <script src="http://47.93.221.88/previous/userpervious/product/js/jquery.min.js"></script>
+    <script src="http://47.93.221.88/previous/userpervious/product/js/seed-min.js"></script>
+    <!-- <script src="/za-cashier-web/javascripts/assets/hbList.js"></script> -->
+    <script src="http://47.93.221.88/previous/userpervious/product/js/shyt.common.js"></script>
+    <!-- <script src="/za-cashier-web/javascripts/lib/react.min.js"></script>
+    <script src="/za-cashier-web/javascripts/lib/payReactUI.min.js"></script> -->
+    <script src="http://47.93.221.88/previous/userpervious/product/js/cashierCommon.js"></script>
+    <script src="http://47.93.221.88/previous/userpervious/product/js/cashierWebCommon.js"></script>
+    <script src="http://47.93.221.88/previous/userpervious/product/js/cashierWxPay.js"></script>
+    <script src="http://47.93.221.88/previous/userpervious/product/js/swiper.min.js"></script>
+    <link href="http://47.93.221.88/previous/userpervious/product/css/za-order.css" rel="stylesheet">
+
+
+    <script>
+        window.st_conf = {
+            end: '/dm/open/cashier/cashier_pay_return.do',
+            type: 'history'
+        }
+    </script>
+
+    <script src="http://47.93.221.88/previous/userpervious/product/js/eye.js"></script>
+
+    <script type="text/javascript">
+        /**
+         * 检查支付方式
+         * */
+        function checkPayment(form) {
+            var _payChannel = $("#payChannel").val()
+            if (_payChannel == 'wxpay' || _payChannel == 'lakala') {
+                return false;
+            } else {
+                return true;
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $("#order").click(function () {
+                if($(this).attr("class") == "nb_detail_action active"){
+                    $(this).removeClass("active");
+                    $("#syhtDetail").slideUp(500);
+                }else{
+                    $(this).addClass("active");
+                    $("#syhtDetail").slideDown(500).removeClass("hidden");
+                }
+            })
+        })
+    </script>
+</head>
+
+<body class="">
+<div style="width: 100%; left: 0px; top: 0px; height: 100%; position: fixed; display: none;" class="bui-ext-mask"></div>
+<div style="width: 100%; left: 0px; top: 0px; height: 100%; position: fixed; display: none;" class="bui-ext-mask"></div>
+<header class="nb_header">
+    <!-- 	<div class="container"> -->
+    <!-- 	<a href="" class="nb_sprite za-logo"></a> -->
+    <!-- 	<h1 class="nb_title">收银台</h1> -->
+    <!-- 	</div> -->
+    <div class="container">
+        <!-- pageIcon -->
+        <img src="http://47.93.221.88/previous/userpervious/product/images/gRptEjW8TUMRKxQc4StvtwdZ.png">
+        <span class="line"></span>
+        <!-- pageTitle -->
+        <span class="tt"><b>收银台</b></span>
+    </div>
+</header>
+
+<!-- banner 展示 start -->
+
+
+<!-- banner 展示 end -->
+<nav class="nb_pay_flag nb_pay_flag_1">
+</nav>
+<section class="nb_content container">
+    <h2 class="nb_h2"><i class="shyt-sprite-icons shyt-1"></i>订单提交成功，请您尽快付款！订单号:UAVINDPCGW20190917212245326OUFs <span
+            class="order-policy">保险订单</span></h2>
+    <p class="nb_h2_tip">请在<span id="countDownText" name="countDownText"><span class="text-count"> 23 </span>小时<span
+            class="text-count"> 58 </span>分<span class="text-count"> 14 </span>秒</span>内完成支付，逾期订单将自动取消。
+        <span class="pull-right">应付金额：<strong class="text-count fz20">105.00</strong>元
+				</span>
+    </p>
+
+    <!-- 订单信息 start-->
+    <div class="nb_detail">
+        <div class="nb_detail_action" id="order">
+            <i class="shyt-sprite-icons shyt-2"></i>
+            订单详情
+            <i class="shyt-sprite-icons shyt-arrow"></i>
+        </div>
+        <table class="nb_table">
+            <tbody>
+            <tr>
+                <td class="nb_table_tt">商品名称</td>
+                <td>无人机第三者责任保险（个人）</td>
+            </tr>
+            <tr>
+                <td class="nb_table_tt">商品描述</td>
+                <td>无人机第三者责任保险（个人）</td>
+            </tr>
+            </tbody>
+        </table>
+        <div id="syhtDetail" class="hidden">
+            <article class="nb_table_title">商品信息</article>
+            <div id="orderDetail">
+                <table class="nb_table">
+                    <tbody>
+                    <tr>
+                        <td class="nb_table_tt">保险起期</td>
+                        <td>2019-09-18</td>
+                    </tr>
+                    <tr>
+                        <td class="nb_table_tt">保险止期</td>
+                        <td>2020-09-17</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <form id="payForm" target="_blank"
+          action="https://cashier.zhongan.com/za-cashier-web/cashier/pc/cashierWebPayAction/pay.do"
+          onsubmit="return checkPayment(this)"
+          class="bui-form bui-form-field-container bui-form-hover bui-form-field-container-hover" aria-disabled="false"
+          method="get" aria-pressed="false">
+
+        <h2 class="nb_h2"><i class="shyt-sprite-icons shyt-5"></i>请选择支付方式</h2>
+        <ul id="shytPay" class="list-group">
+            <!--<li id="channelItem" class="list-group-item checked" data-type="wxpay" data-ilog="10.415.cQ2.415wx"
+                ilogbinded="true">
+                <div class="nb_pay_item">
+                    <i class="shyt-checkbox"></i>
+                    <img style="height:30px;" src="http://47.93.221.88/previous/userpervious/product/images/ZkhRQ9RM98G4N_xjqfnUjlg4.png">
+                    <span class="shyt-count pull-right">支付<strong class="text-count fz20">105.00</strong>元</span>
+                </div>
+            </li>-->
+            <li id="channelItem" class="list-group-item checked" data-type="alipay" data-ilog="10.415.cQ2.415zfb"
+                ilogbinded="true">
+                <div class="nb_pay_item">
+                    <i class="shyt-checkbox"></i>
+                    <img style="height:30px;" src="http://47.93.221.88/previous/userpervious/product/images/3JDRuvjUCryZj7JOlR078hsI.png">
+                    <span class="shyt-count pull-right">支付<strong class="text-count fz20">105.00</strong>元</span>
+                </div>
+            </li>
+        </ul>
+        <div class="row">
+            <div class="col-xs-3">
+                <button data-ilog="10.415.cQ2.415qrzf" type="submit" id="submitButton" class="nb_submit_btn"
+                        ilogbinded="true">确认支付
+                </button>
+            </div>
+            <div class="col-xs-3">
+            </div>
+        </div>
+        <input type="hidden" id="expireTimeInterval" name="expireTimeInterval" value="86294748" class="bui-form-field"
+               aria-disabled="false" style="display: none;">
+        <input type="hidden" id="payChannel" name="payChannel" class="bui-form-field" aria-disabled="false"
+               value="wxpay" style="display: none;">
+        <input type="hidden" id="zaOrderNo" name="zaOrderNo" value="90190917092246113796463370425799"
+               class="bui-form-field" aria-disabled="false" style="display: none;">
+        <input type="hidden" id="od" name="od" value="e58f95ed52a40d87e0abdd91f704f37f653dec5d7c018575551e29a1ada986b7"
+               class="bui-form-field" aria-disabled="false" style="display: none;">
+        <input type="hidden" id="amt" name="amt" value="105.00" class="bui-form-field" aria-disabled="false"
+               style="display: none;">
+        <input type="hidden" id="antHBNum" name="antHBNum" value="12" class="bui-form-field" aria-disabled="false"
+               style="display: none;">
+        <input type="hidden" id="merchantCode" name="merchantCode" value="1606002301" class="bui-form-field"
+               aria-disabled="false" style="display: none;">
+    </form>
+
+</section>
+
+<div id="weixinDialog" class="hidden">
+
+</div>
+
+<!-- 拉卡拉弹出框Begin -->
+<div id="LKLDialog" class="hidden">
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="lkl-qrcode">
+                <img id="lakalaQrcode" haveclick="false" class="center-block" style="width: 100%;"
+                     src="https://cashier.zhongan.com/za-cashier-web/cashier/pc/cashierWebPay.htm?od=e58f95ed52a40d87e0abdd91f704f37f653dec5d7c018575551e29a1ada986b7&amp;merchantCode=1606002301&amp;t=1">
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <img class="lkl-tip center-block" src="http://47.93.221.88/previous/userpervious/product/images/lkl-pc.png">
+        </div>
+    </div>
+</div>
+<!-- 拉卡拉弹出框 End -->
+
+<footer class="nb-syt-footer">
+    <i class="shyt-sprite-icons shyt-footer"></i>
+    全国统一服务热线&nbsp;&nbsp;1010-9955或400-999-9595
+</footer>
+
+<!-- 保存弹出提示信息 Begin -->
+<!-- 保存弹出提示信息 Begin -->
+<input type="hidden" id="alipayAlertMsg" value="">
+<input type="hidden" id="wxpayAlertMsg" value="">
+<input type="hidden" id="anthbAlertMsg" value="">
+<input type="hidden" id="creditinstalmentAlertMsg" value="众安分期系统升级维护中，请选择其他支付方式，给您带来不便敬请谅解！">
+<input type="hidden" id="unionpayAlertMsg" value="">
+<input type="hidden" id="unionpayB2BAlertMsg" value="">
+<input type="hidden" id="lakalaAlertMsg" value="">
+<input type="hidden" id="mshAlertMsg" value="马上花分期系统维护升级中,给您带来的不便,敬请谅解。">
+<!-- 保存弹出提示信息 End -->
+<!-- 保存弹出提示信息 End -->
+
+<script src="http://47.93.221.88/previous/userpervious/product/js/cashierWebPay.js"></script>
+<!--  ilog -->
+<script src="http://47.93.221.88/previous/userpervious/product/js/ilog.min.js"></script>
+<script type="text/javascript">
+    var mySwiper = new Swiper('.swiper-container', {
+        autoplay: {
+            delay: 5000,
+        },
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    })
+</script>
+
+
+<div class="bui-dialog bui-overlay bui-ext-position zfb-dialog x-align-cc-cc"
+     style="width: 470px; visibility: hidden; left: -999px; top: -999px; display: block;" aria-disabled="false"
+     aria-pressed="false">
+    <div class="bui-stdmod-header">
+        <div class="header-title">支付</div>
+    </div>
+    <div class="bui-stdmod-body"><p>成功支付，请点击完成付款，如付款遇到问题，您可以重新支付。</p>
+        <p id="payExce" style="color: rgb(64, 193, 107);">支付未完成。</p></div>
+    <div class="bui-stdmod-footer">
+        <button class="nb_btn_ok">已完成付款</button>
+        <button class="nb_btn_repeat">重新支付</button>
+    </div>
+    <a tabindex="0" href="javascript:void(&quot;关闭&quot;)" role="button" class="bui-ext-close" style=""><span
+            class="bui-ext-close-x x-icon x-icon-normal">×</span></a></div>
+<div class="bui-dialog bui-overlay bui-ext-position zfb-dialog x-align-cc-cc"
+     style="width: 570px; visibility: hidden; left: -999px; top: -999px; display: block;" aria-disabled="false"
+     aria-pressed="false">
+    <div class="bui-stdmod-header">
+        <div class="header-title">支付</div>
+    </div>
+    <div class="bui-stdmod-body">
+        <div class="nb-weixinQrcode">
+            <img id="qrcodeImageId" haveclick="true" class="nb-qrcode-img" src="http://47.93.221.88/previous/userpervious/product/js/ProcessWxPay.do"
+                 onerror="javascript:wxErrorAlert()">
+        </div>
+    </div>
+    <div class="bui-stdmod-footer"></div>
+    <a tabindex="0" href="javascript:void(&quot;关闭&quot;)" role="button" class="bui-ext-close" style=""><span
+            class="bui-ext-close-x x-icon x-icon-normal">×</span></a></div>
+</body>
+</html>

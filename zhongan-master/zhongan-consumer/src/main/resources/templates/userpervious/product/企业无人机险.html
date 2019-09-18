@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8"/>
-    <title>安心飞3.0无人机第三者责任险 个人版</title>
+    <title>安心飞3.0无人机第三者责任险 企业版</title>
     <META NAME="Keywords" CONTENT="众安保险,众安在线,众安保险官网,让保险有温度,做有温度的保险">
     <META NAME="Description" CONTENT="众安保险是国内首家也是唯一一家互联网保险公司，个性化定制风险解决方案，全方位采用互联网先进科技，追求流畅、贴心、温暖的用户体验">
     <link type="image/x-icon" rel="shortcut icon" href="http://47.93.221.88/previous/userpervious/product/image/favicon.ico">
@@ -15,6 +15,45 @@
     <link type="text/css" rel="stylesheet" href="http://47.93.221.88/previous/userpervious/product/css/zeroCalendar.css">
     <link type="text/css" rel="stylesheet" href="http://47.93.221.88/previous/userpervious/product/css/zeroSelect.css">
     <script src="http://47.93.221.88/previous/userpervious/product/js/zz.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(".td-3 tr:not(:first):not(:eq(2))").hover(function () {
+                $(this).addClass("plan-mask-active").siblings().removeClass("plan-mask-active");
+                $("#planMaskSelectPanel>div:eq("+$(this).index()+")").addClass("plan-mask-active").siblings().removeClass("plan-mask-active");
+            })
+            $("#planMaskSelectPanel>div:not(:first):not(:eq(2))").hover(function () {
+                $(this).addClass("plan-mask-active").siblings().removeClass("plan-mask-active");
+                $(".td-3 tr:eq("+$(this).index()+")").addClass("plan-mask-active").siblings().removeClass("plan-mask-active");
+            })
+            $("#c-select-wrap1").click(function () {
+                if($(this).parent().attr("class") == "preminm-factor-control po-re bindSingleChoose active"){
+                    $(this).parent().removeClass("active");
+                    $("#useType").slideUp("500");
+                }else{
+                    $(this).parent().addClass("active");
+                    $("#useType").slideDown("500");
+                }
+            })
+            $("#c-select-wrap2").click(function () {
+                if($(this).parent().attr("class") == "preminm-factor-control po-re frm-select-muilt-index active"){
+                    $(this).parent().removeClass("active");
+                    $(".multChoose").slideUp("500");
+                }else{
+                    $(this).parent().addClass("active");
+                    $(".multChoose").slideDown("500");
+                }
+            })
+            $("#c-select-wrap3").click(function () {
+                if($(this).parent().attr("class") == "preminm-factor-control po-re bindSingleChoose active"){
+                    $(this).parent().removeClass("active");
+                    $("#v-plan-model").slideUp("500");
+                }else{
+                    $(this).parent().addClass("active");
+                    $("#v-plan-model").slideDown("500");
+                }
+            })
+        })
+    </script>
 </head>
 <body class="prduct-detail">
 <link href="http://47.93.221.88/previous/userpervious/product/css/za-common.css" rel="stylesheet"><!--header  start-->
@@ -394,7 +433,7 @@
                         </div></div>
 
 
-                        <table>
+                        <table class="td-3">
                             <colgroup span="3">
                                 <col width="236">
                                 <col width="150">
@@ -603,7 +642,7 @@
                         <div class="premium-factor-item">
                             <p>作业用途</p>
                             <div class="preminm-factor-control po-re bindSingleChoose">
-                                <div class="c-select-wrap">
+                                <div class="c-select-wrap" id="c-select-wrap1">
                                     <div class="c-select">
                                         <div class="c-selected-text js-selected-text"></div>
                                         <b></b>
@@ -628,7 +667,7 @@
                         <div class="premium-factor-item">
                             <p>无人机机型</p>
                             <div data-ilog="410.00004.u.5" class="preminm-factor-control po-re frm-select-muilt-index" id="planListType">
-                                <div class="c-select-wrap">
+                                <div class="c-select-wrap" id="c-select-wrap2">
                                     <div class="c-select">
                                         <div class="c-selected-text js-selected-text" id="planType"></div>
                                         <b></b>
@@ -659,7 +698,7 @@
                         <div class="premium-factor-item">
                             <p>保障计划</p>
                             <div class="preminm-factor-control po-re bindSingleChoose">
-                                <div class="c-select-wrap">
+                                <div class="c-select-wrap" id="c-select-wrap3">
                                     <div class="c-select">
                                         <div class="c-selected-text js-selected-text">黄金版</div>
                                         <b></b>
