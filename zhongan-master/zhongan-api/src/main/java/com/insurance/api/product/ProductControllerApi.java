@@ -22,6 +22,6 @@ public interface ProductControllerApi {
     @ApiOperation("根据产品id查询对应的产品信息与保障范围详情")
     public Product findInfomation(Integer proId);
 
-    @ApiOperation("根据产品方案表里的产品id查产品")
-    public Product getProductByPlanId(Integer planId);
+    @ApiOperation("根据计划编号查询保障范围详情")
+    public Product findByPlanId(Integer proId,Integer planId);
 }

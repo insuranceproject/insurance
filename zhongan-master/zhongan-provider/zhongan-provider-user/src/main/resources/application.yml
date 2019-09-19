@@ -15,9 +15,6 @@ spring:
     initial-size: 5
     max-total: 5
     max-wait-millis: 200
-  data:
-    mongodb:
-      uri: mongodb://47.93.221.88:27017/zhongan
 
   #用于分布式存储
   redis:

@@ -7,12 +7,13 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 
 import javax.swing.text.AbstractDocument;
+import java.io.Serializable;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class PlanInfomation {
+public class PlanInfomation implements Serializable {
     private Integer planId;
     private String content;
 }

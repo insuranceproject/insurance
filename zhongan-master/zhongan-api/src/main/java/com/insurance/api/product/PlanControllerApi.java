@@ -12,7 +12,11 @@ public interface PlanControllerApi {
 
     @ApiOperation("根据产品id查询对应的产品计划")
     public List<Plan> findByProId(Integer proId);
-    @ApiOperation("根据产品方案id查询产品方案")
-    public Plan getPlanByPlanId(Integer planId);
+
+    @ApiOperation("根据产品id与无人机价格计算对应的产品价格")
+    public List<Plan> getPlanPrice(Integer proId,Integer modelPrice);
+
+    @ApiOperation("根据计划编号查询对应的计划信息")
+    public Plan getPlanById(Integer planId);
 
 }

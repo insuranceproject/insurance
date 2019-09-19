@@ -46,7 +46,7 @@ public class Insured extends Model<Insured> implements Serializable {
 
     private Integer relationId;
 
-    private Integer insuredPhonenumber;
+    private String insuredPhonenumber;
 
     private String insuredEmail;
 

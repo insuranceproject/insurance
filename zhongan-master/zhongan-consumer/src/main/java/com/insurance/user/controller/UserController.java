@@ -1,22 +1,17 @@
 package com.insurance.user.controller;
 
 import com.insurance.corp.client.CorpClient;
-import com.insurance.order.client.OrderClient;
-import com.insurance.pojo.*;
-import com.insurance.product.client.ProductClient;
+import com.insurance.pojo.Authentication;
+import com.insurance.pojo.Corp;
+import com.insurance.pojo.User;
 import com.insurance.user.client.UserClient;
 import com.insurance.util.CodeUtil;
 import com.insurance.util.TimeUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.aggregation.ArrayOperators;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
-import javax.xml.crypto.Data;
-import java.time.LocalDateTime;
-import java.util.Date;
-import java.util.List;
 
 @RestController
 public class UserController {
@@ -25,10 +20,6 @@ public class UserController {
     private UserClient userClient;
     @Autowired
     private CorpClient corpClient;
-    @Autowired
-    private OrderClient orderClient;
-    @Autowired
-    private ProductClient productClient;
 
     @RequestMapping(value = "/consumer/user/getOne")
     public User getOne() {
@@ -733,116 +724,6 @@ public class UserController {
         return "n";
     }
 
-    /**
-     * 获取有效保险数量
-     * 首先调用根据用户名获取保单方法,查询到改用户的所有保单
-     * 再根据保单id查询保单详情,拿其中的截至日期与当前时间相对比,判断是否过期
-     * @return
-     */
-    @RequestMapping(value = "/consumer/user/getEffectiveInsurance")
-    public String getEffectiveInsurance(HttpSession session){
-        /*if(policyList != null){ //判断list里不为空则循环list
-            Integer count1 = 0;  //用于迭代有效保险
-            Integer count2 = 0;  //用于迭代无效保险
-            Integer policydetailId = 0; //用于暂时存贮id进行判断是否为同一保单
-            for (Policy p:policyList) {
-                //调用根据保单id查询保单详情方法
-                List<Policydetail> policydetailList = orderClient.getPolicydetailByPolicyId(p.getPolicyId());
-                //循环输入保单详情list
-                for (Policydetail pd:policydetailList) {
-                    TimeUtil timeUtil = new TimeUtil();
-                    Date chinaTime = timeUtil.getChinaTime();
-                    Date policyEndtime = pd.getPolicyEndtime();
-                    //判断policydetailId不等于pd.getPolicyId()则允许进行下一步
-                    //如果两个值相等则说明是同一个保单的详情
-                    if(pd.getPolicyId() != policydetailId){
-                        if(policyEndtime.after(chinaTime)){  //判断如果保单详情里的截止时间大于当前时间则表示该保单详情在有效期中
-                            count1 +=1; //有效期中,count1加一
-                        } else if(policyEndtime.before(chinaTime)){ //截止日期小于当前时间
-                            count2 +=1;//无效
-                        }
-                    }
-                    //每一轮循环最后都将pd.getPolicyId()赋值给policydetailId
-                    //等到下一轮两个值做判断如果一样就是同一个保单,不一样就是不同的保单
-                    policydetailId = pd.getPolicyId();
-                }
-            }
-        }*/
-        User user = (User) session.getAttribute("user");
-        //根据用户id获取保单
-        List<Policy> policyList = orderClient.getPolicyByUserId(user.getUserId());  //调用根据用户id获取保单方法
-        Integer count1 = 0; //有效
-        Integer count2 = 0; //无效
-        for (Policy p:policyList) {
-            if(p.getPolicyStauts() == 1){   //有效加一
-                count1 += 1;
-            }else if(p.getPolicyStauts() == 2){ //无效加一
-                count2 += 1;
-            }
-        }
-        return count1.toString();
-    }
-
-    /**
-     * 根据用户id查询保单及详情
-     * 产品,起止时间,金额,状态(是否在有效期),购买途径
-     * 状态:状态在保单里有,那么直接调用方法根据用户id查到保单即可
-     * 一个用户可能会有多个保单,所以循环插入
-     * 起止时间:在保单详情表中,由于一个保单可能有多个保单详情,所以循环
-     * 购买渠道:与上一致
-     * 购买途径:与上一致
-     * 价格:需要通过详情中的方案编号查询到对应的方案,从而获取价格
-     * 产品:通过方案中的产品编号查询产品
-     *
-     * @param session
-     * @return
-     */
-    @RequestMapping(value = "/consumer/user/getPolicyByUserId")
-    public List<UserPolicydetail> getPolicyByUserId(HttpSession session,List<UserPolicydetail> listUserPolicydetail){
-        User user = (User) session.getAttribute("user");
-        List<Policy> policyList = orderClient.getPolicyByUserId(user.getUserId());  //调用根据用户id获取保单方法
-        for (Policy p : policyList) {
-            //循环查询每个保单
-            UserPolicydetail userPolicydetail = new UserPolicydetail();
-            //插入订单状态
-            if(p.getPolicyStauts() == 1){
-                userPolicydetail.setPolicyStauts("保障中");
-            }else if(p.getPolicyStauts() == 2){
-                userPolicydetail.setPolicyStauts("已失效");
-            }
-            //根据保单id查询保单详情,查询到的保单详情可能会有多个,但是都是对应这一个保单的,所以起止时间,购买途径都是一样的
-            //价格,产品也是一样,所以当循环一次的时候在后面判断数据不为空直接跳出循环即可
-            List<Policydetail> policydetailList = orderClient.getPolicydetailByPolicyId(p.getPolicyId());
-            kk:for (Policydetail pd: policydetailList) {
-                //插入起保时间
-                userPolicydetail.setPolicyStarttime(pd.getPolicyStarttime().toString());
-                //插入止保时间
-                userPolicydetail.setPolicyBuyaddr(pd.getPolicyEndtime().toString());
-                //插入购买途径
-                if(pd.getPolicyBuyaddr() == 1){
-                    userPolicydetail.setPolicyBuyaddr("众安官网");
-                }else{
-                    userPolicydetail.setPolicyBuyaddr("众安APP");
-                }
-                Plan plan = productClient.getPlanByPlanId(pd.getPlanId());  //产品方案
-                //插入价格
-                userPolicydetail.setPlanPrice(plan.getPlanPrice());
-                Product product = productClient.getProductByPlanId(plan.getProductId());    //产品
-                //插入产品
-                userPolicydetail.setProductName(product.getProductName());
-                //这些数据为空直接结束循环
-                if(userPolicydetail.getPolicyStarttime() != null
-                        && userPolicydetail.getPolicyEndtime() != null
-                        && userPolicydetail.getPolicyBuyaddr() != null
-                        && userPolicydetail.getPlanPrice() != null
-                        && userPolicydetail.getProductName() != null){
-                    break kk;
-                }
-            }
-            listUserPolicydetail.add(userPolicydetail);
-        }
-        return listUserPolicydetail;
-    }
 
 
 }

@@ -1,26 +1,17 @@
 package com.insurance.util;
 
-import org.junit.Test;
-
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.ParsePosition;
+import java.net.*;
+import java.io.*;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
-import java.util.TimeZone;
+import java.util.*;
 
 public class TimeUtil {
 
     /**
      * 获取当前系统时间：小时
-     *
      * @return
      */
-    public String getHours() {
+    public String getHours(){
         SimpleDateFormat df = new SimpleDateFormat("HH");//设置日期格式
         return df.format(new Date()).toString();
     }
@@ -29,32 +20,24 @@ public class TimeUtil {
     /**
      * 获取当前系统时间
      * 精确到秒
-     *
      * @return
      */
-    public String getTimeBySeconds() {
+    public String getTimeBySeconds(){
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
         return df.format(new Date()).toString();
     }
 
-    public void getTime() {
-        DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        LocalDateTime time = LocalDateTime.now();
-        String localTime = df.format(time);
-        LocalDateTime ldt = LocalDateTime.parse("2018-01-12 17:07:05", df);
-        System.out.println("LocalDateTime转成String类型的时间：" + localTime);
-        System.out.println("String类型的时间转成LocalDateTime：" + ldt);
-    }
-
-    public Date getChinaTime() {
-        DateFormat format2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        Date date = new Date();
-        String format = format2.format(date);
+    public Date getBJTime(){
         try {
-            date = format2.parse(format);
-        } catch (ParseException e) {
-            e.printStackTrace();
+            URL url = new URL("http://www.baidu.com");// 取得资源对象
+            URLConnection uc = url.openConnection();// 生成连接对象
+            uc.connect();// 发出连接
+            long ld = uc.getDate();// 读取网站日期时间
+            Date date = new Date(ld);// 转换为标准时间对象
+            return date;
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
         }
-        return date;
+        return null;
     }
 }

@@ -2,11 +2,11 @@ package com.insurance.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.insurance.api.product.ProductControllerApi;
-import com.insurance.pojo.Plan;
+import com.insurance.pojo.PlanInfomation;
 import com.insurance.pojo.Product;
-import com.insurance.pojo.User;
-import com.insurance.service.PlanService;
+import com.insurance.pojo.Title;
 import com.insurance.service.ProductService;
+import com.insurance.util.ProductMongoUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,8 +20,6 @@ public class ProductController implements ProductControllerApi {
 
     @Autowired
     private ProductService productService;
-    @Autowired
-    private PlanService planService;
 
 
     @GetMapping("/findByParId")
@@ -48,17 +46,17 @@ public class ProductController implements ProductControllerApi {
         return productService.findInfomation(proId);
     }
 
-
-    /**
-     * 根据产品方案表中的产品id查询产品
-     * @param planId
-     * @return
-     */
+    @Autowired
+    private ProductMongoUtil productMongoUtil;
+    @GetMapping("/findByPlanId")
     @Override
-    @GetMapping("/getProductByPlanId")
-    public Product getProductByPlanId(Integer planId){
-        Plan plan = planService.getOne(new QueryWrapper<Plan>().eq("plan_id", planId));
-        Product product = productService.getOne(new QueryWrapper<Product>().eq("product_id", plan.getProductId()));
-        return product;
-    }
+   public Product findByPlanId(Integer proId,Integer planId){
+      //  ProductMongoUtil productMongoUtil = new ProductMongoUtil();
+        //productMongoUtil.findByPlan(proId, planId);
+       // productMongoUtil.findByPlan2(proId, planId);
+      //  productMongoUtil.findByPlan3("免赔额");
+        return null;
+   }
+
+
 }

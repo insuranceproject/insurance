@@ -2,9 +2,7 @@ package com.insurance.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.insurance.mapper.ProductMapper;
-import com.insurance.pojo.Plan;
-import com.insurance.pojo.Product;
-import com.insurance.pojo.ProductMongo;
+import com.insurance.pojo.*;
 import com.insurance.service.ProductService;
 import com.insurance.util.ProductMongoUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,5 +27,11 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
         ProductMongo productMongo = productMongoUtil.findById(proId);
         product.setProductMongo(productMongo);
         return product;
+    }
+
+    @Override
+    public List<PlanInfomation> findByPlanId(Integer proId, Integer planId) {
+        Product product = productMapper.selectById(proId);
+        return productMongoUtil.findByPlan(proId, planId);
     }
 }

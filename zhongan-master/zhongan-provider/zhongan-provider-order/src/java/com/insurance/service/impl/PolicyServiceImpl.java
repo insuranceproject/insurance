@@ -41,9 +41,4 @@ public class PolicyServiceImpl extends ServiceImpl<PolicyMapper, Policy> impleme
         pageInfo.setList(list);
         return pageInfo;
     }
-
-    @Override
-    public List<Policy> getPolicyByUserId(Integer userId) {
-        return policyMapper.getPolicyByUserId(userId);
-    }
 }

@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface UavBrandService extends IService<Uavbrand> {
 
-    public List<Uavbrand> getBrandByIds(Integer purId);
+    public List<Uavbrand> getBrandByPurId(Integer purId);
 }
