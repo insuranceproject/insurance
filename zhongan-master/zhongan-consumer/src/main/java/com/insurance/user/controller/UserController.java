@@ -119,8 +119,17 @@ public class UserController {
             if (user1 != null) {
                 session.setAttribute("user", user1);
                 return "y";
+            }else{
+                //随机生成用户名
+                Integer num1 = (int) ((Math.random() * 9 + 1) * 100000);
+                user.setUserName(num1 + "");    //封装用户名
+                user.setUserRole("3");
+                boolean registered = userClient.registered(user);   //调用注册方法
+                if(registered){
+                    User user2 = userClient.falsLogin(user);    //调用根据手机号查询用户方法
+                    session.setAttribute("user", user2);
+                }
             }
-            return null;
         }
         return null;
     }
@@ -153,6 +162,10 @@ public class UserController {
         session.setAttribute("hours",timeUtil.getHours());  //储存时间
         User user = (User) session.getAttribute("user");
         Authentication authentication = userClient.getUserAuthentication(user.getUserId());    //调用查询实名信息方法,返回实名信息对象
+        if(authentication == null){
+            modelAndView.setViewName("/userback/myAccount.html");   //实名方法返回为null
+            return modelAndView;
+        }
         session.setAttribute("users", authentication);
         //资料完整度
         Integer num = 0;
@@ -802,7 +815,7 @@ public class UserController {
      */
     @RequestMapping(value = "/consumer/user/getPolicyByUserId")
     public List<UserPolicydetail> getPolicyByUserId(HttpSession session,List<UserPolicydetail> listUserPolicydetail){
-        User user = (User) session.getAttribute("user");
+        /*User user = (User) session.getAttribute("user");
         List<Policy> policyList = orderClient.getPolicyByUserId(user.getUserId());  //调用根据用户id获取保单方法
         for (Policy p : policyList) {
             //循环查询每个保单
@@ -845,8 +858,12 @@ public class UserController {
             listUserPolicydetail.add(userPolicydetail);
 
         }
-        return listUserPolicydetail;
+        return listUserPolicydetail;*/
+        return  null;
     }
+
+
+
 
 
 }

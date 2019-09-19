@@ -58,10 +58,8 @@ public class CodeUtil {
 
     @Test
     public void Test_1111(){
-        Authentication authentication = realNameAuthentication("蒋超祥", "430523199907184374");
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-        String format1 = format.format(authentication.getAuthBorndate());
-        System.out.println();
+        Authentication authentication = realNameAuthentication("qweqwe", "430523199907184374");
+        System.out.println(authentication);
     }
 
     /**
@@ -72,6 +70,10 @@ public class CodeUtil {
      * @return  Authentication对象
      */
     public Authentication realNameAuthentication(String authRealname, String authIdentitycard){
+        String regex = "[\u4E00-\u9FA5]+";
+        if(!authRealname.matches(regex)){
+            return null;    //输入的值不是中文直接返回null
+        }
         String host = "https://checkid.market.alicloudapi.com";
         String path = "/IDCard";
         String appcode = "c825cf5719f64f32b4e3f37e0f85786e";
