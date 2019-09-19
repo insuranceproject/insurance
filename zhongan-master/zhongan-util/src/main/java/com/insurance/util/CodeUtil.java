@@ -58,7 +58,7 @@ public class CodeUtil {
 
     @Test
     public void Test_1111(){
-        Authentication authentication = realNameAuthentication("qweqwe", "430523199907184374");
+        Authentication authentication = realNameAuthentication("啊啊大大", "1241241512123132");
         System.out.println(authentication);
     }
 
@@ -70,9 +70,13 @@ public class CodeUtil {
      * @return  Authentication对象
      */
     public Authentication realNameAuthentication(String authRealname, String authIdentitycard){
-        String regex = "[\u4E00-\u9FA5]+";
+        String regex = "[\u4E00-\u9FA5]+";  //真实姓名
+        String regex1 = "\\d{15}(\\d{2}[0-9xX])?";   //身份证
         if(!authRealname.matches(regex)){
             return null;    //输入的值不是中文直接返回null
+        }
+        if(!authIdentitycard.matches(regex1)){
+            return null;
         }
         String host = "https://checkid.market.alicloudapi.com";
         String path = "/IDCard";
