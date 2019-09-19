@@ -22,4 +22,9 @@ public class PlanController implements PlanControllerApi {
     public List<Plan> findByProId(Integer proId){
         return planService.list(new QueryWrapper<Plan>().eq("product_id",proId));
     }
+
+    @GetMapping("/getPlanByPlanId")
+    public Plan getPlanByPlanId(Integer planId){
+        return  planService.getOne(new QueryWrapper<Plan>().eq("plan_id",planId));
+    }
 }

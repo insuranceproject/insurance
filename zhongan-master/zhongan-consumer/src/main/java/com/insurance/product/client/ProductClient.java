@@ -33,4 +33,10 @@ public interface ProductClient {
 
     @GetMapping("/plan/getByProId")
     public List<Plan> getByProId(@RequestParam("proId") Integer proId);
+
+    @GetMapping("/product/getProductByPlanId")
+    public Product getProductByPlanId(@RequestParam("planId") Integer planId);
+
+    @GetMapping("/plan/getPlanByPlanId")
+    public Plan getPlanByPlanId(@RequestParam("planId") Integer planId);
 }
