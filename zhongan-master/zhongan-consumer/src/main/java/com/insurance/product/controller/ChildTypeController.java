@@ -17,7 +17,7 @@ public class ChildTypeController{
     @Autowired
    private ProductClient productClient;
 
-    @GetMapping("findByParId")
+    @GetMapping("/findByParId")
     public List<Childtype> findByParId(Integer parId) {
         return null;
     }

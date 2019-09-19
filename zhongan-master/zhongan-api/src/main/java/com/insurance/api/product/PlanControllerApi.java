@@ -12,5 +12,7 @@ public interface PlanControllerApi {
 
     @ApiOperation("根据产品id查询对应的产品计划")
     public List<Plan> findByProId(Integer proId);
+    @ApiOperation("根据产品方案id查询产品方案")
+    public Plan getPlanByPlanId(Integer planId);
 
 }

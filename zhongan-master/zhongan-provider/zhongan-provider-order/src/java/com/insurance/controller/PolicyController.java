@@ -41,7 +41,7 @@ public class PolicyController {
      * @return
      */
     @PostMapping("/getPolicyByUserId")
-    public List<Policy> getPolicyByUserId(@RequestBody Integer userId){
+    public List<Policy> getPolicyByUserId(Integer userId){
         return policyService.getPolicyByUserId(userId);
     }
 }
