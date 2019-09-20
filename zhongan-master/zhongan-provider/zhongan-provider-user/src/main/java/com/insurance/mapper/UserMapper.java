@@ -4,10 +4,13 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.insurance.pojo.Authentication;
-import com.insurance.pojo.Policy;
 import com.insurance.pojo.User;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Component;
 
+@Mapper
+@Component
 public interface UserMapper extends BaseMapper<User> {
     /**
      * 用户显示分页+模糊姓名查询
@@ -40,4 +43,5 @@ public interface UserMapper extends BaseMapper<User> {
      */
     @Select("SELECT * FROM insurance_authentication where user_id = #{userId} ")
     public Authentication getUserAuthentication(Integer userId);
+    
 }

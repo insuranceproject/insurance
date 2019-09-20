@@ -5,10 +5,19 @@ import com.insurance.pojo.User;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
+
 @FeignClient("PROVIDER-USER")
 public interface UserClient {
     @GetMapping("/user/getOne")
     public User getOne();
+
+    /**
+     * 迅捷登陆
+     * @return
+     */
+    @PostMapping("/user/fastLogin")
+    public boolean fastLogin(User user, HttpSession session);
 
     /**
      * 个人登陆
@@ -40,7 +49,7 @@ public interface UserClient {
      * @param user
      * @return
      */
-    @GetMapping("/user/updateUser")
+    @PostMapping("/user/updateUser")
     public boolean updateUser(User user);
 
     /**
@@ -56,7 +65,7 @@ public interface UserClient {
      * @param user
      * @return
      */
-    @GetMapping("/user/getUserByName")
+    @PostMapping("/user/getUserByName")
     public User getUserByName(User user);
 
 
@@ -66,8 +75,8 @@ public interface UserClient {
      * @param
      * @return
      */
-    @GetMapping("/user/getUserAuthentication")
-    public Authentication getUserAuthentication(Integer userId);
+    @PostMapping("/user/getUserAuthentication")
+    public Authentication getUserAuthentication(@RequestBody Integer userId);
 
     /**
      * 根据邮箱查询用户
@@ -91,5 +100,5 @@ public interface UserClient {
      * @return
      */
     @PostMapping("/user/saveAuthentication")
-    public boolean saveAuthentication(Authentication authentication);
+    public boolean saveAuthentication(@RequestBody Authentication authentication);
 }

@@ -13,6 +13,9 @@ import org.apache.ibatis.annotations.Select;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
+import java.sql.Date;
+
 @RestController
 @RequestMapping("/user")
 public class UserController implements UserControllerApi {
@@ -20,7 +23,6 @@ public class UserController implements UserControllerApi {
     private UserService userService;
     @Autowired
     private AuthenticationService authenticationService;
-
 
     @GetMapping("/getOne")
     public User getOne(){
@@ -51,6 +53,36 @@ public class UserController implements UserControllerApi {
     }
 
     /**
+     * 快速登录
+     * @param user
+     * @param session
+     * @return
+     */
+    @PostMapping("/fastLogin")
+    @Override
+    public boolean fastLogin(@RequestBody User user, HttpSession session) {
+        String s2="^[1](([3|5|8][\\d])|([4][4,5,6,7,8,9])|([6][2,5,6,7])|([7][^9])|([9][1,8,9]))[\\d]{8}$";// 验证手机号
+        if(!user.getUserPhonenumber().matches(s2)){
+            return false;
+        }
+        //首先查询根据传进来的电话号查询用户,如果为空则说明未注册
+        User user1 = userService.getOne(new QueryWrapper<User>().eq("user_phonenumber", user.getUserPhonenumber()));
+        if(user1 == null){
+            //随机生成用户名
+            Integer num1 = (int) ((Math.random() * 9 + 1) * 100000);
+            user.setUserName(num1 + "");    //封装用户名
+            user.setUserRole("3");
+            boolean registered = registered(user);
+            if(registered){
+                session.setAttribute("user", user);
+                return true;
+            }
+        }
+        session.setAttribute("user", user1);
+        return true;
+    }
+
+    /**
      * 注册
      * 新增一个用户
      * @param user
@@ -68,7 +100,7 @@ public class UserController implements UserControllerApi {
      * @param user
      * @return
      */
-    @GetMapping("/updateUser")
+    @PostMapping("/updateUser")
     @Override
     public boolean updateUser(@RequestBody User user) {
         return userService.updateById(user);
@@ -91,7 +123,7 @@ public class UserController implements UserControllerApi {
      * @param user
      * @return
      */
-    @GetMapping("/getUserByName")
+    @PostMapping("/getUserByName")
     @Override
     public User getUserByName(@RequestBody User user) {
         return userService.getOne(new QueryWrapper<User>().eq("user_name",user.getUserName()));
@@ -102,9 +134,9 @@ public class UserController implements UserControllerApi {
      * @param
      * @return
      */
-    @GetMapping("/getUserAuthentication")
+    @PostMapping("/getUserAuthentication")
     @Override
-    public Authentication getUserAuthentication(Integer userId) {
+    public Authentication getUserAuthentication(@RequestBody Integer userId) {
         return userService.getUserAuthentication(userId);
     }
 
@@ -137,9 +169,7 @@ public class UserController implements UserControllerApi {
      */
     @Override
     @PostMapping("/saveAuthentication")
-    public boolean saveAuthentication(Authentication authentication) {
+    public boolean saveAuthentication(@RequestBody Authentication authentication) {
         return authenticationService.save(authentication);
     }
-
-
 }
