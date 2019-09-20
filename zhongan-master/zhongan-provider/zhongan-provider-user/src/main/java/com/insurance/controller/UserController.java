@@ -13,12 +13,14 @@ import org.apache.ibatis.annotations.Select;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
+
 @RestController
 @RequestMapping("/user")
 public class UserController implements UserControllerApi {
     @Autowired
     private UserService userService;
-    @Autowired
+    @Resource
     private AuthenticationService authenticationService;
 
 
@@ -47,7 +49,23 @@ public class UserController implements UserControllerApi {
     @PostMapping("/falsLogin")
     @Override
     public User falsLogin(@RequestBody User user) {
-        return userService.getOne(new QueryWrapper<User>().eq("user_phonenumber",user.getUserPhonenumber()));
+        String s2="^[1](([3|5|8][\\d])|([4][4,5,6,7,8,9])|([6][2,5,6,7])|([7][^9])|([9][1,8,9]))[\\d]{8}$";// 验证手机号
+        if(!user.getUserPhonenumber().matches(s2)){
+            return null;
+        }
+        //首先查询根据传进来的电话号查询用户,如果为空则说明未注册
+        User user1 = userService.getOne(new QueryWrapper<User>().eq("user_phonenumber", user.getUserPhonenumber()));
+        if(user1 == null){
+            //随机生成用户名
+            Integer num1 = (int) ((Math.random() * 9 + 1) * 100000);
+            user.setUserName(num1 + "");    //封装用户名
+            user.setUserRole("3");
+            boolean registered = registered(user);
+            if(registered){
+                return user;
+            }
+        }
+        return user1;
     }
 
     /**
@@ -140,6 +158,4 @@ public class UserController implements UserControllerApi {
     public boolean saveAuthentication(Authentication authentication) {
         return authenticationService.save(authentication);
     }
-
-
 }

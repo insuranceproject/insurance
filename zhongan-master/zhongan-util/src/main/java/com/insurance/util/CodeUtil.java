@@ -58,8 +58,8 @@ public class CodeUtil {
 
     @Test
     public void Test_1111(){
-        Authentication authentication = realNameAuthentication("啊啊大大", "1241241512123132");
-        System.out.println(authentication);
+        /*Authentication authentication = realNameAuthentication("蒋超祥", "430523199907184374");
+        System.out.println(authentication);*/
     }
 
     /**
@@ -71,11 +71,12 @@ public class CodeUtil {
      */
     public Authentication realNameAuthentication(String authRealname, String authIdentitycard){
         String regex = "[\u4E00-\u9FA5]+";  //真实姓名
-        String regex1 = "\\d{15}(\\d{2}[0-9xX])?";   //身份证
+        String regularExpression = "(^[1-9]\\d{5}(18|19|20)\\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\\d{3}[0-9Xx]$)|" +
+                "(^[1-9]\\d{5}\\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\\d{3}$)";   //身份证
         if(!authRealname.matches(regex)){
             return null;    //输入的值不是中文直接返回null
         }
-        if(!authIdentitycard.matches(regex1)){
+        if(!authIdentitycard.matches(regularExpression)){
             return null;
         }
         String host = "https://checkid.market.alicloudapi.com";
@@ -91,6 +92,7 @@ public class CodeUtil {
             int httpCode = 0;
             httpCode = httpURLConnection.getResponseCode();
             String data = read(httpURLConnection.getInputStream());
+            System.out.println(data);
             //将第一个与最后一个字符去掉
             data = data.substring(1, data.length() - 1);
             //将所有的"号替换成空
@@ -105,8 +107,8 @@ public class CodeUtil {
                 String[] str2 = str1[i].split(":");
                 //str2[0]为KEY,str2[1]为值
                 map.put(str2[0], str2[1]);
-                if (map.get("status").equals("02")){
-                    break;
+                if (!map.get("status").equals("01")){
+                    return null;
                 }
             }
             if(map.get("status").equals("01")){
