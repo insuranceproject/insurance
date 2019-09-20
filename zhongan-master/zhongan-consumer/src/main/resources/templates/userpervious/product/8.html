@@ -1,0 +1,1238 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>安心飞3.0无人机第三者责任险 企业版</title>
+    <META NAME="Keywords" CONTENT="众安保险,众安在线,众安保险官网,让保险有温度,做有温度的保险">
+    <META NAME="Description" CONTENT="众安保险是国内首家也是唯一一家互联网保险公司，个性化定制风险解决方案，全方位采用互联网先进科技，追求流畅、贴心、温暖的用户体验">
+    <link type="image/x-icon" rel="shortcut icon" href="http://47.93.221.88/previous/userpervious/product/image/favicon.ico">
+    <script type="text/javascript" src="http://47.93.221.88/previous/userpervious/product/js/jquery.min.js"></script>
+    <script src="http://47.93.221.88/previous/userpervious/product/js/jquery-1.8.3.min.js"></script>
+    <link href="http://47.93.221.88/previous/userpervious/product/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://47.93.221.88/previous/userpervious/product/css/index.css">
+    <link href="http://47.93.221.88/previous/userpervious/product/css/anxf_corporation.css" rel="stylesheet">
+
+    <link type="text/css" rel="stylesheet" href="http://47.93.221.88/previous/userpervious/product/css/zeroCalendar.css">
+    <link type="text/css" rel="stylesheet" href="http://47.93.221.88/previous/userpervious/product/css/zeroSelect.css">
+    <script src="http://47.93.221.88/previous/userpervious/product/js/zz.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(".td-3 tr:not(:first):not(:eq(2))").hover(function () {
+                $(this).addClass("plan-mask-active").siblings().removeClass("plan-mask-active");
+                $("#planMaskSelectPanel>div:eq("+$(this).index()+")").addClass("plan-mask-active").siblings().removeClass("plan-mask-active");
+            })
+            $("#planMaskSelectPanel>div:not(:first):not(:eq(2))").hover(function () {
+                $(this).addClass("plan-mask-active").siblings().removeClass("plan-mask-active");
+                $(".td-3 tr:eq("+$(this).index()+")").addClass("plan-mask-active").siblings().removeClass("plan-mask-active");
+            })
+            $("#c-select-wrap1").click(function () {
+                if($(this).parent().attr("class") == "preminm-factor-control po-re bindSingleChoose active"){
+                    $(this).parent().removeClass("active");
+                    $("#useType").slideUp("500");
+                }else{
+                    $(this).parent().addClass("active");
+                    $("#useType").slideDown("500");
+                }
+            })
+            $("#c-select-wrap2").click(function () {
+                if($(this).parent().attr("class") == "preminm-factor-control po-re frm-select-muilt-index active"){
+                    $(this).parent().removeClass("active");
+                    $(".multChoose").slideUp("500");
+                }else{
+                    $(this).parent().addClass("active");
+                    $(".multChoose").slideDown("500");
+                }
+            })
+            $("#c-select-wrap3").click(function () {
+                if($(this).parent().attr("class") == "preminm-factor-control po-re bindSingleChoose active"){
+                    $(this).parent().removeClass("active");
+                    $("#v-plan-model").slideUp("500");
+                }else{
+                    $(this).parent().addClass("active");
+                    $("#v-plan-model").slideDown("500");
+                }
+            })
+        })
+    </script>
+</head>
+<body class="prduct-detail">
+<link href="http://47.93.221.88/previous/userpervious/product/css/za-common.css" rel="stylesheet"><!--header  start-->
+<div th:replace="/public/public_head :: head"></div>
+<div th:replace="/public/public_head :: nav"></div>
+<form id="info">
+    <input type="hidden" name="bizCode" id="bizCode" value="PCGW">
+    <input type="hidden" name="payChannel" id="payChannel" value="">
+    <input type="hidden" name="bizContent" id="bizContent" value="">
+    <input type="hidden" name="productBrand" id="productBrand1" value="">
+    <input type="hidden" name="productModel" id="productModel1" value="">
+    <input type="hidden" name="productUsage1" id="productUsage1" value="">
+    <input type="hidden" name="productUsage" id="productUsage" value="">
+    <input type="hidden" name="uavCarry" id="uavCarry" value="">
+    <input type="hidden" name="productUsageText" id="productUsageText" value="">
+    <input type="hidden" name="productUsageDes" id="productUsageDes" value="">
+    <input type="hidden" name="insurePlan" id="insurePlan" value="3">
+    <input type="hidden" name="brandCodes" id="brandCodes" value="">
+    <input type="hidden" name="key" id="key" value="uavCor20190828121431q9T">
+    <input type="hidden" name="batchKey" id="batchKey" value="corUavBatch20190828121431p5s">
+    <input type="hidden" name="backUrl" id="backUrl" value="http://digital.zhongan.com/uav/corporation/uavIndex.htm?promotionCode=PCGW">
+</form>
+<div id="viewport">
+    <div class="fixed-header" id="fixedHeader">
+        <div class="header-inner clearfix">
+            <h2 class="header-left" th:title="${product.productName}" th:text="${product.productName}" title="安心飞3.0无人机第三者责任险 个人版">安心飞3.0无人机第三者责任险 个人版</h2>
+            <div class="header-right">
+                <div class="header-price clearfix">
+                    <span class="selected-plan-name"></span>
+                    <b id="fixedSelectedPlanPrice" th:text="${product.productPrice}">35</b>
+                    <span>元</span>
+                </div>
+                <div class="header-location-plan">
+                    <a href="javascript:;" data-ilog="410.00001.u.1" class="specialInsurance-bth" name="planContent">试算保费</a>
+                </div>
+                <button class="subBtn" data-ilog="410.00001.u.2" event-src="btnSubmit">立即投保</button>
+            </div>
+        </div>
+    </div>
+    <div class="content-wrap">
+        <div class="header-banner-bg" style="background-image: url('http://47.93.221.88/previous/userpervious/product/image/bg-corporation.png');"></div>
+        <div class="content">
+            <div class="header-banner" id="banner" style="background-image: url('http://47.93.221.88/previous/userpervious/product/image/banner-corporation.png');">
+                <div class="header-info" >
+                    <h2>安心飞3.0无人机第三者责任险 企业版</h2>
+                    <p>无人机伤人损物两全保障</p>
+                </div>
+                <div class="header-content">
+                    <div class="header-banner-price">
+                        <b id="banSelectedPlanPrice">300</b>
+                        <span>元起</span>
+                    </div>
+                </div>
+            </div>
+            <div class="person_title">
+                <a data-ilog="410.00004.u.3" href="https://digital.zhongan.com/uav/uavIndex.htm?promotionCode=PCGW" class="tt"><span class="txt">个人用户请移步安心飞个人版</span><span class="arrow"></span></a>
+            </div>
+            <div class="common-shadow">
+                <div class="plan-content clearfix" id="planContent">
+                    <div class="plan-mask" id="planMask">
+
+                        <div id="planMaskSelectPanel" class="plan-mask-select-panel" style="width: 148px; height: 376.5px; top: -3.5px; left: 536px; opacity: 1; display: block;"><div class="selected-panel-item plan-mask-header-row plan-mask-row-0 plan-mask-td-3" style="height:61px;line-height:61px ">
+                            <div class="plan-mask-text plan-mask-header">
+                                <i class="plan-mask-recommend"></i>
+                                <span>黄金版</span>
+                            </div>
+                        </div><div class="selected-panel-item plan-mask-content plan-mask-row-1 plan-mask-td-3" style="height:64px;line-height:64px ">
+                            <div class="plan-mask-text">
+                                <span class="vam_dis">累计50万，每次事故25万</span><span class="valignM"></span>
+                            </div>
+                        </div><div class="selected-panel-item plan-mask-content plan-mask-row-2 plan-mask-td-3" style="height:84px;line-height:84px ">
+                            <div class="plan-mask-text">
+                                <span class="vam_dis">物损:每次2000元或损失金额的10%，高者为准</span><span class="valignM"></span>
+                            </div>
+                        </div><div class="selected-panel-item not-hover plan-mask-row-3 plan-mask-td-3" style="height:25px;line-height:25px ">
+                            <div class="split-top">&nbsp;</div>
+                        </div><div class="selected-panel-item plan-mask-row-4 plan-mask-td-3" style="height:45px;line-height:45px ">
+                            <div class="plan-mask-text  ">
+                                1年
+                            </div>
+                        </div><div class="selected-panel-item plan-mask-row-5 plan-mask-td-3" style="height:45px;line-height:45px ">
+                            <div class="plan-mask-text  ">
+												<span class="vam_dis"><span class="td_productUsage">影视/航拍</span>
+												<i class="za-tootip td_productUsageDes" data-tootip="&lt;p&gt;指影视/航拍等用途&lt;/p&gt;"></i></span><span class="valignM"></span>
+                            </div>
+                        </div><div class="selected-panel-item plan-mask-row-6 plan-mask-td-3 plan-mask-active" style="height:52px;line-height:52px ">
+                            <div class="plan-mask-text plan-mask-price ">
+
+                                <span class="priceShow">1500</span><b> 元起</b>
+
+                            </div>
+                        </div></div>
+
+
+                        <table class="td-3">
+                            <colgroup span="3">
+                                <col width="236">
+                                <col width="150">
+                                <col width="150">
+                                <col width="150">
+                                <col width="150">
+                            </colgroup>
+                            <tbody>
+                            <tr class="plan-mask-header-row plan-mask-row-0">
+                                <td class="plan-mask-td-0">
+                                    <div class="plan-mask-text plan-mask-header">
+                                        <span></span>
+                                    </div>
+                                </td>
+                                <td class="plan-mask-td-1">
+                                    <div class="plan-mask-text plan-mask-header">
+                                        <span>经典版</span>
+                                    </div>
+                                </td>
+                                <td class="plan-mask-td-2">
+                                    <div class="plan-mask-text plan-mask-header">
+                                        <span>白银版</span>
+                                    </div>
+                                </td>
+                                <td class="plan-mask-td-3">
+                                    <div class="plan-mask-text plan-mask-header">
+                                        <i class="plan-mask-recommend"></i>
+                                        <span>黄金版</span>
+                                    </div>
+                                </td>
+                                <td class="plan-mask-td-4">
+                                    <div class="plan-mask-text plan-mask-header">
+                                        <i class="plan-mask-recommend"></i>
+                                        <span>铂金版</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="plan-mask-content plan-mask-row-1">
+                                <td class="plan-mask-td-0">
+                                    <div class="plan-mask-text">
+                                        赔偿限额
+                                    </div>
+                                </td>
+                                <td class="plan-mask-td-1">
+                                    <div class="plan-mask-text">
+                                        <span class="vam_dis">累计10万，每次事故5万</span><span class="valignM"></span>
+                                    </div>
+                                </td>
+                                <td class="plan-mask-td-2">
+                                    <div class="plan-mask-text">
+                                        <span class="vam_dis">累计20万，每次事故10万</span><span class="valignM"></span>
+                                    </div>
+                                </td>
+                                <td class="plan-mask-td-3">
+                                    <div class="plan-mask-text">
+                                        <span class="vam_dis">累计50万，每次事故25万</span><span class="valignM"></span>
+                                    </div>
+                                </td>
+                                <td class="plan-mask-td-4">
+                                    <div class="plan-mask-text">
+                                        <span class="vam_dis">累计100万，每次事故50万</span><span class="valignM"></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="plan-mask-content plan-mask-row-2">
+                                <td class="plan-mask-td-0">
+                                    <div class="plan-mask-text">
+                                        免赔额
+                                    </div>
+                                </td>
+                                <td class="plan-mask-td-1">
+                                    <div class="plan-mask-text">
+                                        <span class="vam_dis">物损:每次2000元或损失金额的10%，高者为准</span><span class="valignM"></span>
+                                    </div>
+                                </td>
+                                <td class="plan-mask-td-2">
+                                    <div class="plan-mask-text">
+                                        <span class="vam_dis">物损:每次2000元或损失金额的10%，高者为准</span><span class="valignM"></span>
+                                    </div>
+                                </td>
+                                <td class="plan-mask-td-3">
+                                    <div class="plan-mask-text">
+                                        <span class="vam_dis">物损:每次2000元或损失金额的10%，高者为准</span><span class="valignM"></span>
+                                    </div>
+                                </td>
+                                <td class="plan-mask-td-4">
+                                    <div class="plan-mask-text">
+                                        <span class="vam_dis">物损:每次2000元或损失金额的10%，高者为准</span><span class="valignM"></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="not-hover plan-mask-row-3">
+                                <td class="plan-mask-td-0">
+                                    <div class="split-top">&nbsp;</div>
+                                </td>
+                                <td class="plan-mask-td-1">
+                                    <div class="split-top">&nbsp;</div>
+                                </td>
+                                <td class="plan-mask-td-2">
+                                    <div class="split-top">&nbsp;</div>
+                                </td>
+                                <td class="plan-mask-td-3">
+                                    <div class="split-top">&nbsp;</div>
+                                </td>
+                                <td class="plan-mask-td-4">
+                                    <div class="split-top">&nbsp;</div>
+                                </td>
+                            </tr>
+                            <tr class="plan-mask-row-4">
+                                <td class="plan-mask-td-0">
+                                    <div class="plan-mask-text  ">
+                                        保障期限
+                                    </div>
+                                </td>
+                                <td class="plan-mask-td-1">
+                                    <div class="plan-mask-text  ">
+                                        1年
+                                    </div>
+                                </td>
+                                <td class="plan-mask-td-2">
+                                    <div class="plan-mask-text  ">
+                                        1年
+                                    </div>
+                                </td>
+                                <td class="plan-mask-td-3">
+                                    <div class="plan-mask-text  ">
+                                        1年
+                                    </div>
+                                </td>
+                                <td class="plan-mask-td-4">
+                                    <div class="plan-mask-text  ">
+                                        1年
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="plan-mask-row-5">
+                                <td class="plan-mask-td-0">
+                                    <div class="plan-mask-text  ">
+                                    </div>
+                                </td>
+                                <td class="plan-mask-td-1">
+                                    <div class="plan-mask-text  ">
+												<span class="vam_dis"><span class="td_productUsage">影视/航拍</span>
+												<i class="za-tootip td_productUsageDes" data-tootip="&lt;p&gt;指影视/航拍等用途&lt;/p&gt;"></i></span><span class="valignM"></span>
+                                    </div>
+                                </td>
+                                <td class="plan-mask-td-2">
+                                    <div class="plan-mask-text  ">
+												<span class="vam_dis"><span class="td_productUsage">影视/航拍</span>
+												<i class="za-tootip td_productUsageDes" data-tootip="&lt;p&gt;指影视/航拍等用途&lt;/p&gt;"></i></span><span class="valignM"></span>
+                                    </div>
+                                </td>
+                                <td class="plan-mask-td-3">
+                                    <div class="plan-mask-text  ">
+												<span class="vam_dis"><span class="td_productUsage">影视/航拍</span>
+												<i class="za-tootip td_productUsageDes" data-tootip="&lt;p&gt;指影视/航拍等用途&lt;/p&gt;"></i></span><span class="valignM"></span>
+                                    </div>
+                                </td>
+                                <td class="plan-mask-td-4">
+                                    <div class="plan-mask-text  ">
+												<span class="vam_dis"><span class="td_productUsage">影视/航拍</span>
+												<i class="za-tootip td_productUsageDes" data-tootip="&lt;p&gt;指影视/航拍等用途&lt;/p&gt;"></i></span><span class="valignM"></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="plan-mask-row-6 plan-mask-active">
+                                <td class="plan-mask-td-0">
+                                    <div class="plan-mask-text plan-mask-price ">
+                                    </div>
+                                </td>
+                                <td class="plan-mask-td-1">
+                                    <div class="plan-mask-text plan-mask-price ">
+
+                                        <span class="priceShow">300</span><b> 元起</b>
+
+                                    </div>
+                                </td>
+                                <td class="plan-mask-td-2">
+
+                                    <div class="plan-mask-text plan-mask-price ">
+
+                                        <span class="priceShow">600</span><b> 元起</b>
+
+                                    </div>
+                                </td>
+                                <td class="plan-mask-td-3">
+                                    <div class="plan-mask-text plan-mask-price ">
+
+                                        <span class="priceShow">1500</span><b> 元起</b>
+
+                                    </div>
+                                </td>
+                                <td class="plan-mask-td-4">
+                                    <div class="plan-mask-text plan-mask-price ">
+
+                                        <span class="priceShow">3000</span><b> 元起</b>
+
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <div class="premium-factor">
+                        <div class="premium-factor-item">
+                            <p>作业用途</p>
+                            <div class="preminm-factor-control po-re bindSingleChoose">
+                                <div class="c-select-wrap" id="c-select-wrap1">
+                                    <div class="c-select">
+                                        <div class="c-selected-text js-selected-text"></div>
+                                        <b></b>
+                                    </div>
+                                </div>
+                                <div class="singleChoose chooseType dis-none" id="useType" style="">
+                                    <ul class="clearfix">
+                                        <li><a data-ilog="410.00004.u.4" href="javascript:;" data="1" data-des="指新闻拍摄、直播、无人机表演与展示、婚礼摄影、影视剧航拍等文化与创意活动用途。">影视航拍</a></li>
+                                        <li><a data-ilog="410.00004.u.4" href="javascript:;" data="2" data-des="指消防警用、救灾搜救、安防执法、安保监督、交通事故处理与执法、河道巡检与执法等用途。">公共安全</a></li>
+                                        <li><a data-ilog="410.00004.u.4" href="javascript:;" data="7" data-des="指房地产航拍、建筑勘测、施工管理、建筑监测、桥梁巡检、矿业监测、码头及港口监测与巡检等用途。">建筑及基础设施巡检</a></li>
+                                        <li><a data-ilog="410.00004.u.4" href="javascript:;" data="10" data-des="教育机构或训练机构通过培训驾驶技术及运行要求，以培养符合资质要求的无人机驾驶员为目的而开展的无人机飞行训练用途。">教育培训</a></li>
+                                        <li><a data-ilog="410.00004.u.4" href="javascript:;" data="3" data-des="指发电站巡检、石油天然气设备监测、电力巡线、核电站巡检等用途。">能源巡检</a></li>
+                                        <li><a data-ilog="410.00004.u.4" href="javascript:;" data="8" data-des="指基站信号改善、场强分布测试、光钎、通信线路巡检等用途。">通信巡检</a></li>
+                                        <li><a data-ilog="410.00004.u.4" href="javascript:;" data="4" data-des="指土壤和土地分析、种植、农作物监控、农作物喷洒、农作物健康检测、森林巡检等用途。">农林业</a></li>
+                                        <li><a data-ilog="410.00004.u.4" href="javascript:;" data="5" data-des="指DOM正射影像获取，三维建模等用途。">勘察测绘</a></li>
+                                        <li><a data-ilog="410.00004.u.4" href="javascript:;" data="6" data-des="指邮件快递货物运输、外卖送餐等用途。">物流运输</a></li>
+                                        <li><a data-ilog="410.00004.u.4" href="javascript:;" data="9" data-des="指空气、水、动物、气象监测等用途。">环保监测</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="premium-factor-item">
+                            <p>无人机机型</p>
+                            <div data-ilog="410.00004.u.5" class="preminm-factor-control po-re frm-select-muilt-index" id="planListType">
+                                <div class="c-select-wrap" id="c-select-wrap2">
+                                    <div class="c-select">
+                                        <div class="c-selected-text js-selected-text" id="planType"></div>
+                                        <b></b>
+                                    </div>
+                                </div>
+                                <div class="multChoose chooseType dis-none" style="">
+                                    <div class="itemsNav" id="itemsNav">
+                                        <a data-ilog="410.00004.u.6" class="on" href="javascript:;" data="0">品牌</a>
+                                        <a data-ilog="410.00004.u.7" href="javascript:;" data="1">机型</a>
+                                    </div>
+                                    <div class="items">
+                                        <ul class="clearfix" id="v-model">
+
+                                        </ul>
+                                    </div>
+                                    <div class="items dis-none">
+                                        <ul class="clearfix" id="v-type">
+                                            <!-- 											<li><a class="on" href="javascript:;">x11</a></li> -->
+                                            <!-- 											<li><a href="javascript:;">x11</a></li> -->
+                                            <!-- 											<li><a href="javascript:;">x11</a></li> -->
+                                            <!-- 											<li><a href="javascript:;">x11</a></li> -->
+                                            <!-- 											<li><a href="javascript:;">x11</a></li> -->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="premium-factor-item">
+                            <p>保障计划</p>
+                            <div class="preminm-factor-control po-re bindSingleChoose">
+                                <div class="c-select-wrap" id="c-select-wrap3">
+                                    <div class="c-select">
+                                        <div class="c-selected-text js-selected-text">黄金版</div>
+                                        <b></b>
+                                    </div>
+                                </div>
+                                <div class="singleChoose chooseType dis-none" id="v-plan-model" style="">
+                                    <ul class="clearfix">
+                                        <li><a data-ilog="410.00004.u.10" href="javascript:;" data="1">经典版</a></li>
+                                        <li><a data-ilog="410.00004.u.10" href="javascript:;" data="2">白银版</a></li>
+                                        <li><a data-ilog="410.00004.u.10" class="on" href="javascript:;" data="3">黄金版</a></li>
+                                        <li><a data-ilog="410.00004.u.10" href="javascript:;" data="4">铂金版</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="premium-factor-selected-price" id="premium-factor-selected-price">
+                            <b id="selectedPlanPrice" style="font-size: 40px;">1500</b>
+                            <span id="priceUnit">元</span>
+                        </div>
+                        <button data-ilog="410.00004.u.2" class="premium-factor-buy subBtn" event-src="btnSubmit">
+                            立即投保
+                        </button>
+                        <p class="premium-factor-insure-text" id="premiumFactorInsureText">
+                            请阅读
+                            <a data-ilog="410.00004.u.11" href="https://digital.zhongan.com/uav/corporation/uavInsureInstruction.htm" target="_blank">《投保须知》</a>
+                            和
+                            <a data-ilog="410.00004.u.12" href="https://static.zhongan.com/website/other/documents/wrjdsfzrx.pdf" target="_blank">《保险条款》</a>
+                            了解更多详情
+                        </p>
+                    </div>
+                </div>
+                <div id="moreIntroduce" class="more-introduce clearfix">
+
+
+                    <div class="more-introduce-content">
+                        <div class="more-introduce-content-inner" style="top: 0%;">
+
+                            <img src="http://47.93.221.88/previous/userpervious/product/image/ban04-corporation.png">
+
+                            <img src="http://47.93.221.88/previous/userpervious/product/image/ban03-corporation.png">
+
+                            <img src="http://47.93.221.88/previous/userpervious/product/image/ban01-corporation.png">
+
+                            <img src="http://47.93.221.88/previous/userpervious/product/image/ban02-corporation.png">
+
+                        </div>
+                    </div>
+                    <ul class="more-introduce-list">
+
+                        <li data-index="0" class="active">
+                            <img src="http://47.93.221.88/previous/userpervious/product/image/ban04-m-corporation.png">
+                        </li>
+
+                        <li data-index="1" class="">
+                            <img src="http://47.93.221.88/previous/userpervious/product/image/ban03-m-corporation.png">
+                        </li>
+
+                        <li data-index="2" class="">
+                            <img src="http://47.93.221.88/previous/userpervious/product/image/ban01-m-corporation.png">
+                        </li>
+
+                        <li data-index="3" class="">
+                            <img src="http://47.93.221.88/previous/userpervious/product/image/ban02-m-corporation.png">
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="buyStep common-shadow">
+                <P class="title">采购流程</P>
+                <div class="content-main clearfix">
+                    <div class="content-left">
+                        <img src="http://47.93.221.88/previous/userpervious/product/images/adv.png"/>
+                    </div>
+                    <div class="content-right">
+                        <div class="steps-right">
+                            <div class="steps-item">
+                                <p>选择投保信息和机型</p>
+                            </div>
+                            <div class="steps-item">
+                                <p>若为机库存在机型，录入承保信息，支付保费，生成电子保单；</p>
+                            </div>
+                            <div class="steps-item">
+                                <p>若为其他机型，录入承保信息，等待人工核保线下报价，支持对公转账，完成保险采购。</p>
+                                <p>与产品有关的任何疑问，请咨询uav@zhongan.com.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-qa-content common-shadow">
+                <ul class="tab-nav clearfix">
+                    <li class="tab-nav-first active" data="0">
+                        <div>流程介绍</div>
+                    </li>
+                    <li class="tab-nav-last" data="1">
+                        <div>常见问题</div>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="claimprocess-content">
+                        <div id="claimprocessContent">
+
+
+                            <ul class="clearfix calimprocess-list">
+
+
+                                <li class="process-item" style="width: 210px">
+                                    <div class="process-img">
+                                        <img src="http://47.93.221.88/previous/userpervious/product/image/1496807077918_icon1.png">
+                                    </div>
+                                    <p>
+                                        申请理赔拨打1010-9955或400-999-9595官方客服热线或在官网、APP中“申请理赔”
+
+                                        <i data-tootip="备用" class="za-tootip"></i>
+
+                                    </p>
+                                </li>
+
+                                <li class="process-arrow-item">
+                                    <div class="process-arrow"></div>
+                                </li>
+
+
+                                <li class="process-item" style="width: 210px">
+                                    <div class="process-img">
+                                        <img src="http://47.93.221.88/previous/userpervious/product/image/1496807083043_icon2.png">
+                                    </div>
+                                    <p>
+                                        根据保险条款规定准备理赔材料并提交
+
+                                        <i data-tootip="根据保险条款规定提供理赔所需材料通常包括（但不限于）： &lt;br &gt;&lt;/i&gt;·身份证明； &lt;br /&gt;·保险合同凭证； &lt;br /&gt;·确认保险事故的性质、原因、损失程度等有关的其他证明和资料； &lt;br /&gt;详细请参看条款中“保险金申请与给付”部分&lt;br /&gt;&lt;br /&gt;材料提供方式：&lt;br /&gt; 网络提供、自动理赔、寄送"
+                                           class="za-tootip"></i>
+
+                                    </p>
+                                </li>
+
+                                <li class="process-arrow-item">
+                                    <div class="process-arrow"></div>
+                                </li>
+
+
+                                <li class="process-item" style="width: 210px">
+                                    <div class="process-img">
+                                        <img src="http://47.93.221.88/previous/userpervious/product/image/1496807088582_icon3.png">
+                                    </div>
+                                    <p>
+                                        确属保险责任，赔付协议
+
+                                    </p>
+                                </li>
+
+                                <li class="process-arrow-item">
+                                    <div class="process-arrow"></div>
+                                </li>
+
+
+                                <li class="process-item" style="width: 210px">
+                                    <div class="process-img">
+                                        <img src="http://47.93.221.88/previous/userpervious/product/image/1496807094365_icon4.png">
+                                    </div>
+                                    <p>
+                                        达成后10天内，赔款资金将支付至被保险人或受益人账户
+
+                                    </p>
+                                </li>
+
+
+                            </ul>
+
+                        </div>
+                        <!--<div class="steps">
+                            <div class="steps-item">
+                                <p class="p1">简述事故经过</p>
+                                <p>提供保单号及承保无人机机身编码、操作人员身份证复印件；</p>
+                            </div>
+                            <div class="steps-item">
+                                <p class="p1">提供初步资料</p>
+                                <p>事故现场照片和视频、事故发生时的飞行数据、第三者物损及人伤损失金额估计；</p>
+                            </div>
+                            <div class="steps-item">
+                                <p class="p1">若需要查勘，配合众安进行事故查勘</p>
+                            </div>
+                            <div class="steps-item last">
+                                <p class="p1">提供进一步理赔资料</p>
+                                <p>索赔申请书；</p>
+                                <p>事故经过书面说明；</p>
+                                <p>公安机关或其他权利机构出具的就事故发生的第三方书面文件；</p>
+                                <p>生效的法律文书；</p>
+                                <p>涉及物质损失：受损财产清单、原始票据或其他能够证明财产价值的单据原件；</p>
+                                <p>涉及人身伤亡：医疗费用原始发票、单证、诊断证明、死亡证明或残疾程度鉴定书；</p>
+                                <p>赔偿支付证明；</p>
+                                <p>操作人员无人机操作资质证书；</p>
+                                <p>其他相关资料</p>
+                            </div>
+                        </div>-->
+                    </div>
+                    <div class="qa-content clearfix" id="qaContent">
+
+
+                        <ul class="problemslist-item">
+
+
+                            <li class="problemslist-item-0">
+                                <div class="problemslist-inner">
+                                    <div class="problemslist-question clearfix">
+                                        <span class="problemslist-answer-head">Q：</span>
+                                        <div class="problemslist-answer-content">
+                                            <div>
+                                                什么是安心飞3.0企业版保险产品？
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="problemslist-answer clearfix">
+                                        <span class="problemslist-answer-head">A：</span>
+                                        <div class="problemslist-answer-content">
+                                            <div>
+                                                安心飞3.0企业版是众安推出的针对企业用户的无人机第三者责任保险，如果贵公司购买了保障，在保险生效的一年内，无人机在作业过程中，由于无人机或者从无人机上坠落的任何物体造成第三者财产损失和人身伤亡的，需要您承担经济赔偿责任的，由众安按照合同约定负责赔偿。详见保险条款。整体方案将按照行业作业的类型分类承保。
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+
+                            <li class="problemslist-item-2">
+                                <div class="problemslist-inner">
+                                    <div class="problemslist-question clearfix">
+                                        <span class="problemslist-answer-head">Q：</span>
+                                        <div class="problemslist-answer-content">
+                                            <div>
+                                                安心飞3.0企业版计划的有效期限？
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="problemslist-answer clearfix">
+                                        <span class="problemslist-answer-head">A：</span>
+                                        <div class="problemslist-answer-content">
+                                            <div>
+                                                安心飞3.0企业版计划的有效期为一年，企业用户可以选择生效日期，最长不超过30天。同一架无人机一个保险年度仅能在众安投保一次三责险,请根据需求选择经典版、白银版、黄金版和铂金版计划。
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+
+                            <li class="problemslist-item-4">
+                                <div class="problemslist-inner">
+                                    <div class="problemslist-question clearfix">
+                                        <span class="problemslist-answer-head">Q：</span>
+                                        <div class="problemslist-answer-content">
+                                            <div>
+                                                无人机在国外发生第三者责任事故是否可以理赔？
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="problemslist-answer clearfix">
+                                        <span class="problemslist-answer-head">A：</span>
+                                        <div class="problemslist-answer-content">
+                                            <div>
+                                                不能，保单的承保区域范围为中华人民共和国境内，不包含港澳台。
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+
+                            <li class="problemslist-item-6">
+                                <div class="problemslist-inner">
+                                    <div class="problemslist-question clearfix">
+                                        <span class="problemslist-answer-head">Q：</span>
+                                        <div class="problemslist-answer-content">
+                                            <div>
+                                                企业投保如何支付保费？
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="problemslist-answer clearfix">
+                                        <span class="problemslist-answer-head">A：</span>
+                                        <div class="problemslist-answer-content">
+                                            <div>
+                                                目前可在线投保的企业版支持支付宝、微信、银联支付，其中银联BtoB支付指南如下：需人工核保的安心飞企业版支持对公转账付款。
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+
+                            <li class="problemslist-item-8">
+                                <div class="problemslist-inner">
+                                    <div class="problemslist-question clearfix">
+                                        <span class="problemslist-answer-head">Q：</span>
+                                        <div class="problemslist-answer-content">
+                                            <div>
+                                                怎样索取增值税发票？
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="problemslist-answer clearfix">
+                                        <span class="problemslist-answer-head">A：</span>
+                                        <div class="problemslist-answer-content">
+                                            <div>
+                                                您成功投保后，若开具增值税普通发票，可登录众安保险官网-保险服务-保单查询下载电子发票。<br>若需要增值税纸质发票，请在收到承保邮件后，根据提示提供以下信息，并邮件至uav@zhongan.com，我们将在收到信息后，五个工作日内开具发票并递送：<br>1.保单号码<br>2.公司名称<br>3.纳税人识别号(统一社会信用代码）<br>若开具增值税专业发票，请填写以下信息，我们将安排递送：<br>1.保单号码<br>2.公司名称<br>3.纳税人识别号(统一社会信用代码）<br>4.注册地址<br>5.企业联系电话<br>6.开户银行名称<br>7.开户银行账号<br>8.纳税人类型（类型为：增值税一般纳税人；增值税小规模纳税人；其他（请详细说明））<br>9.收件人姓名<br>10.收件人电话<br>11.邮寄地址
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+
+                            <li class="problemslist-item-10">
+                                <div class="problemslist-inner">
+                                    <div class="problemslist-question clearfix">
+                                        <span class="problemslist-answer-head">Q：</span>
+                                        <div class="problemslist-answer-content">
+                                            <div>
+                                                无人机若由于产品质量问题退换厂商跟换新机，是否可以办理保险变更？
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="problemslist-answer clearfix">
+                                        <span class="problemslist-answer-head">A：</span>
+                                        <div class="problemslist-answer-content">
+                                            <div>
+                                                无人机若因质量问题由厂商售后换机，机身编码发生变化，请提供厂商更换的证明，并填写批改申请书，办理保险变更。
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+
+                            <li class="problemslist-item-12">
+                                <div class="problemslist-inner">
+                                    <div class="problemslist-question clearfix">
+                                        <span class="problemslist-answer-head">Q：</span>
+                                        <div class="problemslist-answer-content">
+                                            <div>
+                                                电子保单靠谱么？
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="problemslist-answer clearfix">
+                                        <span class="problemslist-answer-head">A：</span>
+                                        <div class="problemslist-answer-content">
+                                            <div>
+                                                众安保险采用电子保险单承保，法律效力等同于纸质保单。
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+
+                            <li class="problemslist-item-14">
+                                <div class="problemslist-inner">
+                                    <div class="problemslist-question clearfix">
+                                        <span class="problemslist-answer-head">Q：</span>
+                                        <div class="problemslist-answer-content">
+                                            <div>
+                                                我的隐私安全吗？
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="problemslist-answer clearfix">
+                                        <span class="problemslist-answer-head">A：</span>
+                                        <div class="problemslist-answer-content">
+                                            <div>
+                                                请放心！我们严格遵守现行的关于个人信息、数据及隐私保护的法律法规，采取充分的技术手段和制
+                                                度管理，保护您提供给我们的个人信息、数据和隐私不受到非法的泄露或披露给未获授权的第三方。您还可以登录众安保险官网：www.zhongan.com查阅众安隐私声明。
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+
+                        </ul>
+                        <ul class="problemslist-item">
+
+
+                            <li>
+                                <div class="problemslist-inner">
+                                    <div class="problemslist-question clearfix">
+                                        <span class="problemslist-answer-head">Q：</span>
+                                        <div class="problemslist-answer-content">
+                                            <div>
+                                                不属于安心飞3.0企业版计划的承保范围？
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="problemslist-answer clearfix">
+                                        <span class="problemslist-answer-head">A：</span>
+                                        <div class="problemslist-answer-content">
+                                            <div>
+                                                以下原因或情况造成的事故，不在承保范围内：<br>(1) 参见<a
+                                                    href="https://static.zhongan.com/website/other/documents/wrjdsfzrx.pdf"
+                                                    target="_blank">保险条款</a>，责任免除共20条；<br>(2)
+                                                被保险无人机起飞、飞行、降落的条件不符合制造商建议的标准时的事故，但因不可抗力所致的情况除外；<br>(3)
+                                                根据法律或合同约定应由供货人、制造人、安装人或修理人承担的费用或责任；
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+
+                            <li>
+                                <div class="problemslist-inner">
+                                    <div class="problemslist-question clearfix">
+                                        <span class="problemslist-answer-head">Q：</span>
+                                        <div class="problemslist-answer-content">
+                                            <div>
+                                                安心飞3.0企业版计划承保无人机哪些行业应用？
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="problemslist-answer clearfix">
+                                        <span class="problemslist-answer-head">A：</span>
+                                        <div class="problemslist-answer-content">
+                                            <div>
+                                                安心飞3.0企业版目前承保10个行业应用，若有其他行业用途，请联系uav@zhongan.com.主要线上承保用途如下：<br>1、影视航拍：指新闻拍摄、直播、无人机表演与展示、婚礼摄影、影视剧航拍等文化与创意活动用途。<br>2、公共安全：指消防警用、救灾搜救、安防执法、安保监督、交通事故处理与执法、河道巡检与执法等用途；<br>3、建筑及基础设施巡检：指房地产航拍、建筑勘测、施工管理、建筑监测、桥梁巡检、矿业监测、码头及港口监测与巡检等用途。<br>4、能源巡检：指发电站巡检、石油天然气设备监测、电力巡线、核电站巡检等用途；<br>5、农林业用途：指土壤和土地分析、种植、农作物监控、农作物喷洒、农作物健康检测、森林巡检等用途；<br>6、通信巡检：指基站信号改善、场强分布测试、光钎、通信线路巡检等用途；<br>7、勘察测绘：指DOM正射影像获取，三维建模等用途；<br>8、物流运输：指邮件快递货物运输、外卖送餐等用途；<br>9、环保监测：指空气、水、动物、气象监测等用途；<br>10、教育培训：教育机构或训练机构通过培训驾驶技术及运行要求，以培养符合资质要求的无人机驾驶员为目的而开展的无人机飞行训练用途。
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+
+                            <li>
+                                <div class="problemslist-inner">
+                                    <div class="problemslist-question clearfix">
+                                        <span class="problemslist-answer-head">Q：</span>
+                                        <div class="problemslist-answer-content">
+                                            <div>
+                                                无人机的机身编号如何查看？
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="problemslist-answer clearfix">
+                                        <span class="problemslist-answer-head">A：</span>
+                                        <div class="problemslist-answer-content">
+                                            <div>
+                                                Mavic Pro、Phantom 4位于机身电池仓内；<br>Phantom 3系列 、Inspire 系列位于机尾处；<br>M100系列在中心板内侧；<br>M200系列机尾对人，机体右侧；<br>M600系列在一号电池仓下；<br>S1000在机臂电机下。
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+
+                            <li>
+                                <div class="problemslist-inner">
+                                    <div class="problemslist-question clearfix">
+                                        <span class="problemslist-answer-head">Q：</span>
+                                        <div class="problemslist-answer-content">
+                                            <div>
+                                                无人机如导致第三者财产损失以及第三者人身伤亡如何进行理赔？
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="problemslist-answer clearfix">
+                                        <span class="problemslist-answer-head">A：</span>
+                                        <div class="problemslist-answer-content">
+                                            <div>
+                                                请您在工作日9:00-21:00第一时间致电众安保险服务热线1010-9955或400-999-9595，我们会核实您的无人机机身编码，身份信息、保单号码，确定您是否购买了安心飞3.0计划。同时，会要求您提供事故照片、视频以及出险时的飞行数据进行初步分析。后续会有专职理赔人员确定是否需要现场查勘，并指引提交理赔材料，让您尽快获得赔付。为降低或减少对第三者的赔偿责任为目的产生的仲裁或诉讼费用及律师费用，在事先经过我司书面同意的前提下，也能获得赔付。
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+
+                            <li>
+                                <div class="problemslist-inner">
+                                    <div class="problemslist-question clearfix">
+                                        <span class="problemslist-answer-head">Q：</span>
+                                        <div class="problemslist-answer-content">
+                                            <div>
+                                                无人机若变更使用性质导致危险程度增加，怎么办？
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="problemslist-answer clearfix">
+                                        <span class="problemslist-answer-head">A：</span>
+                                        <div class="problemslist-answer-content">
+                                            <div>
+                                                您需要及时书面通知众安，我们将酌情进行保全批改或明示拒绝投保，若无人机使用不符保单约定可能导致保单拒绝赔偿。
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+
+                            <li>
+                                <div class="problemslist-inner">
+                                    <div class="problemslist-question clearfix">
+                                        <span class="problemslist-answer-head">Q：</span>
+                                        <div class="problemslist-answer-content">
+                                            <div>
+                                                无人机若转让、转卖他人，是否可以继续享受保险服务？
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="problemslist-answer clearfix">
+                                        <span class="problemslist-answer-head">A：</span>
+                                        <div class="problemslist-answer-content">
+                                            <div>
+                                                不可以，若未发生保险事故，您可以选择退保，请登录官网-保险服务-申请批改-下载批改申请书（非团险）办理退保手续后，建议新用户重新购买新保单。
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+
+                            <li>
+                                <div class="problemslist-inner">
+                                    <div class="problemslist-question clearfix">
+                                        <span class="problemslist-answer-head">Q：</span>
+                                        <div class="problemslist-answer-content">
+                                            <div>
+                                                退保流程是怎样的？
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="problemslist-answer clearfix">
+                                        <span class="problemslist-answer-head">A：</span>
+                                        <div class="problemslist-answer-content">
+                                            <div>
+                                                在未发生保险理赔事故时，投保人可以申请书面形式通知众安解除保险合同。您提供下列证明文件和资料：a.批改申请书（众安官网-保险服务-申请批改，下载批改申请书（非团险））b.投保人身份证复印件。投保人申请解除保险合同的，自众安保险接到保险合同解除申请书次日零时起，保险合同效力终止。按照条款收取短期费率，并将退保金退还至支付保费的账户。
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+
+                            <li>
+                                <div class="problemslist-inner">
+                                    <div class="problemslist-question clearfix">
+                                        <span class="problemslist-answer-head">Q：</span>
+                                        <div class="problemslist-answer-content">
+                                            <div>
+                                                理赔需要哪些资料？
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="problemslist-answer clearfix">
+                                        <span class="problemslist-answer-head">A：</span>
+                                        <div class="problemslist-answer-content">
+                                            <div>
+                                                理赔需要的资料将根据事故的类型区分，主要包含以下资料：<br>1.保险合同凭证；<br>2.索赔申请书；<br>3.被保险人就保险事故的书面说明；<br>4.事故现场照片和视频；<br>5.被保险无人机事故发生时的飞行数据；<br>6.公安机关或其他权力机构就保险事故发生出具的第三方书面文件；<br>7.第三者的医疗费用的原始发票及单证、诊断证明、死亡证明或残疾程度鉴定书；<br>8.生效的法律文书（包括裁定书、裁决书、判决书、调解书等）或经保险人事先认可与第三者达成的赔偿协议；<br>9.第三者财产损失清单及原始票据或其他能够证明财产价值的单据原件；<br>10.被保险人赔偿支付证明；<br>11.驾驶员身份证明原件及复印件、无人机操作资质证书；<br>12.投保人、被保险人所能提供的与确认保险事故的性质、原因、损失程度等有关的其他证明和资料。
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--footer  start-->
+<div class="za-footer">
+    <div class="za-footer">
+        <div class="za-footer-layout">
+            <div class="za-footer-help">
+                <div class="help-item"><h4 class="help-item-hd">众安保险</h4>
+                    <ul class="za-footer-help-list">
+                        <li class="help-list-item"><a href="#" target="_blank" title="关于我们" rel="nofollow">关于我们</a>
+                        </li>
+                        <li class="help-list-item"><a href="#" target="_blank" title="新闻中心"
+                                                      rel="nofollow">新闻中心</a></li>
+                        <li class="help-list-item"><a href="#" target="_blank" title="加入我们"
+                                                      rel="nofollow">加入我们</a></li>
+                        <!--<li class="help-list-item"><a href="https://www.zhongan.com/channel/public/2018xiaozhao/index.html" target="_blank" title="2019校园招聘" rel="nofollow">2019校园招聘</a></li>-->
+                        <li class="help-list-item"><a href="#" target="_blank" title="隐私声明"
+                                                      rel="nofollow">隐私声明</a></li>
+                        <li class="help-list-item"><a href="#" target="_blank"
+                                                      title="风险提示" rel="nofollow">风险提示</a></li>
+                    </ul>
+                </div>
+                <div class="help-item"><h4 class="help-item-hd">发现</h4>
+                    <ul class="za-footer-help-list">
+                        <li class="help-list-item"><a href="#" target="_blank" title="网站地图">网站地图</a>
+                        </li>
+                        <li class="help-list-item"><a href="# " target="_blank"
+                                                      title="车险计算器">车险计算器</a></li>
+                        <li class="help-list-item"><a href="#" target="_blank"
+                                                      title="众安科技">众安科技</a></li>
+                        <li class="help-list-item"><a href="#" target="_blank" title="众安开放平台">众安开放平台</a>
+                        </li>
+                        <li class="help-list-item"><a href="#" target="_blank" title="众安小贷"
+                                                      rel="nofollow">众安小贷</a></li>
+                        <li class="help-list-item"><a href="#" target="_blank" title="投诉与建议"
+                                                      rel="nofollow">投诉与建议</a></li>
+                        <li class="help-list-item"><a href="#" target="_blank"
+                                                      title="众安安全应急响应中心" rel="nofollow">众安安全应急响应中心</a></li>
+                    </ul>
+                </div>
+                <div class="help-item"><h4 class="help-item-hd">关注众安</h4>
+                    <ul class="za-footer-help-list">
+                        <li class="help-list-item"><i class="icon-chat"></i>微信公众号<span class="code code-chat"></span>
+                        </li>
+                        <li class="help-list-item"><i class="icon-alipay"></i>支付宝服务窗<span
+                                class="code code-alipay"></span></li>
+                    </ul>
+                </div>
+                <div class="help-item help-item-server"><h4 class="help-item-hd">客户服务</h4>
+                    <div class="server-tel" style="font-size: 15px"><i class="icon-tel"></i><span class="tel-numb"
+                                                                                                  style="font-size: 16px">1010-9955 </span>
+                        <div>全国统一服务热线</div>
+                        <div>健康险报案服务时间：7×24小时</div>
+                    </div>
+                    <div class="server-tel" style="font-size: 15px"><i class="icon-tel"></i><span class="tel-numb"
+                                                                                                  style="font-size: 16px">021-80399188</span>
+                        <div>举报建议及投诉电话</div>
+                    </div>
+                    <p class="server-email" style="font-size: 15px"><i class="icon-email"></i><a
+                            href="mailto:cs@zhongan.com">客服邮箱：cs@zhongan.com</a></p>
+                    <p class="server-email" style="font-size: 15px"><i class="icon-email"></i><a
+                            href="mailto:jubao@zhongan.com">保险欺诈举报邮箱：jubao@zhongan.com</a></p></div>
+            </div>
+            <div class="za-footer-bd"><h4 class="footer-logo"><a href="#" title="众安保险">众安保险</a>
+            </h4>
+                <p class="footer-copyright"><a target="_blank"
+                                               href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010102004862"
+                                               rel="nofollow"><img
+                        src="http://47.93.221.88/previous/userpervious/product/image/police.png"
+                        style="vertical-align:-6px;margin-right:8px;" alt="沪公网安备 31010102004862号">沪公网安备 31010102004862号</a><a
+                        target="_blank" rel="nofollow" style="margin-left: 17px"
+                        href="http://www.miitbeian.gov.cn/"><img
+                        src="http://47.93.221.88/previous/userpervious/product/image/network.png"
+                        alt="沪ICP备13041135号-1" style="vertical-align:-4px;margin-right:8px;">沪ICP备13041135号-1</a><a
+                        target="_blank" style="margin-left: 17px"
+                        href="https://218.242.124.22:8082/businessCheck/verifKey.do?showType=extShow&serial=9031000020170721110206000001942333-SAIC_SHOW_310000-20131111112754954041&signData=MEUCIGONA4AG1pExDb6kOnq0gaicafgHzjVrZpf3YseTN5ZkAiEA/+LP3riJh9rj8/NlhMQS6OWt02fu1TeXWB59GYeY29w="
+                        rel="nofollow"><img width="20"
+                                            src="http://47.93.221.88/previous/userpervious/product/image/lz2.jpg"
+                                            alt="沪工商备 20131111112754954" style="vertical-align:-4px;margin-right:8px;">沪工商备
+                    20131111112754954</a></p></div>
+        </div>
+    </div><!--end  footer--><!--统计代码-->
+
+
+    <script>
+        var zero_config = {
+            staticPath: '//static.zhongan.com',
+            controller: 'js/uavIndexBase.js',
+            data: {
+                payInfo: {     //提交时需传递
+                    campaignDefId: '',
+                    goodsCode: '',
+                    packageDefId: '',
+                },
+                showInfo: {     //仅做页面展示
+                    startingPrice: '',
+                    productId: '',
+                    payNum: '1'
+                },
+                goodsName: '安心飞3.0无人机第三者责任险 企业版',
+                recommendReason: '无人机伤人损物两全保障',
+                goodsCode: '',
+                headerInfo: {
+                    mainImgList: '["image/banner-corporation.png","image/bg-corporation.png"]',
+                    discountActivitys: '[]'
+                },
+                tableData: {
+                    tableData: formatServerData([{
+                        "sumInsuredDesc": "累计10万，每次事故5万",
+                        "deductible": "物损:每次2000元或损失金额的10%，高者为准",
+                        "premium": "300"
+                    }, {
+                        "sumInsuredDesc": "累计20万，每次事故10万",
+                        "deductible": "物损:每次2000元或损失金额的10%，高者为准",
+                        "premium": "600"
+                    }, {
+                        "sumInsuredDesc": "累计50万，每次事故25万",
+                        "deductible": "物损:每次2000元或损失金额的10%，高者为准",
+                        "premium": "1500"
+                    }, {
+                        "sumInsuredDesc": "累计100万，每次事故50万",
+                        "deductible": "物损:每次2000元或损失金额的10%，高者为准",
+                        "premium": "3000"
+                    }])
+                },
+                detailImg: {
+                    detailImgList: formatServerData(["//static.zhongan.com/website/open/assets/wp/anxf/images/ban04-corporation.png", "//static.zhongan.com/website/open/assets/wp/anxf/images/ban03-corporation.png", "//static.zhongan.com/website/open/assets/wp/anxf/images/ban01-corporation.png", "//static.zhongan.com/website/open/assets/wp/anxf/images/ban02-corporation.png"]),
+                    detailThumbImgList: formatServerData(["//static.zhongan.com/website/open/assets/wp/anxf/images/ban04-m-corporation.png", "//static.zhongan.com/website/open/assets/wp/anxf/images/ban03-m-corporation.png", "//static.zhongan.com/website/open/assets/wp/anxf/images/ban01-m-corporation.png", "//static.zhongan.com/website/open/assets/wp/anxf/images/ban02-m-corporation.png"]),
+                },
+                claimProcessList: {
+                    title: '理赔流程',
+                    showStatus: false,
+                    desc: '',
+                    content: formatServerData([{
+                        "children": [{
+                            "claimContent": "申请理赔拨打1010-9955或400-999-9595官方客服热线或在官网、APP中“申请理赔”",
+                            "claimIcon": "//static.zhongan.com/website/assembler/claimIcon/1496807077918_icon1.png",
+                            "claimRemark": "备用",
+                            "id": 87149,
+                            "seq": 7,
+                            "versionCode": "87145"
+                        }, {
+                            "claimContent": "根据保险条款规定准备理赔材料并提交",
+                            "claimIcon": "//static.zhongan.com/website/assembler/claimIcon/1496807083043_icon2.png",
+                            "claimRemark": "根据保险条款规定提供理赔所需材料通常包括（但不限于）： <br />·身份证明； <br />·保险合同凭证； <br />·确认保险事故的性质、原因、损失程度等有关的其他证明和资料； <br />详细请参看条款中“保险金申请与给付”部分<br /><br />材料提供方式：<br /> 网络提供、自动理赔、寄送",
+                            "id": 87148,
+                            "seq": 6,
+                            "versionCode": "87145"
+                        }, {
+                            "claimContent": "确属保险责任，赔付协议",
+                            "claimIcon": "//static.zhongan.com/website/assembler/claimIcon/1496807088582_icon3.png",
+                            "claimRemark": "",
+                            "id": 87147,
+                            "seq": 5,
+                            "versionCode": "87145"
+                        }, {
+                            "claimContent": "达成后10天内，赔款资金将支付至被保险人或受益人账户",
+                            "claimIcon": "//static.zhongan.com/website/assembler/claimIcon/1496807094365_icon4.png",
+                            "claimRemark": "",
+                            "id": 87146,
+                            "seq": 4,
+                            "versionCode": "87145"
+                        }], "id": 87145, "seq": 0, "versionCode": "0", "versionName": ""
+                    }])
+                },
+                questionList: {
+                    title: '常见问题',
+                    showStatus: false,
+                    content: formatServerData([{
+                        "answer": "安心飞3.0企业版是众安推出的针对企业用户的无人机第三者责任保险，如果贵公司购买了保障，在保险生效的一年内，无人机在作业过程中，由于无人机或者从无人机上坠落的任何物体造成第三者财产损失和人身伤亡的，需要您承担经济赔偿责任的，由众安按照合同约定负责赔偿。详见保险条款。整体方案将按照行业作业的类型分类承保。",
+                        "question": "什么是安心飞3.0企业版保险产品？"
+                    }
+                        , {
+                            "answer": "以下原因或情况造成的事故，不在承保范围内：<br/>(1) 参见<a href='https://static.zhongan.com/website/other/documents/wrjdsfzrx.pdf' target='_blank'>保险条款</a>，责任免除共20条；<br/>(2) 被保险无人机起飞、飞行、降落的条件不符合制造商建议的标准时的事故，但因不可抗力所致的情况除外；<br/>(3) 根据法律或合同约定应由供货人、制造人、安装人或修理人承担的费用或责任；",
+                            "question": "不属于安心飞3.0企业版计划的承保范围？"
+                        }
+                        , {
+                            "answer": "安心飞3.0企业版计划的有效期为一年，企业用户可以选择生效日期，最长不超过30天。同一架无人机一个保险年度仅能在众安投保一次三责险,请根据需求选择经典版、白银版、黄金版和铂金版计划。",
+                            "question": "安心飞3.0企业版计划的有效期限？"
+                        }
+                        , {
+                            "answer": "安心飞3.0企业版目前承保10个行业应用，若有其他行业用途，请联系uav@zhongan.com.主要线上承保用途如下：<br/>1、影视航拍：指新闻拍摄、直播、无人机表演与展示、婚礼摄影、影视剧航拍等文化与创意活动用途。<br/>2、公共安全：指消防警用、救灾搜救、安防执法、安保监督、交通事故处理与执法、河道巡检与执法等用途；<br/>3、建筑及基础设施巡检：指房地产航拍、建筑勘测、施工管理、建筑监测、桥梁巡检、矿业监测、码头及港口监测与巡检等用途。<br/>4、能源巡检：指发电站巡检、石油天然气设备监测、电力巡线、核电站巡检等用途；<br/>5、农林业用途：指土壤和土地分析、种植、农作物监控、农作物喷洒、农作物健康检测、森林巡检等用途；<br>6、通信巡检：指基站信号改善、场强分布测试、光钎、通信线路巡检等用途；<br/>7、勘察测绘：指DOM正射影像获取，三维建模等用途；<br/>8、物流运输：指邮件快递货物运输、外卖送餐等用途；<br/>9、环保监测：指空气、水、动物、气象监测等用途；<br/>10、教育培训：教育机构或训练机构通过培训驾驶技术及运行要求，以培养符合资质要求的无人机驾驶员为目的而开展的无人机飞行训练用途。",
+                            "question": "安心飞3.0企业版计划承保无人机哪些行业应用？"
+                        }
+                        , {"answer": "不能，保单的承保区域范围为中华人民共和国境内，不包含港澳台。", "question": "无人机在国外发生第三者责任事故是否可以理赔？"}
+                        , {
+                            "answer": "Mavic Pro、Phantom 4位于机身电池仓内；<br/>Phantom 3系列 、Inspire 系列位于机尾处；<br/>M100系列在中心板内侧；<br/>M200系列机尾对人，机体右侧；<br/>M600系列在一号电池仓下；<br/>S1000在机臂电机下。",
+                            "question": "无人机的机身编号如何查看？"
+                        }
+                        , {
+                            "answer": "目前可在线投保的企业版支持支付宝、微信、银联支付，其中银联BtoB支付指南如下：需人工核保的安心飞企业版支持对公转账付款。",
+                            "question": "企业投保如何支付保费？"
+                        }
+                        , {
+                            "answer": "请您在工作日9:00-21:00第一时间致电众安保险服务热线1010-9955或400-999-9595，我们会核实您的无人机机身编码，身份信息、保单号码，确定您是否购买了安心飞3.0计划。同时，会要求您提供事故照片、视频以及出险时的飞行数据进行初步分析。后续会有专职理赔人员确定是否需要现场查勘，并指引提交理赔材料，让您尽快获得赔付。为降低或减少对第三者的赔偿责任为目的产生的仲裁或诉讼费用及律师费用，在事先经过我司书面同意的前提下，也能获得赔付。",
+                            "question": "无人机如导致第三者财产损失以及第三者人身伤亡如何进行理赔？"
+                        }
+                        , {
+                            "answer": "您成功投保后，若开具增值税普通发票，可登录众安保险官网-保险服务-保单查询下载电子发票。<br/>若需要增值税纸质发票，请在收到承保邮件后，根据提示提供以下信息，并邮件至uav@zhongan.com，我们将在收到信息后，五个工作日内开具发票并递送：<br/>1.保单号码<br/>2.公司名称<br/>3.纳税人识别号(统一社会信用代码）<br/>若开具增值税专业发票，请填写以下信息，我们将安排递送：<br/>1.保单号码<br/>2.公司名称<br/>3.纳税人识别号(统一社会信用代码）<br/>4.注册地址<br/>5.企业联系电话<br/>6.开户银行名称<br/>7.开户银行账号<br/>8.纳税人类型（类型为：增值税一般纳税人；增值税小规模纳税人；其他（请详细说明））<br/>9.收件人姓名<br/>10.收件人电话<br/>11.邮寄地址",
+                            "question": "怎样索取增值税发票？"
+                        }
+                        , {
+                            "answer": "您需要及时书面通知众安，我们将酌情进行保全批改或明示拒绝投保，若无人机使用不符保单约定可能导致保单拒绝赔偿。",
+                            "question": "无人机若变更使用性质导致危险程度增加，怎么办？"
+                        }
+                        , {
+                            "answer": "无人机若因质量问题由厂商售后换机，机身编码发生变化，请提供厂商更换的证明，并填写批改申请书，办理保险变更。",
+                            "question": "无人机若由于产品质量问题退换厂商跟换新机，是否可以办理保险变更？"
+                        }
+                        , {
+                            "answer": "不可以，若未发生保险事故，您可以选择退保，请登录官网-保险服务-申请批改-下载批改申请书（非团险）办理退保手续后，建议新用户重新购买新保单。",
+                            "question": "无人机若转让、转卖他人，是否可以继续享受保险服务？"
+                        }
+                        , {"answer": "众安保险采用电子保险单承保，法律效力等同于纸质保单。", "question": "电子保单靠谱么？"}
+                        , {
+                            "answer": "在未发生保险理赔事故时，投保人可以申请书面形式通知众安解除保险合同。您提供下列证明文件和资料：a.批改申请书（众安官网-保险服务-申请批改，下载批改申请书（非团险））b.投保人身份证复印件。投保人申请解除保险合同的，自众安保险接到保险合同解除申请书次日零时起，保险合同效力终止。按照条款收取短期费率，并将退保金退还至支付保费的账户。",
+                            "question": "退保流程是怎样的？"
+                        }
+                        , {
+                            "answer": "请放心！我们严格遵守现行的关于个人信息、数据及隐私保护的法律法规，采取充分的技术手段和制 度管理，保护您提供给我们的个人信息、数据和隐私不受到非法的泄露或披露给未获授权的第三方。您还可以登录众安保险官网：www.zhongan.com查阅众安隐私声明。",
+                            "question": "我的隐私安全吗？"
+                        }
+                        , {
+                            "answer": " 理赔需要的资料将根据事故的类型区分，主要包含以下资料：<br/>1.保险合同凭证；<br/>2.索赔申请书；<br/>3.被保险人就保险事故的书面说明；<br/>4.事故现场照片和视频；<br/>5.被保险无人机事故发生时的飞行数据；<br/>6.公安机关或其他权力机构就保险事故发生出具的第三方书面文件；<br/>7.第三者的医疗费用的原始发票及单证、诊断证明、死亡证明或残疾程度鉴定书；<br/>8.生效的法律文书（包括裁定书、裁决书、判决书、调解书等）或经保险人事先认可与第三者达成的赔偿协议；<br/>9.第三者财产损失清单及原始票据或其他能够证明财产价值的单据原件；<br/>10.被保险人赔偿支付证明；<br/>11.驾驶员身份证明原件及复印件、无人机操作资质证书；<br/>12.投保人、被保险人所能提供的与确认保险事故的性质、原因、损失程度等有关的其他证明和资料。",
+                            "question": "理赔需要哪些资料？"
+                        }])
+                },
+                special: {
+                    certNo: '',
+                    certName: '',
+                    zmScore: '',
+                    isShowSesameCredit: 'N'
+                },
+                csSupport: false,
+                recommendList: []
+            },
+            toast: ''
+        }
+
+        function formatServerData(data) {
+            if (data) {
+                return data;
+            }
+            return '';
+        }
+    </script>
+</div>
+
+</body>
+</html>

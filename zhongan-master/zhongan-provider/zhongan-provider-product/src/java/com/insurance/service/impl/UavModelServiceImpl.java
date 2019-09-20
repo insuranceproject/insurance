@@ -26,7 +26,7 @@ public class UavModelServiceImpl extends ServiceImpl<UavModelMapper, Uavmodel> i
     @Autowired
     private UavModelMapper uavModelMapper;
     @Override
-    public List<Uavmodel> getModelByIds(Integer purId, Integer brandId) {
+    public List<Uavmodel> getModelByPurId(Integer purId, Integer brandId) {
         List<PurposeUavbrand> list = purposeUavBrandMapper.selectList(new QueryWrapper<PurposeUavbrand>().eq("purpose_id", purId));
         List<Integer> modelList = new ArrayList<Integer>();
         for (PurposeUavbrand pub: list) {

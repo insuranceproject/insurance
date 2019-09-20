@@ -4,12 +4,14 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import com.baomidou.mybatisplus.annotation.TableId;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 /**
  * <p>
@@ -32,9 +34,9 @@ public class Policydetail extends Model<Policydetail> implements Serializable {
     @TableId(value = "detail_id", type = IdType.AUTO)
     private Integer detailId;
 
-    private Date policyEndtime;
+    private LocalDateTime policyEndtime;
 
-    private Date policyStarttime;
+    private LocalDateTime policyStarttime;
 
     private Integer policyBuyaddr;
 

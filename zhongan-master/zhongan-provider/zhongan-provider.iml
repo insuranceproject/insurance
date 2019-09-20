@@ -155,7 +155,6 @@
     <orderEntry type="library" name="Maven: org.eclipse.jetty.websocket:websocket-client:9.4.15.v20190215" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-client:9.4.15.v20190215" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.jetty.websocket:websocket-servlet:9.4.15.v20190215" level="project" />
-    <orderEntry type="library" name="Maven: javax.servlet:javax.servlet-api:4.0.1" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.jetty.websocket:javax-websocket-server-impl:9.4.15.v20190215" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-annotations:9.4.15.v20190215" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.jetty:jetty-plus:9.4.15.v20190215" level="project" />
@@ -223,5 +222,6 @@
     <orderEntry type="library" name="Maven: io.swagger:swagger-annotations:1.5.13" level="project" />
     <orderEntry type="library" name="Maven: com.github.pagehelper:pagehelper:5.1.8" level="project" />
     <orderEntry type="library" name="Maven: com.github.jsqlparser:jsqlparser:1.2" level="project" />
+    <orderEntry type="library" name="Maven: javax.servlet:javax.servlet-api:4.0.1" level="project" />
   </component>
 </module>

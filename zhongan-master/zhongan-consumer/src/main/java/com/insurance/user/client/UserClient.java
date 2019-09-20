@@ -32,7 +32,7 @@ public interface UserClient {
      * @return
      */
     @PostMapping("/user/falsLogin")
-    public User falsLogin(User user);
+    public boolean falsLogin(User user, HttpSession session);
 
     /**
      * 个人注册

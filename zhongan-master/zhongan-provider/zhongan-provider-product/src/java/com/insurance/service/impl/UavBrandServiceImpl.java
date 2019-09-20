@@ -25,7 +25,7 @@ public class UavBrandServiceImpl extends ServiceImpl<UavBrandMapper, Uavbrand> i
     private  UavBrandMapper uavBrandMapper;
 
     @Override
-    public List<Uavbrand> getBrandByIds(Integer purId) {
+    public List<Uavbrand> getBrandByPurId(Integer purId) {
         List<PurposeUavbrand> list = purposeUavBrandMapper.selectList(new QueryWrapper<PurposeUavbrand>().eq("purpose_id", purId));
         List<Integer> brandList = new ArrayList<Integer>();
         for (PurposeUavbrand pub: list) {

@@ -2,9 +2,11 @@ package com.insurance.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.insurance.api.product.UavControllerApi;
+import com.insurance.pojo.Purpose;
 import com.insurance.pojo.PurposeUavbrand;
 import com.insurance.pojo.Uavbrand;
 import com.insurance.pojo.Uavmodel;
+import com.insurance.service.PurposeService;
 import com.insurance.service.PurposeUavBrandService;
 import com.insurance.service.UavBrandService;
 import com.insurance.service.UavModelService;
@@ -28,15 +30,35 @@ public class UavController implements UavControllerApi {
     @Autowired
     private UavModelService uavModelService;
 
-    @GetMapping("/getBrandByIds")
+   @Autowired
+   private PurposeService purposeService;
+
+    @GetMapping("/getBrandByPurId")
     @Override
-    public List<Uavbrand> getBrandByIds(Integer purId) {
-        return uavBrandService.getBrandByIds(purId);
+    public List<Uavbrand> getBrandByPurId(Integer purId) {
+        return uavBrandService.getBrandByPurId(purId);
     }
 
-    @GetMapping("/getModelByIds")
+    @GetMapping("/getModelByPurId")
     @Override
-    public List<Uavmodel> getModelByIds(Integer purId, Integer brandId) {
-        return uavModelService.getModelByIds(purId,brandId);
+    public List<Uavmodel> getModelByPurId(Integer purId, Integer brandId) {
+        return uavModelService.getModelByPurId(purId,brandId);
+    }
+
+    @GetMapping("/findById")
+    @Override
+    public Purpose findById(Integer purId){
+        return purposeService.getById(purId);
+    }
+
+    @GetMapping("/getModelById")
+    @Override
+    public Uavmodel getModelById(Integer modelId){
+        return uavModelService.getById(modelId);
+    }
+    @GetMapping("/getBrandById")
+    @Override
+    public Uavbrand getBrandById(Integer brandId){
+        return uavBrandService.getById(brandId);
     }
 }

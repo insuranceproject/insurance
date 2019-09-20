@@ -26,13 +26,4 @@ public interface PolicyMapper extends BaseMapper<Policy> {
             "</script>"})
     public List<Policy> selectPagePolicy(Map<String, Object> map);
 
-
-    /**
-     * 根据用户id查询保单
-     * @param userId
-     * @return
-     */
-    @Select("select * from insurance_policy where order_id in (select order_id from insurance_order where user_id = #{user_id})")
-    public List<Policy> getPolicyByUserId(Integer userId);
-
 }

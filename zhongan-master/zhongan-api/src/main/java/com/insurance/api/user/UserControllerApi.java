@@ -29,8 +29,8 @@ public interface UserControllerApi {
      * @param user
      * @return
      */
-    @ApiOperation("个人用户名密码登陆")
-    public User falsLogin(User user);
+    @ApiOperation("个人用户快速登陆")
+    public boolean falsLogin(User user, HttpSession session);
 
     @ApiOperation("快速登录")
     public boolean fastLogin(User user, HttpSession session);

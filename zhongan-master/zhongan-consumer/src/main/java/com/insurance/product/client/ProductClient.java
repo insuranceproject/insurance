@@ -1,9 +1,6 @@
 package com.insurance.product.client;
 
-import com.insurance.pojo.Childtype;
-import com.insurance.pojo.Partype;
-import com.insurance.pojo.Plan;
-import com.insurance.pojo.Product;
+import com.insurance.pojo.*;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,9 +31,27 @@ public interface ProductClient {
     @GetMapping("/plan/getByProId")
     public List<Plan> getByProId(@RequestParam("proId") Integer proId);
 
-    @GetMapping("/product/getProductByPlanId")
-    public Product getProductByPlanId(@RequestParam("planId") Integer planId);
+    @GetMapping("/plan/getPlanPrice")
+    public List<Plan> getPlanPrice(@RequestParam("proId") Integer proId, @RequestParam("modelPrice") Integer modelPrice);
 
-    @GetMapping("/plan/getPlanByPlanId")
-    public Plan getPlanByPlanId(@RequestParam("planId") Integer planId);
+    @GetMapping("/plan/getPlanById")
+    public Plan getPlanById(@RequestParam("planId") Integer planId);
+
+    @GetMapping("/uav/getBrandByPurId")
+    public List<Uavbrand> getBrandByPurId(@RequestParam("purId") Integer purId);
+
+    @GetMapping("/uav/getModelByPurId")
+    public List<Uavmodel> getModelByPurId(@RequestParam("purId") Integer purId, @RequestParam("brandId") Integer brandId);
+
+    @GetMapping("/uav/findById")
+    public Purpose findById(@RequestParam("purId") Integer purId);
+
+    @GetMapping("/cert/listCertByProId")
+    public List<Certificates> listCertByProId(@RequestParam("proId") Integer proId);
+
+    @GetMapping("/uav/getModelById")
+    public Uavmodel getModelById(@RequestParam("modelId") Integer modelId);
+
+    @GetMapping("/uav/getBrandById")
+    public Uavbrand getBrandById(@RequestParam("brandId") Integer brandId);
 }

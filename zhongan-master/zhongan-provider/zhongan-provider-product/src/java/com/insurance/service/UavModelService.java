@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface UavModelService extends IService<Uavmodel> {
 
-    public List<Uavmodel> getModelByIds(Integer purId, Integer brandId);
+    public List<Uavmodel> getModelByPurId(Integer purId, Integer brandId);
 }

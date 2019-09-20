@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- saved from url=(0291)https://digital.zhongan.com/uav/uavInsure.htm?bizCode=PCGW&payChannel=&bizContent=&productBrand=%E5%A4%A7%E7%96%86&productModel=Spark&insurePlan=3&brandCodes=&key=uavIndSin201909172119247t6&backUrl=http%3A%2F%2Fhrc-ec-za-digital-web-hrc.prd.za.biz%2Fuav%2FuavIndex.htm%3FpromotionCode%3DPCGW -->
-<html style=""
+<html xmlns:th="http://www.thymeleaf.org"
       class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -46,6 +46,11 @@
     <link type="text/css" rel="stylesheet" href="http://47.93.221.88/previous/userpervious/product/css/zeroCalendar.css">
     <script type="text/javascript">
         $(function () {
+            $("#notes").show();
+            $(".iKnow>a").click(function () {
+                $("#notes").hide();
+            });
+
             $("#customerCertiType").click(function () {
                 if($(this).attr("class") == "frm-select active"){
                     $(this).removeClass("active");
@@ -72,7 +77,9 @@
                     $(this).addClass("active");
                     $("#type").slideDown("500");
                 }
-            })
+            //    $(".multChoose").slideToggle();
+
+            });
             $("#insurePlanDesc").click(function () {
                 if($(this).attr("class") == "frm-select active"){
                     $(this).removeClass("active");
@@ -81,103 +88,204 @@
                     $(this).addClass("active");
                     $("#c-select-options").slideDown("500");
                 }
+              //  $(".c-options").slideToggle();
             })
+            choiceuav();
+            showold();
+            choiceuav();
+            choicemodel();
+            choicetype();
+            choiceplan();
+            choicecert();
+            clear();
+            submit();
+            know();
+        });
 
-        })
+        function showold(){
+            var modelId = $("#productBrand1").attr("i");
+            $("#v-model a[i = '"+modelId+"']").addClass("on");
+            var typeId = $("#productModel1").attr("i");
+            $("#v-type a[i = '"+typeId+"']").addClass("on");
+            var text = $("#v-model a[i = '"+modelId+"']").text()+" "+ $("#v-type a[i = '"+typeId+"']").text();
+            $("#planListType").val(text)
+        }
+        function choiceuav() {
+            $("#itemsNav>a").click(function () {
+                $("#itemsNav>a").removeClass("on");
+                $(this).addClass("on");
+                var index = $(this).index();
+                $(".multChoose>.items").addClass("dis-none");
+                $(".multChoose>.items").eq(index).removeClass("dis-none");
+            });
+        }
+        function choicemodel() {
+            $("#v-model>li").click(function () {
+                $("#v-model>li>a").removeClass("on");
+                $(this).find("a").addClass("on");
+                var index = $(this).parents(".items").index();
+                $("#itemsNav>a").removeClass("on");
+                $("#itemsNav>a").addClass("on");
+                $("#itemsNav>a").eq(0).removeClass("on");
+                $(".multChoose>.items").addClass("dis-none");
+                $(".multChoose>.items").removeClass("dis-none");
+                $(".multChoose>.items").eq(0).addClass("dis-none");
+                var text = $(this).find("a").text();
+                var brandId = $(this).find("a").attr("i");
+                $("#planListType").val("");
+                $("#planListType").val(text);
+                $.getJSON("/consumer/product/findModelByBrandId", {"brandId": brandId, "purId": 11}, function (result) {
+                    $("#v-type").empty();
+                    var ul = "";
+                    for (var i = 0; i < result.length; i++) {
+                        var model = result[i];
+                        ul += "<li><a i='" + model.modelId + "' price='" + model.modelPrice + "' href='javascript:;'>" + model.modelName + "</a></li>"
+                    }
+                    $("#v-type").append(ul);
+                });
+            });
+        }
+        function choicetype() {
+            $("body").on("click","#v-type>li", function () {
+                $("#v-type>li>a").removeClass("on");
+                $(this).find("a").addClass("on");
+                var text = $("#v-model>li>.on").text();
+                text += " " + $(this).find("a").text();
+                $("#planListType").val("");
+                $("#planListType").val(text);
+                $(".multChoose").slideUp();
+                $("#planListType").removeClass("active");
+                $.getJSON("/consumer/product/getPlanPrice", {
+                    "proId": $("#productId").text(),
+                    "modelPrice": $(this).find("a").attr("price")
+                }, function (result) {
+                    for (var i = 0; i < result.length; i++) {
+                        $(".c-options li[i='" + result[i].planId + "']").attr("price",result[i].planPrice);
+                    }
+                    $("#priceShow").text("¥"+$(".c-options-selected").attr("price"));
+                });
+
+            });
+        }
+        function choiceplan(){
+            var planid = $("#planId").attr("i");
+            $("#c-select-options .c-options li[i='"+planid+"']").addClass("c-options-selected");
+            $("#insurePlanDesc").val($(".c-options-selected").text());
+            $("#c-select-options .c-options li").click(function () {
+                $("#c-select-options .c-options li").removeClass("c-options-selected");
+                $(this).addClass("c-options-selected");
+                $("#insurePlanDesc").val("");
+                $("#insurePlanDesc").val($("#c-select-options .c-options-selected").text());
+                $("#insurePlanDesc").removeClass("active");
+                $("#c-select-options").slideUp();
+                $("#priceShow").text("¥"+$("#c-select-options .c-options-selected").attr("price"));
+            });
+        }
+        function choicecert(){
+            $("#sb li").click(function () {
+                $("#sb li").removeClass("c-options-selected");
+                $(this).addClass("c-options-selected");
+                $("#customerCertiType").val("");
+                $("#customerCertiType").val($("#sb .c-options-selected").text());
+                $("#customerCertiType").removeClass("active");
+                $("#card").slideUp();
+            })
+        }
+        function clear(){
+            $(".frm-clearInpt").click(function () {
+                $("#sin_customerName").val("");
+                $("#customerCertiType").val("");
+                $("#sb li").removeClass("c-options-selected");
+                $("#sin_customerCertiNo").val("");
+                $("#sin_customerTel").val("");
+                $("#sin_customerEmail").val("");
+            });
+        }
+        function submit(){
+            $("#submitBtn").click(function () {
+                var username = $("#sin_customerName").val();
+                var certtype = $("#customerCertiType").val();
+                var certnumber = $("#sin_customerCertiNo").val();
+                var telnumber = $("#sin_customerTel").val();
+                var email = $("#sin_customerEmail").val();
+                var no = $("#sin_productSerialNo").val();
+                var certId = $("#sb .c-options-selected").attr("i");
+                var proId = $("#productId").text();
+                var brandId = $("#v-model .on").attr("i");
+                var modelId = $("#v-type .on").attr("i");
+                var planId = $("#choosePlanType .c-options-selected").attr("i");
+                var price = $("#priceShow").text();
+                if(username == ""){
+                    hint("姓名不能为空");
+                }else if(certtype == ""){
+                    hint("请选择您的证件")
+                }else if (certnumber == ""){
+                    hint("证件号码不能为空")
+                }else if (telnumber == ""){
+                    hint("手机号码不能为空")
+                }else if (email == ""){
+                    hint("邮箱地址不能为空")
+                }else if (no == ""){
+                    hint("请输入机身编号")
+                }else if (!$("#readAgreement").hasClass("checked")){
+                    hint("请阅读须知与条款并勾选")
+                }else{
+                    var json = JSON.stringify($("input[type='text']").serialize());
+                    //?proId"+proId+"&certId="+certId+"&brandId="+brandId+"" +
+                   // "&modelId="+modelId+"&planId="+planId,
+                    $.post("/consumer/product/uavconfirm?proId="+proId+"&certId="+certId+"&brandId="+brandId+"" +
+                        "&modelId="+modelId+"&planId="+planId+"&price="+price+"&purId=11",json,function (result) {
+                        window.location="/consumer/product/confirm";
+                    });
+                    // $.ajax({
+                    //     type: "post",
+                    //     dataType: "json",
+                    //     url: "/consumer/product/uavconfirm",
+                    //     contentType: "application/json;charset=UTF-8",//指定消息请求类型
+                    //     data:json,
+                    //     success: function (result) {
+                    //         alert(result);
+                    //     }
+                    // });
+
+                }
+            });
+        }
+        function hint(info){
+            $(".ui-alert-c").text(info);
+            $(".light").show();
+            $(".ui-alert").show();
+        }
+        function know(){
+            $(".ui-alert-btn").click(function () {
+                $(".light").hide();
+                $(".ui-alert").hide();
+            })
+        }
+
     </script>
 </head>
 <body>
 <link href="http://47.93.221.88/previous/userpervious/product/css/za-common.css" rel="stylesheet"><!--header  start-->
-<div class="za-toolbar" data-ilog="1.589.zL6|a">
-    <div class="za-toolbar-layout">
-        <div class="za-toolbar-layout-logo"><a href="https://www.zhongan.com/" title="众安保险" rel="nofollow">众安保险</a>
-        </div>
-        <p class="za-toolbar-layout-slogan"><span>做有温度的保险</span></p>
-        <div class="za-toolbar-layout-entry"><input type="hidden" id="logoutUrl" value="/logOut"> <input type="hidden"
-                                                                                                         id="domain"
-                                                                                                         value="http://hrc-ec-za-digital-web-hrc.prd.za.biz">
-            <input type="hidden" id="originDomain" value="https://www.zhongan.com"> <input type="hidden" id="appName"
-                                                                                           value="digital">
-            <!--<div class="entry-item entry-login" id="headerLogin">-->
-            <div id="headerLogin"
-                 style="    position: relative;display: inline;float: left;line-height: 34px;box-sizing: content-box;">
-                <div class="entry-item entry-account" style="padding-right: 5px;padding-left: 5px;"><a id=""
-                                                                                                       href="https://www.zhongan.com/account/myAccount"
-                                                                                                       class="entry-item-hd"
-                                                                                                       rel="nofollow"><span>登录</span><i
-                        class="icon-drop" style="margin-left: 2px;"></i></a>
-                    <ul class="za-toolbar-sublist" style="left: 50%;transform: translateX(-47%);">
-                        <li class="sub-item"><a
-                                href="https://login.zhongan.com/passport/login.htm?sourceApp=1&amp;target=https://www.zhongan.com/open/member/loginJump?logincallback=/account/myAccount"
-                                title="个人登录" rel="nofollow">个人登录</a></li>
-                        <li class="sub-item"><a
-                                href="https://login.zhongan.com/passport/open_platform.htm?sourceApp=3&amp;target=https://open.zhongan.com/promotion/loginJump?logincallback=/promotion/manager/home"
-                                title="企业登录" rel="nofollow">企业登录</a></li>
-                    </ul>
-                </div>
-                <!--<a class="login-link" href="https://login.zhongan.com/passport/login.htm?sourceApp=1&target=https://www.zhongan.com/open/member/loginJump?logincallback=/account/myAccount">登录</a>-->
-                <div class="entry-item entry-login" style="padding: 5px 0;"><i class="vline"></i></div>
-                <!--<a class="register-link" href="https://login.zhongan.com/passport/register.htm?sourceApp=1&target=https://www.zhongan.com/open/member/loginJump?logincallback=/">注册</a>-->
-                <div class="entry-item entry-account" style="padding-left: 5px;padding-right: 5px;"><a id=""
-                                                                                                       href="https://www.zhongan.com/account/myAccount"
-                                                                                                       class="entry-item-hd"
-                                                                                                       rel="nofollow"><span>注册</span><i
-                        class="icon-drop" style="margin-left: 2px;"></i></a>
-                    <ul class="za-toolbar-sublist" style="left: 50%;transform: translateX(-47%);">
-                        <li class="sub-item"><a
-                                href="https://login.zhongan.com/passport/register.htm?sourceApp=1&amp;target=https://www.zhongan.com/open/member/loginJump?logincallback=/"
-                                title="个人注册" rel="nofollow">个人注册</a></li>
-                        <li class="sub-item"><a
-                                href="https://login.zhongan.com/passport/openPlatformRegister.htm?sourceApp=3&amp;target=https%3A%2F%2Fopen.zhongan.com%2Fpromotion%2FloginJump%3Flogincallback%3D%2Fpromotion%2Fmanager%2Fhome"
-                                title="企业注册" rel="nofollow">企业注册</a></li>
-                    </ul>
-                </div>
-            </div>            <!--</div>-->
-            <div class="entry-item entry-account"><a href="https://www.zhongan.com/account/myAccount"
-                                                     class="entry-item-hd" rel="nofollow"><span>个人中心</span><i
-                    class="icon-drop"></i></a>
-                <ul class="za-toolbar-sublist">
-                    <li class="sub-item"><a href="https://www.zhongan.com/account/myPolicy" title="我的订单" rel="nofollow">我的订单</a>
-                    </li>
-                    <li class="sub-item"><a href="https://www.zhongan.com/account/employeeWelfare" title="团险保单"
-                                            rel="nofollow">团险保单</a></li>
-                    <li class="sub-item"><a href="https://www.zhongan.com/account/claimEnquiry" title="理赔查询"
-                                            rel="nofollow">理赔查询</a></li>
-                    <li class="sub-item"><a href="https://www.zhongan.com/account/myInfo" title="我的资料" rel="nofollow">我的资料</a>
-                    </li>
-                    <li class="sub-item"><a href="https://www.zhongan.com/account/myInvest" title="我的投资" rel="nofollow">我的投资</a>
-                    </li>
-                    <li class="sub-item"><a href="http://open.zhongan.com/innerweb/ygd/loanApplyRecord.htm" title="我的资产"
-                                            rel="nofollow">我的资产</a></li>
-                    <li class="sub-item"><a href="https://www.zhongan.com/account/myPoint" title="我的积分" rel="nofollow">我的积分</a>
-                    </li>
-                </ul>
+<div th:replace="/public/public_head :: head"></div>
+<div class="notes" id="notes">
+    <div class="mask"></div>
+    <div class="notes-details">
+        <div class="mod-cont">
+            <h2 class="cont-title">投保须知</h2>
+            <div class="cont-details">
+                <p>1、本保险产品保险期限为一年，个人客户成功投保后次日零时生效；</p>
+                <p>2、本保险产品承保的无人机用途仅包含个人消费用途，指供个人航拍、消费娱乐使用等用途；</p>
+                <p>3、本保险产品承保区域：中华人民共和国境内（不包含港澳台地区）；</p>
+                <p>4、本保险产品仅承保列明驾驶员操作无人机造成的保险事故；</p>
+                <p>5、本保险产品不承保被保险无人机起飞、飞行、降落的条件不符合制造商建议的标准时的事故，但因不可抗力所致的情况除外；</p>
+                <p>6、本保险产品不承保根据法律或合同约定应由供货人、制造人、安装人或修理人承担的费用或责任；</p>
+                <p>7、投保人及被保险人应就本公司提出的询问据实告知，否则本公司有权按照《中华人民共和国保险法》解除保险合同；</p>
+                <p>8、您成功投保后，众安保险将向您提供的邮箱地址发送电子保单。若未收到保单，您可登录众安保险官网-保险服务进行保单查询并下载电子保单；</p>
+                <p>9、如需要咨询保险产品相关事宜，请发邮件至uav@zhongan.com或拨打客服电话1010-9955、400-999-9595。</p>
+                <p>本人已阅读《众安在线财产保险股份有限公司无人机第三者责任保险条款》，尤其针对其中免除保险人责任的条款，本人已充分理解并接受上述内容，同意作为订立保险合同的依据。</p>
             </div>
-            <div class="entry-item entry-eportal"><a href="https://www.zhongan.com/eportal/"
-                                                     rel="nofollow"><span>众安团险</span><i class="icon-drop"></i></a>
-                <ul class="za-toolbar-sublist">
-                    <li class="sub-item"><a href="https://www.zhongan.com/eportal/employee.html" title="员工商业保险"
-                                            rel="nofollow">员工商业保险</a></li>
-                    <li class="sub-item"><a href="https://hr.zhongan.com/" title="https://hr.zhongan.com"
-                                            rel="nofollow">企业hr保单管理</a></li>
-                </ul>
-            </div>
-            <div class="entry-item entry-mobile-download"><a href="https://www.zhongan.com/open/active/app/appdownload">下载APP</a>
-            </div>
-            <div class="entry-item entry-open"><a href="https://open.zhongan.com/open/home/home.htm" target="_blank"
-                                                  rel="nofollow">开放平台</a></div>
-            <div class="entry-item entry-publicInfo"><a
-                    href="https://www.zhongan.com/channel/public/publicInfo2018.html" target="_blank"
-                    rel="nofollow"><span>公开信息披露</span><i class="icon-drop"></i></a>
-                <ul class="za-toolbar-sublist">
-                    <li class="sub-item"><a href="https://www.zhongan.com/channel/public/publicInfo2018.html"
-                                            title="公开信息披露" rel="nofollow">公开信息披露</a></li>
-                    <li class="sub-item"><a href="https://www.zhongan.com/channel/internetInfo/internetInfo.html"
-                                            title="互联网保险信息披露" rel="nofollow">互联网保险信息披露</a></li>
-                </ul>
-            </div>
-            <div class="entry-item entry-open"><a href="https://www.zhongan.com/corporate/announcements/"
-                                                  rel="nofollow">投资者关系 Investor Relations</a></div>
+            <p class="iKnow"><a data-ilog="410.00002.u.1" href="javascript:;" event-src="iKnow">我知道了</a></p>
         </div>
     </div>
 </div>
@@ -194,39 +302,35 @@
     <div class="mod-view-cont">
         <div class="mod-cont clearfix">
             <input type="hidden" id="key" value="uavIndSin201909172119247t6">
-            <form id="myForm">
+            <form id="myForm" method="get" action="/userpervious/product/uavInsureConfirm.html">
                 <input name="_csrf_token" type="hidden" value="vyUmYFHU5c3fKMskKbfpW3">
                 <input type="hidden" id="bizCode" name="_fm.ua._0.b" value="PCGW">
                 <input type="hidden" name="_fm.ua._0.bi" value="">
                 <input type="hidden" name="_fm.ua._0.pa" value="">
-                <input type="hidden" id="brandCodes" name="_fm.ua._0.br" value="">
+                <input type="hidden" id="planId" name="_fm.ua._0.br" value="" th:i="${planId}">
                 <input type="hidden" id="sumInsuredDesc" name="_fm.ua._0.su" value="累计15万，每次事故7.5万"><!-- 保额描述 -->
                 <input type="hidden" id="sumInsured" name="_fm.ua._0.s" value="150000"><!-- 保额 -->
                 <input type="hidden" id="deductible" name="_fm.ua._0.d" value="人身伤亡：无 ；财产损失：每次事故2000元或损失金额的10%,以高者为准">
                 <!-- 免赔额 -->
                 <input type="hidden" id="policyHolderType_sin" name="_fm.ua._0.po" value="1">
                 <input type="hidden" id="liability" name="_fm.ua._0.l" value="无人机第三者责任险">
-                <input data-name="productBrand" type="hidden" id="productBrand1" name="_fm.ua._0.p" value="大疆">
-                <input data-name="productModel" type="hidden" id="productModel1" name="_fm.ua._0.pr" value="Spark">
+                <p id="productId" style="display: none;" th:text="${product.productId}"></p>
+                <input data-name="productBrand" type="hidden" id="productBrand1" th:i="${brandId}" name="_fm.ua._0.p" value="大疆">
+                <input data-name="productModel" type="hidden" id="productModel1" th:i="${modelId}" name="_fm.ua._0.pr" value="Spark">
                 <input type="hidden" name="_fm.ua._0.t" value="uavIndSin201909172119247t6">
                 <input type="hidden" name="_fm.ua._0.is" value="0">
                 <input type="hidden" name="backUrl" id="backUrl" value="https://m.zhongan.com/s/6ZZbmq">
                 <div>
-                    <h2 class="pro-title">安心飞3.0无人机第三者责任险 个人版</h2>
+                    <h2 class="pro-title" th:text="${product.productName}">安心飞3.0无人机第三者责任险 个人版</h2>
                     <div class="mod-order-insure" id="J_orderForm">
                         <div class="mod-form" id="J_orderHolder">
                             <h2 class="frm-title">投被保人信息</h2>
                             <div class="frm-error-tips v-hidden"></div>
-
-                            <div id="no_discount" class="tTips unSuc ">补充驾驶证享受安全飞行折扣</div>
-                            <div id="discount" class="tTips suc h_d">已享受<span class="color">95折</span>优惠</div>
-
                             <div class="frm-item">
                                 <h5 class="frm-item-hd">姓&nbsp;&nbsp;名</h5>
                                 <div class="frm-item-cont">
                                     <i class="inptMask"></i>
-                                    <input data-name="pilotName" type="text" id="sin_customerName" class="frm-inpt"
-                                           name="_fm.ua._0.c" placeholder="请输入姓名" data-type="*" data-need="true"
+                                    <input data-name="pilotName" type="text" id="sin_customerName" class="frm-inpt" name="uname" placeholder="请输入姓名" data-type="*" data-need="true"
                                            msg-null="姓名不能为空！" msg-error="姓名长度过长！" maxlength="32">
                                 </div>
                             </div>
@@ -234,22 +338,15 @@
                                 <h5 class="frm-item-hd">证件类型</h5>
                                 <div class="frm-item-cont">
                                     <input data-name="pilotCertiType" type="hidden" id="customerCertiType_data"
-                                           name="_fm.ua._0.cu" value="">
+                                            value="">
                                     <input data-name="pilotCertiType_text" type="text" id="customerCertiType"
                                            class="frm-select" readonly="readonly" placeholder="请选择证件类型" data-type="*"
-                                           data-need="true" msg-null="证件类型不能为空！" msg-error="证件类型格式错误！">
+                                           data-need="true" msg-null="证件类型不能为空！" msg-error="证件类型格式错误！" name="certname">
                                     <b></b>
                                     <div class="c-select-options" id="card"
                                          style="top: 48px; left: 0px; width: 328px; display: none;">
-                                        <ul class="c-options js-options" style="display: block;">
-                                            <li class="" data="I">身份证</li>
-                                            <li class="" data="H">户口簿</li>
-                                            <li class="" data="M">军人证</li>
-                                            <li class="" data="P">护照</li>
-                                            <li class="" data="GJ">港澳居民来往内地通行证</li>
-                                            <li class="" data="TB">台湾居民来往内地通行证</li>
-                                            <li class="" data="J">外国人永久居留证</li>
-                                            <li class="" data="Q">其他</li>
+                                        <ul class="c-options js-options" id="sb" style="display: block;">
+                                            <li th:each="cert:${certList}" th:i="${cert.certId}" th:text="${cert.certName}">身份证</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -259,7 +356,7 @@
                                 <div class="frm-item-cont">
                                     <i class="inptMask"></i>
                                     <input data-name="pilotCertiNo" type="text" class="frm-inpt"
-                                           id="sin_customerCertiNo" name="_fm.ua._0.cus" placeholder="请输入证件号码"
+                                           id="sin_customerCertiNo" name="certnumber" placeholder="请输入证件号码"
                                            data-type="idCard" data-need="true" msg-null="证件号码不能为空！"
                                            msg-error="证件号码格式错误！" maxlength="50">
                                 </div>
@@ -269,7 +366,7 @@
                                 <div class="frm-item-cont">
                                     <i class="inptMask"></i>
                                     <input data-name="customerTel" type="text" class="frm-inpt" id="sin_customerTel"
-                                           name="_fm.ua._0.cust" data-type="tel" data-need="true" msg-null="手机号码不能为空！"
+                                           name="phone" data-type="tel" data-need="true" msg-null="手机号码不能为空！"
                                            msg-error="手机号码格式错误！" maxlength="11" placeholder="请输入手机号码">
                                 </div>
                             </div>
@@ -278,39 +375,8 @@
                                 <div class="frm-item-cont">
                                     <i class="inptMask"></i>
                                     <input data-name="customerEmail" type="text" class="frm-inpt" id="sin_customerEmail"
-                                           name="_fm.ua._0.custo" data-type="email" data-need="true"
+                                           name="email" data-type="email" data-need="true"
                                            msg-null="邮箱地址不能为空！" msg-error="邮箱地址格式错误！" placeholder="请输入邮箱地址">
-                                </div>
-                            </div>
-                            <div class="frm-item">
-                                <h5 class="frm-item-hd">证书颁发单位</h5>
-                                <div class="frm-item-cont">
-                                    <input data-name="pilotCertiSource" type="hidden" id="pilotCertiSource_data"
-                                           name="_fm.ua._0.pilo" value="">
-                                    <input data-name="pilotCertiSource_text" type="text" id="pilotCertiSource"
-                                           readonly="readonly" class="frm-select" value="" placeholder="请选择(非必填)"
-                                           data-type="*" data-need="false" msg-null="证书颁发单位不能为空！"
-                                           msg-error="证书颁发单位格式错误！">
-                                    <b></b>
-                                    <div class="c-select-options" id="book"
-                                         style="top: 48px; left: 0px; width: 328px; display: none;">
-                                        <ul class="c-options js-options" style="display: block;">
-                                            <li class="" data="">无</li>
-                                            <li class="" data="1">AOPA中国航空器拥有者及驾驶员协会</li>
-                                            <li class="" data="2">中国航空运输协会通用航空分会\中国成人教育协会</li>
-                                            <li class="" data="3">中国航空运动协会</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="frm-item">
-                                <h5 class="frm-item-hd">证书编号</h5>
-                                <div class="frm-item-cont">
-                                    <i class="inptMask"></i>
-                                    <input data-name="pilotCertiSourceNo" type="text" class="frm-inpt J_errorItem"
-                                           id="sin_pilotCertiSourceNo" name="_fm.ua._0.pilot" placeholder="请输入证书编号"
-                                           data-type="*" data-need="false" msg-null="证书编号不能为空！" msg-error="证书编号格式错误！"
-                                           maxlength="50">
                                 </div>
                             </div>
                             <div class="frm-extra"><label class="frm-inpt-check-box frm-check-box" id="ofJ"
@@ -324,7 +390,7 @@
                             <div class="frm-item">
                                 <h5 class="frm-item-hd">无人机机型</h5>
                                 <div class="frm-item-cont">
-                                    <input data-name="modelBrand" type="text" name="" id="planListType"
+                                    <input data-name="modelBrand" type="text" name="uav" id="planListType"
                                            class="frm-select-muilt" value="" readonly="" placeholder="请选择无人机品牌机型"
                                            data-type="*" data-need="true" msg-null="无人机机型不能为空！" msg-error="无人机机型格式错误！">
                                     <b></b>
@@ -335,37 +401,14 @@
                                         </div>
                                         <div class="items">
                                             <ul class="clearfix" id="v-model">
-                                                <li><a href="javascript:;" data="大疆" class="on">大疆</a></li>
-                                                <li><a href="javascript:;" data="昊翔">昊翔</a></li>
-                                                <li><a href="javascript:;" data="零度">零度</a></li>
-                                                <li><a href="javascript:;" data="九鹰">九鹰</a></li>
-                                                <li><a href="javascript:;" data="亿航">亿航</a></li>
-                                                <li><a href="javascript:;" data="亚拓">亚拓</a></li>
-                                                <li><a href="javascript:;" data="华科尔">华科尔</a></li>
-                                                <li><a href="javascript:;" data="一电">一电</a></li>
-                                                <li><a href="javascript:;" data="臻迪">臻迪</a></li>
-                                                <li><a href="javascript:;" data="神州">神州</a></li>
-                                                <li><a href="javascript:;" data="基石">基石</a></li>
-                                                <li><a href="javascript:;" data="斯威普">斯威普</a></li>
-                                                <li><a href="javascript:;" data="普宙">普宙</a></li>
-                                                <li><a href="javascript:;" data="零零无限">零零无限</a></li>
-                                                <li><a href="javascript:;" data="小米">小米</a></li>
-                                                <li><a href="javascript:;" data="博瑞云飞">博瑞云飞</a></li>
-                                                <li><a href="javascript:;" data="Parrot">Parrot</a></li>
+                                                <li th:each="brand:${brandList}">
+                                                    <a th:data="${brand.brandName}" th:text="${brand.brandName}" th:i="${brand.brandId}" data-ilog="410.00001.u.7" href="javascript:;" data="大疆">大疆</a>
+                                                </li>
                                             </ul>
                                         </div>
                                         <div class="items dis-none">
                                             <ul class="clearfix" id="v-type">
-                                                <li><a href="javascript:;" data="Mavic Air">Mavic Air</a></li>
-                                                <li><a href="javascript:;" data="Spark" class="on">Spark</a></li>
-                                                <li><a href="javascript:;" data="Mavic Pro">Mavic Pro</a></li>
-                                                <li><a href="javascript:;" data="Phantom3">Phantom3</a></li>
-                                                <li><a href="javascript:;" data="Phantom4">Phantom4</a></li>
-                                                <li><a href="javascript:;" data="Inspire1">Inspire1</a></li>
-                                                <li><a href="javascript:;" data="Inspire2">Inspire2</a></li>
-                                                <li><a href="javascript:;" data="Phantom4 Pro">Phantom4 Pro</a></li>
-                                                <li><a href="javascript:;" data="mavic 2 zoom">mavic 2 zoom</a></li>
-                                                <li><a href="javascript:;" data="Mavic 2 pro">Mavic 2 pro</a></li>
+                                                <li th:each="model:${modelList}"><a th:i="${model.modelId}" th:text="${model.modelName}" href="javascript:;">x11</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -375,33 +418,30 @@
                                 <h5 class="frm-item-hd">保障计划</h5>
                                 <div class="frm-item-cont">
                                     <!--<input type="hidden" id="insurePlan1" name="insurePlan1"/>-->
-                                    <input data-name="insurePlan" type="hidden" id="insurePlan" name="_fm.ua._0.i"
+                                    <input data-name="insurePlan" type="hidden" id="insurePlan"
                                            value="3">
-                                    <input type="text" name="" id="insurePlanDesc" readonly="readonly"
+                                    <input type="text" id="insurePlanDesc" readonly="readonly" name="plan"
                                            class="frm-select" placeholder="请选择保障计划" data-type="*" data-need="true"
                                            msg-null="保障计划不能为空！" msg-error="保障计划格式错误！">
                                     <b></b>
                                     <div class="c-select-options" id="c-select-options"
                                          style="top: 48px; left: 0px; width: 328px; display: none;">
                                         <ul class="c-options js-options" id="choosePlanType" style="display: block;">
-                                            <li class="" data="1" data-originpremium="35"
+                                            <li class="" i="1" data-originpremium="35"
                                                 data-suminsureddesc="累计5万，每次事故2.5万" data-suminsured="50000"
-                                                data-deductible="人身伤亡：无 ；财产损失：每次事故2000元或损失金额的10%,以高者为准">
-                                                经典版，累计5万，每次事故2.5万
+                                                data-deductible="人身伤亡：无 ；财产损失：每次事故2000元或损失金额的10%,以高者为准">经典版，累计5万，每次事故2.5万
                                             </li>
-                                            <li class="" data="2" data-originpremium="70"
+                                            <li class="" i="2" data-originpremium="70"
                                                 data-suminsureddesc="累计10万，每次事故5万" data-suminsured="100000"
                                                 data-deductible="人身伤亡：无 ；财产损失：每次事故2000元或损失金额的10%,以高者为准">白银版，累计10万，每次事故5万
                                             </li>
-                                            <li class="c-options-selected" data="3" data-originpremium="105"
+                                            <li i="3" data-originpremium="105"
                                                 data-suminsureddesc="累计15万，每次事故7.5万" data-suminsured="150000"
-                                                data-deductible="人身伤亡：无 ；财产损失：每次事故2000元或损失金额的10%,以高者为准">
-                                                黄金版，累计15万，每次事故7.5万
+                                                data-deductible="人身伤亡：无 ；财产损失：每次事故2000元或损失金额的10%,以高者为准">黄金版，累计15万，每次事故7.5万
                                             </li>
-                                            <li class="" data="4" data-originpremium="140"
+                                            <li class="" i="4" data-originpremium="140"
                                                 data-suminsureddesc="累计20万，每次事故10万" data-suminsured="200000"
-                                                data-deductible="人身伤亡：无 ；财产损失：每次事故2000元或损失金额的10%,以高者为准">
-                                                铂金版，累计20万，每次事故10万
+                                                data-deductible="人身伤亡：无 ；财产损失：每次事故2000元或损失金额的10%,以高者为准">铂金版，累计20万，每次事故10万
                                             </li>
                                         </ul>
                                     </div>
@@ -412,7 +452,7 @@
                                 <div class="frm-item-cont">
                                     <i class="inptMask"></i>
                                     <input data-name="productSerialNo" type="text" class="frm-inpt"
-                                           id="sin_productSerialNo" name="_fm.ua._0.pro" placeholder="请输入机身编号"
+                                           id="sin_productSerialNo" name="no" placeholder="请输入机身编号"
                                            data-type="*" data-need="true" msg-null="机身编号不能为空！" msg-error="机身编号长度过长！"
                                            maxlength="50">
                                     <i class="remark_icon" id="remark_icon"></i>
@@ -439,7 +479,7 @@
                     </div>
                     <input type="hidden" id="premium" name="_fm.ua._0.pre" value="105">
                     <input type="hidden" id="originPremium" name="_fm.ua._0.or" value="105">
-                    <div class="discount-summary">应付金额：<span id="priceShow">¥105</span><span class="re_price v-hidden"
+                    <div class="discount-summary">应付金额：<span id="priceShow" th:text="@{'¥'+${price}}">¥105</span><span class="re_price v-hidden"
                                                                                              id="re_priceShow"></span>
                     </div>
                     <div class="frm-error-tips v-hidden" id="frm-error-tips"></div>
@@ -530,24 +570,6 @@
                 20131111112754954</a></p></div>
     </div>
 </div><!--end  footer--><!--统计代码-->
-<script>var _hmt = _hmt || [];
-(function () {
-    var hm = document.createElement("script");
-    hm.src = "https://hm.baidu.com/hm.js?ecc6d381dd1b2d77f324681c7a9d76d5";
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(hm, s);
-})();</script><!--百度自动推送代码2-->
-<script>(function () {
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    } else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();</script>
 <script>
     var insurePlanJson = {
         "1": "经典版",
@@ -582,6 +604,8 @@
         window._maEvt.push(['click', value]);
     });
 </script>
+<div class="ui-mask light" style="display: none;"></div>
+<div class="ui-alert" style="margin-top: -145.2px; display: none;"><h4>提示</h4><div class="ui-alert-c">姓名不能为空！</div><div class="ui-alert-b"><input type="button" class="ui-alert-btn" value="我知道了"></div></div>
 
 </body>
 </html>
