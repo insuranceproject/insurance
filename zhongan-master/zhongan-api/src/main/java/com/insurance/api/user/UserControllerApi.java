@@ -6,6 +6,8 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.models.auth.In;
 
+import javax.servlet.http.HttpSession;
+
 @Api(value="用户管理接口",description = "用户接口，提供用户的增、删、改、查")
 public interface UserControllerApi {
 
@@ -27,8 +29,8 @@ public interface UserControllerApi {
      * @param user
      * @return
      */
-    @ApiOperation("个人用户名密码登陆")
-    public User falsLogin(User user);
+    @ApiOperation("个人用户快速登陆")
+    public boolean falsLogin(User user, HttpSession session);
 
     /**
      * 个人注册

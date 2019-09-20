@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
 @RestController
 @RequestMapping("/user")
@@ -48,10 +49,10 @@ public class UserController implements UserControllerApi {
      */
     @PostMapping("/falsLogin")
     @Override
-    public User falsLogin(@RequestBody User user) {
+    public boolean falsLogin(@RequestBody User user,HttpSession session) {
         String s2="^[1](([3|5|8][\\d])|([4][4,5,6,7,8,9])|([6][2,5,6,7])|([7][^9])|([9][1,8,9]))[\\d]{8}$";// 验证手机号
         if(!user.getUserPhonenumber().matches(s2)){
-            return null;
+            return false;
         }
         //首先查询根据传进来的电话号查询用户,如果为空则说明未注册
         User user1 = userService.getOne(new QueryWrapper<User>().eq("user_phonenumber", user.getUserPhonenumber()));
@@ -62,10 +63,12 @@ public class UserController implements UserControllerApi {
             user.setUserRole("3");
             boolean registered = registered(user);
             if(registered){
-                return user;
+                session.setAttribute("user", user);
+                return true;
             }
         }
-        return user1;
+        session.setAttribute("user", user1);
+        return true;
     }
 
     /**

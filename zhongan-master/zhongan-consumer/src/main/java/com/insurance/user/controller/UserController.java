@@ -113,11 +113,9 @@ public class UserController {
         if (session.getAttribute("phone").equals(phone) && session.getAttribute("smsCode").equals(smsCode)) {
             session.removeAttribute("phone");    //进了这个方法这两个值在session里就没用了
             session.removeAttribute("smsCode");
-
             User user = new User();
             user.setUserPhonenumber(phone);
             User user1 = userClient.falsLogin(user);    //根据手机号查询一个用户
-            session.setAttribute("user", user1);
             return "y";
         }
         return null;

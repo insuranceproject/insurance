@@ -5,6 +5,8 @@ import com.insurance.pojo.User;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
+
 @FeignClient("PROVIDER-USER")
 public interface UserClient {
     @GetMapping("/user/getOne")
@@ -23,7 +25,7 @@ public interface UserClient {
      * @return
      */
     @PostMapping("/user/falsLogin")
-    public User falsLogin(User user);
+    public boolean falsLogin(User user, HttpSession session);
 
     /**
      * 个人注册
