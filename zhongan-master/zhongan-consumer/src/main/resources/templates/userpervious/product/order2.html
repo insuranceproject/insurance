@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- saved from url=(0039)https://www.zhongan.com/dm/order/order2 -->
-<html style=""
+<html xmlns:th="http://www.thymeleaf.org" style=""
       class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -312,71 +312,7 @@
 </head>
 <body>
 <div id="viewport" class="pg-order-details">
-    <link href="http://47.93.221.88/previous/userpervious/product/css/za-common.css" rel="stylesheet">
-    <!--header  start-->
-    <div class="za-toolbar" data-ilog="1.589.zL6|a" ilogbinded="true">
-        <div class="za-toolbar-layout">
-            <div class="za-toolbar-layout-logo"><a href="https://www.zhongan.com/" title="众安保险" rel="nofollow">众安保险</a>
-            </div>
-            <p class="za-toolbar-layout-slogan"><span>做有温度的保险</span></p>
-            <div class="za-toolbar-layout-entry"><input type="hidden" id="logoutUrl" value="/logOut"> <input
-                    type="hidden" id="domain" value="https://www.zhongan.com"> <input type="hidden" id="originDomain"
-                                                                                      value="https://www.zhongan.com">
-                <input type="hidden" id="appName" value="dm">
-                <!--<div class="entry-item entry-login" id="headerLogin">-->
-                <div id="headerLogin"
-                     style="    position: relative;display: inline;float: left;line-height: 34px;box-sizing: content-box;">
-                    <a href="https://www.zhongan.com/account/myAccount" title="点击进入我的账户">za19lxk0c9</a><i
-                        class="vline"></i><a href="https://www.zhongan.com/logOut">退出</a></div>            <!--</div>-->
-                <div class="entry-item entry-account"><a href="https://www.zhongan.com/account/myAccount"
-                                                         class="entry-item-hd" rel="nofollow"><span>个人中心</span><i
-                        class="icon-drop"></i></a>
-                    <ul class="za-toolbar-sublist">
-                        <li class="sub-item"><a href="https://www.zhongan.com/account/myPolicy" title="我的订单"
-                                                rel="nofollow">我的订单</a></li>
-                        <li class="sub-item"><a href="https://www.zhongan.com/account/employeeWelfare" title="团险保单"
-                                                rel="nofollow">团险保单</a></li>
-                        <li class="sub-item"><a href="https://www.zhongan.com/account/claimEnquiry" title="理赔查询"
-                                                rel="nofollow">理赔查询</a></li>
-                        <li class="sub-item"><a href="https://www.zhongan.com/account/myInfo" title="我的资料"
-                                                rel="nofollow">我的资料</a></li>
-                        <li class="sub-item"><a href="https://www.zhongan.com/account/myInvest" title="我的投资"
-                                                rel="nofollow">我的投资</a></li>
-                        <li class="sub-item"><a href="http://open.zhongan.com/innerweb/ygd/loanApplyRecord.htm"
-                                                title="我的资产" rel="nofollow">我的资产</a></li>
-                        <li class="sub-item"><a href="https://www.zhongan.com/account/myPoint" title="我的积分"
-                                                rel="nofollow">我的积分</a></li>
-                    </ul>
-                </div>
-                <div class="entry-item entry-eportal"><a href="https://www.zhongan.com/eportal/" rel="nofollow"><span>众安团险</span><i
-                        class="icon-drop"></i></a>
-                    <ul class="za-toolbar-sublist">
-                        <li class="sub-item"><a href="https://www.zhongan.com/eportal/employee.html" title="员工商业保险"
-                                                rel="nofollow">员工商业保险</a></li>
-                        <li class="sub-item"><a href="https://hr.zhongan.com/" title="https://hr.zhongan.com"
-                                                rel="nofollow">企业hr保单管理</a></li>
-                    </ul>
-                </div>
-                <div class="entry-item entry-mobile-download"><a
-                        href="https://www.zhongan.com/open/active/app/appdownload">下载APP</a></div>
-                <div class="entry-item entry-open"><a href="https://open.zhongan.com/open/home/home.htm" target="_blank"
-                                                      rel="nofollow">开放平台</a></div>
-                <div class="entry-item entry-publicInfo"><a
-                        href="https://www.zhongan.com/channel/public/publicInfo2018.html" target="_blank"
-                        rel="nofollow"><span>公开信息披露</span><i class="icon-drop"></i></a>
-                    <ul class="za-toolbar-sublist">
-                        <li class="sub-item"><a href="https://www.zhongan.com/channel/public/publicInfo2018.html"
-                                                title="公开信息披露" rel="nofollow">公开信息披露</a></li>
-                        <li class="sub-item"><a href="https://www.zhongan.com/channel/internetInfo/internetInfo.html"
-                                                title="互联网保险信息披露" rel="nofollow">互联网保险信息披露</a></li>
-                    </ul>
-                </div>
-                <div class="entry-item entry-open"><a href="https://www.zhongan.com/corporate/announcements/"
-                                                      rel="nofollow">投资者关系 Investor Relations</a></div>
-            </div>
-        </div>
-    </div>
-    <script src="http://47.93.221.88/previous/userpervious/product/js/headerLogin.js"></script>    <!--end  header-->
+    <div th:replace="/public/public_head :: head"></div>
     <form id="CM_Form" action="https://www.zhongan.com/dm/order/order2" method="post" autocomplete="off">
         <input name="_csrf_token" type="hidden" value="CTft1bki4HKEGVNefwcmw1">
         <input type="hidden" name="action" value="/dm/order/OrderAction">

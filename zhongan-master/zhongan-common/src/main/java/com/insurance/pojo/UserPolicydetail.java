@@ -1,40 +1,26 @@
 package com.insurance.pojo;
 
-import java.io.Serializable;
-
 /**
  * 用户保单详情(第三方表)
  */
-public class UserPolicydetail implements Serializable {
+public class UserPolicydetail {
+    private Integer userId;  //用户编号
     private String productName; //产品名称
     private String policyStarttime; //起始时间
     private String policyEndtime; //结束时间
     private Integer planPrice; //产品金额
-    private String policyStauts;   //保单状态
-    private String policyBuyaddr;  //保单详情,购买渠道
+    private Integer policyStauts;   //保单状态
+    private Integer policyBuyaddr;  //保单详情,购买渠道
     private String orderCreateTime;  //订单创建时间
     private String orderNumber;  //订单编号
     private String policyNumber;  //保单号
-
-    @Override
-    public String toString() {
-        return "UserPolicydetail{" +
-                "productName='" + productName + '\'' +
-                ", policyStarttime='" + policyStarttime + '\'' +
-                ", policyEndtime='" + policyEndtime + '\'' +
-                ", planPrice=" + planPrice +
-                ", policyStauts='" + policyStauts + '\'' +
-                ", policyBuyaddr='" + policyBuyaddr + '\'' +
-                ", orderCreateTime='" + orderCreateTime + '\'' +
-                ", orderNumber='" + orderNumber + '\'' +
-                ", policyNumber='" + policyNumber + '\'' +
-                '}';
-    }
+    private Integer productClaims;  //在线理赔
 
     public UserPolicydetail() {
     }
 
-    public UserPolicydetail(String productName, String policyStarttime, String policyEndtime, Integer planPrice, String policyStauts, String policyBuyaddr, String orderCreateTime, String orderNumber, String policyNumber) {
+    public UserPolicydetail(Integer userId, String productName, String policyStarttime, String policyEndtime, Integer planPrice, Integer policyStauts, Integer policyBuyaddr, String orderCreateTime, String orderNumber, String policyNumber, Integer productClaims) {
+        this.userId = userId;
         this.productName = productName;
         this.policyStarttime = policyStarttime;
         this.policyEndtime = policyEndtime;
@@ -44,6 +30,15 @@ public class UserPolicydetail implements Serializable {
         this.orderCreateTime = orderCreateTime;
         this.orderNumber = orderNumber;
         this.policyNumber = policyNumber;
+        this.productClaims = productClaims;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public String getProductName() {
@@ -78,19 +73,19 @@ public class UserPolicydetail implements Serializable {
         this.planPrice = planPrice;
     }
 
-    public String getPolicyStauts() {
+    public Integer getPolicyStauts() {
         return policyStauts;
     }
 
-    public void setPolicyStauts(String policyStauts) {
+    public void setPolicyStauts(Integer policyStauts) {
         this.policyStauts = policyStauts;
     }
 
-    public String getPolicyBuyaddr() {
+    public Integer getPolicyBuyaddr() {
         return policyBuyaddr;
     }
 
-    public void setPolicyBuyaddr(String policyBuyaddr) {
+    public void setPolicyBuyaddr(Integer policyBuyaddr) {
         this.policyBuyaddr = policyBuyaddr;
     }
 
@@ -116,5 +111,30 @@ public class UserPolicydetail implements Serializable {
 
     public void setPolicyNumber(String policyNumber) {
         this.policyNumber = policyNumber;
+    }
+
+    public Integer getProductClaims() {
+        return productClaims;
+    }
+
+    public void setProductClaims(Integer productClaims) {
+        this.productClaims = productClaims;
+    }
+
+    @Override
+    public String toString() {
+        return "UserPolicydetail{" +
+                "userId=" + userId +
+                ", productName='" + productName + '\'' +
+                ", policyStarttime='" + policyStarttime + '\'' +
+                ", policyEndtime='" + policyEndtime + '\'' +
+                ", planPrice=" + planPrice +
+                ", policyStauts=" + policyStauts +
+                ", policyBuyaddr=" + policyBuyaddr +
+                ", orderCreateTime='" + orderCreateTime + '\'' +
+                ", orderNumber='" + orderNumber + '\'' +
+                ", policyNumber='" + policyNumber + '\'' +
+                ", productClaims=" + productClaims +
+                '}';
     }
 }

@@ -6,7 +6,9 @@ import com.insurance.product.client.ProductClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -18,9 +20,9 @@ public class TypeController {
     private ProductClient productClient;
 
     @RequestMapping("/findAll")
-    public String findAll(Model model){
+    public String findAll(HttpSession session){
         List<Partype> typeList = productClient.findAll();
-       model.addAttribute("typeList",typeList);
+        session.setAttribute("typeList",typeList);
         return "/index";
     }
 }

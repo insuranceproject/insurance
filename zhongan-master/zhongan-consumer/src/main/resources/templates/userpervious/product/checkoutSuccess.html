@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- saved from url=(0664)https://www.zhongan.com/dm/open/cashier/cashier_pay_return.do?amt=5.00&merchant_code=1605001601&notify_info=%7B%27orderType%27%3A%270%27%7D&notify_time=2019-09-16+11%3A45%3A07&order_time=2019-09-16+11%3A39%3A33&out_trade_no=P000019042512230&pay_channel=alipay&pay_channel_user_no=134****9606&pay_result=S&pay_time=2019-09-16+11%3A45%3A06&pay_trade_no=2019091622001438311052944273&seller_account=za_zfbs4%40zhongan.com&sign=626437053178573ec93b6c6725ce211b&sign_type=MD5&subject=%E5%85%B1%E4%BA%AB%E5%8D%95%E8%BD%A6%E9%AA%91%E8%A1%8C%E9%99%A9%EF%BC%88%E5%AE%98%E7%BD%91%EF%BC%89&trade_no=90190916113933377082432789501479&za_order_no=90190916113933377082432789501479 -->
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -78,69 +78,7 @@
 </head>
 <body class="pg-account">
 <div id="viewport" class="pg-success">
-    <link href="http://47.93.221.88/previous/userpervious/product/css/za-common.css" rel="stylesheet"><!--header  start-->
-    <div class="za-toolbar" data-ilog="1.589.zL6|a" ilogbinded="true">
-        <div class="za-toolbar-layout">
-            <div class="za-toolbar-layout-logo"><a href="https://www.zhongan.com/" title="众安保险" rel="nofollow">众安保险</a>
-            </div>
-            <p class="za-toolbar-layout-slogan"><span>做有温度的保险</span></p>
-            <div class="za-toolbar-layout-entry"><input type="hidden" id="logoutUrl" value="/logOut"> <input
-                    type="hidden" id="domain" value="https://www.zhongan.com"> <input type="hidden" id="originDomain"
-                                                                                      value="https://www.zhongan.com">
-                <input type="hidden" id="appName" value="dm">
-                <!--<div class="entry-item entry-login" id="headerLogin">-->
-                <div id="headerLogin"
-                     style="    position: relative;display: inline;float: left;line-height: 34px;box-sizing: content-box;">
-                    <a href="https://www.zhongan.com/account/myAccount" title="点击进入我的账户">qqqq1111</a><i
-                        class="vline"></i><a href="https://www.zhongan.com/logOut">退出</a></div>            <!--</div>-->
-                <div class="entry-item entry-account"><a href="https://www.zhongan.com/account/myAccount"
-                                                         class="entry-item-hd" rel="nofollow"><span>个人中心</span><i
-                        class="icon-drop"></i></a>
-                    <ul class="za-toolbar-sublist">
-                        <li class="sub-item"><a href="https://www.zhongan.com/account/myPolicy" title="我的订单"
-                                                rel="nofollow">我的订单</a></li>
-                        <li class="sub-item"><a href="https://www.zhongan.com/account/employeeWelfare" title="团险保单"
-                                                rel="nofollow">团险保单</a></li>
-                        <li class="sub-item"><a href="https://www.zhongan.com/account/claimEnquiry" title="理赔查询"
-                                                rel="nofollow">理赔查询</a></li>
-                        <li class="sub-item"><a href="https://www.zhongan.com/account/myInfo" title="我的资料"
-                                                rel="nofollow">我的资料</a></li>
-                        <li class="sub-item"><a href="https://www.zhongan.com/account/myInvest" title="我的投资"
-                                                rel="nofollow">我的投资</a></li>
-                        <li class="sub-item"><a href="http://open.zhongan.com/innerweb/ygd/loanApplyRecord.htm"
-                                                title="我的资产" rel="nofollow">我的资产</a></li>
-                        <li class="sub-item"><a href="https://www.zhongan.com/account/myPoint" title="我的积分"
-                                                rel="nofollow">我的积分</a></li>
-                    </ul>
-                </div>
-                <div class="entry-item entry-eportal"><a href="https://www.zhongan.com/eportal/" rel="nofollow"><span>众安团险</span><i
-                        class="icon-drop"></i></a>
-                    <ul class="za-toolbar-sublist">
-                        <li class="sub-item"><a href="https://www.zhongan.com/eportal/employee.html" title="员工商业保险"
-                                                rel="nofollow">员工商业保险</a></li>
-                        <li class="sub-item"><a href="https://hr.zhongan.com/" title="https://hr.zhongan.com"
-                                                rel="nofollow">企业hr保单管理</a></li>
-                    </ul>
-                </div>
-                <div class="entry-item entry-mobile-download"><a
-                        href="https://www.zhongan.com/open/active/app/appdownload">下载APP</a></div>
-                <div class="entry-item entry-open"><a href="https://open.zhongan.com/open/home/home.htm" target="_blank"
-                                                      rel="nofollow">开放平台</a></div>
-                <div class="entry-item entry-publicInfo"><a
-                        href="https://www.zhongan.com/channel/public/publicInfo2018.html" target="_blank"
-                        rel="nofollow"><span>公开信息披露</span><i class="icon-drop"></i></a>
-                    <ul class="za-toolbar-sublist">
-                        <li class="sub-item"><a href="https://www.zhongan.com/channel/public/publicInfo2018.html"
-                                                title="公开信息披露" rel="nofollow">公开信息披露</a></li>
-                        <li class="sub-item"><a href="https://www.zhongan.com/channel/internetInfo/internetInfo.html"
-                                                title="互联网保险信息披露" rel="nofollow">互联网保险信息披露</a></li>
-                    </ul>
-                </div>
-                <div class="entry-item entry-open"><a href="https://www.zhongan.com/corporate/announcements/"
-                                                      rel="nofollow">投资者关系 Investor Relations</a></div>
-            </div>
-        </div>
-    </div>
+    <div th:replace="/public/public_head :: head"></div>
     <script src="http://47.93.221.88/previous/userpervious/product/js/headerLogin.js"></script>    <!--end  header-->
     <div class="contentWidth bar">
         <input name="_csrf_token" type="hidden" value="n3gidlQ5660lH5YasEi8T6">

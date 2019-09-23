@@ -1,5 +1,7 @@
 package com.insurance.order.client;
 
+import com.github.pagehelper.PageInfo;
+import com.insurance.pojo.Claim;
 import com.insurance.pojo.Policy;
 import com.insurance.pojo.Policydetail;
 import com.insurance.pojo.UserPolicydetail;
@@ -17,7 +19,7 @@ public interface OrderClient {
      * @param userId
      * @return
      */
-    @PostMapping("/policy/getPolicyByUserId")
+    @PostMapping("/Policy/getPolicyByUserId")
     public List<Policy> getPolicyByUserId(@RequestParam("userId") Integer userId);
 
     /**
@@ -30,11 +32,24 @@ public interface OrderClient {
 
     /**
      * 根据条件分页查询订单
-     * @param pageNo
-     * @param pageSize
      * @param map
      * @return
      */
-    @PostMapping("/order/selectOrder")
-    public PageInfo<UserPolicydetail> selectOrder(@RequestParam("pageNo") Integer pageNo, @RequestParam("pageSize") Integer pageSize, @RequestParam("map") Map<String, Object> map);
+    @GetMapping("/order/selectOrder")
+    public PageInfo<UserPolicydetail> selectOrder(@RequestParam("pageNo") Integer pageNo,@RequestParam("pageSize") Integer pageSize,@RequestParam Map<String,Object> map);
+
+    /**
+     * 添加理赔信息
+     * @param claim
+     * @return
+     */
+    @PostMapping("/order/addCliam")
+    public boolean addCliam(@RequestBody Claim claim);
+
+    /**
+     * 分页查询理赔信息
+     * @return
+     */
+    @GetMapping("/order/selectClaim")
+    public PageInfo<Claim> selectClaim(@RequestParam("pageNo") Integer pageNo,@RequestParam("pageSize") Integer pageSize);
 }

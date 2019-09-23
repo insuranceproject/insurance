@@ -17,7 +17,7 @@ public interface UserClient {
      * @return
      */
     @PostMapping("/user/fastLogin")
-    public boolean fastLogin(User user, HttpSession session);
+    public boolean fastLogin(@RequestParam("user") User user,@RequestParam("session") HttpSession session);
 
     /**
      * 个人登陆
@@ -32,7 +32,7 @@ public interface UserClient {
      * @return
      */
     @PostMapping("/user/falsLogin")
-    public boolean falsLogin(User user, HttpSession session);
+    public User falsLogin(User user);
 
     /**
      * 个人注册

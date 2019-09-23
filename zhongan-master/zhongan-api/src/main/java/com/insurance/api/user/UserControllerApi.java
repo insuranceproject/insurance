@@ -30,7 +30,7 @@ public interface UserControllerApi {
      * @return
      */
     @ApiOperation("个人用户快速登陆")
-    public boolean falsLogin(User user, HttpSession session);
+    public User falsLogin(User user, HttpSession session);
 
     @ApiOperation("快速登录")
     public boolean fastLogin(User user, HttpSession session);

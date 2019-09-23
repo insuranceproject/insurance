@@ -17,7 +17,7 @@ import javax.annotation.Resource;
 @RequestMapping("/corp")
 public class CorpController implements CorpControllerApi {
 
-    @Resource
+    @Autowired
     private CorpService corpService;
 
     /**

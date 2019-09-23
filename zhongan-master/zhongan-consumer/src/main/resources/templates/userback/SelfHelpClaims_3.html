@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)https://one.cpic.com.cn/pc/views/policyServer/healthySelfClaim.html -->
+<html xmlns:th="http://www.thymeleaf.org"><!-- 个人中心- －展示-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>健康险自助理赔</title>
+    <link href="http://47.93.221.88/previous/userback/css/za-common(1).css" rel="stylesheet">
+    <link rel="stylesheet" href="http://47.93.221.88/previous/userback/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://47.93.221.88/previous/userback/css/base.css">
+    <link rel="stylesheet" href="http://47.93.221.88/previous/userback/css/nprogress.css">
+    <script async="" src="http://47.93.221.88/previous/userback/js/td-pc-website-sdk.js" charset="UTF-8"></script>
+    <script async="" src="http://47.93.221.88/previous/userback/js/sensorsdata.min.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="http://47.93.221.88/previous/userback/js/nprogress.js"></script>
+    <link rel="stylesheet" href="http://47.93.221.88/previous/userback/css/healthySelfClaim.css">
+    <script type="text/javascript" src="http://47.93.221.88/previous/userback/js/require.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery"
+            src="http://47.93.221.88/previous/userback/js/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="bootstrap"
+            src="http://47.93.221.88/previous/userback/js/bootstrap.min.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="vue"
+            src="http://47.93.221.88/previous/userback/js/vue.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="s_code"
+            src="http://47.93.221.88/previous/userback/js/s_code.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="require_css"
+            src="http://47.93.221.88/previous/userback/js/require_css.js"></script>
+    <link type="text/css" rel="stylesheet" href="http://47.93.221.88/previous/userback/css/codeImg.css">
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="codeImg"
+            src="http://47.93.221.88/previous/userback/js/codeImg.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="actionConf"
+            src="http://47.93.221.88/previous/userback/js/actionConf.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="header"
+            src="http://47.93.221.88/previous/userback/js/headerNew.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="pageAddress"
+            src="http://47.93.221.88/previous/userback/js/pageAddress.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="footer"
+            src="http://47.93.221.88/previous/userback/js/footer.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="crumbs"
+            src="http://47.93.221.88/previous/userback/js/crumbs.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="polyfill"
+            src="http://47.93.221.88/previous/userback/js/polyfill.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="http://47.93.221.88/previous/userback/css/vee-validate.css">
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_"
+            data-requiremodule="base/component/plugins/vee-validate" src="http://47.93.221.88/previous/userback/js/vee-validate.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="VeeValidate"
+            src="http://47.93.221.88/previous/userback/js/extend-vee-validate.js"></script>
+    <link type="text/css" rel="stylesheet" href="http://47.93.221.88/previous/userback/css/roundVerCode.css">
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="roundVerCode"
+            src="http://47.93.221.88/previous/userback/js/roundVerCode.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_"
+            data-requiremodule="base/component/ui/avatarCropUpload/ajaxfileupload"
+            src="http://47.93.221.88/previous/userback/js/ajaxfileupload.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_"
+            data-requiremodule="uploadFileToFileServer" src="http://47.93.221.88/previous/userback/js/uploadFileToFileServer.js"></script>
+    <meta name="referrer" content="always">
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ajax"
+            src="http://47.93.221.88/previous/userback/js/ajax.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="baiduHM"
+            src="http://47.93.221.88/previous/userback/js/hm.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="actionTokens"
+            src="http://47.93.221.88/previous/userback/js/actionTokens-prod.js"></script>
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="vue_resource"
+            src="http://47.93.221.88/previous/userback/js/vue-resource.js"></script>
+    <link type="text/css" rel="stylesheet" href="http://47.93.221.88/previous/userback/js/loading.css">
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="loading"
+            src="http://47.93.221.88/previous/userback/js/loading.js"></script>
+</head>
+
+<body>
+<!--<script type="text/javascript">
+    NProgress.start();
+</script>-->
+
+<div id="app">
+    <div class="container-fluid cpic-ibox visible" style="">
+        <div th:replace="/public/public_head :: head"></div>
+        <div id="navlist-box-model">
+            <div class="zzlp"><span class="aliIconfont home"></span> <a href="javascript:void(0);"
+                                                                                        class="crumbs">&nbsp;众安保险首页&nbsp;/&nbsp;</a><a
+                    href="javascript:void(0);" class="crumbs">&nbsp;我的账户首页&nbsp;/&nbsp;</a> <span>健康险自助理赔</span></div>
+        </div>
+        <div class="box">
+            <div class="ipad-cont main container">
+                <div class="chose-type" style="display: none;">
+                    <div class="tit1 mb10">尊敬的客户：</div>
+                    <div class="tit2 mb20">欢迎进入太保安联健康险自助理赔区，非常感谢您投保我公司产品，请选择您所申请的险种名称：</div>
+                    <ul class="chose-list">
+                        <li class="mb30">
+                            <div class="chose-li">加倍爱重大疾病保险</div>
+                        </li>
+                        <li class="mb30">
+                            <div class="chose-li tikes-active">医学美容意外伤害保险</div>
+                        </li>
+                        <li class="mb30">
+                            <div class="chose-li">四季宝贝儿童疾病保险</div>
+                        </li>
+                        <li class="mb30">
+                            <div class="chose-li">个人意外伤害及附加个人疾病身故保险</div>
+                        </li>
+                        <li class="mb30">
+                            <div class="chose-li">综合意外伤害保险及附加运动意外伤害保险</div>
+                        </li>
+                        <li class="mb30">
+                            <div class="chose-li">个人百万重大疾病保险</div>
+                        </li>
+                        <li class="mb30">
+                            <div class="chose-li">个人百万恶性肿瘤疾病保险</div>
+                        </li>
+                        <li class="mb30">
+                            <div class="chose-li">个人百万医疗保险</div>
+                        </li>
+                    </ul>
+                    <div class="btn-blue type-next">下一步</div>
+                </div>
+                <div class="program clearfix" style="">
+                    <div class="round-wrap fl actived"><p>申请须知</p>
+                        <div class="four-point"></div>
+                    </div>
+                    <div class="round-wrap fl active"><p>上传资料</p>
+                        <div class="four-point"></div>
+                    </div>
+                    <div class="round-wrap fl mar0"><p>提交申请</p></div>
+                </div>
+                <div class="line-throw" style=""></div>
+                <div class="guide" style="display: none;">
+                    <div class="contents">
+                        <div class="tit-one">尊敬的客户：</div>
+                        <div class="tit-two mb20">非常感谢您投保我公司产品，在您发起理赔申请之前，请认真阅读以下提示：</div>
+                        <div class="tit-blue">一、申请资料</div>
+                        <p class="content-one mb20">1.请按照索赔资料指引准备完备的理赔资料上传。<br>
+                            2.所有资料均应彩拍上传，身份证件需要同时拍照正反面。<br>
+                            3.被保险人身份证明、监护人身份证明和关系证明均需上传。<br>
+                            4.理赔申请书务必填写完整，以便我们能够及时联系到您并在做出理赔赔付决定后将赔款支付至您的指定账户。<br>
+                            5.提交理赔资料后，请将书面资料快递至上海市浦东新区世纪大道1229号世纪大都会13层理赔部。
+                        </p>
+                        <div class="tit-blue">二、反保险欺诈提示</div>
+                        <p class="content-one mb20">请务必确保您的理赔申请真实有效，否则将有可能承担刑事责任、行政责任或民事责任。</p>
+                        <div class="tit-blue">三、其他须知</div>
+                        <p class="content-one">通过在线自助申请理赔等同于申请人已授权太保安联健康保险股份有限公司可要求持有或了解被保险人的健康及医疗记录的任何第三方获取上述资料。</p>
+                    </div>
+                    <div class="guide-btns clearfix">
+                        <div class="guide-pro btn-white fl">上一步</div>
+                        <div class="guide-next btn-blue fl">我已阅读并同意</div>
+                    </div>
+                </div>
+                <div class="update-doc" style="">
+                    <div class="gray-area" style="display: none;">
+                        <div class="tot-one">加倍爱重大疾病保险理赔资料指引</div>
+                        <div class="li-content clearfix">
+                            <ul class="fl">
+                                <li class="li-tit">身份资料</li>
+                                <li class="li-i">理赔申请书（请下载并填写完整）</li>
+                                <li class="li-i">被保险人、申请人有效身份证明</li>
+                                <li class="li-i">法定监护人申请需提供关系证明（如户口本）</li>
+                            </ul>
+                            <ul class="fl ">
+                                <li class="li-tit">病历资料</li>
+                                <li class="li-i">出院小结</li>
+                                <li class="li-i">诊断证明书（如病理报告）</li>
+                                <li class="li-i">其他检查报告</li>
+                            </ul>
+                            <ul class="fl mr0">
+                                <li class="li-tit">账户资料</li>
+                                <li class="li-i">银行卡/存折复印件</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="gray-area" style="">
+                        <div class="tot-one pb0">医学美容意外伤害保险索赔资料索引</div>
+                        <div class="tot-one">意外身故保险金申请资料</div>
+                        <div class="li-content">
+                            <div class="clearfix">
+                                <ul class="fl">
+                                    <li class="li-tit">申请资料</li>
+                                    <li class="li-i">个人保险理赔申请书（请填写完整并签名）</li>
+                                </ul>
+                                <ul class="fl ">
+                                    <li class="li-tit">保险凭证</li>
+                                    <li class="li-i">保险合同或电子保险单号</li>
+                                </ul>
+                                <ul class="fl mr0">
+                                    <li class="li-tit">身份资料</li>
+                                    <li class="li-i">被保险人、申请人有效身份证件（证件如为身份证需正反面复印件）</li>
+                                    <li class="li-i">受益人关系证明（公安机关出具）</li>
+                                    <li class="li-i">委托授权书（受益人如为多个，委托其中一人申请理赔，需提供委托人签署的授权委托书）</li>
+                                </ul>
+                                <ul class="fl ">
+                                    <li class="li-tit">死亡证明资料</li>
+                                    <li class="li-i">医学死亡证明</li>
+                                    <li class="li-i">户口注销证明</li>
+                                    <li class="li-i" style="opacity: 0;"></li>
+                                </ul>
+                                <ul class="fl ">
+                                    <li class="li-tit">账户资料</li>
+                                    <li class="li-i">保险金转账授权书、存折或银行卡复印件</li>
+                                </ul>
+                                <ul class="fl ">
+                                    <li class="li-tit">其他资料</li>
+                                    <li class="li-i">意外事故证明资料（公安等有权部门出具）</li>
+                                    <li class="li-i">若为境外出险，需提供事故发生地使领馆出具的包含死亡原因的书面证明材料。</li>
+                                    <li class="li-i">若保险金申请人与我们对被保险人的死因有争议，双方均有权提请司法鉴定机构。</li>
+                                    <li class="li-i">对被保险人进行死因鉴定，另一方应当予以配合。</li>
+                                </ul>
+                            </div>
+                            <div class="tot-one">意外手术保险金申请资料</div>
+                            <div class="clearfix">
+                                <ul class="fl">
+                                    <li class="li-tit">申请资料</li>
+                                    <li class="li-i">个人保险理赔申请书（请填写完整并签名）</li>
+                                </ul>
+                                <ul class="fl ">
+                                    <li class="li-tit">保险凭证</li>
+                                    <li class="li-i">保险合同或电子保险单号</li>
+                                </ul>
+                                <ul class="fl mr0">
+                                    <li class="li-tit">身份资料</li>
+                                    <li class="li-i">被保险人、申请人有效身份证件（证件如为身份证需正反面复印件）</li>
+                                </ul>
+                                <ul class="fl ">
+                                    <li class="li-tit">病历资料</li>
+                                    <li class="li-i">门急诊病历、出院小结、诊断证明</li>
+                                    <li class="li-i">医学美容治疗项目实施纪录</li>
+                                    <li class="li-i">手术治疗记录单</li>
+                                </ul>
+                                <ul class="fl ">
+                                    <li class="li-tit">账单资料</li>
+                                    <li class="li-i">医疗费用的发票原件（有医保含医保结算单）</li>
+                                    <li class="li-i">医疗费用结算单及明细清单</li>
+                                    <li class="li-i">若存在第三方赔付，请提供第三方已赔付证明</li>
+                                </ul>
+                                <ul class="fl mr0">
+                                    <li class="li-tit">账户资料</li>
+                                    <li class="li-i">保险金转账授权书、存折或银行卡复印件。</li>
+                                </ul>
+                                <ul class="fl ">
+                                    <li class="li-tit">其他资料</li>
+                                    <li class="li-i">意外事故证明资料（公安等有权部门出具）</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gray-area" style="display: none;">
+                        <div class="tot-one pb0">四季宝贝儿童疾病保险索赔资料指引</div>
+                        <div class="tot-one">少儿重大疾病保险金申请资料</div>
+                        <div class="li-content ">
+                            <div class="clearfix">
+                                <ul class="fl">
+                                    <li class="li-tit">身份资料</li>
+                                    <li class="li-i">理赔申请书（请下载并填写完整）</li>
+                                    <li class="li-i">被保险人、申请人有效身份证明（证件如为身份证需正反面复印件）</li>
+                                    <li class="li-i">法定监护人申请的需提供关系证明（如户口本）</li>
+                                </ul>
+                                <ul class="fl ">
+                                    <li class="li-tit">保险凭证</li>
+                                    <li class="li-i">保险合同或电子保险单号</li>
+                                </ul>
+                                <ul class="fl mr0">
+                                    <li class="li-tit">病历资料</li>
+                                    <li class="li-i">出院小结</li>
+                                    <li class="li-i">诊断证明书（如病理报告）</li>
+                                    <li class="li-i">其他检查报告</li>
+                                </ul>
+                                <ul class="fl ">
+                                    <li class="li-tit">账户资料</li>
+                                    <li class="li-i">银行卡/存折复印件</li>
+                                </ul>
+                            </div>
+                            <div class="tot-one">附加特定疾病门急诊医疗保险金申请资料</div>
+                            <div class="clearfix">
+                                <ul class="fl ">
+                                    <li class="li-tit">身份资料</li>
+                                    <li class="li-i">理赔申请书（请下载并填写完整）</li>
+                                    <li class="li-i">被保险人、申请人有效身份证明（证件如为身份证需正反面复印件）</li>
+                                    <li class="li-i">法定监护人申请的需提供关系证明（如户口本）</li>
+                                </ul>
+                                <ul class="fl mr0">
+                                    <li class="li-tit">保险凭证</li>
+                                    <li class="li-i">保险合同或电子保险单号</li>
+                                </ul>
+                                <ul class="fl ">
+                                    <li class="li-tit">病历资料</li>
+                                    <li class="li-i">门急诊病史</li>
+                                    <li class="li-i">出院小结</li>
+                                    <li class="li-i">诊断证明</li>
+                                    <li class="li-i">确诊特约疾病进行的特殊血液检查、核酸检查、病毒检测等化验检查及其他医疗仪器检查报告</li>
+                                </ul>
+                                <ul class="fl ">
+                                    <li class="li-tit">账单资料</li>
+                                    <li class="li-i">医疗费用的发票原件（有医保含医保结算单）</li>
+                                    <li class="li-i">医疗费用结算单及明细清单</li>
+                                    <li class="li-i">若存在第三方赔付，请提供第三方已赔付证明</li>
+                                </ul>
+                                <ul class="fl ">
+                                    <li class="li-tit">账户资料</li>
+                                    <li class="li-i">保险金转账授权书、存折或银行卡复印件</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gray-area" style="display: none;">
+                        <div class="tot-one pb0">个人意外伤害及附加个人疾病身故疾病保险索赔资料指引</div>
+                        <div class="tot-one">身故保险金申请资料</div>
+                        <div class="li-content ">
+                            <div class="clearfix">
+                                <ul class="fl">
+                                    <li class="li-tit">申请材料</li>
+                                    <li class="li-i">个人保险理赔申请书(请填写完整并签名)</li>
+                                </ul>
+                                <ul class="fl ">
+                                    <li class="li-tit">身份资料</li>
+                                    <li class="li-i">被保险人、申请人有效身份证明(证件如为身份证需正反面复印件)</li>
+                                    <li class="li-i">受益人关系证明(公安机关出具)</li>
+                                    <li class="li-i">委托授权书(受益人如为多个, 委托其中一人申请理赔,需提供委托人签署的授权委托书)</li>
+                                </ul>
+                                <ul class="fl mr0">
+                                    <li class="li-tit">死亡证明资料</li>
+                                    <li class="li-i">医学死亡证明</li>
+                                    <li class="li-i">户口注销证明</li>
+                                    <li class="li-i">殡葬证明</li>
+                                </ul>
+                                <ul class="fl ">
+                                    <li class="li-tit">账户资料</li>
+                                    <li class="li-i">银行卡、存折复印件(理赔申请书上已填写账户信息可不必提供)</li>
+                                </ul>
+                                <ul class="fl ">
+                                    <li class="li-tit">病历资料</li>
+                                    <li class="li-i">门急诊病史(须含初诊相关病史资料)</li>
+                                    <li class="li-i">出院小结</li>
+                                    <li class="li-i">住院费用清单</li>
+                                    <li class="li-i">诊断证明书（如病理报告）</li>
+                                    <li class="li-i">其他相关检查、检验报告</li>
+                                </ul>
+                                <ul class="fl ">
+                                    <li class="li-tit">其他资料</li>
+                                    <li class="li-i">猝死证明资料(申请猝死保险金请提供 猝死证明资料是指：卫生行政部门认定的医疗机构、公安部门或其他相关机构出具的证明资料)</li>
+                                    <li class="li-i">意外事故证明资料(申请意外身故保险金请提供)</li>
+                                </ul>
+                            </div>
+                            <div class="tot-one">手术医疗保险金申请资料</div>
+                            <div class="clearfix">
+                                <ul class="fl ">
+                                    <li class="li-tit">申请材料</li>
+                                    <li class="li-i">个人保险理赔申请书(请填写完整并签名)</li>
+                                </ul>
+                                <ul class="fl mr0">
+                                    <li class="li-tit">身份资料</li>
+                                    <li class="li-i">被保险人、申请人有效身份证明(证件如为身份证需正反面复印件)</li>
+                                    <li class="li-i">受益人关系证明(公安机关出具，申请人为被保险人本人可不必提供)</li>
+                                    <li class="li-i">委托授权书(申请人为被保险人本人可不必提供)</li>
+                                </ul>
+                                <ul class="fl ">
+                                    <li class="li-tit">病历资料</li>
+                                    <li class="li-i">门急诊病史(须含初诊相关病史资料)</li>
+                                    <li class="li-i">出院小结</li>
+                                    <li class="li-i">住院费用清单</li>
+                                    <li class="li-i">诊断证明书（如病理报告）</li>
+                                    <li class="li-i">其他相关手术资料；检查、检验报告</li>
+                                </ul>
+                                <ul class="fl ">
+                                    <li class="li-tit">账单资料</li>
+                                    <li class="li-i">医疗费用的发票原件</li>
+                                    <li class="li-i">社保结算单原件</li>
+                                    <li class="li-i">第三方已赔付证明</li>
+                                </ul>
+                                <ul class="fl ">
+                                    <li class="li-tit">账户资料</li>
+                                    <li class="li-i">银行卡、存折复印件(理赔申请书上已填写账户信息可不必提供)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gray-area" style="display: none;">
+                        <div class="tot-one pb0">综合意外伤害保险及附加运动意外伤害保险索赔资料指引</div>
+                        <div class="tot-one">意外身故保险金申请资料</div>
+                        <div class="li-content ">
+                            <div class="clearfix">
+                                <ul class="fl">
+                                    <li class="li-tit">申请材料</li>
+                                    <li class="li-i">个人保险理赔申请书(请填写完整并签名)</li>
+                                </ul>
+                                <ul class="fl">
+                                    <li class="li-tit">保险凭证</li>
+                                    <li class="li-i">保险合同或电子保险单号</li>
+                                </ul>
+                                <ul class="fl ">
+                                    <li class="li-tit">身份资料</li>
+                                    <li class="li-i">被保险人、申请人有效身份证明(证件如为身份证需正反面复印件)</li>
+                                    <li class="li-i">受益人关系证明(公安机关出具)</li>
+                                    <li class="li-i">委托授权书(受益人如为多个, 委托其中一人申请理赔,需提供委托人签署的授权委托书)</li>
+                                </ul>
+                                <ul class="fl mr0">
+                                    <li class="li-tit">死亡证明资料</li>
+                                    <li class="li-i">医学死亡证明</li>
+                                    <li class="li-i">户口注销证明</li>
+                                </ul>
+                                <ul class="fl ">
+                                    <li class="li-tit">账户资料</li>
+                                    <li class="li-i">保险金转账授权书、存折或银行卡复印件</li>
+                                </ul>
+                                <ul class="fl ">
+                                    <li class="li-tit">其他资料</li>
+                                    <li class="li-i">意外事故证明资料（公安等有权部门出具)</li>
+                                    <li class="li-i">若为境外出险，需提供事故发生地使领馆出具的包含死亡原因的书面证明材料。</li>
+                                    <li class="li-i">若保险金申请人与我们对被保险人的死因有争议，双方均有权提请司法鉴定机构对被保险人进行死因鉴定，另一方应当予以配合。</li>
+                                </ul>
+                            </div>
+                            <div class="tot-one">意外残疾保险金申请资料</div>
+                            <div class="clearfix">
+                                <ul class="fl ">
+                                    <li class="li-tit">申请材料</li>
+                                    <li class="li-i">个人保险理赔申请书(请填写完整并签名)</li>
+                                </ul>
+                                <ul class="fl mr0">
+                                    <li class="li-tit">保险凭证</li>
+                                    <li class="li-i">保险合同或电子保险单号</li>
+                                </ul>
+                                <ul class="fl ">
+                                    <li class="li-tit">身份资料</li>
+                                    <li class="li-i">被保险人、申请人有效身份证明(证件如为身份证需正反面复印件)</li>
+                                </ul>
+                                <ul class="fl ">
+                                    <li class="li-tit">病历资料</li>
+                                    <li class="li-i">门急诊病史</li>
+                                    <li class="li-i">出院小结</li>
+                                    <li class="li-i">卫生行政部门认定的二级以上医院或者由双方认可的医疗机构（或鉴定机构）出具的被保险人伤残程度的资料或身体伤残程度鉴定书</li>
+                                </ul>
+                                <ul class="fl ">
+                                    <li class="li-tit">账户资料</li>
+                                    <li class="li-i">保险金转账授权书、存折或银行卡复印件</li>
+                                </ul>
+                                <ul class="fl ">
+                                    <li class="li-tit">其他资料</li>
+                                    <li class="li-i">意外事故证明资料（公安等有权部门出具)</li>
+                                </ul>
+                            </div>
+                            <div class="tot-one">意外医疗保险金申请资料</div>
+                            <div class="clearfix">
+                                <ul class="fl ">
+                                    <li class="li-tit">申请材料</li>
+                                    <li class="li-i">个人保险理赔申请书(请填写完整并签名)</li>
+                                </ul>
+                                <ul class="fl mr0">
+                                    <li class="li-tit">保险凭证</li>
+                                    <li class="li-i">保险合同或电子保险单号</li>
+                                </ul>
+                                <ul class="fl ">
+                                    <li class="li-tit">身份资料</li>
+                                    <li class="li-i">被保险人、申请人有效身份证明(证件如为身份证需正反面复印件)</li>
+                                </ul>
+                                <ul class="fl ">
+                                    <li class="li-tit">病历资料</li>
+                                    <li class="li-i">门急诊病史</li>
+                                    <li class="li-i">出院小结</li>
+                                    <li class="li-i">诊断证明</li>
+                                </ul>
+                                <ul class="fl ">
+                                    <li class="li-tit">账单资料</li>
+                                    <li class="li-i">医疗费用的发票原件（有医保含医保结算单）</li>
+                                    <li class="li-i">医疗费用结算单及明细清单</li>
+                                    <li class="li-i">若存在第三方赔付，请提供第三方已赔付证明</li>
+                                </ul>
+                                <ul class="fl ">
+                                    <li class="li-tit">账户资料</li>
+                                    <li class="li-i">保险金转账授权书、存折或银行卡复印件</li>
+                                </ul>
+                                <ul class="fl ">
+                                    <li class="li-tit">其他资料</li>
+                                    <li class="li-i">意外事故证明资料（公安等有权部门出具)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gray-area" style="display: none;">
+                        <div class="tot-one">个人百万重大疾病保险索赔资料指引</div>
+                        <div class="li-content clearfix">
+                            <ul class="fl">
+                                <li class="li-tit">身份资料</li>
+                                <li class="li-i">理赔申请书（请下载并填写完整）</li>
+                                <li class="li-i">被保险人、申请人有效身份证明（证件如为身份证需正反面复印件）</li>
+                                <li class="li-i">法定监护人申请的需提供关系证明（如户口本）</li>
+                            </ul>
+                            <ul class="fl">
+                                <li class="li-tit">保险凭证</li>
+                                <li class="li-i">保险合同或电子保险单号</li>
+                            </ul>
+                            <ul class="fl ">
+                                <li class="li-tit">病历资料</li>
+                                <li class="li-i">出院小结</li>
+                                <li class="li-i">诊断证明书、检查报告（如病理报告）</li>
+                                <li class="li-i">其他事故证明类资料</li>
+                            </ul>
+                            <ul class="fl mr0">
+                                <li class="li-tit">账单资料</li>
+                                <li class="li-i">医疗费用的发票原件（有医保含医保结算单）</li>
+                                <li class="li-i">医疗费用结算单及明细清单</li>
+                                <li class="li-i">若存在第三方赔付，请提供第三方已赔付证明</li>
+                            </ul>
+                            <ul class="fl ">
+                                <li class="li-tit">账户资料</li>
+                                <li class="li-i">银行卡/存折复印件</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="gray-area" style="display: none;">
+                        <div class="tot-one">个人百万恶性肿瘤疾病保险索赔资料指引</div>
+                        <div class="li-content clearfix">
+                            <ul class="fl">
+                                <li class="li-tit">身份资料</li>
+                                <li class="li-i">理赔申请书（请下载并填写完整）</li>
+                                <li class="li-i">被保险人、申请人有效身份证明（证件如为身份证需正反面复印件）</li>
+                                <li class="li-i">法定监护人申请的需提供关系证明（如户口本）</li>
+                            </ul>
+                            <ul class="fl">
+                                <li class="li-tit">保险凭证</li>
+                                <li class="li-i">保险合同或电子保险单号</li>
+                            </ul>
+                            <ul class="fl ">
+                                <li class="li-tit">病历资料</li>
+                                <li class="li-i">出院小结</li>
+                                <li class="li-i">诊断证明书、检查报告（如病理报告）</li>
+                                <li class="li-i">其他事故证明类资料</li>
+                            </ul>
+                            <ul class="fl mr0">
+                                <li class="li-tit">账单资料</li>
+                                <li class="li-i">医疗费用的发票原件（有医保含医保结算单）</li>
+                                <li class="li-i">医疗费用结算单及明细清单</li>
+                                <li class="li-i">若存在第三方赔付，请提供第三方已赔付证明</li>
+                            </ul>
+                            <ul class="fl ">
+                                <li class="li-tit">账户资料</li>
+                                <li class="li-i">银行卡/存折复印件</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="gray-area" style="display: none;">
+                        <div class="tot-one pb0">个人百万医疗保险索赔资料指引</div>
+                        <div class="tot-one">一般医疗保险金申请资料</div>
+                        <div class="li-content ">
+                            <div class="clearfix">
+                                <ul class="fl">
+                                    <li class="li-tit">身份资料</li>
+                                    <li class="li-i">理赔申请书（请下载并填写完整）</li>
+                                    <li class="li-i">被保险人、申请人有效身份证明（证件如为身份证需正反面复印件）</li>
+                                    <li class="li-i">法定监护人申请的需提供关系证明（如户口本）</li>
+                                </ul>
+                                <ul class="fl">
+                                    <li class="li-tit">保险凭证</li>
+                                    <li class="li-i">保险合同或电子保险单号</li>
+                                </ul>
+                                <ul class="fl ">
+                                    <li class="li-tit">病历资料</li>
+                                    <li class="li-i">出院小结</li>
+                                    <li class="li-i">诊断证明书（如病理报告）</li>
+                                    <li class="li-i">其他检查报告</li>
+                                    <li class="li-i">门诊手术记录</li>
+                                </ul>
+                                <ul class="fl ">
+                                    <li class="li-tit">账户资料</li>
+                                    <li class="li-i">银行卡/存折复印件</li>
+                                </ul>
+                            </div>
+                            <div class="tot-one">恶性肿瘤医疗保险金申请资料</div>
+                            <div class="clearfix">
+                                <ul class="fl mr0">
+                                    <li class="li-tit">身份资料</li>
+                                    <li class="li-i">理赔申请书（请下载并填写完整）</li>
+                                    <li class="li-i">被保险人、申请人有效身份证明（证件如为身份证需正反面复印件）</li>
+                                    <li class="li-i">法定监护人申请的需提供关系证明（如户口本）</li>
+                                </ul>
+                                <ul class="fl ">
+                                    <li class="li-tit">保险凭证</li>
+                                    <li class="li-i">保险合同或电子保险单号</li>
+                                </ul>
+                                <ul class="fl ">
+                                    <li class="li-tit">病历资料</li>
+                                    <li class="li-i">门急诊病史</li>
+                                    <li class="li-i">出院小结</li>
+                                    <li class="li-i">诊断证明书</li>
+                                    <li class="li-i">确诊为恶性肿瘤进行的病理检查报告、血液检查报告、以其他科学方法作出的检验报告、手术记录</li>
+                                </ul>
+                                <ul class="fl ">
+                                    <li class="li-tit">账单资料</li>
+                                    <li class="li-i">医疗费用的发票原件（有医保含医保结算单）</li>
+                                    <li class="li-i">医疗费用结算单及明细清单</li>
+                                    <li class="li-i">若存在第三方赔付，请提供第三方已赔付证明</li>
+                                </ul>
+                                <ul class="fl ">
+                                    <li class="li-tit">账户资料</li>
+                                    <li class="li-i">保险金转账授权书、存折或银行卡复印件</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="download-btns clearfix">
+                        <div class="down-btn fl">下载理赔申请书</div>
+                        <div class="down-btn fl">下载理赔指南</div>
+                    </div>
+                    <div class="line-throw"></div>
+                    <div class="up-tit">上传理赔申请资料<span>（资料类型为jpg/tif/rmvb/pdf/avi,且文件大小不能超过2M）</span></div>
+                    <div id="fileUpLoad2">
+                        <div class="file2List"></div>
+                    </div>
+                    <div><label for="fileupload_input2">
+                        <div class="up-btn btn-white">上传资料</div>
+                    </label></div>
+                    <input type="file" name="file" id="fileupload_input2" style="display: none;">
+                    <div class="update-btns guide-btns clearfix fr">
+                        <div class="guide-pro btn-white fl">上一步</div>
+                        <div class="guide-next fl btn-gray">下一步</div>
+                    </div>
+                </div>
+                <div class="submit-wrap" style="display: none;">
+                    <div class="submit-tit">信息填写与核对</div>
+                    <div class="has-feedback phonenum"><label class="text-info mb10"><span class="red">*</span>请输入/核对您的手机号</label>
+                        <input type="text" readonly="readonly" maxlength="11" id="phone" class="form-control"></div>
+                    <div class="has-feedback phonenum"><label class="text-info mb10"><span
+                            class="red">*</span>图形验证码</label>
+                        <div class="code-wrap">
+                            <div class="codeImg imgCodeWidth"><input autocomplete="off" type="text" maxlength="4"
+                                                                     class="codeImg_btn form-control">
+                                <div class="tuxing-pic"><img
+                                        src="data:image/png;base64,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"
+                                        alt=""></div>
+                                <p class="p-msg" style="display: none;">请输入4位数字验证码</p></div>
+                        </div>
+                    </div>
+                    <div class="has-feedback phonenum phonenum_1"><label class="text-info mb10"><span
+                            class="red">*</span>短信验证码</label>
+                        <div class="code-wrap"><input type="text" id="code" placeholder="请输入验证码" maxlength="6"
+                                                      class="form-control">
+                            <div id="getCode">获取验证码</div>
+                        </div>
+                    </div>
+                    <div class="has-feedback phonenum"><label class="text-info mb10"><span class="red">*</span>请输入/核对您的电子邮箱</label>
+                        <div style="position: relative;"><input type="text" placeholder="请输入您的电子邮箱" maxlength="30"
+                                                                id="emailAddr" class="form-control"></div>
+                    </div>
+                    <div class="wenxin">温馨提示：</div>
+                    <p class="wenxin-cont">请您在完成自助理赔申请后妥善保存理赔原始资料，我们将及时与您联系，指导您将理赔原始资料快递至我们的受理地点，以便完成理赔支付。</p>
+                    <div class="submit-btns guide-btns clearfix fr">
+                        <div class="guide-pro btn-white fl">上一步</div>
+                        <div class="guide-next btn-blue fl">提交申请</div>
+                    </div>
+                </div>
+            </div>
+            <div class="za-footer">
+                <div class="za-footer-layout">
+                    <div class="za-footer-help">
+                        <div class="help-item"><h4 class="help-item-hd">众安保险</h4>
+                            <ul class="za-footer-help-list">
+                                <li class="help-list-item"><a href="https://www.zhongan.com/corporate/" target="_blank" title="关于我们"
+                                                              rel="nofollow">关于我们</a></li>
+                                <li class="help-list-item"><a href="https://www.zhongan.com/channel/about/newsList.html"
+                                                              target="_blank" title="新闻中心" rel="nofollow">新闻中心</a></li>
+                                <li class="help-list-item"><a href="https://www.zhongan.com/open/about/job" target="_blank"
+                                                              title="加入我们" rel="nofollow">加入我们</a></li>
+                                <!--<li class="help-list-item"><a href="https://www.zhongan.com/channel/public/2018xiaozhao/index.html" target="_blank" title="2019校园招聘" rel="nofollow">2019校园招聘</a></li>-->
+                                <li class="help-list-item"><a href="https://www.zhongan.com/channel/about/website.html"
+                                                              target="_blank" title="隐私声明" rel="nofollow">隐私声明</a></li>
+                                <li class="help-list-item"><a href="https://www.zhongan.com/channel/about/fengxiantishi.html"
+                                                              target="_blank" title="风险提示" rel="nofollow">风险提示</a></li>
+                            </ul>
+                        </div>
+                        <div class="help-item"><h4 class="help-item-hd">发现</h4>
+                            <ul class="za-footer-help-list">
+                                <li class="help-list-item"><a href="https://www.zhongan.com/channel/sitemap/sitemap.html"
+                                                              target="_blank" title="网站地图">网站地图</a></li>
+                                <li class="help-list-item"><a href="https://www.zhongan.com/chexianjisuanqi/" target="_blank"
+                                                              title="车险计算器">车险计算器</a></li>
+                                <li class="help-list-item"><a href="https://www.zhongan.io/" target="_blank" title="众安科技">众安科技</a>
+                                </li>
+                                <li class="help-list-item"><a href="http://open.zhongan.com/" target="_blank"
+                                                              title="众安开放平台">众安开放平台</a></li>
+                                <li class="help-list-item"><a href="https://xd.zhongan.io/" target="_blank" title="众安小贷"
+                                                              rel="nofollow">众安小贷</a></li>
+                                <li class="help-list-item"><a href="https://www.zhongan.com/open/about/feedback" target="_blank"
+                                                              title="投诉与建议" rel="nofollow">投诉与建议</a></li>
+                                <li class="help-list-item"><a href="https://security.zhongan.com/" target="_blank"
+                                                              title="众安安全应急响应中心" rel="nofollow">众安安全应急响应中心</a></li>
+                            </ul>
+                        </div>
+                        <div class="help-item"><h4 class="help-item-hd">关注众安</h4>
+                            <ul class="za-footer-help-list">
+                                <li class="help-list-item"><i class="icon-chat"></i>微信公众号<span class="code code-chat"></span></li>
+                                <li class="help-list-item"><i class="icon-alipay"></i>支付宝服务窗<span class="code code-alipay"></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="help-item help-item-server"><h4 class="help-item-hd">客户服务</h4>
+                            <div class="server-tel" style="font-size: 15px"><i class="icon-tel"></i><span class="tel-numb"
+                                                                                                          style="font-size: 16px">1010-9955 </span>
+                                <div>全国统一服务热线</div>
+                                <div>健康险报案服务时间：7×24小时</div>
+                            </div>
+                            <div class="server-tel" style="font-size: 15px"><i class="icon-tel"></i><span class="tel-numb"
+                                                                                                          style="font-size: 16px">021-80399188</span>
+                                <div>举报建议及投诉电话</div>
+                            </div>
+                            <p class="server-email" style="font-size: 15px"><i class="icon-email"></i><a
+                                    href="mailto:cs@zhongan.com">客服邮箱：cs@zhongan.com</a></p>
+                            <p class="server-email" style="font-size: 15px"><i class="icon-email"></i><a
+                                    href="mailto:jubao@zhongan.com">保险欺诈举报邮箱：jubao@zhongan.com</a></p></div>
+                    </div>
+                    <div class="za-footer-bd"><h4 class="footer-logo"><a href="https://www.zhongan.com/" title="众安保险">众安保险</a></h4>
+                        <p class="footer-copyright"><a target="_blank"
+                                                       href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010102004862"
+                                                       rel="nofollow"><img src="http://47.93.221.88/previous/userback/images/police.png"
+                                                                           style="vertical-align:-6px;margin-right:8px;"
+                                                                           alt="沪公网安备 31010102004862号">沪公网安备 31010102004862号</a><a
+                                target="_blank" rel="nofollow" style="margin-left: 17px" href="http://www.miitbeian.gov.cn/"><img
+                                src="http://47.93.221.88/previous/userback/images/network.png" alt="沪ICP备13041135号-1"
+                                style="vertical-align:-4px;margin-right:8px;">沪ICP备13041135号-1</a><a target="_blank"
+                                                                                                     style="margin-left: 17px"
+                                                                                                     href="https://218.242.124.22:8082/businessCheck/verifKey.do?showType=extShow&amp;serial=9031000020170721110206000001942333-SAIC_SHOW_310000-20131111112754954041&amp;signData=MEUCIGONA4AG1pExDb6kOnq0gaicafgHzjVrZpf3YseTN5ZkAiEA/+LP3riJh9rj8/NlhMQS6OWt02fu1TeXWB59GYeY29w="
+                                                                                                     rel="nofollow"><img width="20"
+                                                                                                                         src="http://47.93.221.88/previous/userback/images/lz2.jpg"
+                                                                                                                         alt="沪工商备 20131111112754954"
+                                                                                                                         style="vertical-align:-4px;margin-right:8px;">沪工商备
+                            20131111112754954</a></p></div>
+                </div>
+            </div><!--end  footer--><!--统计代码-->
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="http://47.93.221.88/previous/userback/js/base.js"
+        permodule="codeImg,header,footer,crumbs,pageAddress,VeeValidate,roundVerCode,uploadFileToFileServer"></script>
+<script type="text/javascript" src="http://47.93.221.88/previous/userback/js/healthySelfClaim.js"></script>
+
+<script type="text/javascript" src="http://47.93.221.88/previous/userback/js/cpic.sd.js"></script>
+
+</body>
+</html>

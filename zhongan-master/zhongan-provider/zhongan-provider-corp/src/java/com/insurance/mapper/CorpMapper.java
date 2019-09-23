@@ -6,8 +6,12 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.insurance.pojo.Authentication;
 import com.insurance.pojo.Corp;
 import com.insurance.pojo.User;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Component;
 
+@Mapper
+@Component
 public interface CorpMapper extends BaseMapper<Corp> {
 
 }

@@ -734,42 +734,26 @@ public class UserController {
      * 获取有效保险数量
      * 首先调用根据用户名获取保单方法,查询到改用户的所有保单
      * 再根据保单id查询保单详情,拿其中的截至日期与当前时间相对比,判断是否过期
+     *
      * @return
      */
     @RequestMapping(value = "/consumer/user/getEffectiveInsurance")
-    public List<Integer> getEffectiveInsurance(HttpSession session){
+    public List<Integer> getEffectiveInsurance(HttpSession session) {
         List<Integer> list = new ArrayList<>();
         User user = (User) session.getAttribute("user");
+        //根据用户id获取保单
         List<Policy> policyList = orderClient.getPolicyByUserId(user.getUserId());  //调用根据用户id获取保单方法
-        if(policyList != null){ //判断list里不为空则循环list
-            Integer count1 = 0;  //用于迭代有效保险
-            Integer count2 = 0;  //用于迭代无效保险
-            Integer policydetailId = 0; //用于暂时存贮id进行判断是否为同一保单
-            for (Policy p:policyList) {
-                //调用根据保单id查询保单详情方法
-                List<Policydetail> policydetailList = orderClient.getPolicydetailByPolicyId(p.getPolicyId());
-                //循环输入保单详情list
-                for (Policydetail pd:policydetailList) {
-                    TimeUtil timeUtil = new TimeUtil();
-                    Date chinaTime = timeUtil.getChinaTime();
-                    Date policyEndtime = pd.getPolicyEndtime();
-                    //判断policydetailId不等于pd.getPolicyId()则允许进行下一步
-                    //如果两个值相等则说明是同一个保单的详情
-                    if(pd.getPolicyId() != policydetailId){
-                        if(policyEndtime.after(chinaTime)){  //判断如果保单详情里的截止时间大于当前时间则表示该保单详情在有效期中
-                            count1 +=1; //有效期中,count1加一
-                        } else if(policyEndtime.before(chinaTime)){ //截止日期小于当前时间
-                            count2 +=1;//无效
-                        }
-                    }
-                    //每一轮循环最后都将pd.getPolicyId()赋值给policydetailId
-                    //等到下一轮两个值做判断如果一样就是同一个保单,不一样就是不同的保单
-                    policydetailId = pd.getPolicyId();
-                }
+        Integer count1 = 0; //有效
+        Integer count2 = 0; //无效
+        for (Policy p : policyList) {
+            if (p.getPolicyStauts() == 1) {   //有效加一
+                count1 += 1;
+            } else if (p.getPolicyStauts() == 2) { //无效加一
+                count2 += 1;
             }
-            list.add(count1);
-            list.add(count2);
         }
+        list.add(count1);
+        list.add(count2);
         return list;
     }
 

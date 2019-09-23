@@ -105,12 +105,12 @@
             <div class="login-way-icon">
                 <div class="icon-way">
                     <img alt="扫码登录" class="qr" onclick="changeLoginWay(0);" src="http://47.93.221.88/previous/userpervious/images/icon_qr.png">
-                    <img alt="密码登录" class="pc" onclick="changeLoginWay(1);" src="http://47.93.221.88/previous/userpervious/images/icon_pc.png">
+                    <!--<img alt="密码登录" class="pc" onclick="changeLoginWay(1);" src="http://47.93.221.88/previous/userpervious/images/icon_pc.png">-->
                 </div>
-                <div class="pc-tip" id="wayPcTip">账号密码登录在这里哦</div>
+                <!--<div class="pc-tip" id="wayPcTip">账号密码登录在这里哦</div>-->
             </div>
             <div class="za-login-form">
-                <div class="way-form">
+                <div class="way-form" style="display:block;">
                     <div class="form-item">
                         <div class="login-way">
 								<span class="tab-change" id="tab1" onclick="changeTab(this);">
@@ -121,7 +121,7 @@
                         <div class="form-item" data-type="name">
                             <div class="ui-input loginName">
                                 <input autocomplete="off" class="seraph-phone" data-type="input" id="loginName"
-                                       name="loginName" placeholder="用户名/手机号/邮箱" type="text"> <span class="placehld"
+                                       name="loginName" placeholder="用户名/手机号/邮箱" type="text" value="13574875894"> <span class="placehld"
                                                                                                     style="position: relative; line-height: 22px; top: -40px; color: red; display: none;">
 										用户名/手机号/邮箱 </span>
                             </div>
@@ -129,7 +129,7 @@
                         <div class="form-item" data-type="password">
                             <div class="ui-input password">
                                 <input autocomplete="off" data-type="input" id="password" name="password"
-                                       placeholder="密码" type="password"> <span class="placehld"
+                                       placeholder="密码" type="password" value="123456"> <span class="placehld"
                                                                                style="position: relative; line-height: 22px; top: -40px; color: red; display: none;">
 										密码 </span>
                             </div>
@@ -293,7 +293,7 @@
                     </div>
 
                 </div>
-                <div class="way-qr">
+                <!--<div class="way-qr">
                     <div class="qr-title">手机扫码登录</div>
                     <div class="qr-content qr-content-move-right" id="qrContent">
                         <div class="qr-img">
@@ -330,7 +330,7 @@
                             立即注册 <i> &gt; </i>
                         </div>
                     </div>
-                </div>
+                </div>-->
             </div>
         </div>
     </div>

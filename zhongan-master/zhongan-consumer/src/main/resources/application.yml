@@ -10,6 +10,21 @@ spring:
     suffix: .html
   resources:
       static-locations: classpath:/templates/,classpath:/static/,classpath:/public/
+  data:
+    mongodb:
+      uri: mongodb://47.93.221.88:27017/zhongan
+  servlet:
+    multipart:
+      #默认支持文件上传.
+      enabled: true
+      #支持文件写入磁盘.
+      file-size-threshold: 0
+      # 上传文件的临时目录
+      location:
+      # 最大支持文件大小
+      max-file-size: 2MB
+      # 最大支持请求大小
+      max-request-size: 30MB
 
   #spring:
   application:
@@ -52,3 +67,18 @@ hystrix:
 ribbon:
   ReadTimeout: 30000
   ConnectTimeout: 30000
+
+#分页合理化配置
+pagehelper:
+     helperDialect: mysql
+     reasonable: true
+     supportMethodsArguments: true
+     pageSizeZero: true
+     params: count=countSql
+
+xuecheng:
+  fastdfs:
+    connect_timeout_in_secodes: 5000
+    network_timeout_in_seconds: 30003
+    charset: UTF-8
+    tracker_servers: 39.106.18.84:22122 #多个 trackerServer中间以逗号分隔

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: commons-fileupload:commons-fileupload:unknown">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../Maven-Repository-Idea/commons-fileupload/commons-fileupload/unknown/commons-fileupload-unknown.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../Maven-Repository-Idea/commons-fileupload/commons-fileupload/unknown/commons-fileupload-unknown-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../Maven-Repository-Idea/commons-fileupload/commons-fileupload/unknown/commons-fileupload-unknown-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

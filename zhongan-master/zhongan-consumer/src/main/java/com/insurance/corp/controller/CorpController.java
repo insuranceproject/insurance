@@ -19,19 +19,22 @@ public class CorpController {
      * 注册
      * @param session
      * @param emails
-     * @param passWord
      * @param rPassWord
      * @param emailCode
      * @return
      */
     @RequestMapping("/consumer/corp/registeredCorp")
-    public String registeredCorp(HttpSession session,String emails,String passWord,String rPassWord,String emailCode){
-        //判断邮箱,验证码是否与session里的相当
+    public String registeredCorp(HttpSession session,String emails,String rPassWord,String emailCode){
+        //判断邮箱,验证码是否与session里的相等
         if(emailCode.equals(session.getAttribute("emailCode")) && emails.equals(session.getAttribute("emails"))){
             //相等
-
+            Corp corp = new Corp();
+            corp.setCorpEmail(emails);
+            corp.setCorpPassword(rPassWord);
+            corpClient.registeredCorp(corp);
+            return "y";
         }
-        return null;
+        return "n";
     }
 
 

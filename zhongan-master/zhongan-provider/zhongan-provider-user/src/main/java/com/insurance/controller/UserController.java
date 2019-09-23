@@ -48,7 +48,7 @@ public class UserController implements UserControllerApi {
      */
     @PostMapping("/falsLogin")
     @Override
-    public User falsLogin(@RequestBody User user) {
+    public User falsLogin(@RequestBody User user,HttpSession session) {
         return userService.getOne(new QueryWrapper<User>().eq("user_phonenumber",user.getUserPhonenumber()));
     }
 
@@ -60,7 +60,7 @@ public class UserController implements UserControllerApi {
      */
     @PostMapping("/fastLogin")
     @Override
-    public boolean fastLogin(@RequestBody User user, HttpSession session) {
+    public boolean fastLogin(@RequestParam("user") User user,@RequestParam("session") HttpSession session) {
         String s2="^[1](([3|5|8][\\d])|([4][4,5,6,7,8,9])|([6][2,5,6,7])|([7][^9])|([9][1,8,9]))[\\d]{8}$";// 验证手机号
         if(!user.getUserPhonenumber().matches(s2)){
             return false;

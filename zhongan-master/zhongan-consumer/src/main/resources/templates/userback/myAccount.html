@@ -14,8 +14,8 @@
     <script src="http://47.93.221.88/previous/userback/js/hm.js"></script>
     <script src="http://47.93.221.88/previous/userback/js/hm.js"></script>
     <script src="http://47.93.221.88/previous/userback/js/push.js"></script>
-    <script src="http://47.93.221.88/previous/userback/js/hm.js(1)"></script>
-    <script src="http://47.93.221.88/previous/userback//modernizr.js"></script>
+    <script src="http://47.93.221.88/previous/userback/js/hm(1).js"></script>
+    <script src="http://47.93.221.88/previous/userback/js/modernizr.js"></script>
     <link href="http://47.93.221.88/previous/userback/css/za-base.min.css" type="text/css" rel="stylesheet">
     <link href="http://47.93.221.88/previous/userback/css/personalCenter.min.css" type="text/css" rel="stylesheet">
     <link href="http://47.93.221.88/previous/userback/css/myAccount.css" type="text/css" rel="stylesheet">
@@ -28,292 +28,123 @@
     <script type="text/javascript" id="zaHeaderLogin" src="http://47.93.221.88/previous/userback/js/za-bootstrap.js"></script>
     <link rel="stylesheet" type="text/css" href="http://47.93.221.88/previous/userback/css/iframes.css">
     <script type="text/javascript" src="http://47.93.221.88/previous/userback/js/callback.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $.post("/consumer/user/getEffectiveInsurance",function (result) {
+                for(var i = 0;i < result.length;i++){
+                    if(i == 0){
+                        $("#youxiao").text(result[i]);
+                    }
+                    if(i == 1){
+                        $("#zhongzhi").text(result[i]);
+                    }
+                }
+            })
+            var pageNo = 1;
+            var status = 0;
+            Datas(pageNo,status);
+            $("#prev").click(function () {
+                pageNo = pageNo - 1;
+                Datas(pageNo,status);
+            })
+            $("#next").click(function () {
+                pageNo = pageNo + 1;
+                Datas(pageNo,status);
+            })
+            $("#all").click(function () {
+                $(this).addClass("active");
+                $("#valid,#termination").removeClass("active");
+                status = 0;
+                Datas(pageNo,status);
+            })
+            $("#valid").click(function () {
+                $(this).addClass("active");
+                $("#all,#termination").removeClass("active");
+                status = 1;
+                Datas(pageNo,status);
+            })
+            $("#termination").click(function () {
+                $(this).addClass("active");
+                $("#all,#valid").removeClass("active");
+                status = 2;
+                Datas(pageNo,status);
+            })
+            $(".more_btn").live("mouseover",function () {
+                $(this).children("ul").attr("style","display:block");
+            })
+            $(".more_btn").live("mouseout",function () {
+                $(this).children("ul").attr("style","display:none");
+            })
+            $(".iconBtn").live("click",function () {
+                window.location = "/userback/SelfHelpClaims_2.html"
+            })
+        })
+        function Datas(pageNo,status) {
+            $.post("/consumer/order/selectOreder?pageNo="+pageNo+"&status="+status,function (result) {
+                $("#ul dl").remove();
+                for (var i = 0;i < result.list.length;i ++){
+                    var order = result.list[i];
+                    var dl = "<dl class='za-gray-border za-com-m-t15 bui-list-item'>";
+                    dl += "<dt class='za-acc-orlist-th pad15 za-clearfix' style='background: #eee;'>";
+                    dl += "<span>"+order.orderCreateTime.substring(0,10)+"</span><span></span><span style='float:right;margin-right:15px;'>保单号："+order.policyNumber+"</span>";
+                    dl += "<span style='float:right;'>订单号："+order.orderNumber+"</span></dt>";
+                    dl += "<dd><table class='za-acc-orTable' style='width:100%;'>";
+                    dl += "<tbody><tr><td class='w220 za-acc-pol-name1 tl' style='border:none;'>";
+                    dl += "<a href='javascript:void(0)' class='s-fc-green' style='display:block;margin:0 20px;'>";
+                    dl += "<i style='display:none;' class='za-acc-pol-icon za-my-icon-bgpro1301132504'></i><span>"+order.productName+"</span></a></td>";
+                    dl += "<td class='za-acc-orlist-w100'><p>"+order.policyStarttime.substring(0,10)+"至</p><p>"+order.policyEndtime.substring(0,10)+"</p></td>";
+                    dl += "<td class='za-acc-orlist-w100'>"+order.planPrice+"</td>";
+                    var policyStauts;
+                    if(order.policyStauts == 1){
+                        policyStauts = "保障中";
+                    }
+                    if(order.policyStauts == 2){
+                        policyStauts = "待续保";
+                    }
+                    dl += "<td class='za-acc-orlist-w100'>"+policyStauts+"</td>";
+                    dl += "<td class='za-acc-orlist-w100'>";
+                    var policyBuyaddr;
+                    if(order.policyBuyaddr == 1){
+                        policyBuyaddr = "众安官网";
+                    }
+                    dl += "<div style='margin:0 5px;'>"+policyBuyaddr+"</div>";
+                    dl += "</td><td class='za-acc-orlist-w270' colspan='2'>";
+                    dl += "<div class='za-acc-orlist-tools account-mypolicy za-clearfix'>";
+                    dl += "<a href='javascript:void(0)' class='za-my-icon-bgop1' alt='下载保单' title='下载保单' data-ilogasync='1.23.gH7' ilogbinded='true'>";
+                    dl += "<font>下载保单</font></a><a href='javascript:void(0)' class='za-my-icon-bgop7' data-ilogasync='1.23.iJ9' ilogbinded='true'>";
+                    dl += "<span class='za-account-invoice'><span class='za-clearfix'><span class='za-invoice-btn za-btn-left'>个人</span>";
+                    dl += "<span class='za-invoice-btn za-btn-right' >企业</span></span>";
+                    dl += "<span class='za-invoice-arraw'></span><span class='za-invoice-inner-arraw'></span></span></a>";
+                    if(order.productClaims == 1){
+                        dl += "<div class='more_btn' style='font-size:14px;'>更多 <i class='arrow_down'></i>";
+                        dl += "<ul style='display:none;'><i class='arrow'></i>";
+                        dl += "<li><a href='javascript:void(0)' class='iconBtn' alt='理赔' title='理赔' data-ilogasync='1.23.gH7' ilogbinded='true'>";
+                        dl += "<font>理赔</font><i class='za-my-icon3 bg3 icon'></i></a></li>";
+                        dl += "<li></li></ul></div>";
+                    }
+                    dl += "</div></td></tr></tbody></table></dd></dl>";
+                    $("#ul").append(dl);
+                }
+                $(".bui-button-number a").attr("id",pageNo).text(pageNo);
+                if($(".bui-button-number a").text() == 1){
+                    $("#prev").addClass("disabled");
+                }else {
+                    $("#prev").removeClass("disabled");
+                }
+                if($(".bui-button-number a").text() == result.pages){
+                    $("#next").addClass("disabled");
+                }else {
+                    $("#next").removeClass("disabled");
+                }
+            })
+        }
+    </script>
 </head>
 
 <body class="">
-<link href="http://47.93.221.88/previous/userback/css/za-common.css" rel="stylesheet"><!--header  start-->
-<div class="za-toolbar" data-ilog="1.589.zL6|a" ilogbinded="true">
-    <div class="za-toolbar-layout">
-        <div class="za-toolbar-layout-logo"><a href="https://www.zhongan.com/" title="众安保险">众安保险</a></div>
-        <p class="za-toolbar-layout-slogan"><span>做有温度的保险</span></p>
-        <div class="za-toolbar-layout-entry"><input type="hidden" id="logoutUrl" value="/logOut"> <input type="hidden"
-                                                                                                         id="domain"
-                                                                                                         value="https://www.zhongan.com">
-            <input type="hidden" id="originDomain" value="https://www.zhongan.com"> <input type="hidden" id="appName"
-                                                                                           value="dm">
-            <!--<div class="entry-item entry-login" id="headerLogin">-->
-            <div id="headerLogin"
-                 style="    position: relative;display: inline;float: left;line-height: 34px;box-sizing: content-box;">
-                <a href="https://www.zhongan.com/account/myAccount" title="点击进入我的账户">za19ki6q84</a><i class="vline"></i><a
-                    href="https://www.zhongan.com/logOut">退出</a></div>            <!--</div>-->
-            <div class="entry-item entry-account"><a id="" href="https://www.zhongan.com/account/myAccount"
-                                                     rel="nofollow" class="entry-item-hd"><span>个人中心</span><i
-                    class="icon-drop"></i></a>
-                <ul class="za-toolbar-sublist">
-                    <li class="sub-item"><a href="https://www.zhongan.com/account/myPolicy" rel="nofollow" title="我的订单">我的订单</a>
-                    </li>
-                    <li class="sub-item"><a href="https://www.zhongan.com/account/employeeWelfare" rel="nofollow"
-                                            title="团险保单">团险保单</a></li>
-                    <li class="sub-item"><a href="https://www.zhongan.com/account/claimEnquiry" rel="nofollow"
-                                            title="理赔查询">理赔查询</a></li>
-                    <li class="sub-item"><a href="/consumer/user/getMyInfo" rel="nofollow" title="我的资料">我的资料</a>
-                    </li>
-                    <!--<li class="sub-item"><a href="https://www.zhongan.com/account/myInvest" rel="nofollow" title="我的投资" >我的投资</a></li>-->
-                    <!--<li class="sub-item"><a href="http://open.zhongan.com/innerweb/ygd/loanApplyRecord.htm" rel="nofollow" title="我的资产" >我的资产</a></li>-->
-                    <li class="sub-item"><a href="https://www.zhongan.com/account/myPoint" rel="nofollow" title="我的积分">我的积分</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="entry-item entry-eportal"><a href="https://www.zhongan.com/eportal/"
-                                                     rel="nofollow"><span>众安团险</span><i class="icon-drop"></i></a>
-                <ul class="za-toolbar-sublist">
-                    <li class="sub-item"><a href="https://www.zhongan.com/eportal/employee.html" rel="nofollow"
-                                            title="员工商业保险">员工商业保险</a></li>
-                    <li class="sub-item"><a href="https://hr.zhongan.com/" rel="nofollow"
-                                            title="https://hr.zhongan.com">企业hr保单管理</a></li>
-                </ul>
-            </div>
-            <div class="entry-item entry-open"><a href="https://open.zhongan.com/open/home/home.htm"
-                                                  rel="nofollow">开放平台</a></div>
-            <div class="entry-item entry-publicInfo"><a
-                    href="https://www.zhongan.com/channel/public/publicInfo2018.html" rel="nofollow"><span>公开信息披露</span><i
-                    class="icon-drop"></i></a>
-                <ul class="za-toolbar-sublist">
-                    <li class="sub-item"><a href="https://www.zhongan.com/channel/public/publicInfo2018.html"
-                                            rel="nofollow" title="公开信息披露">公开信息披露</a></li>
-                    <li class="sub-item"><a href="https://www.zhongan.com/channel/internetInfo/internetInfo.html"
-                                            rel="nofollow" title="互联网保险信息披露">互联网保险信息披露</a></li>
-                </ul>
-            </div>
-            <div class="entry-item entry-open"><a href="https://www.zhongan.com/corporate/announcements/"
-                                                  rel="nofollow">投资者关系 Investor Relations</a></div>
-        </div>
-    </div>
-</div>
-<script src="http://47.93.221.88/previous/userback/js/headerLogin.js"></script><!--end  header--><!--mainNav  start-->
-<div class="za-main-nav">
-    <div class="za-main-nav-layout">
-        <ul class="za-main-nav-list" data-ilog="1.589.iR9|a" ilogbinded="true">
-            <li class="list-item"><a title="首页" class="list-item-hd" id="zaNav_onlineIndex"
-                                     href="https://www.zhongan.com/index.html#channelEnName=onlineIndex">首页</a></li>
-            <li class="list-item"><a title="特色保险" class="list-item-hd" id="zaNav_exclusive"
-                                     href="https://www.zhongan.com/open/exclusive#channelEnName=exclusive">特色保险</a> <i
-                    class="item-bg" style="width: 1519px; left: -160px;"></i>
-                <div class="za-main-nav-pro">
-                    <ul class="za-main-nav-pro-list">
-                        <li><a href="https://www.zhongan.com/p/84779612#channelEnName=exclusive"> <img
-                                data-src="//static.zhongan.com/upload/online/material/1516947371920.png"
-                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="汪星保宠物责任险">
-                            <h3 class="pro-title" title="汪星保宠物责任险">汪星保宠物责任险</h3>
-                            <p class="pro-price"><span class="price-numb">19.9</span>元起</p></a></li>
-                        <li>
-                            <a href="https://digital.zhongan.com/uav/uavIndex.htm?promotionCode=PCGW#channelEnName=exclusive">
-                                <img data-src="//static.zhongan.com/upload/online/material/1486985693103.png"
-                                     src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                     alt="无人机第三者责任险-个人版">
-                                <h3 class="pro-title" title="无人机第三者责任险-个人版">无人机第三者责任险-个人版</h3>
-                                <p class="pro-price"><span class="price-numb">35</span>元起</p></a></li>
-                        <li>
-                            <a href="https://digital.zhongan.com/uav/corporation/uavIndex.htm?promotionCode=PCGW#channelEnName=exclusive">
-                                <img data-src="//static.zhongan.com/upload/online/material/1513222918608.png"
-                                     src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                     alt="无人机第三者责任险-企业版">
-                                <h3 class="pro-title" title="无人机第三者责任险-企业版">无人机第三者责任险-企业版</h3>
-                                <p class="pro-price"><span class="price-numb">300</span>元起</p></a></li>
-                        <li><a href="https://www.zhongan.com/p/82416126#channelEnName=exclusive"> <img
-                                data-src="//static.zhongan.com/upload/online/material/1495876751921.png"
-                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="爱享e家 家财意外险">
-                            <h3 class="pro-title" title="爱享e家 家财意外险">爱享e家 家财意外险</h3>
-                            <p class="pro-price"><span class="price-numb">188</span>元起</p></a></li>
-                        <li><a href="https://www.zhongan.com/p/83759098#channelEnName=exclusive"> <img
-                                data-src="//static.zhongan.com/upload/online/material/1505470489356.png"
-                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="童安保 儿童防走失计划">
-                            <h3 class="pro-title" title="童安保 儿童防走失计划">童安保 儿童防走失计划</h3>
-                            <p class="pro-price"><span class="price-numb">499</span>元起</p></a></li>
-                        <li><a href="https://www.zhongan.com/p/85132614#channelEnName=exclusive"> <img
-                                data-src="//static.zhongan.com/upload/online/material/1486983433549.png"
-                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="银行卡盗刷险">
-                            <h3 class="pro-title" title="银行卡盗刷险">银行卡盗刷险</h3>
-                            <p class="pro-price"><span class="price-numb">5</span>元起</p></a></li>
-                        <li><a class="more-link" href="https://www.zhongan.com/open/exclusive"> <img
-                                data-src="//static.zhongan.com/website/factoryOnline/assets/images/public/more-product-icon.png"
-                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="查看全部">
-                            <h3 class="pro-title" title="查看全部">查看全部</h3></a></li>
-                    </ul>
-                </div>
-            </li>
-            <li class="list-item"><a title="航旅险" class="list-item-hd" id="zaNav_travel"
-                                     href="https://www.zhongan.com/open/travel#channelEnName=travel">航旅险</a> <i
-                    class="item-bg" style="width: 1519px; left: -160px;"></i>
-                <div class="za-main-nav-pro">
-                    <ul class="za-main-nav-pro-list">
-                        <li><a href="https://www.zhongan.com/p/82761035#channelEnName=travel"> <img
-                                data-src="//static.zhongan.com/upload/online/material/1526721427049.png"
-                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="飞享e生升级版">
-                            <h3 class="pro-title" title="飞享e生升级版">飞享e生升级版</h3>
-                            <p class="pro-price"><span class="price-numb">79</span>元起</p></a></li>
-                        <li><a href="https://www.zhongan.com/p/81510950#channelEnName=travel"> <img
-                                data-src="//static.zhongan.com/upload/online/material/1486983788235.png"
-                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="东南亚旅游意外险">
-                            <h3 class="pro-title" title="东南亚旅游意外险">东南亚旅游意外险</h3>
-                            <p class="pro-price"><span class="price-numb">30</span>元起</p></a></li>
-                        <li><a href="https://www.zhongan.com/p/81176313#channelEnName=travel"> <img
-                                data-src="//static.zhongan.com/upload/online/material/1486984019112.png"
-                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="台湾旅行意外险">
-                            <h3 class="pro-title" title="台湾旅行意外险">台湾旅行意外险</h3>
-                            <p class="pro-price"><span class="price-numb">50</span>元起</p></a></li>
-                        <li><a href="https://www.zhongan.com/p/81381168#channelEnName=travel"> <img
-                                data-src="//static.zhongan.com/upload/online/material/1486983964669.png"
-                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="港澳游旅行意外险">
-                            <h3 class="pro-title" title="港澳游旅行意外险">港澳游旅行意外险</h3>
-                            <p class="pro-price"><span class="price-numb">30</span>元起</p></a></li>
-                        <li><a href="https://www.zhongan.com/p/81691190#channelEnName=travel"> <img
-                                data-src="//static.zhongan.com/upload/online/material/1498012344281.png"
-                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="飞享日本旅行险">
-                            <h3 class="pro-title" title="飞享日本旅行险">飞享日本旅行险</h3>
-                            <p class="pro-price"><span class="price-numb">60</span>元起</p></a></li>
-                        <li><a href="https://www.zhongan.com/p/81922714#channelEnName=travel"> <img
-                                data-src="//static.zhongan.com/upload/online/material/1486984171231.png"
-                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="短途及周边游">
-                            <h3 class="pro-title" title="短途及周边游">短途及周边游</h3>
-                            <p class="pro-price"><span class="price-numb">5</span>元起</p></a></li>
-                        <li><a class="more-link" href="https://www.zhongan.com/open/travel"> <img
-                                data-src="//static.zhongan.com/website/factoryOnline/assets/images/public/more-product-icon.png"
-                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="查看全部">
-                            <h3 class="pro-title" title="查看全部">查看全部</h3></a></li>
-                    </ul>
-                </div>
-            </li>
-            <li class="list-item"><a title="意外险" class="list-item-hd" id="zaNav_accident"
-                                     href="https://www.zhongan.com/open/accident#channelEnName=accident">意外险</a> <i
-                    class="item-bg" style="width: 1519px; left: -160px;"></i>
-                <div class="za-main-nav-pro">
-                    <ul class="za-main-nav-pro-list">
-                        <li><a href="https://www.zhongan.com/p/82138393#channelEnName=accident"> <img
-                                data-src="//static.zhongan.com/upload/online/material/1536205132057.png"
-                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="众享e家·意外险">
-                            <h3 class="pro-title">众享e家·意外险</h3>
-                            <p class="pro-price"><span class="price-numb">398</span>元起</p></a></li>
-                        <li><a href="https://www.zhongan.com/p/82208550#channelEnName=accident"> <img
-                                data-src="//static.zhongan.com/upload/online/material/1496915833372.png"
-                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="骑行保共享单车意外险">
-                            <h3 class="pro-title">骑行保共享单车意外险</h3>
-                            <p class="pro-price"><span class="price-numb">5</span>元起</p></a></li>
-                        <li><a href="https://www.zhongan.com/p/82232099#channelEnName=accident"> <img
-                                data-src="//static.zhongan.com/upload/online/material/1486986235534.png"
-                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="私家车驾驶员&lt;br/&gt;意外险">
-                            <h3 class="pro-title">私家车驾驶员<br>意外险</h3>
-                            <p class="pro-price"><span class="price-numb">1</span>元起</p></a></li>
-                    </ul>
-                </div>
-            </li>
-            <li class="list-item"><a title="健康险" class="list-item-hd" id="zaNav_health"
-                                     href="https://www.zhongan.com/open/health#channelEnName=health">健康险</a> <i
-                    class="item-bg" style="width: 1519px; left: -160px;"></i>
-                <div class="za-main-nav-pro">
-                    <ul class="za-main-nav-pro-list">
-                        <li><a href="https://www.zhongan.com/p/83398346#channelEnName=health"> <img
-                                data-src="//static.zhongan.com/upload/online/material/1509704896994.png"
-                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="尊享e生·新全保通2017少儿版">
-                            <h3 class="pro-title" title="尊享e生·新全保通2017少儿版">尊享e生·新全保通2017少儿版</h3>
-                            <p class="pro-price"><span class="price-numb">200</span>元起</p></a></li>
-                        <li><a href="https://www.zhongan.com/p/83881372#channelEnName=health"> <img
-                                data-src="//static.zhongan.com/upload/online/material/1509704812948.png"
-                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="尊享e生·新全保通2017成人版">
-                            <h3 class="pro-title" title="尊享e生·新全保通2017成人版">尊享e生·新全保通2017成人版</h3>
-                            <p class="pro-price"><span class="price-numb">245</span>元起</p></a></li>
-                        <li>
-                            <a href="https://ztg.zhongan.com/promote/entrance/promoteEntrance.do?promotionCode=INST190834380020&amp;redirectType=pc&amp;bizOrigin=zx2019pc#channelEnName=health">
-                                <img data-src="//static.zhongan.com/upload/online/material/1497858674376.png"
-                                     src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                     alt="尊享e生2019版">
-                                <h3 class="pro-title" title="尊享e生2019版">尊享e生2019版</h3>
-                                <p class="pro-price"><span class="price-numb">146</span>元起</p></a></li>
-                        <li><a href="https://www.zhongan.com/p/83052692#channelEnName=health"> <img
-                                data-src="//static.zhongan.com/upload/online/material/1501577396494.png"
-                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="乐活e生·少儿重疾险">
-                            <h3 class="pro-title" title="乐活e生·少儿重疾险">乐活e生·少儿重疾险</h3>
-                            <p class="pro-price"><span class="price-numb">40</span>元起</p></a></li>
-                        <li><a href="https://www.zhongan.com/p/83190811#channelEnName=health"> <img
-                                data-src="//static.zhongan.com/upload/online/material/1501577679673.png"
-                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="乐活e生·成人重疾险">
-                            <h3 class="pro-title" title="乐活e生·成人重疾险">乐活e生·成人重疾险</h3>
-                            <p class="pro-price"><span class="price-numb">60</span>元起</p></a></li>
-                        <li><a href="https://www.zhongan.com/p/83619954#channelEnName=health"> <img
-                                data-src="//static.zhongan.com/upload/online/material/1497858765597.png"
-                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="儿童重大疾病险">
-                            <h3 class="pro-title" title="儿童重大疾病险">儿童重大疾病险</h3>
-                            <p class="pro-price"><span class="price-numb">34</span>元起</p></a></li>
-                        <li><a class="more-link" href="https://www.zhongan.com/open/health"> <img
-                                data-src="//static.zhongan.com/website/factoryOnline/assets/images/public/more-product-icon.png"
-                                src="data:image/gif;base64,R0lGODlhAQABAIABAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="查看全部">
-                            <h3 class="pro-title" title="查看全部">查看全部</h3></a></li>
-                    </ul>
-                </div>
-            </li>
-            <li class="list-item"><a title="车险" class="list-item-hd" id="zaNav_chexian"
-                                     href="https://www.zhongan.com/open/castle/inputQueryInfo?utm_source=zyggbz#channelEnName=chexian">车险</a>
-            </li>
-            <li class="list-item"><a title="头条" class="list-item-hd" id="zaNav_index_toutiao"
-                                     href="https://www.zhongan.com/toutiao#channelEnName=index_toutiao">头条</a></li>
-        </ul>
-        <div class="za-main-nav-layout-qrcode">
-            <div class="entry-item"><a href="https://www.zhongan.com/open/active/app/appdownload"
-                                       class="entry-item-app">下载众安APP</a>
-                <div class="za-main-nav-sublist">
-                    <div class="trangle"></div>
-                    <div class="QRcode">
-                        <div class="img"></div>
-                    </div>
-                    <div class="subtext"><p class="text1">扫码下载APP</p>
-                        <p>实时追踪服务进程</p></div>
-                </div>
-            </div>
-        </div>
-        <div class="za-main-nav-layout-entry" data-ilog="1.589.bV2|a" ilogbinded="true">
-            <div class="entry-item"><a href="https://www.zhongan.com/open/policy/insureService" rel="nofollow"
-                                       class="entry-item-hd">保险服务<i class="icon-drop"></i></a>
-                <ul class="za-main-nav-sublist">
-                    <li class="sub-item"><i class="online_applyPgai"></i> <a
-                            href="https://www.zhongan.com/open/modify/putModify.htm" rel="nofollow"
-                            title="申请批改">申请批改</a></li>
-                    <li class="sub-item"><i class="online_applyClaim"></i> <a
-                            href="https://www.zhongan.com/open/claim/putClaim" rel="nofollow" title="申请理赔">申请理赔</a></li>
-                    <li class="sub-item"><i class="online_policyQuery"></i> <a
-                            href="https://www.zhongan.com/open/policy/policySearch" rel="nofollow" title="保单查询">保单查询</a>
-                    </li>
-                    <li class="sub-item"><i class="online_applyValid"></i> <a
-                            href="https://www.zhongan.com/open/policy/policyVerify" rel="nofollow" title="保单验真">保单验真</a>
-                    </li>
-                    <li class="sub-item"><i class="online_datadownload"></i> <a
-                            href="https://www.zhongan.com/open/policy/insureDownload" rel="nofollow"
-                            title="资料下载">资料下载</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div><!--end  mainNav-->
+<!--<link href="http://47.93.221.88/previous/userback/css/za-common.css" rel="stylesheet">--><!--header  start-->
+<div th:replace="/public/public_head :: head"></div>
+<div th:replace="/public/public_head :: nav"></div>
 <div class="za-buy-product2 za-body-bg-gray wrapper myAccount">
     <div class="za-nav-flag za-l-w za-margin-auto" data-ilog="1.22.lK9" ilogbinded="true"><a
             href="https://www.zhongan.com/">众安保险</a>&nbsp;&gt;&nbsp;我的账户
@@ -326,8 +157,8 @@
                 <li><a href="https://www.zhongan.com/account/myPolicy" rel="nofollow"><b
                         class="bg1"></b><span>我的订单</span></a>
                 </li>
-                <li><a href="https://www.zhongan.com/account/employeeWelfare" rel="nofollow"><b class="bg6"></b><span>团险保单</span></a>
-                </li>
+                <!--<li><a href="https://www.zhongan.com/account/employeeWelfare" rel="nofollow"><b class="bg6"></b><span>团险保单</span></a>
+                </li>-->
                 <li><a href="https://www.zhongan.com/account/claimEnquiry" rel="nofollow"><b
                         class="bg2"></b><span>理赔查询</span></a>
                 </li>
@@ -337,8 +168,8 @@
                 <!--li><a href="/account/transpwd" rel="nofollow"><b class="bg7"></b><span>我的投资</span></a></li-->
                 <!-- <li><a href="/account/myOrder"><b class="bg7"></b><span>我的订单</span></a></li> -->
                 <!--li><a href="http://open.zhongan.com/innerweb/ygd/loanApplyRecord.htm"><b class="bg8"></b><span>我的资产</span></a></li-->
-                <li><a href="https://www.zhongan.com/account/myPoint"><b class="za-icon-point"></b><span>我的积分</span></a>
-                </li>
+                <!--<li><a href="https://www.zhongan.com/account/myPoint"><b class="za-icon-point"></b><span>我的积分</span></a>
+                </li>-->
             </ul>
             <div class="za-app-Qrcode-box">
                 <div class="pic">
@@ -368,14 +199,14 @@
                     <!--                    <a class="email"><font>已绑定邮箱</font><i></i></a>
                     -->
                 </div>
-                <div class="progress-bar-w">
+                <div class="progress-bar-w" style="float: right;">
                     <span class="progress-text">资料完整度</span>
                     <span class="progress-bar">
-                        <span style="width:50%"></span>
+                        <span th:style="'width:'+${dataIntegrity}+'%'"></span>
                         </span>
-                    <span class="percent">50%</span>
+                    <span class="percent" th:text="${dataIntegrity}+'%'">50%</span>
                 </div>
-                <div class="login-time">上次登录时间：<span>2019-08-28 17:45:14</span></div>
+                <!--<div class="login-time">上次登录时间：<span>2019-08-28 17:45:14</span></div>-->
             </div>
             <div class="za-myaccount">
                 <div class="za-myaccount-item w474 mr12">
@@ -386,13 +217,13 @@
                     <div class="za-myaccount-c br">
                         <div class="za-myaccount-c-l">
                             有效保单
-                            <span>3</span>
+                            <span id="youxiao">0</span>
                         </div>
                     </div>
                     <div class="za-myaccount-c">
                         <div class="za-myaccount-c-l">
                             终止保单
-                            <span>0</span>
+                            <span id="zhongzhi">0</span>
                         </div>
                     </div>
                 </div>
@@ -445,10 +276,9 @@
                             <em class="disabled typeicon">状态<i class="za-icon za-icon-arrow-down"></i></em>
                             <ul data-ilog="1.23.eF5|a" ilogbinded="true">
                                 <li><a class="typeicon">状态<i class="za-icon za-icon-arrow-down"></i></a></li>
-                                <li><a href="javascript:void(0)" onclick="reLoad(&#39;all&#39;,1)">全部</a></li>
-                                <li><a href="javascript:void(0)" onclick="reLoad(&#39;valid&#39;,2)"
-                                       class="active">有效</a></li>
-                                <li><a href="javascript:void(0)" onclick="reLoad(&#39;invalid&#39;,3)">终止</a></li>
+                                <li><a href="javascript:void(0)" id="all" class="active">全部</a></li>
+                                <li><a href="javascript:void(0)" id="valid" >有效</a></li>
+                                <li><a href="javascript:void(0)" id="termination" >终止</a></li>
                             </ul>
                         </div>
                     </span>
@@ -459,8 +289,8 @@
                             <div id="za-pol-list" data-ilog="1.23.fG6|.s-fc-green" class="fz14" ilogbinded="true">
                                 <div class="bui-simple-list demo-list clearfix" aria-disabled="false"
                                      aria-pressed="false">
-                                    <ul>
-                                        <dl class="za-gray-border za-com-m-t15 bui-list-item">
+                                    <ul id="ul">
+                                        <!--<dl class="za-gray-border za-com-m-t15 bui-list-item">
                                             <dt class="za-acc-orlist-th pad15 za-clearfix" style="background: #eee;">
                                                 <span>2019-08-25</span><span></span><span
                                                     style="float:right;margin-right:15px;">保单号：823880082392778569</span><span
@@ -610,22 +440,23 @@
                                                     </tbody>
                                                 </table>
                                             </dd>
-                                        </dl>
+                                        </dl>-->
                                     </ul>
                                 </div>
                             </div>
                             <div id="za-pol-paging" class="za-com-paging">
                                 <ul class="bui-pagingbar-number bui-pagingbar bui-bar pagination pull-right"
                                     role="toolbar" id="bar1" aria-disabled="false">
-                                    <li class="bui-bar-item bui-inline-block disabled" aria-disabled="true" id="prev"><a
+                                    <li class="bui-bar-item bui-inline-block" aria-disabled="true" id="prev"><a
                                             href="javascript:;">&lt;&lt;</a></li>
                                     <li class="bui-bar-item bui-button-number bui-inline-block active"
                                         aria-disabled="false" id="1"><a
-                                            href="https://www.zhongan.com/account/myAccount">1</a></li>
-                                    <li class="bui-bar-item bui-inline-block disabled" aria-disabled="true" id="next"><a
+                                            href="#">1</a></li>
+                                    <li class="bui-bar-item bui-inline-block" aria-disabled="true" id="next"><a
                                             href="javascript:;">&gt;&gt;</a></li>
                                 </ul>
                             </div>
+                            <div class="za-com-list-empty" style="display:none;">还没享受保障？快去<a href="/consumer/type/findAll">逛逛</a>吧~</div>
                         </div>
                     </div>
                 </div>
@@ -841,16 +672,16 @@
         <div class="za-footer-bd"><h4 class="footer-logo"><a href="https://www.zhongan.com/" title="众安保险">众安保险</a></h4>
             <p class="footer-copyright"><a target="_blank"
                                            href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010102004862"
-                                           rel="nofollow"><img src="http://47.93.221.88/previous/userback/jsimages/police.png"
+                                           rel="nofollow"><img src="http://47.93.221.88/previous/userback/images/police.png"
                                                                style="vertical-align:-6px;margin-right:8px;"
                                                                alt="沪公网安备 31010102004862号">沪公网安备 31010102004862号</a><a
                     target="_blank" rel="nofollow" style="margin-left: 17px" href="http://www.miitbeian.gov.cn/"><img
-                    src="http://47.93.221.88/previous/userback/jsimages/network.png" alt="沪ICP备13041135号-1"
+                    src="http://47.93.221.88/previous/userback/images/network.png" alt="沪ICP备13041135号-1"
                     style="vertical-align:-4px;margin-right:8px;">沪ICP备13041135号-1</a><a target="_blank"
                                                                                          style="margin-left: 17px"
                                                                                          href="https://218.242.124.22:8082/businessCheck/verifKey.do?showType=extShow&amp;serial=9031000020170721110206000001942333-SAIC_SHOW_310000-20131111112754954041&amp;signData=MEUCIGONA4AG1pExDb6kOnq0gaicafgHzjVrZpf3YseTN5ZkAiEA/+LP3riJh9rj8/NlhMQS6OWt02fu1TeXWB59GYeY29w="
                                                                                          rel="nofollow"><img width="20"
-                                                                                                             src="http://47.93.221.88/previous/userback/jsimages/lz2.jpg"
+                                                                                                             src="http://47.93.221.88/previous/userback/images/lz2.jpg"
                                                                                                              alt="沪工商备 20131111112754954"
                                                                                                              style="vertical-align:-4px;margin-right:8px;">沪工商备
                 20131111112754954</a></p></div>

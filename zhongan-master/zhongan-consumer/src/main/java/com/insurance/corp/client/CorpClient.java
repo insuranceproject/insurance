@@ -5,7 +5,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@FeignClient("provider-corp")
+@FeignClient("PROVIDER-CORP")
 public interface CorpClient {
 
     /**

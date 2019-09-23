@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 
 @RestController
 @RequestMapping("/Policy")
@@ -23,12 +25,21 @@ public class PolicyController {
     @PostMapping("/selectPolicyPage")
     public PageInfo<Policy> PolicyPage(Integer pageNo, Integer PageSize, String number){
         PageInfo<Policy> policyPageInfo = policyService.selectPagePolicy(pageNo, PageSize, number);
-        System.out.println(policyPageInfo);
         return policyPageInfo;
     }
 
     @PostMapping("/zz")
     public Policy PolicyPage(){
         return policyMapper.selectById(1);
+    }
+
+    /**
+     * 根据用户id查询保单
+     * @param userId
+     * @return
+     */
+    @PostMapping("/getPolicyByUserId")
+    public List<Policy> getPolicyByUserId(Integer userId){
+        return policyService.getPolicyByUserId(userId);
     }
 }

@@ -11,6 +11,7 @@
   <link href="http://47.93.221.88/previous/corppervious/css/common.css" type="text/css" rel="stylesheet">
   <link href="http://47.93.221.88/previous/corppervious/css/antiSlider.min.css" rel="stylesheet">
   <link href="http://47.93.221.88/previous/corppervious/css/register.css" rel="stylesheet">
+  <script type="text/javascript" src="http://47.93.221.88/previous/corppervious/js/jquery-1.8.1.min.js"></script>
   <!-- 用于开放平台需统计商户注册及登录转化率检查 see http://jira.zhonganonline.com/browse/PCCORE-3899 -->
   <style type="text/css">
             .agl-hover {
@@ -90,6 +91,104 @@
        })();
      })();
    </script>
+    <script type="text/javascript">
+        function setTime(){
+            var num = 61;
+            var time = setInterval(function () {
+                num--;
+                $("#messageButton span").text("重新获取(" + num + ")");
+                $("#messageButton").addClass("disabled");
+                if (num < 0) {
+                    clearInterval(time);
+                    $("#messageButton span").text("获取邮件验证码");
+                    $("#messageButton").removeClass("disabled");
+                }
+            }, 1000);
+        }
+        $(function () {
+            $("#mobilePhone").blur(function () {
+                if($(this).val() != null || $(this).val() != ""){
+                    $.post("/consumer/corp/getCorpByEmail?emails="+$(this).val(),function (result) {
+                        if(result == "y"){
+                            var span = "<span class='x-field-error'>";
+                            span += "<span class='x-icon x-icon-mini x-icon-error'>!</span>";
+                            span += "<label class='x-field-error-text'>邮箱地址已注册，";
+                            span += "<a href='/coppervious/open_platform.html' class='za-error-alink'>去登录</a></label></span>";
+                            $("#mobilePhone").parent().append(span);
+                        }else{
+                            $(".x-field-error").remove();
+                        }
+                    })
+                }else{
+                    $(".x-field-error").remove();
+                }
+            })
+            $("#messageButton").click(function () {
+                var email = $("#mobilePhone").val();
+                if(emaile == null || email == ""){
+                    $(".za-login-message").text("请输入邮箱地址!");
+                }else{
+                    $.post("/consumer/corp/getEmailCode?emails="+email,function (result) {
+                        if(result == "y"){
+                            setTime();
+                        }else{
+                            $(".za-login-message").text("验证码发送失败!");
+                        }
+                    })
+                }
+            })
+            $(".iconfont").click(function () {
+                if($(this).hasClass("icon-gouxuan")){
+                    $(this).removeClass("icon-gouxuan").addClass("icon-weixuan");
+                }else if($(this).hasClass("icon-weixuan")){
+                    $(this).removeClass("icon-weixuan").addClass("icon-gouxuan");
+                }
+            })
+            $(".form-btn").click(function () {
+                var mobilePhone = $("#mobilePhone").val();
+                var messageNumber = $("#messageNumber").val();
+                var password = $("#password").val();
+                var confirm_password = $("#confirm_password").val();
+                if(mobilePhone == "" || mobilePhone == null){
+                    $(".za-login-message").text("请输入邮箱地址!");
+                    return;
+                }
+                if(messageNumber == "" || messageNumber == null){
+                    $(".za-login-message").text("邮箱地址验证码不能为空!");
+                    return;
+                }
+                if(password == "" || password == null || confirm_password == "" || confirm_password == null){
+                    $(".za-login-message").text("密码和确认密码不能为空!");
+                    return;
+                }
+                if(confirm_password != password){
+                    $(".za-login-message").text("密码和确认密码不一致!");
+                    return;
+                }
+                if($(".iconfont").hasClass("icon-weixuan")){
+                    $(".za-login-message").text("请勾选协议条款!");
+                    return;
+                }
+                reg = /^\w+@[a-z0-9]+\.[a-z]{2,4}$/;
+                if(!reg.test(mobilePhone)){
+                    $("#mobilePhone").focus();
+                    $(".za-login-message").text("请输入正确的邮箱地址!");
+                    return;
+                }
+                if($(".x-field-error").text() != "" || $(".x-field-error").text() != null){
+                    $("#mobilePhone").focus();
+                    return;
+                }
+                $.post("/consumer/corp/registeredCorp?emails="+mobilePhone+"&rPassWord="+confirm_password+"&emailCode="+messageNumber,function (result) {
+                    if(result == "y"){
+                        window.location = "/coppervious/open_platform.html";
+                    }else{
+                        $(".za-login-message").text("注册失败!");
+                    }
+                })
+            })
+        })
+    </script>
 
 </head>
 
@@ -166,7 +265,7 @@
           </ul>
           <div class="za-open-tip">
             <p>
-              <a href="https://login.zhongan.com/passport/login.htm?sourceApp=3&amp;target=https://open.zhongan.com/promotion/loginJump?logincallback=/promotion/manager/home">已有账号？去登录 &gt;</a>
+              <a href="/coppervious/open_platform.html">已有账号？去登录 &gt;</a>
             </p>
           </div>
     </form></div>
@@ -180,7 +279,7 @@
   <script src="http://47.93.221.88/previous/corppervious/js/setting.js"></script>
   <script src="http://47.93.221.88/previous/corppervious/js/validate.js"></script>
   <script src="http://47.93.221.88/previous/corppervious/js/common.js" type="text/javascript"></script>
-  <script src="http://47.93.221.88/previous/corppervious/js/openPlatformRegister.js"></script>
+  <!--<script src="http://47.93.221.88/previous/corppervious/js/openPlatformRegister.js"></script>-->
 <!--
 <script type="text/javascript"  src="/web/js/passport/openPlatformRegister.js"></script>
 -->
