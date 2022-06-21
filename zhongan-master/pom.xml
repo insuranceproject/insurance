@@ -48,7 +48,7 @@
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
-                <version>5.1.45</version>
+                <version>8.0.28</version>
             </dependency>
             <!--DRUID是阿里巴巴开源平台上一个数据库连接池实现，
             它结合了C3P0、DBCP、PROXOOL等DB池的优点，同时加入了日志监控，
